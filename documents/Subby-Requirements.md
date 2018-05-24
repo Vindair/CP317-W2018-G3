@@ -84,20 +84,19 @@ page.
 **Subleasing with Subby:**
 To promote available rental units, users must first register and create an account using a valid university email. Once a Subby account holder, a user can create a listing for their residence(s) under ‘My Listings’ and promote said listing through a title, description, up to 20 captioned photographs and a myriad of search fields, including price, property type, rental period and size. 
  
-Moreover, registered users can create personalized profiles so that potential subtenants may get to know the leasee a little bit better. Under ‘My Profile’, a user can upload a photo, include their name, contact information, and profile description.
+Moreover, registered users can create personalized profiles so that potential subtenants may get to know the leasee a little better. Under ‘My Profile’, a user can upload a photo, include their name, contact information, and profile description.
 
-Here, we will describe how Subby works as a whole to make subletting easier for students. 
 
 ### 2.1. Product Perspective
 
-Subby is a website that will utilize Google Maps API to help individuals locate and post sublets in the Waterloo area. 
+Subby is a website that will utilize Google Maps API to help users locate and post sublets in the KW region. 
 
 #### Actors and Use Cases
 
 ![Use Case Chart](https://i.imgur.com/I7MsGHd.png)
 
 #### 2.1.1. Front-End Users
-Subby will have a rather simplistic design to make it easier for front-end users to use. The homepage will consist of a search bar in the middle, where students can search for sublets, along with a sign-in link and a register link located at the top of the page. Since the website is targeted for students, individuals will have to register using a school email address. By doing so, the amount of fake accounts will decrease resulting in less spam and it will be easier to set the location of the account to a certain university. 
+Subby will have a rather simplistic design to make it easier for front-end users to use. The homepage will consist of a search bar in the center of the page, where students can search for sublets. Additionaly, a sign-in link and a register link will be located at the top of the homepage. Since the website is targeted towards students, individuals will have to register using a university or college email address. By doing so, the amount of fake accounts will decrease resulting in less spam and it will be easier to set the location of the account to a certain university. 
 
 There will be two types of front-end users: 
 1. **Lease Owner – the individual looking to sublet their place**
