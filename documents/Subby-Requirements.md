@@ -83,10 +83,7 @@ The lessee by sending them a message of interest through the communication form 
 page.
 
 **Subleasing with Subby:**
-To promote available rental units, users must first register and create an account using a valid university email.
-Once a Subby account holder, a user can create a listing for their residence(s) under ‘My Listings’ and promote \
-said listing through a title, description, up to 20 captioned photographs and a myriad of search fields, including
-price, property type, rental period and size. 
+To promote available rental units, users must first register and create an account using a valid university email. Once a Subby account holder, a user can create a listing for their residence(s) under ‘My Listings’ and promote said listing through a title, description, up to 20 captioned photographs and a myriad of search fields, including price, property type, rental period and size. 
  
 Moreover, registered users can create personalized profiles so that potential subtenants may get to know the leasee a little bit better. Under ‘My Profile’, a user can upload a photo, include their name, contact information, and profile description.
 
@@ -127,17 +124,17 @@ Here are the main features available for back-end users:
 
 #### 2.1.3. Other Features
 * **Review**
-    * Both sublet seekers and leaser owners can rate each other, as well as the unit, depending on their experience on a scale of 1 – 5. For instance, the sublet seeker can rate their experience with the lease owner and the lease owner can rate their experience with the sublet seeker. This will allow individuals to trust others more freely if they have good reviews. 
+    * Both sublet seekers and leaser owners can rate each other, as well as the unit, depending on their experience on a scale of 0 – 5. For instance, the sublet seeker can rate their experience with the lease owner and the lease owner can rate their experience with the sublet seeker. This will allow individuals to trust others more freely if they have good reviews. 
 
 * **Ads**
     * Potentially have school-related ads on the website to generate revenue. 
 
 * **Auction/Bidding Feature**
-    * There will be an option that allows lease owners to set their own price for the rent. They then will have two options - the first is to accept rent applications at listed price, or take the bid they think is the best based on competitive pricing. 
+    * There will be an option that allows lease owners to set their own price for the rent. They then will have two options - the first is to accept rent applications at listed price, or take the bid they think is the best based on competitive pricing.
 
 * **Competitive Pricing**
     * On the page that shows buildings, there will be two boxes that show the competitive pricing. One box will show the lowest renting price set up by lease owners of rooms (same type) in same building, or by leasers of same criteria. The other box will show the highest bidding set by sublet seekers for either rooms (same type) in same building or rooms that fulfil same criteria. The purpose of this feature is to show the competitive pricing of each unit listed. This way, people will have better understanding of how much they should be paying for a sublet or of how much they should charge for subletting their unit.
-    
+
 * **Contract**
     * There will be an option for lease owners to generate a sublet contract that can be customized to their liking. An alternative option would be to direct lease owners to another link/organization that deals with drafting contracts and allow them to make the customizations.
 
@@ -217,7 +214,7 @@ The user will be able to change their email with a simple form, validated agains
 * **Listing Management**
     * A list of an individual User’s Sublet or Sublet Wanted listings will appear on this page, with the address and various actions such as ‘edit’ or ‘delete’. A listing may be edited or created, and may have photos, descriptions, or attributes added to it. A maximum of 8 photos will be allowed, and descriptions limited to short text (<500 characters)
 * **Review Submission**
-    * An integer rating range of 1 to 5 is allowed to be submitted along with a short text description. The description will be sanitized for safety of the database and application.
+    * An integer rating range of 0 to 5 is allowed to be submitted along with a short text description. The description will be sanitized for safety of the database and application.
 * **User Administration**
     * A list of all users, their email addresses, and number of postings will be shown to the administrator as well as links to ‘edit’.
 * **User Administration - Edit**
@@ -229,7 +226,7 @@ The user will be able to change their email with a simple form, validated agains
 * The system shall ensure that users are not creating more than their administrator-defined allowed postings for their geographic area.
 * The system shall allow administrators to ban users, removing their posts and account access but maintaining the user record to prevent later sign-ups from that address. Deleting a user performs the same task, but also removes the user record.
 * The system shall delete dependent records when a model is removed. For example, deleting a Sublet posting will remove Favorite records associated with it, and deleting a User would remove the Sublet postings created by them.
-* Deleting a Sublet posting will also delete Favorite records associated with it. A notification
+* Deleting a Sublet posting will also delete Favorite records associated with it. A notification may be displayed to the user to show that Favorite records have been removed.
 
 ### 3.3. Logical Database Requirements
 * Several tables with many attributes will be required to maintain the data for this project. All tables will have a unique ID as the primary key for the table.
