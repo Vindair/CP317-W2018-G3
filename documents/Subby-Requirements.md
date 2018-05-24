@@ -42,7 +42,6 @@ This requirements document is used to highlight the features and the integration
 Subby will be a website used mainly by students looking to sublet a place in Waterloo or by students looking to sublet their places in Waterloo. The main goal of Subby is to create a centralized website for student sublets.
 
 ### 1.3. Document Lexicon
-Here, we define specific definitions, acronyms and abbreviations used throughout our project.
 
 #### 1.3.1. Definitions
 * **Sublet:** The action of leasing a property to someone else.
@@ -75,11 +74,11 @@ location), search results can be further refined by:
  * **Rental Period** -- users can sublet for periods of 4 or 8 months
  * **Keyword Search** -- search for features and amenities such as ‘onsite laundry’
  * **Number of Roommates** -- the number of roommates expected to occupy residence during stay
- * **Leasee Rating** -- the star-point rating of the lease owner and the unit from a scale of 0 to 5 stars
+ * **Leasee Rating** -- the star-point rating of the lease owner and the unit from a scale of 0 to 5 stars [the rating will be applicable to the unit as well? --> not sure how that would work]
 
 Once a sublet seeker finds a unit to their liking they must create a profile of their own using a university email
 to be able to add the property in question to their ‘Wish List.’ Otherwise, the sublet seeker may directly contact
-The lessee by sending them a message of interest through the communication form appeared on every listing
+The leasee by sending them a message of interest through the communication form which is found on every listing
 page.
 
 **Subleasing with Subby:**
@@ -100,7 +99,7 @@ Subby is a website that will utilize Google Maps API to help individuals locate 
 #### 2.1.1. Front-End Users
 Subby will have a rather simplistic design to make it easier for front-end users to use. The homepage will consist of a search bar in the middle, where students can search for sublets, along with a sign-in link and a register link located at the top of the page. Since the website is targeted for students, individuals will have to register using a school email address. By doing so, the amount of fake accounts will decrease resulting in less spam and it will be easier to set the location of the account to a certain university. 
 
-There will be 2 types of front-end users: 
+There will be two types of front-end users: 
 1. **Lease Owner – the individual looking to sublet their place**
     * These individuals must register to post
     * After registration, they may post details about the property they are subletting (i.e. pictures, brief description of their place, price, location) 
