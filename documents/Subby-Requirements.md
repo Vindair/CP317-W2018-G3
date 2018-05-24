@@ -3,30 +3,30 @@
 ---
 ## Requirements Document
 Version 1.0 – 5/20/18
- 1. **[Introduction](#1_Introduction_29)**  
-     1.1. [Purpose](#11_Purpose_33)  
-     1.2. [Scope](#12_Scope_36)  
-     1.3. [Document Lexicon](#13_Document_Lexicon_39)  
-        1.3.1. [Definitions](#131_Definitions_42)  
-        1.3.2. [Acronyms and Abbreviations ](#132_Acronyms_and_Abbreviations_46)  
-     1.4. [References](#14_References_49)  
-     1.5. [Overview](#15_Overview_52)  
- 2. **[Overall Description](#2_Overall_Description_55)**  
-     2.1. [Product Perspective](#21_Product_Perspective_88)  
-         2.1.1. [Front-End Users](#211_FrontEnd_Users_95)  
-         2.1.2. [Back-End Users](#212_BackEnd_Users_112)  
-         2.1.3. [Other Features](#213_Other_Features_120)  
-         2.1.4. [Sample GUI](#214_Sample_GUI_133)  
-     2.2. [Product Functions](#22_Product_Functions_154)  
-     2.3. [User Characteristics](#23_User_Characteristics_157)  
-     2.4. [Constraints](#24_Constraints_160)  
-     2.5. [Assumptions and Dependencies](#25_Assumptions_and_Dependancies_163)  
-3. **[Specific Requirements](#3_Specific_Requirements_166)**  
-     3.1. [External Interfaces](#31_External_Interfaces_168)  
-     3.2. [Functions](#32_Functions_197)  
-     3.3. [Logical Database Requirements](#33_Logical_Database_Requirements_204)  
-     3.4. [Portability](#34_Portability_213)  
-4. **[Revision History](#40_Revision_History_216)**  
+ 1. **[Introduction](#1-introduction)**  
+     1.1. [Purpose](#11-purpose)  
+     1.2. [Scope](#12-scope)  
+     1.3. [Document Lexicon](#13-document-lexicon)  
+        1.3.1. [Definitions](#131-definitions)  
+        1.3.2. [Acronyms and Abbreviations ](#132-acronyms-and-abbreviations)  
+     1.4. [References](#14-references)  
+     1.5. [Overview](#15-overview)  
+ 2. **[Overall Description](#2-overall-description)**  
+     2.1. [Product Perspective](#21-product-perspective)  
+         2.1.1. [Front-End Users](#211-frontend-users)  
+         2.1.2. [Back-End Users](#212-backend-users)  
+         2.1.3. [Other Features](#213-other-features)  
+         2.1.4. [Sample GUI](#214-sample-gui)  
+     2.2. [Product Functions](#22-product-functions)  
+     2.3. [User Characteristics](#23-user-characteristics)  
+     2.4. [Constraints](#24-constraints)  
+     2.5. [Assumptions and Dependencies](#25-assumptions-and-dependancies)  
+3. **[Specific Requirements](#3-specific-requirements)**  
+     3.1. [External Interfaces](#31-external-interfaces)  
+     3.2. [Functions](#32-functions)  
+     3.3. [Logical Database Requirements](#33-logical-database-requirements)  
+     3.4. [Portability](#34-portability)  
+4. **[Revision History](#40-revision-history)**  
 
 
 # 1. Introduction
@@ -53,7 +53,7 @@ Here, we define specific definitions, acronyms and abbreviations used throughout
 * **API - Application Programming Interface:** Tools for building application software.
 
 ### 1.4. References
-Based on IEEE Std 830-1998.
+Based on [IEEE Std 830-1998](https://standards.ieee.org/findstds/standard/830-1998.html).
 
 ### 1.5. Overview
 The remaining elements of this document highlights the functions and appearance of the Subby website. 
