@@ -35,8 +35,12 @@ Version 1.0 – 5/20/18
 Subby is a website designed to help individuals find sublets within the Waterloo region. In addition, it is also designed to help individuals sublet their places in a standardized manner. 
 The purpose of Subby is to make process of subletting easier and well for the Waterloo community.  Furthermore, the point of Subby is to ensure that both lease owners and sublet seekers are getting realstically best deals possible.
 
+/*A major issue many students face in their time at post-secondary school is the dreaded one-year lease. Most students scramble to find potential candidates to take over their lease as their semester comes to an end. This is where Subby comes into play. Subby is an easy to use website that enables students to either sublet their place or simply find a sublet of their own. The goal for Subby is to create a one stop marketplace for sublets as opposed to the current struggle of students using multiple sites. The site comes with a variety of useful features such as a localized map and search priorities that allow for a visually appealing search and a more detailed search as well.  [from google docs - by: Navdeep Sharma]
+*/
+
+
 ### 1.1. Purpose
-This requirements document is used to highlight the features and the integration of Subby. Throughout the term, individuals on the Subby team will refer to this document and make changes as necessary.
+This document outlines the features and the integration [integration into what?] of Subby. Throughout the term, members on the Subby team will refer to this document and make changes as necessary.
 
 ### 1.2. Scope
 Subby will be a website used mainly by students looking to sublet a place in Waterloo or by students looking to sublet their places in Waterloo. The main goal of Subby is to create a centralized website for student sublets.
@@ -69,7 +73,7 @@ location), search results can be further refined by:
  * **Property Type** – single bedroom, shared bedroom, etc  
  * **Size** – number of beds/bedrooms/washrooms
  * **Distance from Campus** -- distance range from a given university campus
- * **Convenience** -- how convenient is it to reach a nearby plaza, gym, etc...
+ * **Convenience** -- how convenient is it to reach a nearby plaza, gym, etc
  * **Availability** -- move in date
  * **Rental Period** -- users can sublet for periods of 4 or 8 months
  * **Keyword Search** -- search for features and amenities such as ‘onsite laundry’
