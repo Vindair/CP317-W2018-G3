@@ -217,7 +217,7 @@ The user will be able to change their email with a simple form, validated agains
 * **Listing Management**
     * A list of an individual User’s Sublet or Sublet Wanted listings will appear on this page, with the address and various actions such as ‘edit’ or ‘delete’. A listing may be edited or created, and may have photos, descriptions, or attributes added to it. A maximum of 8 photos will be allowed, and descriptions limited to short text (<500 characters)
 * **Review Submission**
-    * An integer rating range of 1 to 5 is allowed to be submitted along with a short text description. The description will be sanitized for safety of the database and application.
+    * An integer rating range of 0 to 5 is allowed to be submitted along with a short text description. The description will be sanitized for safety of the database and application.
 * **User Administration**
     * A list of all users, their email addresses, and number of postings will be shown to the administrator as well as links to ‘edit’.
 * **User Administration - Edit**
@@ -229,7 +229,7 @@ The user will be able to change their email with a simple form, validated agains
 * The system shall ensure that users are not creating more than their administrator-defined allowed postings for their geographic area.
 * The system shall allow administrators to ban users, removing their posts and account access but maintaining the user record to prevent later sign-ups from that address. Deleting a user performs the same task, but also removes the user record.
 * The system shall delete dependent records when a model is removed. For example, deleting a Sublet posting will remove Favorite records associated with it, and deleting a User would remove the Sublet postings created by them.
-* Deleting a Sublet posting will also delete Favorite records associated with it. A notification
+* Deleting a Sublet posting will also delete Favorite records associated with it. A notification may be displayed to the user to show that Favorite records have been removed.
 
 ### 3.3. Logical Database Requirements
 * Several tables with many attributes will be required to maintain the data for this project. All tables will have a unique ID as the primary key for the table.

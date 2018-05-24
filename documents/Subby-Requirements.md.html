@@ -210,7 +210,7 @@
     </li>
     <li><strong>Review Submission</strong>
         <ul>
-            <li>An integer rating range of 1 to 5 is allowed to be submitted along with a short text description. The description will be sanitized for safety of the database and application.</li>
+            <li>An integer rating range of 0 to 5 is allowed to be submitted along with a short text description. The description will be sanitized for safety of the database and application.</li>
         </ul>
     </li>
     <li><strong>User Administration</strong>
@@ -231,7 +231,7 @@
     <li>The system shall ensure that users are not creating more than their administrator-defined allowed postings for their geographic area.</li>
     <li>The system shall allow administrators to ban users, removing their posts and account access but maintaining the user record to prevent later sign-ups from that address. Deleting a user performs the same task, but also removes the user record.</li>
     <li>The system shall delete dependent records when a model is removed. For example, deleting a Sublet posting will remove Favorite records associated with it, and deleting a User would remove the Sublet postings created by them.</li>
-    <li>Deleting a Sublet posting will also delete Favorite records associated with it. A notification</li>
+    <li>Deleting a Sublet posting will also delete Favorite records associated with it. A notification may be displayed to the user to show that Favorite records have been removed.</li>
 </ul>
 <h3 id="33logicaldatabaserequirements">3.3. Logical Database Requirements</h3>
 <ul>
