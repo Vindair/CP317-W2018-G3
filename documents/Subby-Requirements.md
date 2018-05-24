@@ -45,7 +45,7 @@ This document outlines the features and the integration [integration into what?]
 ### 1.2. Scope
 Subby will be a website used mainly by students looking to sublet a place in Waterloo or by students looking to sublet their places in Waterloo. The main goal of Subby is to create a centralized website for student sublets.
 
-/*As an online student-to-student subletting service, Subby seeks to connect tenants and subletters together. In contrast to other lodging services, Subby specialises in subletting exclusively between university and college students for periods of 4 or 8 months. For the time being, Subby will only facilitate subletting listings within the Kitchener-Waterloo (KW) region.*/
+/*As an online student-to-student subletting service, Subby seeks to streamline the way in which tenants and subletters can connect  together. In contrast to other lodging services, Subby specialises in subletting exclusively between university and college students for periods of 4 or 8 months. For the time being, Subby will only facilitate subletting listings within the Kitchener-Waterloo (KW) region.*/
 
 ### 1.3. Document Lexicon
 
