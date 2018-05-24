@@ -83,10 +83,7 @@ The lessee by sending them a message of interest through the communication form 
 page.
 
 **Subleasing with Subby:**
-To promote available rental units, users must first register and create an account using a valid university email.
-Once a Subby account holder, a user can create a listing for their residence(s) under ‘My Listings’ and promote \
-said listing through a title, description, up to 20 captioned photographs and a myriad of search fields, including
-price, property type, rental period and size. 
+To promote available rental units, users must first register and create an account using a valid university email. Once a Subby account holder, a user can create a listing for their residence(s) under ‘My Listings’ and promote said listing through a title, description, up to 20 captioned photographs and a myriad of search fields, including price, property type, rental period and size. 
  
 Moreover, registered users can create personalized profiles so that potential subtenants may get to know the leasee a little bit better. Under ‘My Profile’, a user can upload a photo, include their name, contact information, and profile description.
 
@@ -127,17 +124,17 @@ Here are the main features available for back-end users:
 
 #### 2.1.3. Other Features
 * **Review**
-    * Both sublet seekers and leaser owners can rate each other, as well as the unit, depending on their experience on a scale of 1 – 5. For instance, the sublet seeker can rate their experience with the lease owner and the lease owner can rate their experience with the sublet seeker. This will allow individuals to trust others more freely if they have good reviews. 
+    * Both sublet seekers and leaser owners can rate each other, as well as the unit, depending on their experience on a scale of 0 – 5. For instance, the sublet seeker can rate their experience with the lease owner and the lease owner can rate their experience with the sublet seeker. This will allow individuals to trust others more freely if they have good reviews. 
 
 * **Ads**
     * Potentially have school-related ads on the website to generate revenue. 
 
 * **Auction/Bidding Feature**
-    * There will be an option that allows lease owners to set their own price for the rent. They then will have two options - the first is to accept rent applications at listed price, or take the bid they think is the best based on competitive pricing. 
+    * There will be an option that allows lease owners to set their own price for the rent. They then will have two options - the first is to accept rent applications at listed price, or take the bid they think is the best based on competitive pricing.
 
 * **Competitive Pricing**
     * On the page that shows buildings, there will be two boxes that show the competitive pricing. One box will show the lowest renting price set up by lease owners of rooms (same type) in same building, or by leasers of same criteria. The other box will show the highest bidding set by sublet seekers for either rooms (same type) in same building or rooms that fulfil same criteria. The purpose of this feature is to show the competitive pricing of each unit listed. This way, people will have better understanding of how much they should be paying for a sublet or of how much they should charge for subletting their unit.
-    
+
 * **Contract**
     * There will be an option for lease owners to generate a sublet contract that can be customized to their liking. An alternative option would be to direct lease owners to another link/organization that deals with drafting contracts and allow them to make the customizations.
 
