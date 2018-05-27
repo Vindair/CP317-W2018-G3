@@ -83,8 +83,7 @@ location), search results can be further refined by:
  * **Leasee Rating** -- the star-point rating of the lease owner and the unit from a scale of 0 to 5 stars [the rating will be applicable to the unit as well? --> not sure how that would work]
 
 Once a sublet seeker finds a unit to their liking they must create a profile of their own using a university email
-to be able to add the property in question to their ‘Wish List.’ Otherwise, the sublet seeker may directly contact
-The leasee by sending them a message of interest through the communication form which is found on every listing
+to be able to add the property in question to their ‘Wish List.’ Otherwise, the sublet seeker may directly contact the leasee by sending them a message of interest through the communication form which is found on every listing
 page.
 
 **Subleasing with Subby:**
@@ -102,7 +101,7 @@ The website will utilize Google Maps API to help users locate and post sublets i
 ![Use Case Chart](https://i.imgur.com/I7MsGHd.png)
 
 #### 2.1.1. Front-End Users
-Subby will have a rather simplistic design to make it easier for front-end users to use. The homepage will consist of a search bar in the center of the page, where students can search for sublets. Additionaly, a sign-in link and a register link will be located at the top of the homepage. Since the website is targeted towards students, individuals will have to register using a university or college email address. By doing so, the amount of fake accounts will decrease resulting in less spam and it will be easier to set the location of the account to a certain university. 
+The front-end user interface will be simplistic in design to allow users of all computer literacy to easily navigate around the site.   The homepage will consist of a search bar in the center of the page, where students can search for sublets. Additionaly, a sign-in link and a register link will be located at the top of the homepage. Since the website is targeted towards students, individuals will have to register using a university or college email address. Accordingly, the amount of fake accounts can be reduced, resulting in less spam.
 
 There will be two types of front-end users: 
 1. **Lease Owner – the individual looking to sublet their place**
@@ -140,7 +139,7 @@ Here are the main features available for back-end users:
     * On the page that shows buildings, there will be two boxes that show the competitive pricing. One box will show the lowest renting price set up by lease owners of rooms (same type) in same building, or by leasers of same criteria. The other box will show the highest bidding set by sublet seekers for either rooms (same type) in same building or rooms that fulfil same criteria. The purpose of this feature is to show the competitive pricing of each unit listed. This way, people will have better understanding of how much they should be paying for a sublet or of how much they should charge for subletting their unit.
 
 * **Contract**
-    * There will be an option for lease owners to generate a sublet contract that can be customized to their liking. An alternative option would be to direct lease owners to another link/organization that deals with drafting contracts and allow them to make the customizations.
+    * Lease owners will hae the option to generate a sublet contract that can be customized to their liking. An alternative option would be to direct lease owners to another link/organization that deals with drafting contracts and allow them to make the customizations.
 
 * **Tinder Swipe**
     * Users could swipe “left” or “right” on apartments to make the search easier.
@@ -188,7 +187,7 @@ Every individual will have the option to search for sublets. Registered users wi
 Subby is made for students with basic knowledge of how to navigate a website. The website will be designed to be as straightforward as possible so even the most non-technological individuals can use it.
 
 ### 2.4. Constraints
-In regards to the auction/bidding feature, it may prove difficult to identify the validity of the bids. Users could be making other accounts and bidding on their own properties to earn more money. In order to mitigate this, we plan to make individuals sign up with their school email since they should only have one school email. 
+In regards to the auction/bidding feature, it may prove difficult to identify the validity of the bids; users can potentially make fake accounts and bid on their own property in order to balloon their profits. In order to mitigate this, we plan to make individuals sign up with their school email since they should only have one school email [what about double degree studnts at -->Laurier/Waterloo]
 
 ### 2.5. Assumptions and Dependancies
 Although anyone can visit and search the rental database, to contact a leasee or post a unit to sublet, users must first register with a valid university or college email. Individuals are expected to have access to a device with Wi-Fi and use a browser compatible with Google Maps. 
@@ -197,10 +196,10 @@ Although anyone can visit and search the rental database, to contact a leasee or
 
 ---
 ### 3.1. External Interfaces
-Unless otherwise stated all inputs listed here will be stored in the application database as appropriate for the model it represents.
+Unless otherwise stated, all inputs listed here will be stored in the application database as is appropriate for the model it represents.
 
 * **User Management**
-    * The user will be allowed to change their password by providing their current password, the new password, and confirmation of the new password to ensure no typos have been made.
+    * The user will be allowed to change their password by first providing their current password, then the new password, and lastly confirming the new password to ensure no typos have been made.
 The user will be able to change their email with a simple form, validated against typical email format.
     * All changes to user account information will have to be confirmed through email to ensure account security.
     * The user will be able to enter their own address for the application to more accurately determine which Sublet records may be relevant to them.
