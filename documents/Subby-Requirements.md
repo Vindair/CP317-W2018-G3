@@ -98,7 +98,7 @@ The website will utilize Google Maps API to help users locate and post sublets i
 
 #### Actors and Use Cases
 
-![Use Case Chart](https://i.imgur.com/I7MsGHd.png)
+![Use Case Chart](https://drive.google.com/file/d/18gXs4I1LSKLwzJ7-kuHrlMi7ngDbam5U/view)
 
 #### 2.1.1. Front-End Users
 The front-end user interface will be simplistic in design to allow users of all computer literacy to easily navigate around the site.   The homepage will consist of a search bar in the center of the page, where students can search for sublets. Additionaly, a sign-in link and a register link will be located at the top of the homepage. Since the website is targeted towards students, individuals will have to register using a university or college email address. Accordingly, the amount of fake accounts can be reduced, resulting in less spam.
