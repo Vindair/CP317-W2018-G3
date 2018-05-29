@@ -45,8 +45,8 @@ As an online student-to-student subletting service, Subby seeks to streamline th
 
 #### 1.3.1. Definitions
 * **Sublet:** The action of leasing a property to someone else.
-* **Sublet Seeker:** The person looking to sublet a place.
-* **Lease Owner:** The person looking to rent their place to someone else.
+* **Sublet Seeker/Lessee:** The person looking to sublet a place.
+* **Lease Owner/Lessor:** The person looking to rent their place to someone else.
 
 #### 1.3.2. Acronyms and Abbreviations
 * **API - Application Programming Interface:** Tools for building application software.
@@ -74,7 +74,7 @@ location), search results can be further refined by:
  * **Rental Period** -- users can sublet for periods of 4 or 8 months
  * **Keyword Search** -- search for features and amenities such as ‘onsite laundry’
  * **Number of Roommates** -- the number of roommates expected to occupy residence during stay
- * **Leasee Rating** -- the star-point rating of the lease owner and the unit from a scale of 0 to 5 stars [the rating will be applicable to the unit as well? --> not sure how that would work]
+ * **Lessee Rating** -- the star-point rating of the lease owner and the unit from a scale of 0 to 5 stars [the rating will be applicable to the unit as well? --> not sure how that would work]
 
 Once a sublet seeker finds a unit to their liking they must create a profile of their own using a university email
 to be able to add the property in question to their ‘Wish List.’ Otherwise, the sublet seeker may directly contact the leasee by sending them a message of interest through the communication form which is found on every listing
@@ -95,14 +95,14 @@ The website will utilize Google Maps API to help users locate and post sublets i
 ![Use Case Chart](https://i.imgur.com/6lY7PvN.png)
 
 #### 2.1.1. Front-End Users
-The front-end user interface will be simplistic in design to allow users of all computer literacy to easily navigate around the site. The homepage will consist of a search bar in the center of the page, where students can search for sublets. Additionaly, a sign-in link and a register link will be located at the top of the homepage. Since the website is targeted towards students, individuals will have to register using a university or college email address. Accordingly, the amount of fake accounts can be reduced, resulting in less spam.
+The front-end user interface will be simplistic in design to allow users of all computer literacy to easily navigate around the site. The homepage will consist of a search bar in the center of the page, where students can search for sublets. Additionally, a sign-in link and a register link will be located at the top of the homepage. Since the website is targeted towards students, individuals will have to register using a university or college email address. Accordingly, the amount of fake accounts can be reduced, resulting in less spam.
 
 There will be two main feature sets available to front-end users:
 1. **Lease Owner – the individual looking to sublet their place**
     * These individuals must register to post
     * After registration, they may post details about the property they are subletting (i.e. pictures, brief description of their place, price, location) 
     * They can edit their post at any time (i.e. lower the price, mark as sold, delete the listing)
-    * They can share their posts to social sites like twitter, facebook, etc.
+    * They can share their posts to social sites like Twitter, Facebook, etc.
 
 2. **Sublet Seeker – the individual looking for a sublet**
     * These individuals do not have to register to use the website
@@ -111,33 +111,21 @@ There will be two main feature sets available to front-end users:
     * They could also choose to register and post a “WANTED” advertisement if they do not see anything that meets their requirements
     * Will have a “FAVOURITE” and “SHARE” function – if users find a room they like, they could add them to a list of potential sublets they’re interested in or share it with a friend who might be interested in it as well
     
-#### 2.1.2. Back-End Users
-The back-end users will be the administrators of the website looking to maintain the integrity of the site. 
+#### 2.1.2. Back-End Users / Administrators
+The administrator users will have access to special features to maintain user accounts and enforce rules.
 
 Here are the main features available for back-end users: 
-* **Enforce Rules:** The administrators of Subby will look to ensure individuals are using the website properly. 
-* **Regulate Rules:** Give appropriate punishments to individuals who violate the rules (i.e. spamming, scammers, etc). Punishments could include giving them warnings and banning their accounts.  
-* **Provide Great Customer Service:** Individuals will be able to contact a Subby administrator by email if any problems or questions arise. 
+* **Regulate Rules:** The administrators of Subby will be able to adjust the rules that govern regular users, such as the number of listings they can have up at any time, or the maximum distance from K/W they are allowed to post.
+* **Enforce Rules:** Administrators will give appropriate punishments to individuals who violate the terms of using Subby (i.e. spamming, scamming, etc). Punishments include giving them warnings and banning their accounts.
+* **Provide Customer Service:** Individuals will be able to contact a Subby administrator by email if any problems or questions arise. Administrators will be able to reset passwords and email addresses to ensure users have account access.
 
-#### 2.1.3. Other Features
-* **Review**
-    * Both sublet seekers and leaser owners can rate each other depending on their experience on a scale of 0 – 5. For instance, the sublet seeker can rate their experience with the lease owner and the lease owner can rate their experience with the sublet seeker. This will allow individuals to trust others more freely if they have good reviews.
+#### 2.1.3. Additional Features
+* **Review:** Both sublet seekers and leaser owners can rate each other depending on their experience on a scale of 0 – 5. For instance, the sublet seeker can rate their experience with the lease owner and the lease owner can rate their experience with the sublet seeker. This will allow individuals to trust others more freely if they have good reviews.
 
-* **Ads**
-    * Potentially have school-related ads on the website to generate revenue. 
+* **Competitive Pricing:** On the page that shows buildings, there will be two boxes that show the competitive pricing. One box will show the lowest renting price set up by lease owners of rooms (same type) in same building, or by leasers of same criteria. The other box will show the highest bidding set by sublet seekers for either rooms (same type) in same building or rooms that fulfill same criteria. The purpose of this feature is to show the competitive pricing of each unit listed. This way, people will have better understanding of how much they should be paying for a sublet or of how much they should charge for subletting their unit.
 
-* **Auction/Bidding Feature**
-    * There will be an option that allows lease owners to set their own price for the rent. They then will have two options - the first is to accept rent applications at listed price, or take the bid they think is the best based on competitive pricing.
+* **Tinder-Style Swipe:** Provide an interface allowing users to easily narrow down their search by quickly viewing photos of potential sublets. For mobile devices, the user could swipe "left" to ignore a sublet- or "right" to view more information and contact the lessor. Desktop users would either tap the left or right arrow keys respectively to achieve the same result.
 
-* **Competitive Pricing**
-    * On the page that shows buildings, there will be two boxes that show the competitive pricing. One box will show the lowest renting price set up by lease owners of rooms (same type) in same building, or by leasers of same criteria. The other box will show the highest bidding set by sublet seekers for either rooms (same type) in same building or rooms that fulfil same criteria. The purpose of this feature is to show the competitive pricing of each unit listed. This way, people will have better understanding of how much they should be paying for a sublet or of how much they should charge for subletting their unit.
-
-* **Contract**
-    * Lease owners will hae the option to generate a sublet contract that can be customized to their liking. An alternative option would be to direct lease owners to another link/organization that deals with drafting contracts and allow them to make the customizations.
-
-* **Tinder Swipe**
-    * Users could swipe “left” or “right” on apartments to make the search easier.
-    
 #### 2.1.4. Sample GUI
 **Home Page:**
 
@@ -177,8 +165,8 @@ Subby is made for students with basic knowledge of how to navigate a website. Th
 ### 2.4. Constraints
 In regards to the auction/bidding feature, it may prove difficult to identify the validity of the bids; users can potentially make fake accounts and bid on their own property in order to balloon their profits. In order to mitigate this, we plan to make individuals sign up with their school email since they should only have one school email [what about double degree studnts at -->Laurier/Waterloo]
 
-### 2.5. Assumptions and Dependancies
-Although anyone can visit and search the rental database, to contact a leasee or post a unit to sublet, users must first register with a valid university or college email. Individuals are expected to have access to a device with Wi-Fi and use a browser compatible with Google Maps. 
+### 2.5. Assumptions and Dependencies
+Although anyone can visit and search the rental database, to contact a lessee or post a unit to sublet, users must first register with a valid university or college email. Individuals are expected to have access to a device with Wi-Fi and use a browser compatible with Google Maps.
 
 # 3. Specific Requirements
 
@@ -252,7 +240,7 @@ There are a few main areas of concern for the security of this application:
 * **Section 3**
     * Navdeep Sharma [1] [2018-05-27]
     * Sarah Younes [1, 1.1, 1.2] [2018-05-27]
-    * Alex Kirsopp [2.1.4, 3.4-3.7] [2018-05-28]
+    * Alex Kirsopp [2.1.2-2.1.4, 3.4-3.7] [2018-05-28]
 
 * **Other**
     * Alex Kirsopp - Markdown
