@@ -200,10 +200,10 @@ The user will be able to change their email with a simple form, validated agains
     * The administrator will be able to select to ‘ban’ or ‘delete’ a user.
 
 ### 3.2. Functions
-* The system shall perform basic validation for all models. For example, a User cannot be created without an email address (which must also pass a simple email format validation), and a Sublet posting cannot be made without an availability date.
-* The system shall ensure that users are not creating more than their administrator-defined allowed postings for their geographic area.
-* The system shall allow administrators to ban users, removing their posts and account access but maintaining the user record to prevent later sign-ups from that address. Deleting a user performs the same task, but also removes the user record.
-* The system shall delete dependent records when a model is removed. For example, deleting a Sublet posting will remove Favorite records associated with it, and deleting a User would remove the Sublet postings created by them.
+* The system will perform basic validation for all models. For example, a User cannot be created without an email address (which must also pass a simple email format validation), and a Sublet posting cannot be made without an availability date.
+* The system will ensure that users are not creating more than their administrator-defined allowed postings for their geographic area.
+* The system will allow administrators to ban users, removing their posts and account access but maintaining the user record to prevent later sign-ups from that address. Deleting a user performs the same task, but also removes the user record.
+* The system will delete dependent records when a model is removed. For example, deleting a Sublet posting will remove Favorite records associated with it, and deleting a User would remove the Sublet postings created by them.
 * Deleting a Sublet posting will also delete Favorite records associated with it. A notification may be displayed to the user to show that Favorite records have been removed.
 
 ### 3.3. Logical Database Requirements
@@ -229,7 +229,7 @@ The application will not crash or produce unexpected errors when within the perf
 ### 3.7. Security
 There are a few main areas of concern for the security of this application:
 * **User Passwords:** User passwords must be hashed with a unique salt in the event that a malicious actor were to obtain a dump of the database. Additionally, user invitations must use one-time tokens; password resets require confirmation; and administrators are able to modify user account access should a user become compromised.
-* **Administrators:** Administrator accounts have powerful capabilities, and should only be created manually via migration. No UI shall exist allowing a user or administrator to change their permission level.
+* **Administrators:** Administrator accounts have powerful capabilities, and should only be created manually via migration. No UI will exist allowing a user or administrator to change their permission level.
 * **SQL Injection:** No queries are to be manually written that might allow for a user to supply a malicious payload.
 * **Logging:** Basic logging should be done for future investigation of security issues (request information such as route, client IP, etc).
 
