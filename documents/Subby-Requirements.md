@@ -32,20 +32,14 @@ Version 1.0 – 5/20/18
 # 1. Introduction
 
 ---
-Subby is a website designed to help individuals find sublets within the Waterloo region. In addition, it is also designed to help individuals sublet their places in a standardized manner. 
-The purpose of Subby is to make process of subletting easier and well for the Waterloo community.  Furthermore, the point of Subby is to ensure that both lease owners and sublet seekers are getting realstically best deals possible.
-
-/*A major issue many students face in their time at post-secondary school is the dreaded one-year lease. Most students scramble to find potential candidates to take over their lease as their semester comes to an end. This is where Subby comes into play. Subby is an easy to use website that enables students to either sublet their place or simply find a sublet of their own. The goal for Subby is to create a one stop marketplace for sublets as opposed to the current struggle of students using multiple sites. The site comes with a variety of useful features such as a localized map and search priorities that allow for a visually appealing search and a more detailed search as well.  [from google docs - by: Navdeep Sharma]
-*/
+A major issue many students face in their time at post-secondary school is the dreaded one-year lease. Most students scramble to find potential candidates to take over their lease as their semester comes to an end. This is where Subby comes into play: Subby is an easy to use website that enables students to either sublet their place or simply find a sublet of their own. The goal for Subby is to create a one stop marketplace for sublets as opposed to the current struggle of students using multiple sites. The site comes with a variety of useful features such as a localized map and search priorities that allow for a visually appealing and detailed search.
 
 
 ### 1.1. Purpose
-This document outlines the features and the integration [integration into what?] of Subby. Throughout the term, members on the Subby team will refer to this document and make changes as necessary.
+This document outlines the features that Subby will provide to users and administrators. Throughout the term, members on the Subby team will refer to this document and make changes as necessary.
 
 ### 1.2. Scope
-Subby will be a website used mainly by students looking to sublet a place in Waterloo or by students looking to sublet their places in Waterloo. The main goal of Subby is to create a centralized website for student sublets.
-
-/*As an online student-to-student subletting service, Subby seeks to streamline the way in which tenants and subletters can connect with one another. In contrast to other lodging services, Subby specialises in subletting exclusively between university and college students for periods of 4 or 8 months. For the time being, Subby will only facilitate subletting listings within the Kitchener-Waterloo (KW) region.*/
+As an online student-to-student subletting service, Subby seeks to streamline the way in which tenants and subletters can connect with one another. In contrast to other lodging services, Subby specialises in subletting exclusively between university and college students for periods of 4 or 8 months. For the time being, Subby will only facilitate subletting listings within the Kitchener-Waterloo (KW) region.
 
 ### 1.3. Document Lexicon
 
@@ -101,9 +95,9 @@ The website will utilize Google Maps API to help users locate and post sublets i
 ![Use Case Chart](https://i.imgur.com/6lY7PvN.png)
 
 #### 2.1.1. Front-End Users
-The front-end user interface will be simplistic in design to allow users of all computer literacy to easily navigate around the site.   The homepage will consist of a search bar in the center of the page, where students can search for sublets. Additionaly, a sign-in link and a register link will be located at the top of the homepage. Since the website is targeted towards students, individuals will have to register using a university or college email address. Accordingly, the amount of fake accounts can be reduced, resulting in less spam.
+The front-end user interface will be simplistic in design to allow users of all computer literacy to easily navigate around the site. The homepage will consist of a search bar in the center of the page, where students can search for sublets. Additionaly, a sign-in link and a register link will be located at the top of the homepage. Since the website is targeted towards students, individuals will have to register using a university or college email address. Accordingly, the amount of fake accounts can be reduced, resulting in less spam.
 
-There will be two types of front-end users: 
+There will be two main feature sets available to front-end users:
 1. **Lease Owner – the individual looking to sublet their place**
     * These individuals must register to post
     * After registration, they may post details about the property they are subletting (i.e. pictures, brief description of their place, price, location) 
@@ -127,7 +121,7 @@ Here are the main features available for back-end users:
 
 #### 2.1.3. Other Features
 * **Review**
-    * Both sublet seekers and leaser owners can rate each other, as well as the unit, depending on their experience on a scale of 0 – 5. For instance, the sublet seeker can rate their experience with the lease owner and the lease owner can rate their experience with the sublet seeker. This will allow individuals to trust others more freely if they have good reviews. 
+    * Both sublet seekers and leaser owners can rate each other depending on their experience on a scale of 0 – 5. For instance, the sublet seeker can rate their experience with the lease owner and the lease owner can rate their experience with the sublet seeker. This will allow individuals to trust others more freely if they have good reviews.
 
 * **Ads**
     * Potentially have school-related ads on the website to generate revenue. 
@@ -214,7 +208,6 @@ The user will be able to change their email with a simple form, validated agains
     * An integer rating range of 0 to 5 is allowed to be submitted along with a short text description. The description will be sanitized for safety of the database and application.
 * **User Administration**
     * A list of all users, their email addresses, and number of postings will be shown to the administrator as well as links to ‘edit’.
-* **User Administration - Edit**
     * An administrator will be able to edit a user’s email address as well as send a password reset link. The administrator will not be allowed to directly edit a user’s password.
     * The administrator will be able to select to ‘ban’ or ‘delete’ a user.
 
@@ -229,33 +222,50 @@ The user will be able to change their email with a simple form, validated agains
 * Several tables with many attributes will be required to maintain the data for this project. All tables will have a unique ID as the primary key for the table.
     * **Users table:** The Users table will require a distinct and unique email address, and salted/hashed passwords will also be stored. Two user types will be supported- regular clients who sign up from the web application and administrators who will have access backend functionality, which can be defined as a tinyint and treated as a boolean in the business logic of the application. Account status (such as bans or strikes against the account) will also be stored. Note that users can have zero-to-many relationships with the Sublets, Reviews, and Favorites tables.
     * **Sublets table:** Analogous to postings, the Sublets table will include address information (longitude/latitude as provided by Google’s Maps API), availability date, pricing, and so on. An individual sublet posting will be owned by a User through their distinct ID as a foreign key. As the ‘Wanted’ feature would cover many of the same attributes as a regular sublet, conditional logic or a ‘boolean’-treated field would determine whether a Sublet record is for a physically offered sublet, or a sublet-wanted ad.
-    * **Reviews table:** Reviews will have foreign keys for both the owning User as well as the Sublet record it is for and the User owning that sublet, preventing it from being invalidated when a posting is removed. It will also include a text field for the review content as well as an integer column for rating.
+    * **Reviews table:** Reviews will have foreign keys for both the owning User as well as the target user record it is for, preventing it from being invalidated when a posting is removed. It will also include a text field for the review content as well as an integer column for rating.
     * **Favorites table:** The Favorites table will include foreign keys on both Users and Sublets, allowing a User to look up several Sublet records that were of interest to them at some point. This is a simple join table, and no other information should be required.
 
 Additional tables, such as those related to Auction/Bidding type listings may be added to support the product roadmap as features are implemented. Indexes will applied to all uniquely identifying fields such as ID’s (as well as other fields of import, such as email addresses or location data) to ensure fast lookups for individual and related records.
 
 ### 3.4. Portability
 We must create a functional web page that is accessible on all devices, and because of the web-based nature, we must ensure compatibility with the largest browsers: Google Chrome, FireFox, Edge, and Safari. This means that there should be no issue with accessing the project Windows, Mac OS X, or Linux. There will be a mobile friendly version of the site.
+* **Server-Side:** Use of a well-supported, platform agnostic language and framework such as Python/Django are recommended. Clients do not need to support these technologies as they will be accessing the application through their web browser.
+* **Client-Side:** Clients will need to have a modern web browser with support for HTML5, CSS, and JavaScript.
+
+### 3.5. Performance Requirements
+This application is intended as a proof-of-concept and not for production-level scalability. As such, while common sense is to be used when implementing features, pre-optimization is not desired. For example, the application should be able to support 10 concurrent users at all times, or roughly 150 requests per minute (if each user were to make a request every 4 seconds).
+
+### 3.6. Reliability
+The application will not crash or produce unexpected errors when within the performance confines outlined in section 3.5. Additionally, Subby will likely depend on a separate database server, so cases where this server becomes unavailable should be considered. As this is a proof of concept, load balancing, automated scaling, host health checks, or other reliability strategies are not required at this stage.
+
+### 3.7. Security
+There are a few main areas of concern for the security of this application:
+* **User Passwords:** User passwords must be hashed with a unique salt in the event that a malicious actor were to obtain a dump of the database. Additionally, user invitations must use one-time tokens; password resets require confirmation; and administrators are able to modify user account access should a user become compromised.
+* **Administrators:** Administrator accounts have powerful capabilities, and should only be created manually via migration. No UI shall exist allowing a user or administrator to change their permission level.
+* **SQL Injection:** No queries are to be manually written that might allow for a user to supply a malicious payload.
+* **Logging:** Basic logging should be done for future investigation of security issues (request information such as route, client IP, etc).
 
 # 4.0. Revision History
 
 ---
 ## Version 1.1
 * **Section 3**
-    * Alex Kirsopp [2.1.4, ]
+    * Navdeep Sharma [1] [2018-05-27]
+    * Sarah Younes [1, 1.1, 1.2] [2018-05-27]
+    * Alex Kirsopp [2.1.4, 3.4-3.7] [2018-05-28]
 
 * **Other**
     * Alex Kirsopp - Markdown
 
 ## Version 1.0
 * **Section 1**
-    * Sandra Sung [1.1 - 1.5] [2018-05-20]
+    * Sandra Sung [1.1-1.5] [2018-05-20]
 
 * **Section 2**
-    * Sandra Sung [2.1 - 2.5] [2018-05-20]
+    * Sandra Sung [2.1-2.5] [2018-05-20]
     * Jingchi Chen [2.1.4] [2018-05-20]
-    * Xiaochao Luo[2.1][2018-05-22]
-    * Sizhao Lin [2.1.3' [2018-05-23]
+    * Xiaochao Luo[2.1] [2018-05-22]
+    * Sizhao Lin [2.1.3] [2018-05-23]
     * Sarah Younes [2.1, 2.1.4] [2018-05-20]
 
 
