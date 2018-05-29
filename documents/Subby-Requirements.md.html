@@ -53,25 +53,19 @@
     </h1>
     <hr>
     <p>
-      Subby is a website designed to help individuals find sublets within the Waterloo region. In addition, it is also designed to help individuals sublet their places in a standardized manner. The purpose of Subby is to make process of subletting easier and well for the Waterloo community. Furthermore, the point of Subby is to ensure that both lease owners and sublet seekers are getting realstically best deals possible.
-    </p>
-    <p>
-      /*A major issue many students face in their time at post-secondary school is the dreaded one-year lease. Most students scramble to find potential candidates to take over their lease as their semester comes to an end. This is where Subby comes into play. Subby is an easy to use website that enables students to either sublet their place or simply find a sublet of their own. The goal for Subby is to create a one stop marketplace for sublets as opposed to the current struggle of students using multiple sites. The site comes with a variety of useful features such as a localized map and search priorities that allow for a visually appealing search and a more detailed search as well. [from google docs - by: Navdeep Sharma] */
+      A major issue many students face in their time at post-secondary school is the dreaded one-year lease. Most students scramble to find potential candidates to take over their lease as their semester comes to an end. This is where Subby comes into play: Subby is an easy to use website that enables students to either sublet their place or simply find a sublet of their own. The goal for Subby is to create a one stop marketplace for sublets as opposed to the current struggle of students using multiple sites. The site comes with a variety of useful features such as a localized map and search priorities that allow for a visually appealing and detailed search.
     </p>
     <h3 id="11purpose">
       1.1. Purpose
     </h3>
     <p>
-      This document outlines the features and the integration [integration into what?] of Subby. Throughout the term, members on the Subby team will refer to this document and make changes as necessary.
+      This document outlines the features that Subby will provide to users and administrators. Throughout the term, members on the Subby team will refer to this document and make changes as necessary.
     </p>
     <h3 id="12scope">
       1.2. Scope
     </h3>
     <p>
-      Subby will be a website used mainly by students looking to sublet a place in Waterloo or by students looking to sublet their places in Waterloo. The main goal of Subby is to create a centralized website for student sublets.
-    </p>
-    <p>
-      /<em>As an online student-to-student subletting service, Subby seeks to streamline the way in which tenants and subletters can connect with one another. In contrast to other lodging services, Subby specialises in subletting exclusively between university and college students for periods of 4 or 8 months. For the time being, Subby will only facilitate subletting listings within the Kitchener-Waterloo (KW) region.</em>/
+      As an online student-to-student subletting service, Subby seeks to streamline the way in which tenants and subletters can connect with one another. In contrast to other lodging services, Subby specialises in subletting exclusively between university and college students for periods of 4 or 8 months. For the time being, Subby will only facilitate subletting listings within the Kitchener-Waterloo (KW) region.
     </p>
     <h3 id="13documentlexicon">
       1.3. Document Lexicon
@@ -174,7 +168,7 @@
       The front-end user interface will be simplistic in design to allow users of all computer literacy to easily navigate around the site. The homepage will consist of a search bar in the center of the page, where students can search for sublets. Additionaly, a sign-in link and a register link will be located at the top of the homepage. Since the website is targeted towards students, individuals will have to register using a university or college email address. Accordingly, the amount of fake accounts can be reduced, resulting in less spam.
     </p>
     <p>
-      There will be two types of front-end users:
+      There will be two main feature sets available to front-end users:
     </p>
     <ol>
       <li>
@@ -239,7 +233,7 @@
           <strong>Review</strong>
         </p>
         <ul>
-          <li>Both sublet seekers and leaser owners can rate each other, as well as the unit, depending on their experience on a scale of 0 – 5. For instance, the sublet seeker can rate their experience with the lease owner and the lease owner can rate their experience with the sublet seeker. This will allow individuals to trust others more freely if they have good reviews.
+          <li>Both sublet seekers and leaser owners can rate each other depending on their experience on a scale of 0 – 5. For instance, the sublet seeker can rate their experience with the lease owner and the lease owner can rate their experience with the sublet seeker. This will allow individuals to trust others more freely if they have good reviews.
           </li>
         </ul>
       </li>
@@ -430,11 +424,6 @@
         <ul>
           <li>A list of all users, their email addresses, and number of postings will be shown to the administrator as well as links to ‘edit’.
           </li>
-        </ul>
-      </li>
-      <li>
-        <strong>User Administration - Edit</strong>
-        <ul>
           <li>An administrator will be able to edit a user’s email address as well as send a password reset link. The administrator will not be allowed to directly edit a user’s password.
           </li>
           <li>The administrator will be able to select to ‘ban’ or ‘delete’ a user.
@@ -470,7 +459,7 @@
             <strong>Sublets table:</strong> Analogous to postings, the Sublets table will include address information (longitude/latitude as provided by Google’s Maps API), availability date, pricing, and so on. An individual sublet posting will be owned by a User through their distinct ID as a foreign key. As the ‘Wanted’ feature would cover many of the same attributes as a regular sublet, conditional logic or a ‘boolean’-treated field would determine whether a Sublet record is for a physically offered sublet, or a sublet-wanted ad.
           </li>
           <li>
-            <strong>Reviews table:</strong> Reviews will have foreign keys for both the owning User as well as the Sublet record it is for and the User owning that sublet, preventing it from being invalidated when a posting is removed. It will also include a text field for the review content as well as an integer column for rating.
+            <strong>Reviews table:</strong> Reviews will have foreign keys for both the owning User as well as the target user record it is for, preventing it from being invalidated when a posting is removed. It will also include a text field for the review content as well as an integer column for rating.
           </li>
           <li>
             <strong>Favorites table:</strong> The Favorites table will include foreign keys on both Users and Sublets, allowing a User to look up several Sublet records that were of interest to them at some point. This is a simple join table, and no other information should be required.
@@ -487,6 +476,46 @@
     <p>
       We must create a functional web page that is accessible on all devices, and because of the web-based nature, we must ensure compatibility with the largest browsers: Google Chrome, FireFox, Edge, and Safari. This means that there should be no issue with accessing the project Windows, Mac OS X, or Linux. There will be a mobile friendly version of the site.
     </p>
+    <ul>
+      <li>
+        <strong>Server-Side:</strong> Use of a well-supported, platform agnostic language and framework such as Python/Django are recommended. Clients do not need to support these technologies as they will be accessing the application through their web browser.
+      </li>
+      <li>
+        <strong>Client-Side:</strong> Clients will need to have a modern web browser with support for HTML5, CSS, and JavaScript.
+      </li>
+    </ul>
+    <h3 id="35performancerequirements">
+      3.5. Performance Requirements
+    </h3>
+    <p>
+      This application is intended as a proof-of-concept and not for production-level scalability. As such, while common sense is to be used when implementing features, pre-optimization is not desired. For example, the application should be able to support 10 concurrent users at all times, or roughly 150 requests per minute (if each user were to make a request every 4 seconds).
+    </p>
+    <h3 id="36reliability">
+      3.6. Reliability
+    </h3>
+    <p>
+      The application will not crash or produce unexpected errors when within the performance confines outlined in section 3.5. Additionally, Subby will likely depend on a separate database server, so cases where this server becomes unavailable should be considered. As this is a proof of concept, load balancing, automated scaling, host health checks, or other reliability strategies are not required at this stage.
+    </p>
+    <h3 id="37security">
+      3.7. Security
+    </h3>
+    <p>
+      There are a few main areas of concern for the security of this application:
+    </p>
+    <ul>
+      <li>
+        <strong>User Passwords:</strong> User passwords must be hashed with a unique salt in the event that a malicious actor were to obtain a dump of the database. Additionally, user invitations must use one-time tokens; password resets require confirmation; and administrators are able to modify user account access should a user become compromised.
+      </li>
+      <li>
+        <strong>Administrators:</strong> Administrator accounts have powerful capabilities, and should only be created manually via migration. No UI shall exist allowing a user or administrator to change their permission level.
+      </li>
+      <li>
+        <strong>SQL Injection:</strong> No queries are to be manually written that might allow for a user to supply a malicious payload.
+      </li>
+      <li>
+        <strong>Logging:</strong> Basic logging should be done for future investigation of security issues (request information such as route, client IP, etc).
+      </li>
+    </ul>
     <h1 id="40revisionhistory">
       4.0. Revision History
     </h1>
@@ -500,7 +529,11 @@
           <strong>Section 3</strong>
         </p>
         <ul>
-          <li>Alex Kirsopp [2.1.4, ]
+          <li>Navdeep Sharma [1] [2018-05-27]
+          </li>
+          <li>Sarah Younes [1, 1.1, 1.2] [2018-05-27]
+          </li>
+          <li>Alex Kirsopp [2.1.4, 3.4-3.7] [2018-05-28]
           </li>
         </ul>
       </li>
@@ -523,7 +556,7 @@
           <strong>Section 1</strong>
         </p>
         <ul>
-          <li>Sandra Sung [1.1 - 1.5] [2018-05-20]
+          <li>Sandra Sung [1.1-1.5] [2018-05-20]
           </li>
         </ul>
       </li>
@@ -532,13 +565,13 @@
           <strong>Section 2</strong>
         </p>
         <ul>
-          <li>Sandra Sung [2.1 - 2.5] [2018-05-20]
+          <li>Sandra Sung [2.1-2.5] [2018-05-20]
           </li>
           <li>Jingchi Chen [2.1.4] [2018-05-20]
           </li>
-          <li>Xiaochao Luo[2.1][2018-05-22]
+          <li>Xiaochao Luo[2.1] [2018-05-22]
           </li>
-          <li>Sizhao Lin [2.1.3' [2018-05-23]
+          <li>Sizhao Lin [2.1.3] [2018-05-23]
           </li>
           <li>Sarah Younes [2.1, 2.1.4] [2018-05-20]
           </li>
