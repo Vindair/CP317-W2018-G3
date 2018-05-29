@@ -145,14 +145,9 @@ Here are the main features available for back-end users:
     * Users could swipe “left” or “right” on apartments to make the search easier.
     
 #### 2.1.4. Sample GUI
-**Sign-up Page:**
-
-![Sign-up](https://i.imgur.com/b67oMKF.png)
-
 **Home Page:**
 
-![Home](https://i.imgur.com/QP1qiJJ.png)
-![Home2](https://i.imgur.com/mwkfruO.jpg)
+![Home](https://i.imgur.com/b15lkY9.jpg)
 
 **Sign-up Overlay:**
 
@@ -160,7 +155,7 @@ Here are the main features available for back-end users:
 
 **Search Results Page:**
 
-![Search Results](https://i.imgur.com/UzkJUzQ.png)
+![Search Results](https://i.imgur.com/vR9HFiG.jpg)
 
 **Available Listings Page:**
 
@@ -169,15 +164,14 @@ Here are the main features available for back-end users:
 
 **(Single) Listing Page:**
 
-![Single Listing](https://i.imgur.com/sqelwXj.png)
+![Single Listing](https://i.imgur.com/1b1d2vy.jpg)
 
 **User "My Listings" Page:**
 
-![User "My Listings"](https://i.imgur.com/nFediUb.png)
+![User "My Listings"](https://i.imgur.com/Cqlj6j5.jpg)
 
 **User "My Account" Page:**
 
-![User "My Account" V1](https://i.imgur.com/PHhniXn.png)
 ![User "My Account" V2](https://i.imgur.com/lmDIJEc.png)
 
 ### 2.2. Product Functions
@@ -223,7 +217,7 @@ The user will be able to change their email with a simple form, validated agains
 * **User Administration - Edit**
     * An administrator will be able to edit a user’s email address as well as send a password reset link. The administrator will not be allowed to directly edit a user’s password.
     * The administrator will be able to select to ‘ban’ or ‘delete’ a user.
-    
+
 ### 3.2. Functions
 * The system shall perform basic validation for all models. For example, a User cannot be created without an email address (which must also pass a simple email format validation), and a Sublet posting cannot be made without an availability date.
 * The system shall ensure that users are not creating more than their administrator-defined allowed postings for their geographic area.
@@ -241,11 +235,18 @@ The user will be able to change their email with a simple form, validated agains
 Additional tables, such as those related to Auction/Bidding type listings may be added to support the product roadmap as features are implemented. Indexes will applied to all uniquely identifying fields such as ID’s (as well as other fields of import, such as email addresses or location data) to ensure fast lookups for individual and related records.
 
 ### 3.4. Portability
-We must create a functional web page that is accessible on all devices, and because of the web-based nature, we must ensure compatibility with the largest browsers: Google Chrome, FireFox, Internet Explorer, Safari. This means that there should be no issue with accessing the project Windows, Mac OS X, or Linux. There will be a mobile friendly version of the site.
+We must create a functional web page that is accessible on all devices, and because of the web-based nature, we must ensure compatibility with the largest browsers: Google Chrome, FireFox, Edge, and Safari. This means that there should be no issue with accessing the project Windows, Mac OS X, or Linux. There will be a mobile friendly version of the site.
 
 # 4.0. Revision History
 
 ---
+## Version 1.1
+* **Section 3**
+    * Alex Kirsopp [2.1.4, ]
+
+* **Other**
+    * Alex Kirsopp - Markdown
+
 ## Version 1.0
 * **Section 1**
     * Sandra Sung [1.1 - 1.5] [2018-05-20]
