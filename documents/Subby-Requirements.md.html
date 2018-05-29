@@ -396,13 +396,13 @@
       3.2. Functions
     </h3>
     <ul>
-      <li>The system shall perform basic validation for all models. For example, a User cannot be created without an email address (which must also pass a simple email format validation), and a Sublet posting cannot be made without an availability date.
+      <li>The system will perform basic validation for all models. For example, a User cannot be created without an email address (which must also pass a simple email format validation), and a Sublet posting cannot be made without an availability date.
       </li>
-      <li>The system shall ensure that users are not creating more than their administrator-defined allowed postings for their geographic area.
+      <li>The system will ensure that users are not creating more than their administrator-defined allowed postings for their geographic area.
       </li>
-      <li>The system shall allow administrators to ban users, removing their posts and account access but maintaining the user record to prevent later sign-ups from that address. Deleting a user performs the same task, but also removes the user record.
+      <li>The system will allow administrators to ban users, removing their posts and account access but maintaining the user record to prevent later sign-ups from that address. Deleting a user performs the same task, but also removes the user record.
       </li>
-      <li>The system shall delete dependent records when a model is removed. For example, deleting a Sublet posting will remove Favorite records associated with it, and deleting a User would remove the Sublet postings created by them.
+      <li>The system will delete dependent records when a model is removed. For example, deleting a Sublet posting will remove Favorite records associated with it, and deleting a User would remove the Sublet postings created by them.
       </li>
       <li>Deleting a Sublet posting will also delete Favorite records associated with it. A notification may be displayed to the user to show that Favorite records have been removed.
       </li>
@@ -468,7 +468,7 @@
         <strong>User Passwords:</strong> User passwords must be hashed with a unique salt in the event that a malicious actor were to obtain a dump of the database. Additionally, user invitations must use one-time tokens; password resets require confirmation; and administrators are able to modify user account access should a user become compromised.
       </li>
       <li>
-        <strong>Administrators:</strong> Administrator accounts have powerful capabilities, and should only be created manually via migration. No UI shall exist allowing a user or administrator to change their permission level.
+        <strong>Administrators:</strong> Administrator accounts have powerful capabilities, and should only be created manually via migration. No UI will exist allowing a user or administrator to change their permission level.
       </li>
       <li>
         <strong>SQL Injection:</strong> No queries are to be manually written that might allow for a user to supply a malicious payload.
