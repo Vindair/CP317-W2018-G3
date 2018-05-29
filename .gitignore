@@ -5,3 +5,6 @@ __pycache__/
 
 # In case we end up using this -- AK
 db.sqlite3
+
+# Yay JS
+node_modules/

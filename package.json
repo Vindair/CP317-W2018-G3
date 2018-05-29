@@ -1,0 +1,24 @@
+{
+  "name": "subby",
+  "version": "1.0.0",
+  "description": "CP317 Term Project 'Subby'",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kuresov/CP317-W2018-G3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kuresov/CP317-W2018-G3/issues"
+  },
+  "homepage": "https://github.com/Kuresov/CP317-W2018-G3#readme",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "htmltidy2": "^0.3.0",
+    "showdown": "^1.8.6"
+  }
+}
