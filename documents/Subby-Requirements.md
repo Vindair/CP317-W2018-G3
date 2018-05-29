@@ -77,13 +77,13 @@ location), search results can be further refined by:
  * **Lessee Rating** -- the star-point rating of the lease owner and the unit from a scale of 0 to 5 stars [the rating will be applicable to the unit as well? --> not sure how that would work]
 
 Once a sublet seeker finds a unit to their liking they must create a profile of their own using a university email
-to be able to add the property in question to their ‘Wish List.’ Otherwise, the sublet seeker may directly contact the leasee by sending them a message of interest through the communication form which is found on every listing
+to be able to add the property in question to their ‘Wish List.’ Otherwise, the sublet seeker may directly contact the lessee by sending them a message of interest through the communication form which is found on every listing
 page.
 
 **Subleasing with Subby:**
 To promote available rental units, users must first register and create an account using a valid university email. Once a Subby account holder, a user can create a listing for their residence(s) under ‘My Listings’ and promote said listing through a title, description, up to 20 captioned photographs and a myriad of search fields, including price, property type, rental period and size. 
  
-Moreover, registered users can create personalized profiles so that potential subtenants may get to know the leasee a little better; under ‘My Profile’, a user can upload a photo, include their name, contact information, and profile description.
+Moreover, registered users can create personalized profiles so that potential subtenants may get to know the lessee a little better; under ‘My Profile’, a user can upload a photo, include their name, contact information, and profile description.
 
 
 ### 2.1. Product Perspective
@@ -120,9 +120,9 @@ Here are the main features available for back-end users:
 * **Provide Customer Service:** Individuals will be able to contact a Subby administrator by email if any problems or questions arise. Administrators will be able to reset passwords and email addresses to ensure users have account access.
 
 #### 2.1.3. Additional Features
-* **Review:** Both sublet seekers and leaser owners can rate each other depending on their experience on a scale of 0 – 5. For instance, the sublet seeker can rate their experience with the lease owner and the lease owner can rate their experience with the sublet seeker. This will allow individuals to trust others more freely if they have good reviews.
+* **Review:** Both sublet seekers and lessor owners can rate each other depending on their experience on a scale of 0 – 5. For instance, the sublet seeker can rate their experience with the lease owner and the lease owner can rate their experience with the sublet seeker. This will allow individuals to trust others more freely if they have good reviews.
 
-* **Competitive Pricing:** On the page that shows buildings, there will be two boxes that show the competitive pricing. One box will show the lowest renting price set up by lease owners of rooms (same type) in same building, or by leasers of same criteria. The other box will show the highest bidding set by sublet seekers for either rooms (same type) in same building or rooms that fulfill same criteria. The purpose of this feature is to show the competitive pricing of each unit listed. This way, people will have better understanding of how much they should be paying for a sublet or of how much they should charge for subletting their unit.
+* **Competitive Pricing:** On the page that shows buildings, there will be two boxes that show the competitive pricing. One box will show the lowest renting price set up by lease owners of rooms (same type) in same building, or by leases of same criteria. The other box will show the highest bidding set by sublet seekers for either rooms (same type) in same building or rooms that fulfill same criteria. The purpose of this feature is to show the competitive pricing of each unit listed. This way, people will have better understanding of how much they should be paying for a sublet or of how much they should charge for subletting their unit.
 
 * **Tinder-Style Swipe:** Provide an interface allowing users to easily narrow down their search by quickly viewing photos of potential sublets. For mobile devices, the user could swipe "left" to ignore a sublet- or "right" to view more information and contact the lessor. Desktop users would either tap the left or right arrow keys respectively to achieve the same result.
 
