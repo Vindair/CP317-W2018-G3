@@ -3,30 +3,30 @@
 ---
 ## Requirements Document
 Version 1.0 – 5/20/18
- 1. **[Introduction](#1-introduction)**  
-     1.1. [Purpose](#11-purpose)  
-     1.2. [Scope](#12-scope)  
-     1.3. [Document Lexicon](#13-document-lexicon)  
-        1.3.1. [Definitions](#131-definitions)  
-        1.3.2. [Acronyms and Abbreviations ](#132-acronyms-and-abbreviations)  
-     1.4. [References](#14-references)  
-     1.5. [Overview](#15-overview)  
- 2. **[Overall Description](#2-overall-description)**  
-     2.1. [Product Perspective](#21-product-perspective)  
-         2.1.1. [Front-End Users](#211-frontend-users)  
-         2.1.2. [Back-End Users](#212-backend-users)  
-         2.1.3. [Other Features](#213-other-features)  
-         2.1.4. [Sample GUI](#214-sample-gui)  
-     2.2. [Product Functions](#22-product-functions)  
-     2.3. [User Characteristics](#23-user-characteristics)  
-     2.4. [Constraints](#24-constraints)  
-     2.5. [Assumptions and Dependencies](#25-assumptions-and-dependancies)  
-3. **[Specific Requirements](#3-specific-requirements)**  
-     3.1. [External Interfaces](#31-external-interfaces)  
-     3.2. [Functions](#32-functions)  
-     3.3. [Logical Database Requirements](#33-logical-database-requirements)  
-     3.4. [Portability](#34-portability)  
-4. **[Revision History](#40-revision-history)**  
+ 1. **[Introduction](#1introduction)**  
+     1.1. [Purpose](#11purpose)  
+     1.2. [Scope](#12scope)  
+     1.3. [Document Lexicon](#13documentlexicon)  
+        1.3.1. [Definitions](#131definitions)  
+        1.3.2. [Acronyms and Abbreviations](#132acronymsandabbreviations)  
+     1.4. [References](#14references)  
+     1.5. [Overview](#15overview)  
+2. **[Overall Description](#2overalldescription)**  
+    2.1. [Product Perspective](#21productperspective)  
+        2.1.1. [Front-End Users](#211frontendusers)  
+        2.1.2. [Back-End Users](#212backendusers)  
+        2.1.3. [Other Features](#213otherfeatures)  
+        2.1.4. [Sample GUI](#214samplegui)  
+    2.2. [Product Functions](#22productfunctions)  
+    2.3. [User Characteristics](#23usercharacteristics)  
+    2.4. [Constraints](#24constraints)  
+    2.5. [Assumptions and Dependencies](#25assumptionsanddependancies)  
+3. **[Specific Requirements](#3specificrequirements)**  
+    3.1. [External Interfaces](#31externalinterfaces)  
+    3.2. [Functions](#32functions)  
+    3.3. [Logical Database Requirements](#33logicaldatabaserequirements)  
+    3.4. [Portability](#34portability)  
+4. **[Revision History](#40revisionhistory)**  
 
 
 # 1. Introduction
