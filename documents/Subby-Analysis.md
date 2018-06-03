@@ -120,6 +120,7 @@ This UML diagrams displays the various models required to accomplish the above u
 # 5. User Interface Specification
 ## 5.1. Task List
 A sample task list for the administrator:
+
 1. Logging into Subby management tool.
 2. Creating a user.
 3. Modifying an existing user's information.
@@ -128,6 +129,7 @@ A sample task list for the administrator:
 6. Logout.
 
 A sample task list for the user:
+
 7. Creating an account using Subby sign-up interface.
 8. Logging into Subby using login interface. 
 9. Inserting a new sublet listing.
