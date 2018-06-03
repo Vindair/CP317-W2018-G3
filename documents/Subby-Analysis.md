@@ -210,6 +210,11 @@ The user has navigated to an individual listings page. The user will hover over 
 
 ## 5.2. Sequence Diagram
 
+![SQCreateUser](https://i.imgur.com/XNlL1ft.png)
+Figure 5.2. Sequence Diagram for Task 1 and 2.
+
+A sequence diagram is provided for task 1 and 2 for an admin to log in to the management tool, and create a new user. This flow begins with the administrator required to log in, however there is no need to log out after a task is completed. Thus, an administrator can freely do multiple tasks in one session.
+
 # 6.0. Revision History
 
 ---
