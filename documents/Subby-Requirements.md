@@ -74,7 +74,7 @@ location), search results can be further refined by:
  * **Rental Period** -- users can sublet for periods of four or eight months
  * **Keyword Search** -- search for features and amenities such as ‘onsite laundry’
  * **Number of Roommates** -- the number of roommates expected to occupy residence during stay
- * **Lessee Rating** -- the star-point rating of the lease owner and the unit from a scale of 0 to 5 stars [the rating will be applicable to the unit as well? --> not sure how that would work]
+ * **Leasee Rating** -- the star-point rating of the lease owner and the unit from a scale of 0 to 5 stars [the rating will be applicable to the unit as well? --> not sure how that would work]
 
 Once a sublet seeker finds a unit to their liking they must create a profile of their own using a university email
 to be able to add the property in question to their ‘Wish List.’ Otherwise, the sublet seeker may directly contact the lessee by sending them a message of interest through the communication form which is found on every listing
