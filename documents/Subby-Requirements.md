@@ -1,6 +1,5 @@
 # Subby
-import highlightText from 'highlight-text';
-const text = highlightText('foo bla foo', 'bla');
+
 ---
 ## Requirements Document
 Version 1.0 – 5/20/18
