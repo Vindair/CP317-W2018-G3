@@ -42,6 +42,8 @@ The idea is to provide:
 # 2. Object Classification
 Here we have provided all entity, boundary, and control objects found in all the Packages. These are broken down later in the Model Analysis.
 
+## 2.1. Entity Objects
+
 ### 2.1.1. User
 
 The User package contains the following:
