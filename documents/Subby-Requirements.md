@@ -39,7 +39,7 @@ A major issue many students face in their time at post-secondary school is the d
 This document outlines the features that Subby will provide to users and administrators. Throughout the term, members on the Subby team will refer to this document and make changes as necessary.
 
 ### 1.2. Scope
-As an online student-to-student subletting service, Subby seeks to streamline the way in which tenants and subletters can connect with one another. In contrast to other lodging services, Subby specialises in subletting exclusively between university and college students for periods of 4 or 8 months. For the time being, Subby will only facilitate subletting listings within the Kitchener-Waterloo (KW) region.
+As an online student-to-student subletting service, Subby seeks to streamline the way in which tenants and subletters can connect with one another. In contrast to other lodging services, Subby specialises in subletting exclusively between university and college students for periods of four or eight months. For the time being, Subby will only facilitate subletting listings within the Kitchener-Waterloo (KW) region.
 
 ### 1.3. Document Lexicon
 
@@ -71,10 +71,10 @@ location), search results can be further refined by:
  * **Distance from Campus** -- distance range from a given university campus
  * **Convenience** -- how convenient is it to reach a nearby plaza, gym, etc [how can this be implemented as a filter?]
  * **Availability** -- move in date
- * **Rental Period** -- users can sublet for periods of 4 or 8 months
+ * **Rental Period** -- users can sublet for periods of four or eight months
  * **Keyword Search** -- search for features and amenities such as ‘onsite laundry’
  * **Number of Roommates** -- the number of roommates expected to occupy residence during stay
- * **Lessee Rating** -- the star-point rating of the lease owner and the unit from a scale of 0 to 5 stars [the rating will be applicable to the unit as well? --> not sure how that would work]
+ * **Leasee Rating** -- the star-point rating of the lease owner and the unit from a scale of 0 to 5 stars [the rating will be applicable to the unit as well? --> not sure how that would work]
 
 Once a sublet seeker finds a unit to their liking they must create a profile of their own using a university email
 to be able to add the property in question to their ‘Wish List.’ Otherwise, the sublet seeker may directly contact the lessee by sending them a message of interest through the communication form which is found on every listing
@@ -120,9 +120,9 @@ Here are the main features available for back-end users:
 * **Provide Customer Service:** Individuals will be able to contact a Subby administrator by email if any problems or questions arise. Administrators will be able to reset passwords and email addresses to ensure users have account access.
 
 #### 2.1.3. Additional Features
-* **Review:** Both sublet seekers and lessor owners can rate each other depending on their experience on a scale of 0 – 5. For instance, the sublet seeker can rate their experience with the lease owner and the lease owner can rate their experience with the sublet seeker. This will allow individuals to trust others more freely if they have good reviews.
+* **Review:** Both sublet seekers and lease owners can rate each other based on their experience on a scale of 0 to 5. For instance, the sublet seeker can rate their experience with the lease owner based on satisfaction of stay and the lease owner can rate their experience with the sublet seeker based on payment reliability and property damage or lack thereof. This will allow individuals to trust others more freely if they have good reviews.
 
-* **Competitive Pricing:** On the page that shows buildings, there will be two boxes that show the competitive pricing. One box will show the lowest renting price set up by lease owners of rooms (same type) in same building, or by leases of same criteria. The other box will show the highest bidding set by sublet seekers for either rooms (same type) in same building or rooms that fulfill same criteria. The purpose of this feature is to show the competitive pricing of each unit listed. This way, people will have better understanding of how much they should be paying for a sublet or of how much they should charge for subletting their unit.
+* **Competitive Pricing:** On the page that shows buildings [the serach results page?], there will be two boxes that show the competitive pricing. One box will show the lowest rent price set up by lease owners of rooms (same type) in same building, or by leases of same criteria [same criteria? as in same search results?]. The other box will show the highest bidding set by sublet seekers for either rooms (same type) in same building or rooms that fulfill same criteria. The purpose of this feature is to show the competitive pricing of each unit listed. This way, people will have better understanding of how much they should be paying for a sublet or of how much they should charge for subletting their unit.
 
 * **Tinder-Style Swipe:** Provide an interface allowing users to easily narrow down their search by quickly viewing photos of potential sublets. For mobile devices, the user could swipe "left" to ignore a sublet- or "right" to view more information and contact the lessor. Desktop users would either tap the left or right arrow keys respectively to achieve the same result.
 
@@ -166,7 +166,7 @@ Subby is made for students with basic knowledge of how to navigate a website. Th
 In regards to the auction/bidding feature, it may prove difficult to identify the validity of the bids; users can potentially make fake accounts and bid on their own property in order to balloon their profits. In order to mitigate this, we plan to make individuals sign up with their school email since they should only have one school email [what about double degree studnts at -->Laurier/Waterloo]
 
 ### 2.5. Assumptions and Dependencies
-Although anyone can visit and search the rental database, to contact a lessee or post a unit to sublet, users must first register with a valid university or college email. Individuals are expected to have access to a device with Wi-Fi and use a browser compatible with Google Maps.
+Although anyone can visit and search the rental database, to contact a lessee or post a unit to sublet, users must first register with a valid university or college email. Additionally, individuals are expected to have access to a device with Wi-Fi and use a browser compatible with Google Maps.
 
 # 3. Specific Requirements
 
