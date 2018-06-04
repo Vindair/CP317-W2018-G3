@@ -11,6 +11,7 @@ Version 1.0 – 5/20/18
     2.1.2. [Sublet](#212sublet)  
     2.1.3. [Rating](#213rating)  
     2.1.4. [Favorite](#214favorite)  
+    2.1.5. [Report](#215report)  
     2.2. [Control Objects](#22controlobjects)  
     2.3. [Boundary Objects](#23boundaryobjects)  
     2.4. [Class Diagram](#22classdiagram)
@@ -24,8 +25,9 @@ Version 1.0 – 5/20/18
 Improving the current state of subletting would be beneficial to students throughout our target region, as we will be able to consolidate listings posted on non-specialized platforms, as well as provide quality assurance on the posted listings. The database of sublet listings will be organized based on standard filters for renting such as location, rating, etc.
 
 The website will display the listing information found in the database in the form of text, diagrams, or maps. The website will allow administrators to insert, edit, and remove entries from the database/website at their discretion. A website user would be allowed access to the data on the front-end and browse through the listings on the site, as well as post new listings. 
+
 ## 1.1. Purpose
-The current state of subletting is disorganized and , with the most popular platform being FaceBook--a site not even properly designed for posting sublets. Subby will allow for listings on FaceBook, Kijiji, and other sites to be consolidated and will be designed to fit the needs of a student subletter/sublessor
+The current state of subletting is disorganized and inconvenient to use, with the most popular platform being FaceBook- a site not even designed for posting sublets. Subby will allow for listings on FaceBook, Kijiji, and other sites to be consolidated and will be designed to fit the needs of a student subletter/sublessor
 
 The idea is to provide:
 1. **Subletters:**
@@ -90,6 +92,16 @@ The Favorite package contains the following:
 
 The Sublet Search UI will display whether a Sublet listing has been "Favorited", and will access the Favorites Manager. 
 
+### 2.1.5. Report
+
+The Report package contains the following:
+* **Entity:** Report
+* **Controls:**
+    * Report Creator: Create and persist Reports to the database.
+    * Report Retriever: Retrieve single records of a Report for display.
+    * Report Lister: Retrieve all of a User's Reports to display the related Sublet listings.
+
+The Reports UI's will be available to both regular and Admin users, so records will need to be persisted and retrieved regardless of authorization.
 
 ## 2.2. Control Objects
 
@@ -115,7 +127,7 @@ The user is the second of two actors in the system, and is allowed to insert con
 
 This UML diagrams displays the various models required to accomplish the above use-cases, as well as their attributes and relations.
 
-![SubbyUML](https://i.imgur.com/0hShmiR.jpg)
+![SubbyUML](https://i.imgur.com/uyJIHZw.jpg)
 
 # 5. User Interface Specification
 ## 5.1. Task List
