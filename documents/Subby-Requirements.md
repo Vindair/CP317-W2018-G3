@@ -32,7 +32,7 @@ Version 1.0 – 5/20/18
 # 1. Introduction
 
 ---
-A major issue many students face in their time at post-secondary school is the dreaded one-year lease. Most students scramble to find potential candidates to take over their lease as their semester comes to an end. This is where Subby comes into play; Subby is an easy to use website that enables students to either sublet their place or simply find a sublet of their own. The goal for Subby is to create a one stop marketplace for sublets as opposed to the current struggle of students using multiple sites. The site comes with a variety of useful features such as a localized map and search priorities that allow for a visually appealing and detailed search.
+A major issue many students face in their time at post-secondary school is the dreaded one-year lease. Most students scramble to find potential candidates to take over their lease as their semester comes to an end. This is where Subby comes into play; Subby is an easy to use website that enables students to either sublet their residence or simply find a sublet of their own. The goal for Subby is to create a one stop marketplace for sublets as opposed to the current struggle of students using multiple sites. The site comes with a variety of useful features such as a localized map and search priorities that allow for a visually appealing and detailed search.
 
 
 ### 1.1. Purpose
