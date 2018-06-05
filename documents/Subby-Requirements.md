@@ -69,11 +69,11 @@ location), search results can be further refined by:
  * **Property Type** – single bedroom, shared bedroom, etc  
  * **Size** – number of beds/bedrooms/washrooms
  * **Distance from Campus** -- distance range from a given university campus
- * **Availability** -- move in date
- * **Rental Period** -- users can sublet for periods of four or eight months
- * **Keyword Search** -- search for features and amenities such as ‘onsite laundry’
- * **Number of Roommates** -- the number of roommates expected to occupy residence during stay
- * **Leasee Rating** -- the star-point rating of the lease owner and the unit from a scale of 0 to 5 stars 
+ * **Availability** – move in date
+ * **Rental Period** – users can sublet for periods of four or eight months
+ * **Keyword Search** – search for features and amenities such as ‘onsite laundry’
+ * **Number of Roommates** – the number of roommates expected to occupy residence during stay
+ * **Leasee Rating** – the star-point rating of the lease owner and the unit from a scale of 0 to 5 stars 
  
  *Note: All search fields are of uniform priority. That is, if one selected field fails to produce a match,then the database wiil not yield any seaarch results.
  
