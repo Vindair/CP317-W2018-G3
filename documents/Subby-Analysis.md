@@ -115,7 +115,7 @@ This class diagram shows an overall picture of the various actor interactions as
 
 # 3. Requirements
 ## 3.1 Database
-Administrators are allowed to modify website content when logged in, while general users may only view website content.
+Administrators are allowed to modify website content when logged in, while general users may view website content, insert content, and modify their inserted content. 
 #### 3.1.1. Administrator Terms of Use
 The administrator is one of two actors in the system, and is allowed to insert, edit, and remove users and content from the site.
 #### 3.1.2. User Terms of Use
