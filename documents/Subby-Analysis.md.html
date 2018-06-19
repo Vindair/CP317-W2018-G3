@@ -20,20 +20,30 @@
         1.1. <a href="#11purpose">Purpose</a>
       </li>
       <li>
-        <strong><a href="#2systemoverview">Object Classification</a></strong><br>
-        2.1. <a href="#211entityobjects">Entity Objects</a><br>
-        2.1.1. <a href="#211user">User</a><br>
-        2.1.2. <a href="#212sublet">Sublet</a><br>
-        2.1.3. <a href="#213rating">Rating</a><br>
-        2.1.4. <a href="#214favorite">Favorite</a><br>
-        2.1.5. <a href="#215report">Report</a><br>
-        2.2. <a href="#22controlobjects">Control Objects</a><br>
-        2.3. <a href="#23boundaryobjects">Boundary Objects</a><br>
-        2.4. <a href="#22classdiagram">Class Diagram</a>
+        <strong><a href="#2objectclassification">Object Classification</a></strong><br>
+        2.1. <a href="#21classdiagram">Class Diagram</a><br>
+        2.2. <a href="#22packages">Packages</a><br>
+        2.2.1. <a href="#221userpackage">User Package</a><br>
+        2.2.2. <a href="#222subletpackage">Sublet Package</a><br>
+        2.2.3. <a href="#223ratingpackage">Rating Package</a><br>
+        2.2.4. <a href="#224favoritepackage">Favorite Package</a><br>
+        2.2.5. <a href="#225reportpackage">Report Package</a>
       </li>
       <li>
-        <strong><a href="#3modelanalysis">Model Analysis</a></strong><br>
-        3.1. <a href="#31umldiagram">UML Diagram</a>
+        <strong><a href="#3requirements">Requirements</a></strong><br>
+        3.1. <a href="#31database">Database</a><br>
+        3.1.1 <a href="#311administratortermsofuse">Administrator Terms of Use</a><br>
+        3.1.2 <a href="#312usertermsofuse">User Terms of Use</a>
+      </li>
+      <li>
+        <strong><a href="#4modelanalysis">Model Analysis</a></strong><br>
+        4.1. <a href="#41umldiagram">UML Diagram</a>
+      </li>
+      <li>
+        <strong><a href="#5userinterfacespecification">User Interface Specification</a></strong><br>
+        5.1 <a href="#51sequencediagram">Sequence Diagram</a><br>
+        5.2. <a href="#52tasklist">Task List</a><br>
+        5.2.1. <a href="#521taskspecifications">Task Specifications</a>
       </li>
       <li>
         <strong><a href="#40revisionhistory">Revision History</a></strong>
@@ -96,21 +106,30 @@
     <p>
       Here we have provided all entity, boundary, and control objects found in all the Packages. These are broken down later in the Model Analysis.
     </p>
-    <h2 id="21entityobjects">
-      2.1. Entity Objects
+    <h2 id="21classdiagram">
+      2.1. Class Diagram
     </h2>
-    <h3 id="211user">
-      2.1.1. User
+    <p>
+      This class diagram shows an overall picture of the various actor interactions as well as controller/entity packages the GUI's pertain to. Note that some views will potentially retrieve data from more than one source- these have been indicated with dashed lines.
+    </p>
+    <p>
+      <img src="http://i.imgur.com/64hk0Jr.jpg" alt="SubbyClassDiagram">
+    </p>
+    <h2 id="22packages">
+      2.2. Packages
+    </h2>
+    <h3 id="221userpackage">
+      2.2.1. User Package
     </h3>
     <p>
       The User package contains the following:
     </p>
     <ul>
       <li>
-        <strong>Entity:</strong> User
+        <strong>Entity Object:</strong> User
       </li>
       <li>
-        <strong>Controls:</strong>
+        <strong>Control Objects:</strong>
         <ul>
           <li>User Creator: Create and persist Users to the database.
           </li>
@@ -122,22 +141,35 @@
           </li>
         </ul>
       </li>
+      <li>
+        <strong>Border Objects:</strong>
+        <ul>
+          <li>User Sign-Up: Submit email, password, and other relevant data to create an account.
+          </li>
+          <li>User Edit: Modify preferences, email, password.
+          </li>
+          <li>User Display: View a user's data.
+          </li>
+          <li>User List: List all users in the database.
+          </li>
+        </ul>
+      </li>
     </ul>
     <p>
       As displayed in the Class Diagram, visitors are the only actors who will be able to use the User Creator view and controller. Administrators and regular users will be able to display accounts, and possibly edit them depending on their role.
     </p>
-    <h3 id="212sublet">
-      2.1.2. Sublet
+    <h3 id="222subletpackage">
+      2.2.2. Sublet Package
     </h3>
     <p>
       The Sublet package contains the following:
     </p>
     <ul>
       <li>
-        <strong>Entity:</strong> Sublet
+        <strong>Entity Object:</strong> Sublet
       </li>
       <li>
-        <strong>Controls:</strong>
+        <strong>Control Objects:</strong>
         <ul>
           <li>Sublet Creator: Create and persist Sublets to the database.
           </li>
@@ -151,22 +183,37 @@
           </li>
         </ul>
       </li>
+      <li>
+        <strong>Border Objects:</strong>
+        <ul>
+          <li>Sublet Create: Provide input to create a sublet listing- address, description, and so on.
+          </li>
+          <li>Sublet Edit: Edit an existing sublet posting.
+          </li>
+          <li>Posted Sublet List: List of posted sublets in a given area.
+          </li>
+          <li>Sublet Search: Search for sublets by user input with filters.
+          </li>
+          <li>Sublet Display: Display a single sublet.
+          </li>
+        </ul>
+      </li>
     </ul>
     <p>
       Note that controllers such as the Sublet Manager will determine, based on User role, whether an actor has permission to edit or destroy a Sublet record. The Sublet Searcher controller will have no such authorization, as it is open to both visitors and regular users.
     </p>
-    <h3 id="213rating">
-      2.1.3. Rating
+    <h3 id="223ratingpackage">
+      2.2.3. Rating Package
     </h3>
     <p>
       The Rating package contains the following:
     </p>
     <ul>
       <li>
-        <strong>Entity:</strong> Rating
+        <strong>Entity Object:</strong> Rating
       </li>
       <li>
-        <strong>Controls:</strong>
+        <strong>Control Objects:</strong>
         <ul>
           <li>Rating Creator: Create and persist Ratings to the database.
           </li>
@@ -176,22 +223,33 @@
           </li>
         </ul>
       </li>
+      <li>
+        <strong>Border Objects:</strong>
+        <ul>
+          <li>Rating Create: Provides input to set a rating level.
+          </li>
+          <li>Rating Edit: Edit an existing rating.
+          </li>
+          <li>Rating Display: Display a list of ratings for a user.
+          </li>
+        </ul>
+      </li>
     </ul>
     <p>
       Note that both the User Display UI, Sublet Search UI, and Sublet Display UI will also use the Rating Retriever Control to display Rating information on their respective pages.
     </p>
-    <h3 id="214favorite">
-      2.1.4. Favorite
+    <h3 id="224favoritepackage">
+      2.2.4. Favorite Package
     </h3>
     <p>
       The Favorite package contains the following:
     </p>
     <ul>
       <li>
-        <strong>Entity:</strong> Favorite
+        <strong>Entity Object:</strong> Favorite
       </li>
       <li>
-        <strong>Controls:</strong>
+        <strong>Control Objects:</strong>
         <ul>
           <li>Favorite Lister: Retrieve all of a User's Favorites to display the related Sublet listings.
           </li>
@@ -199,22 +257,29 @@
           </li>
         </ul>
       </li>
+      <li>
+        <strong>Border Objects:</strong>
+        <ul>
+          <li>Favorites List: Displays a list of favorites belonging to a user.
+          </li>
+        </ul>
+      </li>
     </ul>
     <p>
       The Sublet Search UI will display whether a Sublet listing has been "Favorited", and will access the Favorites Manager.
     </p>
-    <h3 id="215report">
-      2.1.5. Report
+    <h3 id="225reportpackage">
+      2.2.5. Report Package
     </h3>
     <p>
       The Report package contains the following:
     </p>
     <ul>
       <li>
-        <strong>Entity:</strong> Report
+        <strong>Entity Object:</strong> Report
       </li>
       <li>
-        <strong>Controls:</strong>
+        <strong>Control Objects:</strong>
         <ul>
           <li>Report Creator: Create and persist Reports to the database.
           </li>
@@ -224,24 +289,20 @@
           </li>
         </ul>
       </li>
+      <li>
+        <strong>Border Objects:</strong>
+        <ul>
+          <li>Report Create: Display input areas necessary to create a report.
+          </li>
+          <li>Report Display: Display a user's report.
+          </li>
+          <li>Reports List: Display a list of reports from a given user.
+          </li>
+        </ul>
+      </li>
     </ul>
     <p>
       The Reports UI's will be available to both regular and Admin users, so records will need to be persisted and retrieved regardless of authorization.
-    </p>
-    <h2 id="22controlobjects">
-      2.2. Control Objects
-    </h2>
-    <h2 id="23boundaryobjects">
-      2.3. Boundary Objects
-    </h2>
-    <h2 id="24classdiagram">
-      2.4. Class Diagram
-    </h2>
-    <p>
-      This class diagram shows an overall picture of the various actor interactions as well as controller/entity packages the GUI's pertain to. Note that some views will potentially retrieve data from more than one source- these have been indicated with dashed lines.
-    </p>
-    <p>
-      <img src="https://i.imgur.com/DFIcLAT.jpg" alt="SubbyClassDiagram">
     </p>
     <h1 id="3requirements">
       3. Requirements
@@ -250,17 +311,17 @@
       3.1 Database
     </h2>
     <p>
-      Administrators are allowed to modify website content when logged in, while general users may only view website content.
+      Administrators are allowed to modify website content when logged in, while general users may view website content, insert content, and modify their inserted content.
     </p>
-    <h4 id="311administratortermsofuse">
+    <h3 id="311administratortermsofuse">
       3.1.1. Administrator Terms of Use
-    </h4>
+    </h3>
     <p>
-      The administrator is one of two actors in the system, and is allowed to insert, edit, and remove users and content from the site.
+      An administrator is one of two actors in the system, and is allowed to insert, edit, and remove users and content from the site.
     </p>
-    <h4 id="312usertermsofuse">
+    <h3 id="312usertermsofuse">
       3.1.2. User Terms of Use
-    </h4>
+    </h3>
     <p>
       The user is the second of two actors in the system, and is allowed to insert content into the site and edit their inserted content.
     </p>
@@ -274,16 +335,28 @@
       This UML diagrams displays the various models required to accomplish the above use-cases, as well as their attributes and relations.
     </p>
     <p>
-      <img src="https://i.imgur.com/uyJIHZw.jpg" alt="SubbyUML">
+      <img src="http://i.imgur.com/N7jpNTX.jpg" alt="SubbyUML">
     </p>
     <h1 id="5userinterfacespecification">
       5. User Interface Specification
     </h1>
-    <h2 id="51tasklist">
-      5.1. Task List
+    <h2 id="51sequencediagram">
+      5.1. Sequence Diagram
     </h2>
     <p>
-      A sample task list for the administrator:
+      <img src="https://i.imgur.com/XNlL1ft.png" alt="SQCreateUser">
+    </p>
+    <p>
+      Figure 5.2. Sequence Diagram for Task 1 and 2.
+    </p>
+    <p>
+      A sequence diagram is provided for task 1 and 2 for an admin to log in to the management tool, and create a new user. This flow begins with an administrator required to log in, however there is no need to log out after a task is completed. Thus, an administrator can freely do multiple tasks in one session.
+    </p>
+    <h2 id="52tasklist">
+      5.2. Task List
+    </h2>
+    <p>
+      A sample task list for an administrator:
     </p>
     <ol>
       <li>Logging into Subby management tool.
@@ -316,14 +389,14 @@
       <li>Rating a listing.
       </li>
     </ol>
-    <h3 id="511taskspecifications">
-      5.1.1. Task Specifications
+    <h3 id="521taskspecifications">
+      5.2.1. Task Specifications
     </h3>
     <p>
       <strong>Task 1: Logging into Subby management tool.</strong> The user has opened a web browser and has navigated to the Subby management tool log in page. The user enters valid admin credentials and logs in by selecting the "Login" button.
     </p>
     <p>
-      <strong>Task 2: Creating a user. (Prerequisites: Task 1 as Administrator)</strong> The administrator selects the "Create User" which generates a overlayed display that prompts the administrator to fill in fields such as:
+      <strong>Task 2: Creating a user. (Prerequisites: Task 1 as Administrator)</strong> An administrator selects the "Create User" which generates a overlayed display that prompts them to fill in fields such as:
     </p>
     <ul>
       <li>Username
@@ -336,10 +409,10 @@
       </li>
     </ul>
     <p>
-      The administrator enters the relevant information and selects the "Create" button. If the user information already exists in the database, there will be an error message saying that the entry is a duplicate, otherwise a notification will prompt the admin of successful user creation.
+      An administrator enters the relevant information and selects the "Create" button. If the user information already exists in the database, there will be an error message saying that the entry is a duplicate, otherwise a notification will prompt the admin of successful user creation.
     </p>
     <p>
-      <strong>Task 3: Modifying an existing user's information. (Prerequisites: Task 1, Task 2 if no users currently exist)</strong> The administrator looks at the current database of users, and selects the "Edit User" action next to a user entry. A new page will be loaded displaying the information of the selected user. The administrator will be prompted to edit any of:
+      <strong>Task 3: Modifying an existing user's information. (Prerequisites: Task 1, Task 2 if no users currently exist)</strong> An administrator looks at the current database of users, and selects the "Edit User" action next to a user entry. A new page will be loaded displaying the information of the selected user. An administrator will be prompted to edit any of:
     </p>
     <ul>
       <li>Username
@@ -352,16 +425,16 @@
       </li>
     </ul>
     <p>
-      As well as the ability to see all listings currently posted by the selected user (The ability to complete task 5 and 10 is available here as well if there are available listings). The administrator enters and information changes desired, and presses the "Save" button at the bottom of the form. Should there be an error such as duplicate information in the database found, an error message will be displayed, otherwise the information should save. Alternatively, should the administrator deem no changes neccesary, there is a "Cancel" button next to the save to bring the administrator to their previous viewing page.
+      As well as the ability to see all listings currently posted by the selected user (The ability to complete task 5 and 10 is available here as well if there are available listings). An administrator enters and information changes desired, and presses the "Save" button at the bottom of the form. Should there be an error such as duplicate information in the database found, an error message will be displayed, otherwise the information should save. Alternatively, should the administrator deem no changes neccesary, there is a "Cancel" button next to the save to bring the administrator to their previous viewing page.
     </p>
     <p>
-      <strong>Task 4: Deleting a user. (Prerequisites: Task 1, Task 2 if no users currently exist)</strong> The administrator will view all the users entered in the database, and select the "Delete User" button next to the data entry. This will issue a prompt asking for confirmation as to whether or not to proceed with the deletion. Should the administrator press "Confirm", the data entry will be removed from the database, else the administrator will press "Cancel" resulting in the prompt disappearing and no changes occurring to the database. Deleting a user will also remove all listings posted by said user.
+      <strong>Task 4: Deleting a user. (Prerequisites: Task 1, Task 2 if no users currently exist)</strong> An administrator will view all the users entered in the database, and select the "Delete User" button next to the data entry. This will issue a prompt asking for confirmation as to whether or not to proceed with the deletion. Should the administrator press "Confirm", the data entry will be removed from the database, else the administrator will press "Cancel" resulting in the prompt disappearing and no changes occurring to the database. Deleting a user will also remove all listings posted by said user.
     </p>
     <p>
-      <strong>Task 5: Deleting a sublet listing. (Prerequisites: Task 1)</strong> The administrator will view the database containing all listings, and select the "Delete Listing" button next to the data entry. This will issue a prompt asking for confirmation as to whether or not to proceed with the deletion. Should the administrator press "Confirm", a prompt will appear with a textbox asking the administrator to file a reason for deletion. The admin will fill in a relevant reason, and press "Okay". The data entry will be removed from the database, and a message to the lister will be sent with the reason specified for deletion. Otherwise the administrator will press "Cancel" resulting in the prompt disappearing and no changes occurring to the database.
+      <strong>Task 5: Deleting a sublet listing. (Prerequisites: Task 1)</strong> An administrator will view the database containing all listings, and select the "Delete Listing" button next to the data entry. This will issue a prompt asking for confirmation as to whether or not to proceed with the deletion. Should the administrator press "Confirm", a prompt will appear with a textbox asking the administrator to file a reason for deletion. The admin will fill in a relevant reason, and press "Okay". The data entry will be removed from the database, and a message to the lister will be sent with the reason specified for deletion. Otherwise the administrator will press "Cancel" resulting in the prompt disappearing and no changes occurring to the database.
     </p>
     <p>
-      <strong>Task 6: Logout. (Prerequisites: Task 1)</strong> The administrator will press the "Log out" button in the top right corner of the management tool, which will take the user back to the log in page.
+      <strong>Task 6: Logout. (Prerequisites: Task 1)</strong> An administrator will press the "Log out" button in the top right corner of the management tool, which will take the user back to the log in page.
     </p>
     <p>
       <strong>Task 7: Creating an account using Subby sign-up interface.</strong> The user has navigated to the home page of Subby. The user will press the "Register" button in the top right corner of the website, which will create an overlay over the current page prompting the user to enter the following information:
@@ -428,19 +501,45 @@
     <p>
       <strong>Task 12: Rating a listing (Prerequisites: Task 8)</strong> The user has navigated to an individual listings page. The user will hover over the stars on the listings page at a desired rating level and press down when they are satisfied with the rating they are giving. The user will be prompted to submit proof of lease for the rating in an overlay which allows the user to submit an attachment. Once the user has attached their lease, the user will press the "Submit" button allowing for the rating to go through.
     </p>
-    <h2 id="52sequencediagram">
-      5.2. Sequence Diagram
-    </h2>
-    <p>
-      <img src="https://i.imgur.com/XNlL1ft.png" alt="SQCreateUser"> Figure 5.2. Sequence Diagram for Task 1 and 2.
-    </p>
-    <p>
-      A sequence diagram is provided for task 1 and 2 for an admin to log in to the management tool, and create a new user. This flow begins with the administrator required to log in, however there is no need to log out after a task is completed. Thus, an administrator can freely do multiple tasks in one session.
-    </p>
     <h1 id="60revisionhistory">
       6.0. Revision History
     </h1>
     <hr>
+    <h2 id="version11">
+      Version 1.1
+    </h2>
+    <ul>
+      <li>
+        <p>
+          <strong>Section 2</strong>
+        </p>
+      </li>
+      <li>
+        <p>
+          Alex Kirsopp [2.1-2.2.5] [2018-06-19]
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong>Section 4</strong>
+        </p>
+      </li>
+      <li>
+        <p>
+          Alex Kirsopp [4.1] [2018-06-19]
+        </p>
+      </li>
+      <li>
+        <p>
+          <strong>Other</strong>
+        </p>
+      </li>
+      <li>
+        <p>
+          Alex Kirsopp - Misc small fixes (spelling, wording, layout, markdown)
+        </p>
+      </li>
+    </ul>
     <h2 id="version10">
       Version 1.0
     </h2>
@@ -449,55 +548,61 @@
         <p>
           <strong>Section 1</strong>
         </p>
-        <ul>
-          <li>Mackenzie Dang [1.0 - 1.1] [2018-06-03] Initial Draft
-          </li>
-        </ul>
+      </li>
+      <li>
+        <p>
+          Mackenzie Dang [1.0-1.1] [2018-06-03] Initial Draft
+        </p>
       </li>
       <li>
         <p>
           <strong>Section 2</strong>
         </p>
-        <ul>
-          <li>Alex Kirsopp [2.1.1-2.1.4, 2.4] [2018-06-03]
-          </li>
-        </ul>
+      </li>
+      <li>
+        <p>
+          Alex Kirsopp [2.1.1-2.1.4, 2.4] [2018-06-03]
+        </p>
       </li>
       <li>
         <p>
           <strong>Section 3</strong>
         </p>
-        <ul>
-          <li>Mackenzie Dang [3.0 - 3.1.2.] [2018-06-03] Initial Draft
-          </li>
-        </ul>
+      </li>
+      <li>
+        <p>
+          Mackenzie Dang [3.0 - 3.1.2.] [2018-06-03] Initial Draft
+        </p>
       </li>
       <li>
         <p>
           <strong>Section 4</strong>
         </p>
-        <ul>
-          <li>Alex Kirsopp [4.1] [2018-06-03]
-          </li>
-        </ul>
+      </li>
+      <li>
+        <p>
+          Alex Kirsopp [4.1] [2018-06-03]
+        </p>
       </li>
       <li>
         <p>
           <strong>Section 5</strong>
         </p>
-        <ul>
-          <li>Mackenzie Dang [5 - 5.2] [2018-06-03] Initial Draft
-          </li>
-        </ul>
+      </li>
+      <li>
+        <p>
+          Mackenzie Dang [5 - 5.2] [2018-06-03] Initial Draft
+        </p>
       </li>
       <li>
         <p>
           <strong>Other</strong>
         </p>
-        <ul>
-          <li>Alex Kirsopp - Doc layout and formatting
-          </li>
-        </ul>
+      </li>
+      <li>
+        <p>
+          Alex Kirsopp - Doc layout and formatting
+        </p>
       </li>
     </ul>
   </body>
