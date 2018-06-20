@@ -44,7 +44,7 @@ Version 1.0 – 5/20/18
 
 # 1. Introduction
 
-Improving the current state of subletting would be beneficial to students throughout our target region, as we will be able to consolidate listings posted on non-specialized platforms, as well as provide quality assurance on the posted listings. The database of sublet listings will be organized based on standard filters for renting such as location, rating, etc.
+Improving the current state of subletting would be beneficial to students throughout our target market (KW Region), as we will be able to consolidate listings posted on non-specialized platforms, as well as provide quality assurance on the posted listings. The database of sublet listings will be organized based on standard filters for renting such as location, rating, etc.
 
 The website will display the listing information found in the database in the form of text, diagrams, or maps. The website will allow administrators to insert, edit, and remove entries from the database/website at their discretion. A website user would be allowed access to the data on the front-end and browse through the listings on the site, as well as post new listings. 
 <<<<<<< HEAD
@@ -53,23 +53,27 @@ The current state of subletting is disorganized and , with the most popular plat
 =======
 
 ## 1.1. Purpose
+<<<<<<< HEAD
 The current state of subletting is disorganized and inconvenient to use, with the most popular platform being FaceBook- a site not even designed for posting sublets. Subby will allow for listings on FaceBook, Kijiji, and other sites to be consolidated and will be designed to fit the needs of a student subletter/sublessor
 >>>>>>> b7dfa424af4f81314393fa53b3970cc1029eeaba
+=======
+The current state of subletting is disorganized and inconvenient to use, with the most popular platform being FaceBook- a site not even designed for posting sublets. Subby will allow for listings on FaceBook, Kijiji, and other sites to be consolidated, thus providing  a more comprehensive product than what is currently available to the student sublettng market. 
+>>>>>>> 590909a59924cee21b2ba4de9fca037c0ab086df
 
 The idea is to provide:
 1. **Subletters:**
-    * Simple interface to browse through sublet listings, easily sorted using specialized filters.
+    * Simple interface to browse through sublet listings, easily sorted using specialized filters
     * Ability to contact sublessors through site or through provided contact information
-    * Security in browsing since all listings will go through a verification process to confirm legitimacy.
+    * Security in browsing since all listings will go through a verification process to confirm legitimacy
 2. **Sublessors:**
-    * Ability to post new sublet listings according to site policy.
-    * Ability to modify existing listings in case any information changes.
-    * Allows for listings to be seen by verified users, and be contacted by these users.
-    * Provide an interface to let one know the current competitive pricing in the property area.
+    * Ability to post new sublet listings according to site policy
+    * Ability to modify existing listings in case any information changes
+    * Allows for listings to be seen by verified users, and be contacted by these users
+    * Provide an interface to let one know the current competitive pricing in the property area
 3. **Administrators:**
-    * All functionality available to users, as well as the ability to remove and edit any listing at their discretion.
+    * All functionality available to users, as well as the ability to remove and edit any listing at their discretion
 # 2. Object Classification
-Here we have provided all entity, boundary, and control objects found in all the Packages. These are broken down later in the Model Analysis.
+Here we have provided all entity, boundary, and control objects found in all the Packages. They are broken down later in the Model Analysis.
 
 <<<<<<< HEAD
 ## 2.1. Entity Objects
@@ -82,7 +86,7 @@ The User package contains the following:
 =======
 ## 2.1. Class Diagram
 
-This class diagram shows an overall picture of the various actor interactions as well as controller/entity packages the GUI's pertain to. Note that some views will potentially retrieve data from more than one source- these have been indicated with dashed lines.
+This class diagram shows an overall picture of the various actor interactions, as well as controller/entity packages to which the GUI's pertain. Note that some views will potentially retrieve data from more than one source; these have been indicated with dashed lines.
 
 ![SubbyClassDiagram](http://i.imgur.com/64hk0Jr.jpg)
 
@@ -215,11 +219,11 @@ The Report package contains the following:
     * Report Retriever: Retrieve single records of a Report for display.
     * Report Lister: Retrieve all of a User's Reports to display the related Sublet listings.
 * **Border Objects:**
-    * Report Create: Display input areas necessary to create a report.
-    * Report Display: Display a user's report.
-    * Reports List: Display a list of reports from a given user.
+    * Report Create: Display input areas necessary to create a Report.
+    * Report Display: Display a user's Report.
+    * Reports List: Display a list of Reports from a given user.
 
-The Reports UI's will be available to both regular and Admin users, so records will need to be persisted and retrieved regardless of authorization.
+The Reports UI's will be available to both regular and admin users, so records will need to be persisted and retrieved regardless of authorization.
 
 # 3. Requirements
 
@@ -227,7 +231,7 @@ The Reports UI's will be available to both regular and Admin users, so records w
 Administrators are allowed to modify website content when logged in, while general users may view website content, insert content, and modify their inserted content. 
 
 ### 3.1.1. Administrator Terms of Use
-An administrator is one of two actors in the system, and is allowed to insert, edit, and remove users and content from the site.
+An administrator is one of two actors in the system, and is allowed to insert, edit, and remove both users and content from the site.
 
 ### 3.1.2. User Terms of Use
 >>>>>>> b7dfa424af4f81314393fa53b3970cc1029eeaba
@@ -256,7 +260,7 @@ A sample task list for the administrator:
 
 Figure 5.2. Sequence Diagram for Task 1 and 2.
 
-A sequence diagram is provided for task 1 and 2 for an admin to log in to the management tool, and create a new user. This flow begins with an administrator required to log in, however there is no need to log out after a task is completed. Thus, an administrator can freely do multiple tasks in one session.
+A sequence diagram is provided for task 1 and Task 2 for an admin to log in to the management tool, and create a new user. This flow begins with an administrator required to log in, however there is no need to log out after a task is completed. Thus, an administrator can freely execute multiple tasks in one session.
 
 ## 5.2. Task List
 A sample task list for an administrator:
@@ -267,7 +271,7 @@ A sample task list for an administrator:
 3. Modifying an existing user's information.
 4. Deleting a user.
 5. Deleting a sublet listing.
-6. Logout.
+6. Logging out Subby management tool.
 
 A sample task list for the user:
 
