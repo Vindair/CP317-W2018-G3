@@ -69,8 +69,8 @@ The User package contains the following:
 * **Border Objects:**
     * User Sign-Up: Submit email, password, and other relevant data to create an account
     * User Edit: Modify preferences, email, password
-    * User Display: View a user's data
-    * User List: List all users in the database
+    * User Display: View a User's data
+    * User List: List all Users in the database
 
 As displayed in the Class Diagram, visitors are the only actors who will be able to use the User Creator view and controller. Administrators and regular users will be able to display accounts, and possibly edit them depending on their role.
 
@@ -102,9 +102,9 @@ The Rating package contains the following:
     * Rating Manager: Edit and Destroy Ratings
     * Rating Retriever: Retrieve single records of a Rating for display
 * **Border Objects:**
-    * Rating Create: Provides input to set a rating level
-    * Rating Edit: Edit an existing rating
-    * Rating Display: Display a list of ratings for a user
+    * Rating Create: Provides input to set a rating level for a new Rating object
+    * Rating Edit: Edit an existing Rating
+    * Rating Display: Display a list of ratings for a User
 
 Note that both the User Display UI, Sublet Search UI, and Sublet Display UI will also use the Rating Retriever Control to display Rating information on their respective pages.
 
@@ -116,7 +116,7 @@ The Favorite package contains the following:
     * Favorite Lister: Retrieve all of a User's Favorites to display the related Sublet listings
     * Favorite Manager: Create and destroy Favorite entities
 * **Border Objects:**
-    * Favorites List: Displays a list of favorites belonging to a user
+    * Favorites List: Displays a list of favorites belonging to a User
 
 The Sublet Search UI will display whether a Sublet listing has been "Favorited", and will access the Favorites Manager. 
 
@@ -131,7 +131,7 @@ The Report package contains the following:
 * **Border Objects:**
     * Report Create: Display input areas necessary to create a Report
     * Report Display: Display a user's Report
-    * Reports List: Display a list of Reports from a given user
+    * Reports List: Display a list of Reports from a given User
 
 The Reports UI's will be available to both regular and admin users, so records will need to be persisted and retrieved regardless of authorization.
 
