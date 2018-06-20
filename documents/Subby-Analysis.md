@@ -385,6 +385,11 @@ Figure 5.2. Sequence Diagram for Task 1 and 2.
 
 A sequence diagram is provided for task 1 and 2 for an admin to log in to the management tool, and create a new user. This flow begins with the administrator required to log in, however there is no need to log out after a task is completed. Thus, an administrator can freely do multiple tasks in one session.
 
+![SQUsertasks](https://i.imgur.com/STNS7Zt.png)
+Figure 5.2.1. Sequence Diagram for General User Tasks.
+
+A sequence diagram is provided for task 7, 8, 9, and 11. 
+
 # 6.0. Revision History
 
 ---
