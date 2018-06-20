@@ -32,7 +32,7 @@ Improving the current state of subletting would be beneficial to students throug
 The website will display the listing information found in the database in the form of text, diagrams, or maps. The website will allow administrators to insert, edit, and remove entries from the database/website at their discretion. A website user would be allowed access to the data on the front-end and browse through the listings on the site, as well as post new listings. 
 
 ## 1.1. Purpose
-The current state of subletting is disorganized and inconvenient to use, with the most popular platform being FaceBook- a site not even designed for posting sublets. Subby will allow for listings on FaceBook, Kijiji, and other sites to be consolidated, thus providing  and will thus be thus designed to accomodate the  fit the needs of a student subletter/sublessor
+The current state of subletting is disorganized and inconvenient to use, with the most popular platform being FaceBook- a site not even designed for posting sublets. Subby will allow for listings on FaceBook, Kijiji, and other sites to be consolidated, thus providing  a more comprehensive product than what is currently available to the student sublettng market. 
 
 The idea is to provide:
 1. **Subletters:**
