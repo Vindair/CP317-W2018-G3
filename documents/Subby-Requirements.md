@@ -32,7 +32,11 @@ Version 1.0 – 5/20/18
 # 1. Introduction
 
 ---
+<<<<<<< HEAD
 A major issue many students face in their time at post-secondary school is the dreaded one-year lease. Most students scramble to find potential candidates to take over their lease as their semester comes to an end. This is where Subby comes into play: Subby is an easy to use website that enables students to either sublet their place or simply find a sublet of their own. The goal for Subby is to create a one stop marketplace for sublets as opposed to the current struggle of students using multiple sites. The site comes with a variety of useful features such as a localized map and search priorities that allow for a visually appealing and detailed search.
+=======
+A major issue many students face in their time at post-secondary school is the dreaded one-year lease. Most students scramble to find potential candidates to take over their lease as their semester comes to an end. This is where Subby comes into play; Subby is an easy to use website that enables students to either sublet their residence or simply find a sublet of their own. The goal for Subby is to create a one stop marketplace for sublets as opposed to the current struggle of students using multiple sites. The site comes with a variety of useful features such as a localized map and search priorities that allow for a visually appealing and detailed search.
+>>>>>>> b7dfa424af4f81314393fa53b3970cc1029eeaba
 
 
 ### 1.1. Purpose
@@ -45,7 +49,11 @@ As an online student-to-student subletting service, Subby seeks to streamline th
 
 #### 1.3.1. Definitions
 * **Sublet:** The action of leasing a property to someone else.
+<<<<<<< HEAD
 * **Sublet Seeker/Lessee:** The person looking to sublet a place.
+=======
+* **Sublet Seeker/Leasee:** The person looking to sublet a place.
+>>>>>>> b7dfa424af4f81314393fa53b3970cc1029eeaba
 * **Lease Owner/Lessor:** The person looking to rent their place to someone else.
 
 #### 1.3.2. Acronyms and Abbreviations
@@ -69,6 +77,7 @@ location), search results can be further refined by:
  * **Property Type** – single bedroom, shared bedroom, etc  
  * **Size** – number of beds/bedrooms/washrooms
  * **Distance from Campus** -- distance range from a given university campus
+<<<<<<< HEAD
  * **Convenience** -- how convenient is it to reach a nearby plaza, gym, etc [how can this be implemented as a filter?]
  * **Availability** -- move in date
  * **Rental Period** -- users can sublet for periods of four or eight months
@@ -76,6 +85,16 @@ location), search results can be further refined by:
  * **Number of Roommates** -- the number of roommates expected to occupy residence during stay
  * **Leasee Rating** -- the star-point rating of the lease owner and the unit from a scale of 0 to 5 stars [the rating will be applicable to the unit as well? --> not sure how that would work]
 
+=======
+ * **Availability** – move in date
+ * **Rental Period** – users can sublet for periods of four or eight months
+ * **Keyword Search** – search for features and amenities such as ‘onsite laundry’
+ * **Number of Roommates** – the number of roommates expected to occupy residence during stay
+ * **Leasee Rating** – the star-point rating of the lease owner and the unit from a scale of 0 to 5 stars 
+ 
+ *Note: All search fields are of uniform priority. That is, if one selected field fails to produce a match,then the database wiil not yield any seaarch results.
+ 
+>>>>>>> b7dfa424af4f81314393fa53b3970cc1029eeaba
 Once a sublet seeker finds a unit to their liking they must create a profile of their own using a university email
 to be able to add the property in question to their ‘Wish List.’ Otherwise, the sublet seeker may directly contact the lessee by sending them a message of interest through the communication form which is found on every listing
 page.
@@ -115,14 +134,22 @@ There will be two main feature sets available to front-end users:
 The administrator users will have access to special features to maintain user accounts and enforce rules.
 
 Here are the main features available for back-end users: 
+<<<<<<< HEAD
 * **Regulate Rules:** The administrators of Subby will be able to adjust the rules that govern regular users, such as the number of listings they can have up at any time, or the maximum distance from K/W they are allowed to post.
+=======
+* **Regulate Rules:** The administrators of Subby will be able to adjust the rules that govern regular users, such as the number of listings they can have up at any time, or the maximum distance from KW they are allowed to post.
+>>>>>>> b7dfa424af4f81314393fa53b3970cc1029eeaba
 * **Enforce Rules:** Administrators will give appropriate punishments to individuals who violate the terms of using Subby (i.e. spamming, scamming, etc). Punishments include giving them warnings and banning their accounts.
 * **Provide Customer Service:** Individuals will be able to contact a Subby administrator by email if any problems or questions arise. Administrators will be able to reset passwords and email addresses to ensure users have account access.
 
 #### 2.1.3. Additional Features
 * **Review:** Both sublet seekers and lease owners can rate each other based on their experience on a scale of 0 to 5. For instance, the sublet seeker can rate their experience with the lease owner based on satisfaction of stay and the lease owner can rate their experience with the sublet seeker based on payment reliability and property damage or lack thereof. This will allow individuals to trust others more freely if they have good reviews.
 
+<<<<<<< HEAD
 * **Competitive Pricing:** On the page that shows buildings [the serach results page?], there will be two boxes that show the competitive pricing. One box will show the lowest rent price set up by lease owners of rooms (same type) in same building, or by leases of same criteria [same criteria? as in same search results?]. The other box will show the highest bidding set by sublet seekers for either rooms (same type) in same building or rooms that fulfill same criteria. The purpose of this feature is to show the competitive pricing of each unit listed. This way, people will have better understanding of how much they should be paying for a sublet or of how much they should charge for subletting their unit.
+=======
+* **Competitive Pricing:** On the page that shows buildings, there will be two boxes that show the competitive pricing. One box will show the lowest rent price set up by lease owners of rooms (same type) in same building, or by leases of same criteria. The other box will show the highest bidding set by sublet seekers for either rooms (same type) in same building or rooms that fulfill same criteria. The purpose of this feature is to show the competitive pricing of each unit listed. This way, people will have better understanding of how much they should be paying for a sublet or of how much they should charge for subletting their unit.
+>>>>>>> b7dfa424af4f81314393fa53b3970cc1029eeaba
 
 * **Tinder-Style Swipe:** Provide an interface allowing users to easily narrow down their search by quickly viewing photos of potential sublets. For mobile devices, the user could swipe "left" to ignore a sublet- or "right" to view more information and contact the lessor. Desktop users would either tap the left or right arrow keys respectively to achieve the same result.
 
@@ -163,7 +190,11 @@ Every individual will have the option to search for sublets. Registered users wi
 Subby is made for students with basic knowledge of how to navigate a website. The website will be designed to be as straightforward as possible so even the most non-technological individuals can use it.
 
 ### 2.4. Constraints
+<<<<<<< HEAD
 In regards to the auction/bidding feature, it may prove difficult to identify the validity of the bids; users can potentially make fake accounts and bid on their own property in order to balloon their profits. In order to mitigate this, we plan to make individuals sign up with their school email since they should only have one school email [what about double degree studnts at -->Laurier/Waterloo]
+=======
+In regards to the auction/bidding feature, it may prove difficult to identify the validity of the bids; users can potentially make fake accounts and bid on their own property in order to balloon their profits. In order to mitigate this, we plan to make individuals sign up with their school email since they should only have one school email. 
+>>>>>>> b7dfa424af4f81314393fa53b3970cc1029eeaba
 
 ### 2.5. Assumptions and Dependencies
 Although anyone can visit and search the rental database, to contact a lessee or post a unit to sublet, users must first register with a valid university or college email. Additionally, individuals are expected to have access to a device with Wi-Fi and use a browser compatible with Google Maps.
