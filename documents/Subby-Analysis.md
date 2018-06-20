@@ -51,7 +51,7 @@ Here we have provided all entity, boundary, and control objects found in all the
 
 ## 2.1. Class Diagram
 
-This class diagram shows an overall picture of the various actor interactios, as well as controller/entity packages to which the GUI's pertain. Note that some views will potentially retrieve data from more than one source; these have been indicated with dashed lines.
+This class diagram shows an overall picture of the various actor interactions, as well as controller/entity packages to which the GUI's pertain. Note that some views will potentially retrieve data from more than one source; these have been indicated with dashed lines.
 
 ![SubbyClassDiagram](http://i.imgur.com/64hk0Jr.jpg)
 
@@ -129,11 +129,11 @@ The Report package contains the following:
     * Report Retriever: Retrieve single records of a Report for display.
     * Report Lister: Retrieve all of a User's Reports to display the related Sublet listings.
 * **Border Objects:**
-    * Report Create: Display input areas necessary to create a report.
-    * Report Display: Display a user's report.
-    * Reports List: Display a list of reports from a given user.
+    * Report Create: Display input areas necessary to create a Report.
+    * Report Display: Display a user's Report.
+    * Reports List: Display a list of Reports from a given user.
 
-The Reports UI's will be available to both regular and Admin users, so records will need to be persisted and retrieved regardless of authorization.
+The Reports UI's will be available to both regular and admin users, so records will need to be persisted and retrieved regardless of authorization.
 
 # 3. Requirements
 
@@ -141,7 +141,7 @@ The Reports UI's will be available to both regular and Admin users, so records w
 Administrators are allowed to modify website content when logged in, while general users may view website content, insert content, and modify their inserted content. 
 
 ### 3.1.1. Administrator Terms of Use
-An administrator is one of two actors in the system, and is allowed to insert, edit, and remove users and content from the site.
+An administrator is one of two actors in the system, and is allowed to insert, edit, and remove both users and content from the site.
 
 ### 3.1.2. User Terms of Use
 The user is the second of two actors in the system, and is allowed to insert content into the site and edit their inserted content.
@@ -162,7 +162,7 @@ This UML diagrams displays the various models required to accomplish the above u
 
 Figure 5.2. Sequence Diagram for Task 1 and 2.
 
-A sequence diagram is provided for task 1 and 2 for an admin to log in to the management tool, and create a new user. This flow begins with an administrator required to log in, however there is no need to log out after a task is completed. Thus, an administrator can freely do multiple tasks in one session.
+A sequence diagram is provided for task 1 and Task 2 for an admin to log in to the management tool, and create a new user. This flow begins with an administrator required to log in, however there is no need to log out after a task is completed. Thus, an administrator can freely execute multiple tasks in one session.
 
 ## 5.2. Task List
 A sample task list for an administrator:
@@ -172,7 +172,7 @@ A sample task list for an administrator:
 3. Modifying an existing user's information.
 4. Deleting a user.
 5. Deleting a sublet listing.
-6. Logout.
+6. Logging out Subby management tool.
 
 A sample task list for the user:
 
