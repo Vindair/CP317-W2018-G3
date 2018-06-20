@@ -32,7 +32,7 @@ Improving the current state of subletting would be beneficial to students throug
 The website will display the listing information found in the database in the form of text, diagrams, or maps. The website will allow administrators to insert, edit, and remove entries from the database/website at their discretion. A website user would be allowed access to the data on the front-end and browse through the listings on the site, as well as post new listings. 
 
 ## 1.1. Purpose
-The current state of subletting is disorganized and inconvenient to use, with the most popular platform being FaceBook- a site not even designed for posting sublets. Subby will allow for listings on FaceBook, Kijiji, and other sites to be consolidated, thus providing  a more comprehensive product than what is currently available to the student sublettng market. 
+The current state of subletting is disorganized and inconvenient to use, with the most popular platform being FaceBook--a site not even designed for posting sublets. Subby will allow for listings on FaceBook, Kijiji, and other sites to be consolidated, thus providing  a more comprehensive product than what is currently available to the student sublettng market. 
 
 The idea is to provide:
 1. **Subletters:**
@@ -62,15 +62,15 @@ This class diagram shows an overall picture of the various actor interactions, a
 The User package contains the following:
 * **Entity Object:** User
 * **Control Objects:**
-    * User Creator: Create and persist Users to the database.
-    * User Manager: Edit and Destroy Users.
-    * User Retriever: Retrieve single records of a User for display.
-    * User Lister: List the index of Users.
+    * User Creator: Create and persist Users to the database
+    * User Manager: Edit and Destroy Users
+    * User Retriever: Retrieve single records of a User for display
+    * User Lister: List the index of Users
 * **Border Objects:**
-    * User Sign-Up: Submit email, password, and other relevant data to create an account.
-    * User Edit: Modify preferences, email, password.
-    * User Display: View a user's data.
-    * User List: List all users in the database.
+    * User Sign-Up: Submit email, password, and other relevant data to create an account
+    * User Edit: Modify preferences, email, password
+    * User Display: View a user's data
+    * User List: List all users in the database
 
 As displayed in the Class Diagram, visitors are the only actors who will be able to use the User Creator view and controller. Administrators and regular users will be able to display accounts, and possibly edit them depending on their role.
 
@@ -79,17 +79,17 @@ As displayed in the Class Diagram, visitors are the only actors who will be able
 The Sublet package contains the following:
 * **Entity Object:** Sublet
 * **Control Objects:**
-    * Sublet Creator: Create and persist Sublets to the database.
-    * Sublet Manager: Edit and Destroy Sublets.
-    * Sublet Lister: List the index of Sublets.
-    * Sublet Searcher: Searches for Sublet records, taking params such as search query and page number.
-    * Sublet Retriever: Retrieve single records of a Sublet for display.
+    * Sublet Creator: Create and persist Sublets to the database
+    * Sublet Manager: Edit and Destroy Sublets
+    * Sublet Lister: List the index of Sublets
+    * Sublet Searcher: Searches for Sublet records, taking params such as search query and page number
+    * Sublet Retriever: Retrieve single records of a Sublet for display
 * **Border Objects:**
-    * Sublet Create: Provide input to create a sublet listing- address, description, and so on.
-    * Sublet Edit: Edit an existing sublet posting.
-    * Posted Sublet List: List of posted sublets in a given area.
-    * Sublet Search: Search for sublets by user input with filters.
-    * Sublet Display: Display a single sublet.
+    * Sublet Create: Provide input to create a sublet listing- address, description, and so on
+    * Sublet Edit: Edit an existing sublet posting
+    * Posted Sublet List: List of posted sublets in a given area
+    * Sublet Search: Search for sublets by user input with filters
+    * Sublet Display: Display a single sublet
 
 Note that controllers such as the Sublet Manager will determine, based on User role, whether an actor has permission to edit or destroy a Sublet record. The Sublet Searcher controller will have no such authorization, as it is open to both visitors and regular users.
 
@@ -98,13 +98,13 @@ Note that controllers such as the Sublet Manager will determine, based on User r
 The Rating package contains the following:
 * **Entity Object:** Rating
 * **Control Objects:**
-    * Rating Creator: Create and persist Ratings to the database.
-    * Rating Manager: Edit and Destroy Ratings.
-    * Rating Retriever: Retrieve single records of a Rating for display.
+    * Rating Creator: Create and persist Ratings to the database
+    * Rating Manager: Edit and Destroy Ratings
+    * Rating Retriever: Retrieve single records of a Rating for display
 * **Border Objects:**
-    * Rating Create: Provides input to set a rating level.
-    * Rating Edit: Edit an existing rating.
-    * Rating Display: Display a list of ratings for a user.
+    * Rating Create: Provides input to set a rating level
+    * Rating Edit: Edit an existing rating
+    * Rating Display: Display a list of ratings for a user
 
 Note that both the User Display UI, Sublet Search UI, and Sublet Display UI will also use the Rating Retriever Control to display Rating information on their respective pages.
 
@@ -113,10 +113,10 @@ Note that both the User Display UI, Sublet Search UI, and Sublet Display UI will
 The Favorite package contains the following:
 * **Entity Object:** Favorite
 * **Control Objects:**
-    * Favorite Lister: Retrieve all of a User's Favorites to display the related Sublet listings.
-    * Favorite Manager: Create and destroy Favorite entities.
+    * Favorite Lister: Retrieve all of a User's Favorites to display the related Sublet listings
+    * Favorite Manager: Create and destroy Favorite entities
 * **Border Objects:**
-    * Favorites List: Displays a list of favorites belonging to a user.
+    * Favorites List: Displays a list of favorites belonging to a user
 
 The Sublet Search UI will display whether a Sublet listing has been "Favorited", and will access the Favorites Manager. 
 
@@ -125,13 +125,13 @@ The Sublet Search UI will display whether a Sublet listing has been "Favorited",
 The Report package contains the following:
 * **Entity Object:** Report
 * **Control Objects:**
-    * Report Creator: Create and persist Reports to the database.
-    * Report Retriever: Retrieve single records of a Report for display.
-    * Report Lister: Retrieve all of a User's Reports to display the related Sublet listings.
+    * Report Creator: Create and persist Reports to the database
+    * Report Retriever: Retrieve single records of a Report for display
+    * Report Lister: Retrieve all of a User's Reports to display the related Sublet listings
 * **Border Objects:**
-    * Report Create: Display input areas necessary to create a Report.
-    * Report Display: Display a user's Report.
-    * Reports List: Display a list of Reports from a given user.
+    * Report Create: Display input areas necessary to create a Report
+    * Report Display: Display a user's Report
+    * Reports List: Display a list of Reports from a given user
 
 The Reports UI's will be available to both regular and admin users, so records will need to be persisted and retrieved regardless of authorization.
 
@@ -160,13 +160,13 @@ This UML diagrams displays the various models required to accomplish the above u
 
 ![SQCreateUser](https://i.imgur.com/XNlL1ft.png)
 
-Figure 5.1. Sequence Diagram for Task 1 and 2.
+Figure 5.1. Sequence Diagram for Task 1 and Task 2.
 
-A sequence diagram is provided for task 1 and Task 2 for an admin to log in to the management tool, and create a new user. This flow begins with an administrator required to log in, however there is no need to log out after a task is completed. Thus, an administrator can freely execute multiple tasks in one session.
+A sequence diagram is provided for Task 1 and Task 2 for an admin to login to the management tool, and create a new user. This flow begins with an administrator required to login, however there is no need to logout after a task is completed. Thus, an administrator can freely execute multiple tasks in one session.
 
 ![SQUserTasks](https://i.imgur.com/STNS7Zt.png)
 
-Figure 5.1.1 Sequence Diagram for Task 7, 8, 9 and 11.
+Figure 5.1.1 Sequence Diagram for Tasks 7, 8, 9 and 11.
 
 A sequence diagram is also provided to outline the basic user tasks.
 
@@ -175,25 +175,25 @@ A sequence diagram is also provided to outline the basic user tasks.
 ## 5.2. Task List
 A sample task list for an administrator:
 
-1. Logging into Subby management tool.
-2. Creating a user.
-3. Modifying an existing user's information.
-4. Deleting a user.
-5. Deleting a sublet listing.
-6. Logging out Subby management tool.
+1. Logging into Subby management tool
+2. Creating a user
+3. Modifying an existing user's information
+4. Deleting a user
+5. Deleting a sublet listing
+6. Logging out of Subby management tool
 
 A sample task list for the user:
 
-7. Creating an account using Subby sign-up interface.
-8. Logging into Subby using login interface. 
-9. Inserting a new sublet listing.
-10. Modifying an existing sublet listing.
-11. Viewing/filtering/selecting posted listings.
-12. Rating a listing. 
+1. Creating an account using Subby sign-up interface
+2. Logging into Subby using login interface 
+3. Inserting a new sublet listing
+4. Modifying an existing sublet listing
+5. Viewing/filtering/selecting posted listings
+6. Rating a listing
 
 ### 5.2.1. Task Specifications
 **Task 1: Logging into Subby management tool.**
-The user has opened a web browser and has navigated to the Subby management tool log in page. The user enters valid admin credentials and logs in by selecting the "Login" button.
+The user opens a web browser and has navigated to the Subby management tool login page. The user enters valid admin credentials and logs in by selecting the "Login" button.
 
 **Task 2: Creating a user. (Prerequisites: Task 1 as Administrator)**
 An administrator selects the "Create User" which generates a overlayed display that prompts them to fill in fields such as:
@@ -211,7 +211,7 @@ An administrator looks at the current database of users, and selects the "Edit U
 * E-mail
 * Birth Date
 
-As well as the ability to see all listings currently posted by the selected user (The ability to complete task 5 and 10 is available here as well if there are available listings). An administrator enters and information changes desired, and presses the "Save" button at the bottom of the form. Should there be an error such as duplicate information in the database found, an error message will be displayed, otherwise the information should save. Alternatively, should the administrator deem no changes neccesary, there is a "Cancel" button next to the save to bring the administrator to their previous viewing page.
+Additionally, the administrator is afforded the ability to see all listings currently posted by the selected user; the ability to complete Tasks 5 and 10 is available here as well if there are available listings. An administrator enters the desired information changes and presses the "Save" button at the bottom of the form. Should the administrator attempt to make invalid changes, such as duplication of information, an error message will be displayed, otherwise the information should save. Alternatively, should the administrator deem no changes neccesary, there is a "Cancel" button next to the save to bring the administrator to their previous viewing page.
 
 **Task 4: Deleting a user. (Prerequisites: Task 1, Task 2 if no users currently exist)**
 An administrator will view all the users entered in the database, and select the "Delete User" button next to the data entry. This will issue a prompt asking for confirmation as to whether or not to proceed with the deletion. Should the administrator press "Confirm", the data entry will be removed from the database, else the administrator will press "Cancel" resulting in the prompt disappearing and no changes occurring to the database. Deleting a user will also remove all listings posted by said user.
@@ -220,7 +220,7 @@ An administrator will view all the users entered in the database, and select the
 An administrator will view the database containing all listings, and select the "Delete Listing" button next to the data entry. This will issue a prompt asking for confirmation as to whether or not to proceed with the deletion. Should the administrator press "Confirm", a prompt will appear with a textbox asking the administrator to file a reason for deletion. The admin will fill in a relevant reason, and press "Okay". The data entry will be removed from the database, and a message to the lister will be sent with the reason specified for deletion. Otherwise the administrator will press "Cancel" resulting in the prompt disappearing and no changes occurring to the database.
 
 **Task 6: Logout. (Prerequisites: Task 1)**
-An administrator will press the "Log out" button in the top right corner of the management tool, which will take the user back to the log in page.
+An administrator will press the "Logout" button in the top right corner of the management tool, which will take the user back to the login page.
 
 **Task 7: Creating an account using Subby sign-up interface.**
 The user has navigated to the home page of Subby. The user will press the "Register" button in the top right corner of the website, which will create an overlay over the current page prompting the user to enter the following information:
@@ -229,7 +229,7 @@ The user has navigated to the home page of Subby. The user will press the "Regis
 * E-mail
 * Birth Date
 
-As well as passing a captcha to ensure human entry. A link to terms of service and privacy policy will be included below the form for the user to read if neccesary. Upon entering the correct information, the user will press the "Sign Up" button at the bottom of the overlay, which will then prompt the user as to whether or not the account creation was successful. A successful account creation must follow the following criteria:
+Additionally, the user must pass a captcha to ensure human entry. A link to terms of service and privacy policy will be included below the form for the user to read if neccesary. Upon entering the correct information, the user will press the "Sign Up" button at the bottom of the overlay, which will then prompt the user as to whether or not the account creation was successful. A successful account creation must follow the following criteria:
 * Non-duplicate username
 * Password conforming to site-specified rules
 * Non-duplicate e-mail address
@@ -237,7 +237,7 @@ As well as passing a captcha to ensure human entry. A link to terms of service a
 Upon success, the overlay will disappear and be replaced by a pop-up informing the user that a verification email has been sent to their address. Upon failure, the form will highlight where the errors are in red around the specific entries and prompt the user to enter their information again.
 
 **Task 8: Logging into Subby using login interface. (Prerequisites: Task 7)**
-The user will log in by selecting the "Login" button in the top right corner of the web page. This will create an overlay over the current page prompting the user to enter their login information:
+The user will login by selecting the "Login" button in the top right corner of the web page. This will create an overlay over the current page prompting the user to enter their login information:
 * Username/E-mail
 * Password
 
