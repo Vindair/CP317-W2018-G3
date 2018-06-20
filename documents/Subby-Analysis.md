@@ -27,31 +27,31 @@ Version 1.0 – 5/20/18
 
 # 1. Introduction
 
-Improving the current state of subletting would be beneficial to students throughout our target region, as we will be able to consolidate listings posted on non-specialized platforms, as well as provide quality assurance on the posted listings. The database of sublet listings will be organized based on standard filters for renting such as location, rating, etc.
+Improving the current state of subletting would be beneficial to students throughout our target market (KW Region), as we will be able to consolidate listings posted on non-specialized platforms, as well as provide quality assurance on the posted listings. The database of sublet listings will be organized based on standard filters for renting such as location, rating, etc.
 
 The website will display the listing information found in the database in the form of text, diagrams, or maps. The website will allow administrators to insert, edit, and remove entries from the database/website at their discretion. A website user would be allowed access to the data on the front-end and browse through the listings on the site, as well as post new listings. 
 
 ## 1.1. Purpose
-The current state of subletting is disorganized and inconvenient to use, with the most popular platform being FaceBook- a site not even designed for posting sublets. Subby will allow for listings on FaceBook, Kijiji, and other sites to be consolidated and will be designed to fit the needs of a student subletter/sublessor
+The current state of subletting is disorganized and inconvenient to use, with the most popular platform being FaceBook- a site not even designed for posting sublets. Subby will allow for listings on FaceBook, Kijiji, and other sites to be consolidated, thus providing  and will thus be thus designed to accomodate the  fit the needs of a student subletter/sublessor
 
 The idea is to provide:
 1. **Subletters:**
-    * Simple interface to browse through sublet listings, easily sorted using specialized filters.
+    * Simple interface to browse through sublet listings, easily sorted using specialized filters
     * Ability to contact sublessors through site or through provided contact information
-    * Security in browsing since all listings will go through a verification process to confirm legitimacy.
+    * Security in browsing since all listings will go through a verification process to confirm legitimacy
 2. **Sublessors:**
-    * Ability to post new sublet listings according to site policy.
-    * Ability to modify existing listings in case any information changes.
-    * Allows for listings to be seen by verified users, and be contacted by these users.
-    * Provide an interface to let one know the current competitive pricing in the property area.
+    * Ability to post new sublet listings according to site policy
+    * Ability to modify existing listings in case any information changes
+    * Allows for listings to be seen by verified users, and be contacted by these users
+    * Provide an interface to let one know the current competitive pricing in the property area
 3. **Administrators:**
-    * All functionality available to users, as well as the ability to remove and edit any listing at their discretion.
+    * All functionality available to users, as well as the ability to remove and edit any listing at their discretion
 # 2. Object Classification
-Here we have provided all entity, boundary, and control objects found in all the Packages. These are broken down later in the Model Analysis.
+Here we have provided all entity, boundary, and control objects found in all the Packages. They are broken down later in the Model Analysis.
 
 ## 2.1. Class Diagram
 
-This class diagram shows an overall picture of the various actor interactions as well as controller/entity packages the GUI's pertain to. Note that some views will potentially retrieve data from more than one source- these have been indicated with dashed lines.
+This class diagram shows an overall picture of the various actor interactios, as well as controller/entity packages to which the GUI's pertain. Note that some views will potentially retrieve data from more than one source; these have been indicated with dashed lines.
 
 ![SubbyClassDiagram](http://i.imgur.com/64hk0Jr.jpg)
 
