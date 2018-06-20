@@ -160,9 +160,17 @@ This UML diagrams displays the various models required to accomplish the above u
 
 ![SQCreateUser](https://i.imgur.com/XNlL1ft.png)
 
-Figure 5.2. Sequence Diagram for Task 1 and 2.
+Figure 5.1. Sequence Diagram for Task 1 and 2.
 
 A sequence diagram is provided for task 1 and Task 2 for an admin to log in to the management tool, and create a new user. This flow begins with an administrator required to log in, however there is no need to log out after a task is completed. Thus, an administrator can freely execute multiple tasks in one session.
+
+![SQUserTasks](https://i.imgur.com/STNS7Zt.png)
+
+Figure 5.1.1 Sequence Diagram for Task 7, 8, 9 and 11.
+
+A sequence diagram is also provided to outline the basic user tasks.
+
+
 
 ## 5.2. Task List
 A sample task list for an administrator:
@@ -262,6 +270,8 @@ The user has navigated to an individual listings page. The user will hover over 
   * Alex Kirsopp [2.1-2.2.5] [2018-06-19]
 * **Section 4**
   * Alex Kirsopp [4.1] [2018-06-19]
+* **Section 5**
+  * Mackenzie Dang [5.1.1] [2018-06-20] 
 
 * **Other**
   * Alex Kirsopp - Misc small fixes (spelling, wording, layout, markdown)
