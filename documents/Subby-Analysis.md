@@ -267,26 +267,26 @@ The user has navigated to an individual listings page. The user will hover over 
 ---
 ## Version 1.1
 * **Section 2**
-  * Alex Kirsopp [2.1-2.2.5] [2018-06-19]
+    * Alex Kirsopp [2.1-2.2.5] [2018-06-19]
 * **Section 4**
-  * Alex Kirsopp [4.1] [2018-06-19]
+    * Alex Kirsopp [4.1] [2018-06-19]
 * **Section 5**
-  * Mackenzie Dang [5.1.1] [2018-06-20] 
+    * Mackenzie Dang [5.1.1] [2018-06-20] 
 
 * **Other**
-  * Alex Kirsopp - Misc small fixes (spelling, wording, layout, markdown)
+    * Alex Kirsopp - Misc small fixes (spelling, wording, layout, markdown)
 
 ## Version 1.0
 * **Section 1**
-  * Mackenzie Dang [1.0-1.1] [2018-06-03] Initial Draft
+    * Mackenzie Dang [1.0-1.1] [2018-06-03] Initial Draft
 * **Section 2**
-  *  Alex Kirsopp [2.1.1-2.1.4, 2.4] [2018-06-03]
+    *  Alex Kirsopp [2.1.1-2.1.4, 2.4] [2018-06-03]
 * **Section 3**
-  * Mackenzie Dang [3.0 - 3.1.2.] [2018-06-03] Initial Draft
+    * Mackenzie Dang [3.0 - 3.1.2.] [2018-06-03] Initial Draft
 * **Section 4**
-  *  Alex Kirsopp [4.1] [2018-06-03]
+    *  Alex Kirsopp [4.1] [2018-06-03]
 * **Section 5**
-  * Mackenzie Dang [5 - 5.2] [2018-06-03] Initial Draft
+    * Mackenzie Dang [5 - 5.2] [2018-06-03] Initial Draft
 
 * **Other**
-  * Alex Kirsopp - Doc layout and formatting
+    * Alex Kirsopp - Doc layout and formatting
