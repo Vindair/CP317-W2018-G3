@@ -162,7 +162,7 @@ This UML diagrams displays the various models required to accomplish the above u
 
 Figure 5.1. Sequence Diagram for Task 1 and Task 2.
 
-A sequence diagram is provided for Task 1 and Task 2 for an admin to login to the management tool, and create a new user. This flow begins with an administrator required to login, however there is no need to logout after a task is completed. Thus, an administrator can freely execute multiple tasks in one session.
+A sequence diagram is provided for Task 1 and Task 2 for an admin to log in to the management tool and create a new user. This flow begins with and administrator logging in. However, there is no need to logout after a task is completed. Thus, an administrator can freely execute multiple tasks in one session.
 
 ![SQUserTasks](https://i.imgur.com/STNS7Zt.png)
 
@@ -202,7 +202,7 @@ An administrator selects the "Create User" which generates a overlayed display t
 * E-mail Address
 * Birth Date
 
-An administrator enters the relevant information and selects the "Create" button. If the user information already exists in the database, an error message will be displayed indicating that the entry is a duplicate, otherwise a notification will prompt the admin of successful user creation.
+An administrator enters the relevant information and selects the "Create" button. If the user information already exists in the database, an error message is displayed, indicating that the entry is a duplicate. Otherwise, a notification will prompt the admin of successful user creation.
 
 **Task 3: Modifying an existing user's information. (Prerequisites: Task 1, Task 2 if no users currently exist)**
 An administrator looks at the current database of users, and selects the "Edit User" action next to a user entry. A new page is loaded displaying the information of the selected user. The administrator is then prompted to edit any of the following:
@@ -211,13 +211,13 @@ An administrator looks at the current database of users, and selects the "Edit U
 * E-mail
 * Birth Date
 
-Additionally, the administrator is afforded the ability to see all listings currently posted by the selected user; the ability to complete Tasks 5 and 10 is can be also done withing Task 3 if any available listings exist. An administrator makes the desired information changes and presses the "Save" button at the bottom of the form. Should the administrator attempt to make invalid changes, such as duplication of information, an error message will be displayed, otherwise the information is committed. Alternatively, should the administrator deem no changes neccesary, there is a "Cancel" button next to the "Save" button to bring the administrator to their previous viewing page.
+Additionally, the administrator is afforded the ability to see all listings currently posted by the selected user; the ability to complete Tasks 5 and 10 can also be done within Task 3 if any available listings exist. An administrator makes the desired information changes and presses the "Save" button at the bottom of the form. Should the administrator attempt to make invalid changes, such as duplication of information, an error message will be displayed. Otherwise, the information is committed. Alternatively, should the administrator deem no changes neccesary, there is a "Cancel" button next to the "Save" button to bring the administrator to their previous viewing page.
 
 **Task 4: Deleting a user. (Prerequisites: Task 1, Task 2 if no users currently exist)**
-An administrator views all the users entered in the database, and selects the "Delete User" button next to the data entry. This issues a prompt asking for confirmation as to whether or not to proceed with the deletion. Should the administrator press "Confirm", the data entry will be removed from the database, else the administrator presses "Cancel" resulting in the prompt disappearing and no changes occurring to the database. Note that deleting a user will also remove all listings posted by said user.
+An administrator views all the users entered in the database, and selects the "Delete User" button next to the data entry. This issues a prompt asking for confirmation as to whether or not to proceed with the deletion. Should the administrator press "Confirm", the data entry will be removed from the database. Otherwise, the administrator presses "Cancel", resulting in the prompt disappearing and no changes occurring to the database. Note that deleting a user will also remove all listings posted by said user.
 
 **Task 5: Deleting a sublet listing. (Prerequisites: Task 1)**
-An administrator views the database containing all listings, and selects the "Delete Listing" button next to the data entry. This issue a prompt asking for confirmation as to whether or not to proceed with the deletion. Should the administrator press "Confirm", a prompt will appear with a form asking the administrator to file a reason for deletion. The admin then fills in a relevant reason for deletion, and presses "Okay". The data entry will be removed from the database, and a message to the lister is sent with the reason specified for deletion. Otherwise, the administrator presses "Cancel" resulting in the prompt disappearing and no changes occurring to the database.
+An administrator views the database containing all listings, and selects the "Delete Listing" button next to the data entry. This issues a prompt asking for confirmation as to whether or not to proceed with the deletion. Should the administrator press "Confirm", a prompt will appear with a form asking the administrator to file a reason for deletion. The admin then fills in a relevant reason for deletion, and presses "Okay". The data entry will be removed from the database, and a message to the lister is sent with the reason specified for deletion. Otherwise, the administrator presses "Cancel" resulting in the prompt disappearing and no changes occurring to the database.
 
 **Task 6: Logout. (Prerequisites: Task 1)**
 An administrator presses the "Logout" button in the top right corner of the management tool, which take the user back to the login page.
@@ -229,7 +229,7 @@ The user navigates to the home page of Subby and presses the "Register" button i
 * E-mail
 * Birth Date
 
-Additionally, the user must pass a captcha to ensure human entry. A link to terms of service and privacy policy will be included below the form for the user to read if neccesary. Upon entering the correct information, the user will press the "Sign Up" button at the bottom of the overlay, which will then prompt the user as to whether or not the account creation was successful. A successful account creation must follow the following criteria:
+Additionally, the user must pass a captcha to ensure human entry. A link to terms of service and privacy policy will be included below the form for the user to read if neccesary. Upon entering the correct information, the user presses the "Sign Up" button at the bottom of the overlay, which will then prompt the user as to whether or not the account creation was successful. A successful account creation must follow the following criteria:
 * Non-duplicate username
 * Password conforming to site-specified rules
 * Non-duplicate e-mail address
