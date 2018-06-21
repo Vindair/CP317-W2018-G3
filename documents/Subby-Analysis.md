@@ -1,7 +1,7 @@
 # Subby
 
 ---
-## Requirements Document
+## Analysis Document
 Version 1.1 – 06/21/18
 1. **[Introduction](#1introduction)**  
   1.1. [Purpose](#11purpose)  
@@ -220,7 +220,7 @@ An administrator views all the users entered in the database, and selects the "D
 An administrator views the database containing all listings, and selects the "Delete Listing" button next to the data entry. This issues a prompt asking for confirmation as to whether or not to proceed with the deletion. Should the administrator press "Confirm", a prompt will appear with a form asking the administrator to file a reason for deletion. The admin then fills in a relevant reason for deletion, and presses "Okay". The data entry will be removed from the database, and a message to the lister is sent with the reason specified for deletion. Otherwise, the administrator presses "Cancel" resulting in the prompt disappearing and no changes occurring to the database.
 
 **Task 6: Logout. (Prerequisites: Task 1)**
-An administrator presses the "Logout" button in the top right corner of the management tool, which takes the user back to the login page.
+An administrator presses the "Logout" button in the top right corner of the management tool, which take the user back to the login page.
 
 **Task 7: Creating an account using Subby sign-up interface.**
 The user navigates to the home page of Subby and presses the "Register" button in the top right corner of the website, creating an overlay over the current page prompting the user to enter the following information:
@@ -234,10 +234,10 @@ Additionally, the user must pass a captcha to ensure human entry. A link to term
 * Password conforming to site-specified rules
 * Non-duplicate e-mail address
 * Valid captcha entry
-Upon success, the overlay disappears and is replaced by a pop-up informing the user that a verification email has been sent to their inbox. Upon failure, the form highlights the errors in red and prompts the user to enter their information again.
+Upon success, the overlay will disappear and be replaced by a pop-up informing the user that a verification email has been sent to their address. Upon failure, the form will highlight where the errors are in red around the specific entries and prompt the user to enter their information again.
 
 **Task 8: Logging into Subby using login interface. (Prerequisites: Task 7)**
-The user logs in by selecting the "Login" button in the top right corner of the web page. This creates an overlay over the current page prompting the user to enter their login information:
+The user logs by selecting the "Login" button in the top right corner of the web page. This creates an overlay over the current page prompting the user to enter their login information:
 * Username/E-mail
 * Password
 
@@ -257,10 +257,10 @@ Upon entering the relevant information, the user presses the "Post" button at th
 The user navigates to their "My Listings" to view all their currently posted listings. The user selects the "Edit" hyperlink next to a listing, and is directed to a new page containing a form with the listing information. The user is able to edit any information they entered in Task 9, as well as have the ability to mark the listing as "Sold". Upon making the relevant changes, the user presses the "Save" button at the bottom of the form to confirm any changes they made. The user may also cancel editing by pressing the "Cancel" button next to the "Save" button.
 
 **Task 11: Viewing/filtering/selecting posted listings.**
-The user navigates to the home page of Subby and enters a location into the search bar. Subsequently, a new page containing top listings closest to the location specified is loaded. The user is presented with filter options on the right hand side of the page, which allows them to refine their search results to their liking. Once the desired filters are selected, the user presses the "Filter" button to view the corresponding search results. Then, the user selects the listing of their interest, redirecting them to the individual listing page which displays all the relevant information about the sublet. Additionally, The user has the ability to view the sublessor contact information on the right hand side of the page if they are interested in making an offer.
+The user navigates to the home page of Subby and enters a location into the search bar. Subsequently, a new page containing top listings closest to the location specified is loaded. The user is presented with filter options on the right hand side of the page, which allows the user to refine their results to their liking. Once the desired filters are selected, the user presses the "Filter" button to view the corresponding search results. Then, the user selects the listing of their interest, redirecting them to the individual listing page which displays all the relevant information about the sublet. Additionally, The user has the ability to view the sublessor contact information on the right hand side of the page if they are interested in making an offer.
 
 **Task 12: Rating a listing (Prerequisites: Task 8)**
-The user navigates to an individual listings page. The user hovers over the star rating on the listings page at a desired rating level and presses down to select the appropriate rating. Then, the user is prompted to submit proof of lease for the rating in an overlay which allows the user to submit an attachment. Once the user has attached their lease, the user presses the "Submit" button allowing for the rating to go through.
+The user has navigates to an individual listings page. The user hovers over the stars on the listings page at a desired rating level and press down when they are satisfied with the rating they are giving. The user is prompted to submit proof of lease for the rating in an overlay which allows the user to submit an attachment. Once the user has attached their lease, the user presses the "Submit" button allowing for the rating to go through.
 
 # 6.0. Revision History
 
