@@ -193,37 +193,37 @@ A sample task list for the user:
 
 ### 5.2.1. Task Specifications
 **Task 1: Logging into Subby management tool.**
-The user opens a web browser and has navigated to the Subby management tool login page. The user enters valid admin credentials and logs in by selecting the "Login" button.
+The user opens a web browser and navigates to the Subby management tool login page. The user enters valid admin credentials and logs in by selecting the "Login" button.
 
 **Task 2: Creating a user. (Prerequisites: Task 1 as Administrator)**
-An administrator selects the "Create User" which generates a overlayed display that prompts them to fill in fields such as:
+An administrator selects the "Create User" which generates a overlayed display that prompts them to fill in the following fields:
 * Username
 * Password
 * E-mail Address
 * Birth Date
 
-An administrator enters the relevant information and selects the "Create" button. If the user information already exists in the database, there will be an error message saying that the entry is a duplicate, otherwise a notification will prompt the admin of successful user creation.
+An administrator enters the relevant information and selects the "Create" button. If the user information already exists in the database, an error message will be displayed indicating that the entry is a duplicate, otherwise a notification will prompt the admin of successful user creation.
 
 **Task 3: Modifying an existing user's information. (Prerequisites: Task 1, Task 2 if no users currently exist)**
-An administrator looks at the current database of users, and selects the "Edit User" action next to a user entry. A new page will be loaded displaying the information of the selected user. An administrator will be prompted to edit any of:
+An administrator looks at the current database of users, and selects the "Edit User" action next to a user entry. A new page is loaded displaying the information of the selected user. The administrator is then prompted to edit any of the following:
 * Username
 * Password
 * E-mail
 * Birth Date
 
-Additionally, the administrator is afforded the ability to see all listings currently posted by the selected user; the ability to complete Tasks 5 and 10 is available here as well if there are available listings. An administrator enters the desired information changes and presses the "Save" button at the bottom of the form. Should the administrator attempt to make invalid changes, such as duplication of information, an error message will be displayed, otherwise the information should save. Alternatively, should the administrator deem no changes neccesary, there is a "Cancel" button next to the save to bring the administrator to their previous viewing page.
+Additionally, the administrator is afforded the ability to see all listings currently posted by the selected user; the ability to complete Tasks 5 and 10 is can be also done withing Task 3 if any available listings exist. An administrator makes the desired information changes and presses the "Save" button at the bottom of the form. Should the administrator attempt to make invalid changes, such as duplication of information, an error message will be displayed, otherwise the information is committed. Alternatively, should the administrator deem no changes neccesary, there is a "Cancel" button next to the "Save" button to bring the administrator to their previous viewing page.
 
 **Task 4: Deleting a user. (Prerequisites: Task 1, Task 2 if no users currently exist)**
-An administrator will view all the users entered in the database, and select the "Delete User" button next to the data entry. This will issue a prompt asking for confirmation as to whether or not to proceed with the deletion. Should the administrator press "Confirm", the data entry will be removed from the database, else the administrator will press "Cancel" resulting in the prompt disappearing and no changes occurring to the database. Deleting a user will also remove all listings posted by said user.
+An administrator views all the users entered in the database, and selects the "Delete User" button next to the data entry. This issues a prompt asking for confirmation as to whether or not to proceed with the deletion. Should the administrator press "Confirm", the data entry will be removed from the database, else the administrator presses "Cancel" resulting in the prompt disappearing and no changes occurring to the database. Note that deleting a user will also remove all listings posted by said user.
 
 **Task 5: Deleting a sublet listing. (Prerequisites: Task 1)**
-An administrator will view the database containing all listings, and select the "Delete Listing" button next to the data entry. This will issue a prompt asking for confirmation as to whether or not to proceed with the deletion. Should the administrator press "Confirm", a prompt will appear with a textbox asking the administrator to file a reason for deletion. The admin will fill in a relevant reason, and press "Okay". The data entry will be removed from the database, and a message to the lister will be sent with the reason specified for deletion. Otherwise the administrator will press "Cancel" resulting in the prompt disappearing and no changes occurring to the database.
+An administrator views the database containing all listings, and selects the "Delete Listing" button next to the data entry. This issue a prompt asking for confirmation as to whether or not to proceed with the deletion. Should the administrator press "Confirm", a prompt will appear with a form asking the administrator to file a reason for deletion. The admin then fills in a relevant reason for deletion, and presses "Okay". The data entry will be removed from the database, and a message to the lister is sent with the reason specified for deletion. Otherwise, the administrator presses "Cancel" resulting in the prompt disappearing and no changes occurring to the database.
 
 **Task 6: Logout. (Prerequisites: Task 1)**
-An administrator will press the "Logout" button in the top right corner of the management tool, which will take the user back to the login page.
+An administrator presses the "Logout" button in the top right corner of the management tool, which take the user back to the login page.
 
 **Task 7: Creating an account using Subby sign-up interface.**
-The user has navigated to the home page of Subby. The user will press the "Register" button in the top right corner of the website, which will create an overlay over the current page prompting the user to enter the following information:
+The user navigates to the home page of Subby and presses the "Register" button in the top right corner of the website, creating an overlay over the current page prompting the user to enter the following information:
 * Username
 * Password
 * E-mail
@@ -237,30 +237,30 @@ Additionally, the user must pass a captcha to ensure human entry. A link to term
 Upon success, the overlay will disappear and be replaced by a pop-up informing the user that a verification email has been sent to their address. Upon failure, the form will highlight where the errors are in red around the specific entries and prompt the user to enter their information again.
 
 **Task 8: Logging into Subby using login interface. (Prerequisites: Task 7)**
-The user will login by selecting the "Login" button in the top right corner of the web page. This will create an overlay over the current page prompting the user to enter their login information:
+The user logs by selecting the "Login" button in the top right corner of the web page. This creates an overlay over the current page prompting the user to enter their login information:
 * Username/E-mail
 * Password
 
-Upon entering their credentials, the user will select the "Sign in" button at the bottom of the overlay, which will then prompt the user if their credentials were correct or not. If they were correct, the user will be redirected to the home page, otherwise the overlay will display an error message saying invalid credentials were entered.
+Upon entering their credentials, the user selects the "Sign in" button at the bottom of the overlay, which then indicates to the user whether or not their credentials are valid or not. If the former, the user is redirected to the home page, otherwise the overlay displays an error message indicating that invalid credentials are entered.
 
 **Task 9: Inserting a new sublet listing. (Prerequisites: Task 8)**
-The user will select the "Post Listing" button in the top right corner of the page. This will load a new page containing a form for the user to fill out about their listing. Information includes:
+The user selects the "Post Listing" button in the top right corner of the page. This loads a new page containing a form for the user to fill out about their listing. Such listing fields include: 
 * Location
 * Price per month
 * Duration of sublet
 * Special features 
 * Picture Attachments
 
-Upon entering the relevant information, the user will press the "Post" button at the bottom of the form which will prompt the user with either a success message or an error message based on whether the post went through. The user may also cancel a new listing by pressing the "Cancel" button next to the "Post" button.
+Upon entering the relevant information, the user presses the "Post" button at the bottom of the form which prompts the user with either a success message or an error message based on whether the post went through. The user may also cancel a new listing by pressing the "Cancel" button next to the "Post" button.
 
 **Task 10: Modifying an existing sublet listing. (Prerequisites: Task 8, Task 9 if no posted listings)**
-The user will navigate to their "my listings" to view all current listings posted by themselves. The user will select the "Edit" hyperlink next to a listing, and be directed to a new page containing a form with the listing information. The user will be able to edit any information they entered in task 9, as well as have the ability to mark the listing as "Sold". Upon making the relevant changes, the user will press the "Save" button at the bottom of the form to confirm any changes they made. The user may also cancel editing by pressing the "Cancel" button next to the "Save" button.
+The user navigates to their "My Listings" to view all their currently posted listings. The user selects the "Edit" hyperlink next to a listing, and is directed to a new page containing a form with the listing information. The user is able to edit any information they entered in Task 9, as well as have the ability to mark the listing as "Sold". Upon making the relevant changes, the user presses the "Save" button at the bottom of the form to confirm any changes they made. The user may also cancel editing by pressing the "Cancel" button next to the "Save" button.
 
 **Task 11: Viewing/filtering/selecting posted listings.**
-The user has navigated to the home page of Subby. The user will enter a location into the search bar loading a new page containing top listings closest to the location specified in the search bar. The user will be presented with filter options on the right hand side of the page, which allows the user to narrow their results to their specifications. The user will press the "Filter" button upon selecting desired filters, and the page will be reloaded showing a search of new sublets fulfilling their needs. The user will select a listing that interests them which will redirect them to the individual listing page displaying all information about the sublet to the user. The user has the ability to view the sublessor contact information on the right hand side of the page if they are interested in making an offer.
+The user navigates to the home page of Subby and enters a location into the search bar. Subsequently, a new page containing top listings closest to the location specified is loaded. The user is presented with filter options on the right hand side of the page, which allows the user to refine their results to their liking. Once the desired filters are selected, the user presses the "Filter" button to view the corresponding search results. Then, the user selects the listing of their interest, redirecting them to the individual listing page which displays all the relevant information about the sublet. Additionally, The user has the ability to view the sublessor contact information on the right hand side of the page if they are interested in making an offer.
 
 **Task 12: Rating a listing (Prerequisites: Task 8)**
-The user has navigated to an individual listings page. The user will hover over the stars on the listings page at a desired rating level and press down when they are satisfied with the rating they are giving. The user will be prompted to submit proof of lease for the rating in an overlay which allows the user to submit an attachment. Once the user has attached their lease, the user will press the "Submit" button allowing for the rating to go through.
+The user has navigates to an individual listings page. The user hovers over the stars on the listings page at a desired rating level and press down when they are satisfied with the rating they are giving. The user is prompted to submit proof of lease for the rating in an overlay which allows the user to submit an attachment. Once the user has attached their lease, the user presses the "Submit" button allowing for the rating to go through.
 
 # 6.0. Revision History
 
