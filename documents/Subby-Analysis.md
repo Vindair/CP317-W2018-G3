@@ -2,7 +2,7 @@
 
 ---
 ## Requirements Document
-Version 1.0 – 5/20/18
+Version 1.1 – 06/21/18
 1. **[Introduction](#1introduction)**  
   1.1. [Purpose](#11purpose)  
 2. **[Object Classification](#2objectclassification)**  
