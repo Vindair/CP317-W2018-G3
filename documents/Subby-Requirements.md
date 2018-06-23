@@ -172,7 +172,11 @@ Here are the main features available for back-end users:
 
 **User "My Listings" Page:**
 
-![User "My Listings"](https://i.imgur.com/xOPc6zi.jpg)
+![User "My Listings"](https://i.imgur.com/Cqlj6j5.jpg)
+
+**User "Reporting Issue" Page:**
+
+![User "Reporting Issue"](https://i.imgur.com/xOPc6zi.jpg)
 
 **User "My Account" Page:**
 
