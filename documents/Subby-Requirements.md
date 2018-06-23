@@ -166,22 +166,17 @@ Here are the main features available for back-end users:
 
 ![Search Results](https://i.imgur.com/vR9HFiG.jpg)
 
-**Available Listings Page:**
-
-![Available Listings V1](https://i.imgur.com/7lLgZWh.png)
-![Available Listings V2](https://i.imgur.com/htBFivv.png)
-
 **(Single) Listing Page:**
 
 ![Single Listing](https://i.imgur.com/1b1d2vy.jpg)
 
 **User "My Listings" Page:**
 
-![User "My Listings"](https://i.imgur.com/Cqlj6j5.jpg)
+![User "My Listings"](https://i.imgur.com/xOPc6zi.jpg)
 
 **User "My Account" Page:**
 
-![User "My Account" V2](https://i.imgur.com/lmDIJEc.png)
+![User "My Account" V2](https://i.imgur.com/b0Nhu2B.jpg)
 
 ### 2.2. Product Functions
 Every individual will have the option to search for sublets. Registered users will be able to post listings. Everyone will have access to the Google Maps displaying the subletting options. If a user has specific requirements that need to be met, then they can use the filters while searching for a sublet. In addition, if a person is looking to sublet their place, they can search for individuals looking for a specific sublet using the filters. Individuals can directly message each other using the emails they registered with.  
