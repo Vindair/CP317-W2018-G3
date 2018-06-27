@@ -125,6 +125,118 @@
     <h2 id="621userpackage">
       6.2.1 User Package
     </h2>
+    <p>
+      <img src="https://i.imgur.com/zEhaUms.jpg" alt="UserPackage">
+    </p>
+    <h3 id="userclass">
+      User Class
+    </h3>
+    <h4 id="methods">
+      Methods
+    </h4>
+    <ul>
+      <li>
+        <p>
+          Contructor (public)
+        </p>
+        <ul>
+          <li>User(options: map) - Class Constructor. Options parameter is a key-value object with the attributes of the desired User. Only non-null fields are enforced.
+            <ul>
+              <li>Options: (email: string, password: string, lastname: string, firstname: string, phonenumber: string)
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          Getters (public)
+        </p>
+        <ul>
+          <li>get_user_id():int
+          </li>
+          <li>get_email():string
+          </li>
+          <li>get_created_at():datetime
+          </li>
+          <li>get_updated_at():datetime
+          </li>
+          <li>get_is_admin():boolean
+          </li>
+          <li>get_last_name():string
+          </li>
+          <li>get_first_name():string
+          </li>
+          <li>get_phone_number():string
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          Setters (public)
+        </p>
+        <ul>
+          <li>set_email(email: string)
+          </li>
+          <li>set_created_at(date: datetime)
+          </li>
+          <li>set_updated_at(date: datetime)
+          </li>
+          <li>set_is_admin(is_admin: boolean)
+          </li>
+          <li>set_password_from<em>plaintext(plain</em>password: string) - Generates hashed password and sets the salt attribute on the user.
+          </li>
+          <li>set_first_name(firstname: string)
+          </li>
+          <li>set_last_name(lastname: string)
+          </li>
+          <li>set_phone_number(phonenumber: string)
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          Helpers (public)
+        </p>
+        <ul>
+          <li>test_password(password: string) - Tests the given plaintext password against the user's salted and hashed password.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          Helpers (private)
+        </p>
+        <ul>
+          <li>
+            <strong>Static:</strong> hash_password(password: string) - Salts and hashes the given plaintext password.
+          </li>
+          <li>validate_password(password: string) - Ensure password meets specifications (e.x. 8 character minimum limit).
+          </li>
+          <li>validate_phone_number(phonenumber: string) - Ensure that the phone number is of valid length and format.
+          </li>
+          <li>validate_email(email: string) - Validates the format of the given email.
+          </li>
+        </ul>
+      </li>
+      <li>
+        <p>
+          Relation Helpers (public)
+        </p>
+        <ul>
+          <li>save() - Runs the validation helpers, returning errors if present, and saves the User if it is valid.
+          </li>
+          <li>reviews() - Returns an array of Reviews created by the User.
+          </li>
+          <li>favorites() - Returns an array of Favorites created by the User.
+          </li>
+          <li>sublets() - Returns an array of Sublets created by the User.
+          </li>
+          <li>reports() - Returns and array of Reports created by the User.
+          </li>
+        </ul>
+      </li>
+    </ul>
     <h2 id="622subletpackage">
       6.2.2 Sublet Package
     </h2>
@@ -149,7 +261,7 @@
     <ul>
       <li>
         <p>
-          <strong>Section 3</strong>
+          <strong>Section 4</strong>
         </p>
       </li>
       <li>
@@ -159,10 +271,20 @@
       </li>
       <li>
         <p>
+          <strong>Section 6</strong>
+        </p>
+      </li>
+      <li>
+        <p>
+          Alex Kirsopp [6.2.1] [2018-06-27]
+        </p>
+      </li>
+      <li>
+        <p>
           <strong>Other</strong>
         </p>
         <ul>
-          <li>Alex Kirsopp - Layout, markdown, etc
+          <li>Alex Kirsopp - Layout, initial outline, markdown, etc
           </li>
         </ul>
       </li>

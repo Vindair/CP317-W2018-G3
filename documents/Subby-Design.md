@@ -60,6 +60,50 @@
 ## 6.1. Class Diagram
 ## 6.2. Package Details
 ## 6.2.1 User Package
+![UserPackage](https://i.imgur.com/zEhaUms.jpg)
+
+### User Class
+#### Methods
+* Contructor (public)
+    * User(options: map) - Class Constructor. Options parameter is a key-value object with the attributes of the desired User. Only non-null fields are enforced.
+        * Options: (email: string, password: string, lastname: string, firstname: string, phonenumber: string)
+
+* Getters (public)
+    * get\_user\_id():int
+    * get\_email():string
+    * get\_created\_at():datetime
+    * get\_updated\_at():datetime
+    * get\_is\_admin():boolean
+    * get\_last\_name():string
+    * get\_first\_name():string
+    * get\_phone\_number():string
+
+* Setters (public)
+    * set\_email(email: string)
+    * set\_created\_at(date: datetime)
+    * set\_updated\_at(date: datetime)
+    * set\_is\_admin(is_admin: boolean)
+    * set\_password\_from_plaintext(plain_password: string) - Generates hashed password and sets the salt attribute on the user.
+    * set\_first\_name(firstname: string)
+    * set\_last\_name(lastname: string)
+    * set\_phone\_number(phonenumber: string)
+
+* Helpers (public)
+    * test\_password(password: string) - Tests the given plaintext password against the user's salted and hashed password.
+
+* Helpers (private)
+    * **Static:** hash_password(password: string) - Salts and hashes the given plaintext password.
+    * validate\_password(password: string) - Ensure password meets specifications (e.x. 8 character minimum limit).
+    * validate\_phone\_number(phonenumber: string) - Ensure that the phone number is of valid length and format.
+    * validate\_email(email: string) - Validates the format of the given email.
+
+* Relation Helpers (public)
+    * save() - Runs the validation helpers, returning errors if present, and saves the User if it is valid.
+    * reviews() - Returns an array of Reviews created by the User.
+    * favorites() - Returns an array of Favorites created by the User.
+    * sublets() - Returns an array of Sublets created by the User.
+    * reports() - Returns and array of Reports created by the User.
+
 ## 6.2.2 Sublet Package
 ## 6.2.2 Rating Package
 ## 6.2.3 Favorite Package
@@ -69,8 +113,11 @@
 
 # 8. Revision History
 ## Version 1.0
-* **Section 3**
+* **Section 4**
   *  Alex Kirsopp [4.1] [2018-06-20]
 
+* **Section 6**
+  *  Alex Kirsopp [6.2.1] [2018-06-27]
+
 * **Other**
-    * Alex Kirsopp - Layout, markdown, etc
+    * Alex Kirsopp - Layout, initial outline, markdown, etc
