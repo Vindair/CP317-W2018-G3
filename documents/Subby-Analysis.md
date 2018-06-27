@@ -11,7 +11,7 @@ Version 1.1 – 06/21/18
   2.2.1. [User Package](#221userpackage)  
   2.2.2. [Sublet Package](#222subletpackage)  
   2.2.3. [Rating Package](#223ratingpackage)  
-  2.2.4. [Favorite Package](#224favoritepackage)  
+  2.2.4. [Favourite Package](#224favouritepackage)  
   2.2.5. [Report Package](#225reportpackage)  
 3. **[Requirements](#3requirements)**  
   3.1. [Database](#31database)  
@@ -66,7 +66,7 @@ The User package contains the following:
     * User Manager: Edit and Destroy Users
     * User Retriever: Retrieve single records of a User for display
     * User Lister: List the index of Users
-* **Border Objects:**
+* **Boundary Objects:**
     * User Sign-Up: Submit email, password, and other relevant data to create an account
     * User Edit: Modify preferences, email, password
     * User Display: View a User's data
@@ -84,7 +84,7 @@ The Sublet package contains the following:
     * Sublet Lister: List the index of Sublets
     * Sublet Searcher: Searches for Sublet records, taking params such as search query and page number
     * Sublet Retriever: Retrieve single records of a Sublet for display
-* **Border Objects:**
+* **Boundary Objects:**
     * Sublet Create: Provide input to create a sublet listing- address, description, and so on
     * Sublet Edit: Edit an existing sublet posting
     * Posted Sublet List: List of posted sublets in a given area
@@ -101,24 +101,24 @@ The Rating package contains the following:
     * Rating Creator: Create and persist Ratings to the database
     * Rating Manager: Edit and Destroy Ratings
     * Rating Retriever: Retrieve single records of a Rating for display
-* **Border Objects:**
+* **Boundary Objects:**
     * Rating Create: Provides input to set a rating level for a new Rating object
     * Rating Edit: Edit an existing Rating
     * Rating Display: Display a list of ratings for a User
 
 Note that both the User Display UI, Sublet Search UI, and Sublet Display UI will also use the Rating Retriever Control to display Rating information on their respective pages.
 
-### 2.2.4. Favorite Package
+### 2.2.4. Favourite Package
 
-The Favorite package contains the following:
-* **Entity Object:** Favorite
+The Favourite package contains the following:
+* **Entity Object:** Favourite
 * **Control Objects:**
-    * Favorite Lister: Retrieve all of a User's Favorites to display the related Sublet listings
-    * Favorite Manager: Create and destroy Favorite entities
-* **Border Objects:**
-    * Favorites List: Displays a list of favorites belonging to a User
+    * Favourite Lister: Retrieve all of a User's Favourites to display the related Sublet listings
+    * Favourite Manager: Create and destroy Favourite entities
+* **Boundary Objects:**
+    * Favourites List: Displays a list of favourites belonging to a User
 
-The Sublet Search UI will display whether a Sublet listing has been "Favorited", and will access the Favorites Manager. 
+The Sublet Search UI will display whether a Sublet listing has been "Favourited", and will access the Favourites Manager. 
 
 ### 2.2.5. Report Package
 
@@ -128,7 +128,7 @@ The Report package contains the following:
     * Report Creator: Create and persist Reports to the database
     * Report Retriever: Retrieve single records of a Report for display
     * Report Lister: Retrieve all of a User's Reports to display the related Sublet listings
-* **Border Objects:**
+* **Boundary Objects:**
     * Report Create: Display input areas necessary to create a Report
     * Report Display: Display a user's Report
     * Reports List: Display a list of Reports from a given User
@@ -265,6 +265,11 @@ The user has navigates to an individual listings page. The user hovers over the 
 # 6.0. Revision History
 
 ---
+## Version 1.2
+
+* **SQA Fixes**
+    * Alex Kirsopp [2.1-2.2.5] [2018-06-27]
+
 ## Version 1.1
 * **Section 2**
     * Alex Kirsopp [2.1-2.2.5] [2018-06-19]
