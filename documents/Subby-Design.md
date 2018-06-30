@@ -42,7 +42,7 @@
 # 4. Development Policies
 ## 4.1. Technical Standards and Guidelines
 ### 4.1.1. General Guidelines
-* In general, problem-solving strategy should follow the idiomatic approach of the language and tools used.
+* In general, problem-solving strategy and code formatting should follow the idiomatic approach of the language and tools used.
 
 ### 4.1.2. Technical Standards
 * Code should be easily readable and as self-documenting as possible to enable ease of future maintenance.
@@ -52,7 +52,8 @@
 * Frontend HTML and CSS must be in compliance with the established W3C standards.
 
 ## 4.2 Project Deployment
-* Heroku etc etc + alternatives
+* The deployment process will support starting the application on virtual server instances on Heroku. However it could run on a server using any OS that supports Python 3, as this is the runtime that Subby will use.
+* Depending on the deployment configuration, the hosting server will also need to support a local Postgres database; alternatively, a separate server with a networked Postgres instance must be provided and reachable by the application server.
 
 # 5. Project Testing
 
