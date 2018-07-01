@@ -106,9 +106,9 @@
     * reports() - Returns and array of Reports created by the User.
 
 ## 6.2.2 Sublet Package
-## 6.2.2 Rating Package
-## 6.2.3 Favorite Package
-## 6.2.4 Report Package
+## 6.2.3 Rating Package
+## 6.2.4 Favorite Package
+## 6.2.5 Report Package
 
 ### Report Class
 #### Methods
@@ -150,6 +150,7 @@
 
 * **Section 6**
   *  Alex Kirsopp [6.2.1] [2018-06-27]
+  *  Xiaochao Luo [6.2.5] [2018-07-01]
 
 * **Other**
     * Alex Kirsopp - Layout, initial outline, markdown, etc
