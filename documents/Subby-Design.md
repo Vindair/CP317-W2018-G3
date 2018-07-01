@@ -123,7 +123,7 @@
     * get\_user\_id():int
     * get\_description():string
 
-* Setters (public)
+* Setters (public): only available for admins
     * set_report_id(report_id: int)
     * set_created_at(date: datetime)
     * set_updated_at(date: dateime)
@@ -132,14 +132,14 @@
     * set_user_id(user_id: int)
 
 
-* Helpers (public)
+* Helpers (private):
     * test\_description(description: string) – Tests the descriptions user has entered. Reject the report if the description is not valid. For example: a series of punctuations, Non english letters, a series of random letters.
 
 
-* Relation Helpers (public)
-    * save() - Saves the Report if no error is presented
-    * users() - Returns an array of User who has been reported
-    * sublets() - Returns an array of Sublets that has been reported.
+* Relation Helpers (public):
+    * save() - Saves the Report if no error is presented by the prviate helper methods.
+    * users() - Returns an array of User who has been reported. Only available for admins.
+    * sublets() - Returns an array of Sublets that has been reported. Only available for admins.
 
 # 7. Data Dictionary
 
