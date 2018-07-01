@@ -110,6 +110,37 @@
 ## 6.2.3 Favorite Package
 ## 6.2.4 Report Package
 
+### Report Class
+#### Methods
+* Contructor (public)
+    * Report(user_id: int, sublet_id: int, issue: string, description: string) – Class Constructor. All non-null fields are enforced except datetime frields, which are recorded by system automatically.
+
+* Getters (public): only available for admins
+    * get\_report\_id():int
+    * get\_created\_at():datetime
+    * get\_updated\_at():datetime
+    * get\_issue():string
+    * get\_user\_id():int
+    * get\_description():string
+
+* Setters (public)
+    * set_report_id(report_id: int)
+    * set_created_at(date: datetime)
+    * set_updated_at(date: dateime)
+    * set_issue(issue: string)
+    * set_description(description: string)
+    * set_user_id(user_id: int)
+
+
+* Helpers (public)
+    * test\_description(description: string) – Tests the descriptions user has entered. Reject the report if the description is not valid. For example: a series of punctuations, Non english letters, a series of random letters.
+
+
+* Relation Helpers (public)
+    * save() - Saves the Report if no error is presented
+    * users() - Returns an array of User who has been reported
+    * sublets() - Returns an array of Sublets that has been reported.
+
 # 7. Data Dictionary
 
 # 8. Revision History
