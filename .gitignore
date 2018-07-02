@@ -3,8 +3,11 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# In case we end up using this -- AK
-db.sqlite3
+# Ignore Python Virtualenv folders
+bin/*
+include/*
+lib/*
+pip-selfcheck.json
 
 # Yay JS
 node_modules/
