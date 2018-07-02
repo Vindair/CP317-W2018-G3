@@ -1,18 +1,25 @@
 # CP317-W2018-G3
 
 ### Requirements Document
-* Located at `documents/Subby-Requirements.md`  
+* Located at `documents/Subby-Requirements.md`
 * Viewable at: https://rawgit.com/Kuresov/CP317-W2018-G3/master/documents/Subby-Requirements.md.html
 
 ### Developer Notes
+#### Running Subby (Development)
+  * Install PostgreSQL with the default admin user settings, reachable at localhost:
+    * DB Name: subby
+    * User: postgres
+    * Password: postgres
+    * Port: 5432
+  * Ensure `python3` and `pip3` are installed. From the project directory, run `pip3 install -r requirements.txt`
+  * From the project directory, run `python3 manage.py runserver --settings=subby_project.settings --configuration=Dev`. Subby will be running at `http://localhost:8000`
+
 #### Required dependencies:
-  * Python3 + Django
+  * Python3
+  * PostgreSQL
 
 #### Optional Dependencies:
-  * Node + npm
-
-#### Running Subby locally
-  * From the project directory, run `python manage.py runserver`. Subby will be running at `http://localhost:8000`
+  * Node + npm (for Markdown generation)
 
 #### Tasks
   * `gulp markdown` will generate clean HTML from the .md files in `documents/`. Use this instead of editing the HTML directly to avoid losing changes.
