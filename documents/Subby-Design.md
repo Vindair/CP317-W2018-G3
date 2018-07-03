@@ -244,6 +244,7 @@ As discussed in the Analysis Phase, the system consists of five packages: User P
 # 8. Revision History
 ## Version 1.0
 * **Section 1**
+  * Sarah Younes [1.0 - 1.1] [2018-07-01]
   * Sandra Sung [1.3 - 1.4] [2018-07-03]
   
 * **Section 3**
@@ -251,10 +252,12 @@ As discussed in the Analysis Phase, the system consists of five packages: User P
   
 * **Section 4**
   *  Alex Kirsopp [4.1] [2018-06-20]
+   * Sarah Younes [4.1.2 - 4.1.4] [2018-07-02]
 
 * **Section 6**
   *  Alex Kirsopp [6.2.1] [2018-06-27]
   *  Xiaochao Luo [6.2.5] [2018-07-01]
+  * Sarah Younes [6.1] [2018-07-02]
 
 * **Other**
     * Alex Kirsopp - Layout, initial outline, markdown, etc
