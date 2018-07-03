@@ -207,6 +207,7 @@ As discussed in the Analysis Phase, the system consists of five packages: User P
 ## 6.2.3 Rating Package
 ## 6.2.4 Favorite Package
 ## 6.2.5 Report Package
+![UserPackage](https://i.imgur.com/cqmxUjY.png)
 
 ### Report Class
 #### Methods
