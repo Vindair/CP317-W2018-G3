@@ -6,25 +6,25 @@
 1. **[Introduction](#1introduction)**  
   1.1. [Purpose](#11purpose)  
   1.2. [Intended Audience](#12intendedaudience)  
-  1.3. [Product Scope](#13productscope)
-  1.4. [Referencing Documents](#14referencingdocuments)
+  1.3. [Product Scope](#13productscope)  
+  1.4. [Referencing Documents](#14referencingdocuments)  
 2. **[Major Features](#2majorfeatures)**  
   2.1. [Create Sublet Listings](#21createsubletlistings)  
   2.2. [Browse/Search Sublet Listings](#22browsesearchsubletlistings)  
   ... more  
 3. **[Design Considerations](#3designconsiderations)**  
-  3.1. [Assumptions and Dependencies](#31assumptionsanddependencies)
-  3.2. [End-user Characteristics](#32endusercharacteristics)
-  3.3. [General Constraints](#33generalconstraints)
-  3.4. [Goals and Guidelines](#34goalsandguidelines)
-  3.5. [Development Methods](#35developmentmethods)
+  3.1. [Assumptions and Dependencies](#31assumptionsanddependencies)  
+  3.2. [End-user Characteristics](#32endusercharacteristics)  
+  3.3. [General Constraints](#33generalconstraints)  
+  3.4. [Goals and Guidelines](#34goalsandguidelines)  
+  3.5. [Development Methods](#35developmentmethods)  
 4. **[Development Policies](#developmentpolicies)**  
   4.1. [Technical Standards and Guidelines](#41technicalstandardsandguidelines)  
-  4.1.1. [General Guidelines](#411generalguidelines) 
-  4.1.2. [Technical Standards](#412technicalstandards)
+  4.1.1. [General Guidelines](#411generalguidelines)  
+  4.1.2. [Technical Standards](#412technicalstandards)  
   4.1.3. [Data Storage](#413datastorage)  
-  4.1.4. [Data Security](#414datasecurity)
-  4.1.5. [Control Flow](#415controlflow) 
+  4.1.4. [Data Security](#414datasecurity)  
+  4.1.5. [Control Flow](#415controlflow)  
 5. **[Project Testing](#5projecttesting)**  
   5.1. [Testing Strategies](#51testingstrategies)  
 6. **[Project Architecture](#6projectarchitecture)**  
@@ -52,8 +52,8 @@ The intended audience for Subby includes students in the Waterloo region who are
 The scope of Subby is driven by the need for a “one-stop shop” for Waterloo sublets. This will be done by creating, advertising and maintaining a sole website dedicated for finding and selling sublets. Achieving this will simplify an individual’s search to find a place for the school year while also aiding in an individual’s search for a renter. The finished product will be simple to use and easy to navigate through its various filters.  
 
 ## 1.4. Referencing Documents
-* Requirements Documentation for Subby
-* Analysis Documentation for Subby
+* [Requirements Documentation for Subby](https://rawgit.com/Kuresov/CP317-W2018-G3/master/documents/Subby-Requirements.md.html)
+* [Analysis Documentation for Subby](https://rawgit.com/Kuresov/CP317-W2018-G3/master/documents/Subby-Analysis.md.html)
 
 # 2. Major Features
 ## 2.1. Create Sublet Listings
@@ -245,7 +245,7 @@ As discussed in the Analysis Phase, the system consists of five packages: User P
 ## Version 1.0
 * **Section 1**
   * Sarah Younes [1.0 - 1.1] [2018-07-01]
-  * Sandra Sung [1.3 - 1.4] [2018-07-03]
+  * Sandra Sung [1.2 - 1.4] [2018-07-03]
   
 * **Section 3**
   * Sandra Sung [3.1 - 3.5] [2018-07-03]
