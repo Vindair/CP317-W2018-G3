@@ -100,6 +100,10 @@ The Design Phase seeks to capture and document the specific data structures and 
       
 ### 4.1.5. Control Flow 
 
+
+See [Postgresql]( https://www.postgresql.org/about/) for more on database specs 
+
+
 ## 4.2 Project Deployment
 * The deployment process will support starting the application on virtual server instances on Heroku. However it could run on a server using any OS that supports Python 3, as this is the runtime that Subby will use.
 * Depending on the deployment configuration, the hosting server will also need to support a local Postgres database; alternatively, a separate server with a networked Postgres instance must be provided and reachable by the application server.
