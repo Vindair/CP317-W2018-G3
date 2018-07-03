@@ -15,7 +15,10 @@
 4. **[Development Policies](#developmentpolicies)**  
   4.1. [Technical Standards and Guidelines](#41technicalstandardsandguidelines)  
   4.1.1. [General Guidelines](#411generalguidelines)  
-  4.1.2. [Technical Standards](#412technicalstandards)  
+  4.1.2. [Technical Standards](#412technicalstandards)
+  4.1.3. [Data Storage](#413datastorage)  
+  4.1.4. [Data Security](#414datasecurity)
+  4.1.4. [Control Flow](#415controlflow) 
 5. **[Project Testing](#5projecttesting)**  
   5.1. [Testing Strategies](#51testingstrategies)  
 6. **[Project Architecture](#6projectarchitecture)**  
@@ -30,7 +33,12 @@
 8. **[Revision History](#8revisionhistory)**  
 
 # 1. Introduction
+In the Design Phase, we consider the behaviour of the system and detail its design.
+Here, the software architecture is established, providing the framework of the various subsystems and the interaction between them. Building on the Analysis Phase, the Architecture Design introduces the corresponding interfaces of the predefined modules outlined in the previous phases. Additionally, this phase incorporates the Detailed Design which outlays the algorithms and data structures responsible for the operation of the product modules. 
+
 ## 1.1. Purpose
+The Design Phase seeks to capture and document the specific data structures and workflows of the system in order to provide a detailed description of the projects design and automation. Once completed, the development team may proceed to the Implementation Phase. 
+
 ## 1.2. Intended Audience
 
 # 2. Major Features
@@ -50,6 +58,32 @@
 * Methods that perform non-trivial operations should have a short comment with a description of their side-effects.
 * Blocks within methods that are complex should have a short comment explaining their purpose.
 * Frontend HTML and CSS must be in compliance with the established W3C standards.
+
+### 4.1.3. Data Storage  
+*	All objects will be organized into logical groups within one or more schemas in the database to maintain data organization and manageability 
+*	Objects with in one schema should be accessible within another schema, assuming access is permitted 
+*	Permit flexible and robust implementation of user defined objects, such as functions, data types, indexes and operators
+*	Support a variety of data types, such as:
+    * Boolean
+    * Binary
+    * Text (varchar, chart, text)
+    * Date/Time
+    * Enum
+    * Array
+    * User defined data type
+    
+    
+### 4.1.4. Data Security 
+*	Database must maintain the security and integrity of data housed with in it on several levels:
+    * Access Control: 
+        * Postgres ensures all files stored are protected from reading by any accounts other than the Admin
+        * Access is granted or revoked on any object all the way down the column level 
+        * User authentication is performed by backend server and postmaster who sanction permissions to users requesting access to dat
+        * Each Postgres user account is assigned a username and is further secured with a password
+        * Write access is limited to the Admin by default 
+
+
+
 
 ## 4.2 Project Deployment
 * The deployment process will support starting the application on virtual server instances on Heroku. However it could run on a server using any OS that supports Python 3, as this is the runtime that Subby will use.
