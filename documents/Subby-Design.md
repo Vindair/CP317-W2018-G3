@@ -14,7 +14,8 @@
 3. **[Design Considerations](#3designconsiderations)**  
 4. **[Development Policies](#developmentpolicies)**  
   4.1. [Technical Standards and Guidelines](#41technicalstandardsandguidelines)  
-  4.1.1. [General Guidelines](#411generalguidelines)  
+  4.1.1. [General Guidelines](#411generalguidelines) 
+  
   4.1.2. [Technical Standards](#412technicalstandards)
   4.1.3. [Data Storage](#413datastorage)  
   4.1.4. [Data Security](#414datasecurity)
