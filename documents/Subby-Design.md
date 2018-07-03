@@ -6,12 +6,18 @@
 1. **[Introduction](#1introduction)**  
   1.1. [Purpose](#11purpose)  
   1.2. [Intended Audience](#12intendedaudience)  
-  ...more  
+  1.3. [Product Scope] (#13productscope)
+  1.4. [Referencing Documents] (#14referencingdocuments)
 2. **[Major Features](#2majorfeatures)**  
   2.1. [Create Sublet Listings](#21createsubletlistings)  
   2.2. [Browse/Search Sublet Listings](#22browsesearchsubletlistings)  
   ... more  
 3. **[Design Considerations](#3designconsiderations)**  
+  3.1. [Assumptions and Dependencies] (#31assumptionsanddependencies)
+  3.2. [End-user Characteristics] (#32endusercharacteristics)
+  3.3. [General Constraints] (#33generalconstraints)
+  3.4. [Goals and Guidelines] (#34goalsandguidelines)
+  3.5. [Development Methods] (#35developmentmethods)
 4. **[Development Policies](#developmentpolicies)**  
   4.1. [Technical Standards and Guidelines](#41technicalstandardsandguidelines)  
   4.1.1. [General Guidelines](#411generalguidelines) 
@@ -40,12 +46,48 @@ Here, the software architecture is established, providing the framework of the v
 The Design Phase seeks to capture and document the specific data structures and workflows of the system in order to provide a detailed description of the project's design and automation. Once completed, the development team may proceed to the Implementation Phase. 
 
 ## 1.2. Intended Audience
+The intended audience for Subby includes students in the Waterloo region who are either looking to sublet a place or are looking to rent their place out for a specified amount of time. 
+
+## 1.3. Product Scope
+The scope of Subby is driven by the need for a “one-stop shop” for Waterloo sublets. This will be done by creating, advertising and maintaining a sole website dedicated for finding and selling sublets. Achieving this will simplify an individual’s search to find a place for the school year while also aiding in an individual’s search for a renter. The finished product will be simple to use and easy to navigate through its various filters.  
+
+## 1.4. Referencing Documents
+* Requirements Documentation for Subby
+* Analysis Documentation for Subby
 
 # 2. Major Features
 ## 2.1. Create Sublet Listings
 ## 2.2. Browse/Search Sublet Listings
 
 # 3. Design Considerations
+## 3.1. Assumptions and Dependencies
+* Users will have basic knowledge of how to use a computer
+* Users will have a university email to register
+* Google Maps API will be available for use
+
+## 3.2. End-user Characteristics
+* The ability for administrators to fix, update and maintain the website
+* Users have the ability to filter their searches based on their needs
+* Users are able to view available sublets on a map 
+* Users can post their rooms for rent in addition to posting “wanted” ads 
+* Users can rate other users based on their experiences
+* Users are able to place a bid on properties they are interested in 
+
+## 3.3. General Constraints
+* Google Maps API Budget 
+  * Daily free limit of 25,000 map loads 
+	* $0.50 USD per 1,000 map loads over the daily free limit up to a maximum of 100,000 map loads
+  * Subby administrators are trying to make the site as cost-effective as possible which will limit the site to a daily limit of 25,000 map loads 
+
+## 3.4. Goals and Guidelines
+* Comments will be used when coding
+* All features in the design and analysis documents will be adhered to
+* Any feature changes made to Subby will be documented
+* All work done for the project will have SQA performed on them 
+
+## 3.5. Development Methods
+* Utilizing UML to organize and guide the code
+* Performing SQA throughout the project to ensure correctness and thoroughness
 
 # 4. Development Policies
 ## 4.1. Technical Standards and Guidelines
@@ -201,6 +243,12 @@ As discussed in the Analysis Phase, the system consists of five packages: User P
 
 # 8. Revision History
 ## Version 1.0
+* **Section 1**
+  * Sandra Sung [1.3 - 1.4] [2018-07-03]
+  
+* **Section 3**
+  * Sandra Sung [3.1 - 3.5] [2018-07-03]
+  
 * **Section 4**
   *  Alex Kirsopp [4.1] [2018-06-20]
 
