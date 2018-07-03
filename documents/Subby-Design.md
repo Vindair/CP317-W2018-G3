@@ -37,7 +37,7 @@ In the Design Phase, we consider the behaviour of the system and detail its desi
 Here, the software architecture is established, providing the framework of the various subsystems and the interaction between them. Building on the Analysis Phase, the Architecture Design introduces the corresponding interfaces of the predefined modules outlined in the previous phases. Additionally, this phase incorporates the Detailed Design which outlays the algorithms and data structures responsible for the operation of the product modules. 
 
 ## 1.1. Purpose
-The Design Phase seeks to capture and document the specific data structures and workflows of the system in order to provide a detailed description of the projects design and automation. Once completed, the development team may proceed to the Implementation Phase. 
+The Design Phase seeks to capture and document the specific data structures and workflows of the system in order to provide a detailed description of the project's design and automation. Once completed, the development team may proceed to the Implementation Phase. 
 
 ## 1.2. Intended Audience
 
