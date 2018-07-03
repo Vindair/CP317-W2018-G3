@@ -113,6 +113,9 @@ See [Postgresql]( https://www.postgresql.org/about/) for more on database specs
 # 6. Project Architecture
 ## 6.1. Class Diagram
 ## 6.2. Package Details
+As discussed in the Analysis Phase, the system consists of five packages: User Package, Sublet Package, Rating Package, Favourite Package, and Report Package. Within each package diagram, we list the relevant entity objects and their corresponding methods. Additionally, each package diagram includes the control objects responsible for realizing the major use cases representing the interactions between external actors and the system. 
+
+
 ## 6.2.1 User Package
 ![UserPackage](https://i.imgur.com/zEhaUms.jpg)
 
