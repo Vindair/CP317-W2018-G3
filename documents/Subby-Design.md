@@ -81,9 +81,24 @@ The Design Phase seeks to capture and document the specific data structures and 
         * User authentication is performed by backend server and postmaster who sanction permissions to users requesting access to dat
         * Each Postgres user account is assigned a username and is further secured with a password
         * Write access is limited to the Admin by default 
-
-
-
+   * Data Integrity:
+      * Foreign Keys
+      * Primary Keys
+      * Column constraints
+      * Row Checks
+      * UNIQUE, NOT NULL
+      * Explicit Locks, Advisory Locks 
+  * Data Recovery: 
+      * Online backup
+      * Point-in-time recovery using write-ahead logging 
+      * Tablespaces
+      * Concurrency Control:
+          * Concurrency is managed through multi-version concurrency control (MVCC) and immunity to dirty reads 
+          * Ensures each transaction is not visible to other transactions until committed 
+          * Uphold ACID principles:
+              * Three levels of transaction isolation are offered: read committed, repeatable read and serializable 
+      
+### 4.1.5. Control Flow 
 
 ## 4.2 Project Deployment
 * The deployment process will support starting the application on virtual server instances on Heroku. However it could run on a server using any OS that supports Python 3, as this is the runtime that Subby will use.
