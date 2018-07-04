@@ -241,6 +241,8 @@ As discussed in the Analysis Phase, the system consists of five packages: User P
     * sublets() - Returns an array of Sublets that has been reported. Only available for admins.
 
 # 7. Data Dictionary
+![DataDictionary](https://i.imgur.com/frsaeyW.png)
+
 
 # 8. Revision History
 ## Version 1.0
