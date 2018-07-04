@@ -206,6 +206,29 @@ As discussed in the Analysis Phase, the system consists of five packages: User P
 ## 6.2.2 Sublet Package
 ## 6.2.3 Rating Package
 ## 6.2.4 Favorite Package
+
+![SubbyFavouriteDiagram](https://i.imgur.com/3X5iN2c.png)
+### Favourite Class
+  *  **FavouritesLister:** Gathers and returns all favourites for sublet listings display purposes
+  *  **FavouritesManager:** Creates or destroys favourites from the database
+### Methods
+  * Contructor (public)
+    *  Favourite(user_id: int, sublet_id: int) - Constructes Favourite
+    
+  * Getters (public)
+    *  get_favourite_id():int - Returns favourite ID
+    *  get_sublet_id():int - Returns the favourited sublet ID
+    *  get_user_id():int - Returns user ID the favourite is tied to
+    *  get_created_at():datetime - Returns time data for time of class creation
+    *  get_updated_at():datetime - Returns time data for time of last update to class
+  
+  * Setters (public)
+    *  set_created_at(date: datetime) - Updates created_at
+    *  set_updated_at(date: datetime) - Updates updated_at
+    
+  * Relation Helpers (public):
+    * save() - Saves and persistes Favourite
+    
 ## 6.2.5 Report Package
 ![UserPackage](https://i.imgur.com/cqmxUjY.png)
 
