@@ -154,9 +154,7 @@ The scope of Subby is driven by the need for a “one-stop shop” for Waterloo 
               * Three levels of transaction isolation are offered: read committed, repeatable read and serializable 
       
 ### 4.1.5. Control Flow 
-
-
-See [Postgresql]( https://www.postgresql.org/about/) for more on database specs 
+*	Data will transmit between client and PostgreSQL database. Client interacts with the PostgreSQL database using PHP Data Objects (PDO) API. It allows performing the common database operations in PHP such as creating new tables, inserting data, updating data, querying data, deleting data and so on. Once the connection is established successfully, client will directly send qury to database and database will respond corresponding answers to client. 
 
 
 ## 4.2 Project Deployment
