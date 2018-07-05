@@ -167,6 +167,8 @@ The scope of Subby is driven by the need for a “one-stop shop” for Waterloo 
 
 # 6. Project Architecture
 ## 6.1. Class Diagram
+![DesignClassDiagram](https://i.imgur.com/ODITqTs.jpg)
+
 ## 6.2. Package Details
 As discussed in the Analysis Phase, the system consists of five packages: User Package, Sublet Package, Rating Package, Favourite Package, and Report Package. Within each package diagram, we list the relevant entity objects and their corresponding methods. Additionally, each package diagram includes the control objects responsible for realizing the major use cases representing the interactions between external actors and the system. 
 
@@ -217,8 +219,7 @@ As discussed in the Analysis Phase, the system consists of five packages: User P
     * reports() - Returns an array of Reports created by the User.
 
 ## 6.2.2 Sublet Package
-![UserPackage](https://i.imgur.com/unhsSCQ.png)
-
+	
 ### Sublet Class
 #### Methods
 * Constructor (public) 
