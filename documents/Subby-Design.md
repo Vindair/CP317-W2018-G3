@@ -218,6 +218,37 @@ As discussed in the Analysis Phase, the system consists of five packages: User P
 
 ## 6.2.2 Sublet Package
 ## 6.2.3 Rating Package
+
+![SubbyRatingPackage](https://i.imgur.com/szf85fl.png)
+### Rating Class
+
+### Methods
+  * Constructor (public)
+    * Rating(rating: int, comment : string, user_id: int, reviewed_user_id:int) - Constructes a Rating
+    
+  * Getters (public)
+    *  get_comment():string - Returns the text description tied to a rating
+    *  get_reviewed_user_id():int - Returns the ID of the user being rated
+    *  get_user_id():int - Returns the ID of the user who is rating another user
+    *  get_created_at():datetime - Returns time data for time of class creation
+    *  get_updated_at():datetime - Returns time data for time of last update to class
+  
+  * Setters (public)
+    *  set_rating(rating: tinyint) - Updates the rating review number
+    *  set_comment(comment: string) - Updates the comment for the review
+    *  set_reviewed_user_id(reviewed_user_id: int) - Updates the reviewed user ID
+    *  set_user_id(user_id: int) - Updates the reviewing user ID
+    *  set_created_at(date: datetime) - Updates created_at
+    *  set_updated_at(date: datetime) - Updates updated_at
+    
+  * Helpers (private)
+    *  validate_rating(rating: tinyint) - Ensures that the rating is valid (i.e A value that is held in ALLOWED_REVIEW_VALS)
+    
+  * Relation Helpers (public):
+    * save() - Saves and persistes the Rating
+    * users() - Returns an array of User that have been rated.
+    * sublet() - Returns an array of Sublets that is held by the rated user.
+    
 ## 6.2.4 Favorite Package
 
 ![SubbyFavouriteDiagram](https://i.imgur.com/3X5iN2c.png)
@@ -225,7 +256,7 @@ As discussed in the Analysis Phase, the system consists of five packages: User P
   *  **FavouritesLister:** Gathers and returns all favourites for sublet listings display purposes
   *  **FavouritesManager:** Creates or destroys favourites from the database
 ### Methods
-  * Contructor (public)
+  * Constructor (public)
     *  Favourite(user_id: int, sublet_id: int) - Constructes Favourite
     
   * Getters (public)
@@ -247,7 +278,7 @@ As discussed in the Analysis Phase, the system consists of five packages: User P
 
 ### Report Class
 #### Methods
-* Contructor (public)
+* Constructor (public)
     * Report(user_id: int, sublet_id: int, issue: string, description: string) – Class Constructor. All non-null fields are enforced except datetime frields, which are recorded by system automatically.
 
 * Getters (public): only available for admins
