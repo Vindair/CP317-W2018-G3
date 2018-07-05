@@ -32,17 +32,17 @@ Improving the current state of subletting would be beneficial to students throug
 The website will display the listing information found in the database in the form of text, diagrams, or maps. The website will allow administrators to insert, edit, and remove entries from the database/website at their discretion. A website user would be allowed access to the data on the front-end and browse through the listings on the site, as well as post new listings. 
 
 ## 1.1. Purpose
-The current state of subletting is disorganized and inconvenient to use, with the most popular platform being FaceBook--a site not even designed for posting sublets. Subby will allow for listings on FaceBook, Kijiji, and other sites to be consolidated, thus providing  a more comprehensive product than what is currently available to the student sublettng market. 
+The current state of subletting is disorganized and inconvenient to use, with the most popular platform being FaceBook--a site not even designed for posting sublets. Subby will allow for listings on FaceBook, Reddit, and other sites to be consolidated, thus providing  a more comprehensive product than what is currently available to the student sublettng market. 
 
 The idea is to provide:
 1. **Subletters:**
-    * Simple interface to browse through sublet listings, easily sorted using specialized filters
+    * Simple interface to browse through sublet listings which are easily sorted using specialized filters
     * Ability to contact sublessors through site or through provided contact information
-    * Security in browsing since all listings will go through a verification process to confirm legitimacy
+    * Security in browsing since all listings will go through a verification process to confirm legitimacy in ownership/ability to lease
 2. **Sublessors:**
     * Ability to post new sublet listings according to site policy
     * Ability to modify existing listings in case any information changes
-    * Allows for listings to be seen by verified users, and be contacted by these users
+    * Allows for listings to be seen by and be contacted by verified users
     * Provide an interface to let one know the current competitive pricing in the property area
 3. **Administrators:**
     * All functionality available to users, as well as the ability to remove and edit any listing at their discretion
@@ -192,6 +192,9 @@ A sample task list for the user:
 6. Rating a listing
 
 ### 5.2.1. Task Specifications
+
+#### Administrator Tasks:
+
 **Task 1: Logging into Subby management tool.**
 The user opens a web browser and navigates to the Subby management tool login page. The user enters valid admin credentials and logs in by selecting the "Login" button.
 
@@ -222,7 +225,9 @@ An administrator views the database containing all listings, and selects the "De
 **Task 6: Logout. (Prerequisites: Task 1)**
 An administrator presses the "Logout" button in the top right corner of the management tool, which take the user back to the login page.
 
-**Task 7: Creating an account using Subby sign-up interface.**
+#### User Tasks:
+
+**Task 1: Creating an account using Subby sign-up interface.**
 The user navigates to the home page of Subby and presses the "Register" button in the top right corner of the website, creating an overlay over the current page prompting the user to enter the following information:
 * Username
 * Password
@@ -231,40 +236,47 @@ The user navigates to the home page of Subby and presses the "Register" button i
 
 Additionally, the user must pass a captcha to ensure human entry. A link to terms of service and privacy policy will be included below the form for the user to read if neccesary. Upon entering the correct information, the user presses the "Sign Up" button at the bottom of the overlay, which will then prompt the user as to whether or not the account creation was successful. A successful account creation must follow the following criteria:
 * Non-duplicate username
-* Password conforming to site-specified rules
+* Password conforming to site-specific rules
 * Non-duplicate e-mail address
 * Valid captcha entry
 Upon success, the overlay will disappear and be replaced by a pop-up informing the user that a verification email has been sent to their address. Upon failure, the form will highlight where the errors are in red around the specific entries and prompt the user to enter their information again.
 
-**Task 8: Logging into Subby using login interface. (Prerequisites: Task 7)**
+**Task 2: Logging into Subby using login interface. (Prerequisites: Task 7)**
 The user logs by selecting the "Login" button in the top right corner of the web page. This creates an overlay over the current page prompting the user to enter their login information:
 * Username/E-mail
 * Password
 
 Upon entering their credentials, the user selects the "Sign in" button at the bottom of the overlay, which then indicates to the user whether or not their credentials are valid or not. If the former, the user is redirected to the home page, otherwise the overlay displays an error message indicating that invalid credentials are entered.
 
-**Task 9: Inserting a new sublet listing. (Prerequisites: Task 8)**
+**Task 3: Inserting a new sublet listing. (Prerequisites: Task 8)**
 The user selects the "Post Listing" button in the top right corner of the page. This loads a new page containing a form for the user to fill out about their listing. Such listing fields include: 
 * Location
 * Price per month
 * Duration of sublet
 * Special features 
 * Picture Attachments
+* Furniture
+* Utilities
 
-Upon entering the relevant information, the user presses the "Post" button at the bottom of the form which prompts the user with either a success message or an error message based on whether the post went through. The user may also cancel a new listing by pressing the "Cancel" button next to the "Post" button.
+Upon entering the relevant information, the user presses the "Post" button at the bottom of the form which prompts the user with either a success message or an error message based on whether the fields contain incorrect or no data or not. The user may also cancel a new listing by pressing the "Cancel" button next to the "Post" button.
 
-**Task 10: Modifying an existing sublet listing. (Prerequisites: Task 8, Task 9 if no posted listings)**
+**Task 4: Modifying an existing sublet listing. (Prerequisites: Task 8, Task 9 if no posted listings)**
 The user navigates to their "My Listings" to view all their currently posted listings. The user selects the "Edit" hyperlink next to a listing, and is directed to a new page containing a form with the listing information. The user is able to edit any information they entered in Task 9, as well as have the ability to mark the listing as "Sold". Upon making the relevant changes, the user presses the "Save" button at the bottom of the form to confirm any changes they made. The user may also cancel editing by pressing the "Cancel" button next to the "Save" button.
 
-**Task 11: Viewing/filtering/selecting posted listings.**
+**Task 5: Viewing/filtering/selecting posted listings.**
 The user navigates to the home page of Subby and enters a location into the search bar. Subsequently, a new page containing top listings closest to the location specified is loaded. The user is presented with filter options on the right hand side of the page, which allows the user to refine their results to their liking. Once the desired filters are selected, the user presses the "Filter" button to view the corresponding search results. Then, the user selects the listing of their interest, redirecting them to the individual listing page which displays all the relevant information about the sublet. Additionally, The user has the ability to view the sublessor contact information on the right hand side of the page if they are interested in making an offer.
 
-**Task 12: Rating a listing (Prerequisites: Task 8)**
-The user has navigates to an individual listings page. The user hovers over the stars on the listings page at a desired rating level and press down when they are satisfied with the rating they are giving. The user is prompted to submit proof of lease for the rating in an overlay which allows the user to submit an attachment. Once the user has attached their lease, the user presses the "Submit" button allowing for the rating to go through.
+**Task 6: Rating a listing (Prerequisites: Task 8)**
+The user has navigates to an individual listings page. The user hovers over the stars on the listings page at a desired rating level and press down when they are satisfied with the rating they are giving. The user presses the "Submit" button allowing for the rating to go through.
 
 # 6.0. Revision History
 
 ---
+## Version 1.3
+
+* **SQA Fixes**
+    * Mackenzie Dang [1, 3, 5] [2018-07-04]
+
 ## Version 1.2
 
 * **SQA Fixes**
