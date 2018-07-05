@@ -58,8 +58,9 @@ The scope of Subby is driven by the need for a “one-stop shop” for Waterloo 
 
 # 2. Major Features
 ## 2.1. Create Sublet Listings
-* Registered users can post and edit sublet listings
-  * Users can choose to upload pictures as well as a description of the location
+* Registered users can create sublet listings
+  * Users can add details, such as the location and a description, of the listing and choose to upload photos as well
+  * Users can also add filters to their listing, enabling their listing to be included in more refined searches.
   
 ## 2.2. Browse/Search Sublet Listings
 * Users can browse listings created by users
@@ -70,7 +71,8 @@ The scope of Subby is driven by the need for a “one-stop shop” for Waterloo 
   * Users can sort search results using price, date, and ratings
 
 ## 2.3. Contact Sublet Owners
-* Users can contact sublet owners through subby platform
+* Users can contact sublet owners through the subby platform
+  * 
 
 # 3. Design Considerations
 ## 3.1. Assumptions and Dependencies
