@@ -217,6 +217,39 @@ As discussed in the Analysis Phase, the system consists of five packages: User P
     * reports() - Returns and array of Reports created by the User.
 
 ## 6.2.2 Sublet Package
+	
+### Sublet Class
+#### Methods
+* Constructor (public) 
+	* Sublet(sublet_title: string, duration: int, price_per_month: double, location: string, description: string) – Class Constructor. All non-null fields are enforced except for datetime fields, which are automatically recorded by the system. 
+
+
+* Getters (public)
+    * get\_sublet_id(): int
+    * get\_is_sold(): boolean
+    * get\_sublet_title: string
+    * get\_duration():int
+    * get\_price_per_month(): double
+    * get\_location: string
+    * get\_description(): string
+    * get\_created_at(): datetime 
+    * get\_updated_at():datetime
+    * getowner_id(): int
+* Setters (public)
+    * set\_sublet_title(title: string
+    * set\_is_sold(status: boolean) 
+    * set\_duration(duration: int)
+    * set\_price_per_month(price: double)
+    * set\_location(location: string)
+    * set\_description(desc: string)
+    * set\_created_at(date: datetime)
+    * set\_updated_at(date: datetime)
+    * set\_owner_id(user_id: int)
+
+* Relation Helpers (public) 
+    * save() – Commits the Sublet to the database, assuming Sublet is correctly initiated 
+    * reviews() - Returns an array of Reviews concerning the Sublet 
+
 ## 6.2.3 Rating Package
 
 ![SubbyRatingPackage](https://i.imgur.com/szf85fl.png)
