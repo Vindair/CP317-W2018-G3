@@ -152,7 +152,7 @@ The user is the second of two actors in the system, and is allowed to insert con
 
 This UML diagrams displays the various models required to accomplish the above use-cases, as well as their attributes and relations.
 
-![SubbyUML](http://i.imgur.com/N7jpNTX.jpg)
+![SubbyUML](https://i.imgur.com/iBcv1EO.png)
 
 # 5. User Interface Specification
 
