@@ -69,7 +69,7 @@ The scope of Subby is driven by the need for a “one-stop shop” for Waterloo 
   * Users can sort search results using price, date, and ratings
 
 ## 2.3. Contact Sublet Owners
-* Users can conctact sublet owners through subby platform
+* Users can contact sublet owners through subby platform
 
 # 3. Design Considerations
 ## 3.1. Assumptions and Dependencies
