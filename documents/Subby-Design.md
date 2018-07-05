@@ -39,18 +39,18 @@
 8. **[Revision History](#8revisionhistory)**  
 
 # 1. Introduction
-In the Design Phase, we consider the behaviour of the system and detail its design.
+In the Design Phase we consider the behaviour of the system and detail its design.
 Here, the software architecture is established, providing the framework of the various subsystems and the interaction between them. Building on the Analysis Phase, the Architecture Design introduces the corresponding interfaces of the predefined modules outlined in the previous phases. Additionally, this phase incorporates the Detailed Design which outlays the algorithms and data structures responsible for the operation of the product modules. 
 
 ## 1.1. Purpose
-The Design Phase seeks to capture and document the specific data structures and workflows of the system in order to provide a detailed description of the project's design and automation. Once completed, the development team may proceed with a reliable forecast of the project’s time line and design in the Implementation Phase.  
+The Design Phase seeks to capture and document the specific data structures and workflows of the system in order to provide a detailed description of the project's design and automation. Once completed, the development team may proceed with a reliable forecast of the project’s time line and design for the Implementation Phase.  
  
 
 ## 1.2. Intended Audience
 The intended audience for Subby includes students in the Waterloo region who are either looking to sublet a place or are looking to rent their place out for a specified amount of time. 
 
 ## 1.3. Product Scope
-The scope of Subby is driven by the need for a “one-stop shop” for Waterloo sublets. This will be done by creating, advertising and maintaining a sole website dedicated for finding and selling sublets. Achieving this will simplify an individual’s search to find a place for the school year while also aiding in an individual’s search for a renter. The finished product will be simple to use and easy to navigate through its various filters.  
+The scope of Subby is driven by the need for a “one-stop shop” for Waterloo sublets. This will be done by creating, advertising and maintaining a sing website dedicated for finding and selling sublets. Achieving this will simplify an individual’s search to find a place for the school year while also aiding in an individual’s search for a renter. The finished product will be simple to use and easy to navigate through its various filters.  
 
 ## 1.4. Referencing Documents
 * [Requirements Documentation for Subby](https://rawgit.com/Kuresov/CP317-W2018-G3/master/documents/Subby-Requirements.md.html)
@@ -64,20 +64,20 @@ The scope of Subby is driven by the need for a “one-stop shop” for Waterloo 
   
 ## 2.2. Browse/Search Sublet Listings
 * Users can browse listings created by users
-  * Browsing is not limited to registered users and listings are accessible to public users
-  * Users can browse listing using a list, or by manipulating an interactive map
-* Search functions enable public and registered users to specify postings by location or name
-  * Filters can be applied by users to refine searches using criteria such as price range, size, rooms available, and duration
+  * Browsing is not limited to registered users and listings are accessible to public users 
+  * Users can browse listings using a list, or by manipulating an interactive map
+* Search functions enable public and registered users to specify postings by location or address
+  * Filters can be applied by users to refine searches using criteria such as, price range, size, number of rooms available, and duration of stay
   * Users can sort search results using price, date, and ratings
 
 ## 2.3. Contact Sublet Owners
 * Users can contact sublet owners through the subby platform
-  * 
+  
 
 # 3. Design Considerations
 ## 3.1. Assumptions and Dependencies
-* Users will have basic knowledge of how to use a computer
-* Users will have a university email to register
+* Users will have basic knowledge of how to use a computer, more specifically webiste navigation 
+* Users will have a university or college email to register
 * Google Maps API will be available for use
 
 ## 3.2. End-user Characteristics
@@ -176,7 +176,7 @@ As discussed in the Analysis Phase, the system consists of five packages: User P
 
 ### User Class
 #### Methods
-* Contructor (public)
+* Constructor (public)
     * User(options: map) - Class Constructor. Options parameter is a key-value object with the attributes of the desired User. Only non-null fields are enforced.
         * Options: (email: string, password: string, lastname: string, firstname: string, phonenumber: string)
 
@@ -214,7 +214,7 @@ As discussed in the Analysis Phase, the system consists of five packages: User P
     * reviews() - Returns an array of Reviews created by the User.
     * favorites() - Returns an array of Favorites created by the User.
     * sublets() - Returns an array of Sublets created by the User.
-    * reports() - Returns and array of Reports created by the User.
+    * reports() - Returns an array of Reports created by the User.
 
 ## 6.2.2 Sublet Package
 	
@@ -234,7 +234,7 @@ As discussed in the Analysis Phase, the system consists of five packages: User P
     * get\_description(): string
     * get\_created_at(): datetime 
     * get\_updated_at():datetime
-    * getowner_id(): int
+    * get\_owner_id(): int
 * Setters (public)
     * set\_sublet_title(title: string
     * set\_is_sold(status: boolean) 
