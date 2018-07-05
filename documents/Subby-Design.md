@@ -39,17 +39,18 @@
 8. **[Revision History](#8revisionhistory)**  
 
 # 1. Introduction
-In the Design Phase, we consider the behaviour of the system and detail its design.
+In the Design Phase we consider the behaviour of the system and detail its design.
 Here, the software architecture is established, providing the framework of the various subsystems and the interaction between them. Building on the Analysis Phase, the Architecture Design introduces the corresponding interfaces of the predefined modules outlined in the previous phases. Additionally, this phase incorporates the Detailed Design which outlays the algorithms and data structures responsible for the operation of the product modules. 
 
 ## 1.1. Purpose
-The Design Phase seeks to capture and document the specific data structures and workflows of the system in order to provide a detailed description of the project's design and automation. Once completed, the development team may proceed to the Implementation Phase. 
+The Design Phase seeks to capture and document the specific data structures and workflows of the system in order to provide a detailed description of the project's design and automation. Once completed, the development team may proceed with a reliable forecast of the project’s time line and design for the Implementation Phase.  
+ 
 
 ## 1.2. Intended Audience
 The intended audience for Subby includes students in the Waterloo region who are either looking to sublet a place or are looking to rent their place out for a specified amount of time. 
 
 ## 1.3. Product Scope
-The scope of Subby is driven by the need for a “one-stop shop” for Waterloo sublets. This will be done by creating, advertising and maintaining a sole website dedicated for finding and selling sublets. Achieving this will simplify an individual’s search to find a place for the school year while also aiding in an individual’s search for a renter. The finished product will be simple to use and easy to navigate through its various filters.  
+The scope of Subby is driven by the need for a “one-stop shop” for Waterloo sublets. This will be done by creating, advertising and maintaining a sing website dedicated for finding and selling sublets. Achieving this will simplify an individual’s search to find a place for the school year while also aiding in an individual’s search for a renter. The finished product will be simple to use and easy to navigate through its various filters.  
 
 ## 1.4. Referencing Documents
 * [Requirements Documentation for Subby](https://rawgit.com/Kuresov/CP317-W2018-G3/master/documents/Subby-Requirements.md.html)
@@ -57,24 +58,26 @@ The scope of Subby is driven by the need for a “one-stop shop” for Waterloo 
 
 # 2. Major Features
 ## 2.1. Create Sublet Listings
-* Registered users can post and edit sublet listings
-  * Users can choose to upload pictures as well as a description of the location
+* Registered users can create sublet listings
+  * Users can add details, such as the location and a description, of the listing and choose to upload photos as well
+  * Users can also add filters to their listing, enabling their listing to be included in more refined searches.
   
 ## 2.2. Browse/Search Sublet Listings
 * Users can browse listings created by users
-  * Browsing is not limited to registered users and listings are accessible to public users
-  * Users can browse listing using a list, or by manipulating an interactive map
-* Search functions enable public and registered users to specify postings by location or name
-  * Filters can be applied by users to refine searches using criteria such as price range, size, rooms available, and duration
+  * Browsing is not limited to registered users and listings are accessible to public users 
+  * Users can browse listings using a list, or by manipulating an interactive map
+* Search functions enable public and registered users to specify postings by location or address
+  * Filters can be applied by users to refine searches using criteria such as, price range, size, number of rooms available, and duration of stay
   * Users can sort search results using price, date, and ratings
 
 ## 2.3. Contact Sublet Owners
-* Users can contact sublet owners through subby platform
+* Users can contact sublet owners through the subby platform
+  
 
 # 3. Design Considerations
 ## 3.1. Assumptions and Dependencies
-* Users will have basic knowledge of how to use a computer
-* Users will have a university email to register
+* Users will have basic knowledge of how to use a computer, more specifically webiste navigation 
+* Users will have a university or college email to register
 * Google Maps API will be available for use
 
 ## 3.2. End-user Characteristics
@@ -153,9 +156,7 @@ The scope of Subby is driven by the need for a “one-stop shop” for Waterloo 
               * Three levels of transaction isolation are offered: read committed, repeatable read and serializable 
       
 ### 4.1.5. Control Flow 
-
-
-See [Postgresql]( https://www.postgresql.org/about/) for more on database specs 
+*	Data will transmit between client and PostgreSQL database. Client interacts with the PostgreSQL database using PHP Data Objects (PDO) API. It allows performing the common database operations in PHP such as creating new tables, inserting data, updating data, querying data, deleting data and so on. Once the connection is established successfully, client will directly send qury to database and database will respond corresponding answers to client. 
 
 
 ## 4.2 Project Deployment
@@ -175,7 +176,7 @@ As discussed in the Analysis Phase, the system consists of five packages: User P
 
 ### User Class
 #### Methods
-* Contructor (public)
+* Constructor (public)
     * User(options: map) - Class Constructor. Options parameter is a key-value object with the attributes of the desired User. Only non-null fields are enforced.
         * Options: (email: string, password: string, lastname: string, firstname: string, phonenumber: string)
 
@@ -213,10 +214,74 @@ As discussed in the Analysis Phase, the system consists of five packages: User P
     * reviews() - Returns an array of Reviews created by the User.
     * favorites() - Returns an array of Favorites created by the User.
     * sublets() - Returns an array of Sublets created by the User.
-    * reports() - Returns and array of Reports created by the User.
+    * reports() - Returns an array of Reports created by the User.
 
 ## 6.2.2 Sublet Package
+	
+### Sublet Class
+#### Methods
+* Constructor (public) 
+	* Sublet(sublet_title: string, duration: int, price_per_month: double, location: string, description: string) – Class Constructor. All non-null fields are enforced except for datetime fields, which are automatically recorded by the system. 
+
+
+* Getters (public)
+    * get\_sublet_id(): int
+    * get\_is_sold(): boolean
+    * get\_sublet_title: string
+    * get\_duration():int
+    * get\_price_per_month(): double
+    * get\_location: string
+    * get\_description(): string
+    * get\_created_at(): datetime 
+    * get\_updated_at():datetime
+    * get\_owner_id(): int
+* Setters (public)
+    * set\_sublet_title(title: string
+    * set\_is_sold(status: boolean) 
+    * set\_duration(duration: int)
+    * set\_price_per_month(price: double)
+    * set\_location(location: string)
+    * set\_description(desc: string)
+    * set\_created_at(date: datetime)
+    * set\_updated_at(date: datetime)
+    * set\_owner_id(user_id: int)
+
+* Relation Helpers (public) 
+    * save() – Commits the Sublet to the database, assuming Sublet is correctly initiated 
+    * reviews() - Returns an array of Reviews concerning the Sublet 
+
 ## 6.2.3 Rating Package
+
+![SubbyRatingPackage](https://i.imgur.com/szf85fl.png)
+### Rating Class
+
+### Methods
+  * Constructor (public)
+    * Rating(rating: int, comment : string, user_id: int, reviewed_user_id:int) - Constructes a Rating
+    
+  * Getters (public)
+    *  get_comment():string - Returns the text description tied to a rating
+    *  get_reviewed_user_id():int - Returns the ID of the user being rated
+    *  get_user_id():int - Returns the ID of the user who is rating another user
+    *  get_created_at():datetime - Returns time data for time of class creation
+    *  get_updated_at():datetime - Returns time data for time of last update to class
+  
+  * Setters (public)
+    *  set_rating(rating: tinyint) - Updates the rating review number
+    *  set_comment(comment: string) - Updates the comment for the review
+    *  set_reviewed_user_id(reviewed_user_id: int) - Updates the reviewed user ID
+    *  set_user_id(user_id: int) - Updates the reviewing user ID
+    *  set_created_at(date: datetime) - Updates created_at
+    *  set_updated_at(date: datetime) - Updates updated_at
+    
+  * Helpers (private)
+    *  validate_rating(rating: tinyint) - Ensures that the rating is valid (i.e A value that is held in ALLOWED_REVIEW_VALS)
+    
+  * Relation Helpers (public):
+    * save() - Saves and persistes the Rating
+    * users() - Returns an array of User that have been rated.
+    * sublet() - Returns an array of Sublets that is held by the rated user.
+    
 ## 6.2.4 Favorite Package
 
 ![SubbyFavouriteDiagram](https://i.imgur.com/3X5iN2c.png)
@@ -224,7 +289,7 @@ As discussed in the Analysis Phase, the system consists of five packages: User P
   *  **FavouritesLister:** Gathers and returns all favourites for sublet listings display purposes
   *  **FavouritesManager:** Creates or destroys favourites from the database
 ### Methods
-  * Contructor (public)
+  * Constructor (public)
     *  Favourite(user_id: int, sublet_id: int) - Constructes Favourite
     
   * Getters (public)
@@ -246,7 +311,7 @@ As discussed in the Analysis Phase, the system consists of five packages: User P
 
 ### Report Class
 #### Methods
-* Contructor (public)
+* Constructor (public)
     * Report(user_id: int, sublet_id: int, issue: string, description: string) – Class Constructor. All non-null fields are enforced except datetime frields, which are recorded by system automatically.
 
 * Getters (public): only available for admins
