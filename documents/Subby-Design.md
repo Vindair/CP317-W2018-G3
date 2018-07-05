@@ -217,7 +217,8 @@ As discussed in the Analysis Phase, the system consists of five packages: User P
     * reports() - Returns an array of Reports created by the User.
 
 ## 6.2.2 Sublet Package
-	
+![UserPackage](https://i.imgur.com/unhsSCQ.png)
+
 ### Sublet Class
 #### Methods
 * Constructor (public) 
