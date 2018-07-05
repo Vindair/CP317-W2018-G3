@@ -117,8 +117,8 @@ The scope of Subby is driven by the need for a “one-stop shop” for Waterloo 
 * Frontend HTML and CSS must be in compliance with the established W3C standards.
 
 ### 4.1.3. Data Storage  
-*	All objects will be organized into logical groups within one or more schemas in the database to maintain data organization and manageability 
-*	Objects with in one schema should be accessible within another schema, assuming access is permitted 
+*	All objects will be organized into logical groups within one or more schemas in the database to maintain data organization and manageability. 
+*	Objects within one schema should be accessible within another schema, assuming access is permitted. 
 *	Permit flexible and robust implementation of user defined objects, such as functions, data types, indexes and operators
 *	Support a variety of data types, such as:
     * Boolean
@@ -133,11 +133,11 @@ The scope of Subby is driven by the need for a “one-stop shop” for Waterloo 
 ### 4.1.4. Data Security 
 *	Database must maintain the security and integrity of data housed with in it on several levels:
     * Access Control: 
-        * Postgres ensures all files stored are protected from reading by any accounts other than the Admin
-        * Access is granted or revoked on any object all the way down the column level 
-        * User authentication is performed by backend server and postmaster who sanction permissions to users requesting access to dat
-        * Each Postgres user account is assigned a username and is further secured with a password
-        * Write access is limited to the Admin by default 
+        * Postgres ensures all files stored are protected from reading by any accounts other than the Admin.
+        * Access is granted or revoked on any object all the way down the column level.
+        * User authentication is performed by backend server and postmaster, who sanction permissions to users requesting access to data.
+        * Each Postgres user account is assigned a username and is further secured with a password.
+        * Write access is limited to the Admin by default.
     * Data Integrity:
         * Foreign Keys
         * Primary Keys
@@ -150,10 +150,10 @@ The scope of Subby is driven by the need for a “one-stop shop” for Waterloo 
         * Point-in-time recovery using write-ahead logging 
         * Tablespaces
     * Concurrency Control:
-        * Concurrency is managed through multi-version concurrency control (MVCC) and immunity to dirty reads 
-        * Ensures each transaction is not visible to other transactions until committed 
+        * Concurrency is managed through multi-version concurrency control (MVCC) and immunity to dirty reads.
+        * Ensures each transaction is not visible to other transactions until committed.
         * Uphold ACID principles:
-              * Three levels of transaction isolation are offered: read committed, repeatable read and serializable 
+              * Three levels of transaction isolation are offered: read committed, repeatable read and serializable.
       
 ### 4.1.5. Control Flow 
 *	Data will transmit between client and PostgreSQL database. Client interacts with the PostgreSQL database using PHP Data Objects (PDO) API. It allows performing the common database operations in PHP such as creating new tables, inserting data, updating data, querying data, deleting data and so on. Once the connection is established successfully, client will directly send qury to database and database will respond corresponding answers to client. 
