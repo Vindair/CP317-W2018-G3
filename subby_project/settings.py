@@ -39,16 +39,16 @@ class Dev(Configuration):
 
 class Production(Configuration):
     DEBUG = False
-    SECRET_KEY = os.environ['SECRET_KEY']
+    SECRET_KEY = os.environ.get('SECRET_KEY', '')
     ALLOWED_HOSTS = []
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': os.environ['DBNAME'],
-            'USER': os.environ['DBUSER'],
-            'HOST': os.environ['DBHOST'],
-            'PORT': os.environ['DBPORT'],
-            'PASSWORD': os.environ['DBPASS'],
+            'NAME': os.environ.get('DBNAME', ''),
+            'USER': os.environ.get('DBUSER', ''),
+            'HOST': os.environ.get('DBHOST', ''),
+            'PORT': os.environ.get('DBPORT', ''),
+            'PASSWORD': os.environ.get('DBPASS', ''),
         }
     }
 
