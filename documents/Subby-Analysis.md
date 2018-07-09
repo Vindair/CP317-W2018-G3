@@ -2,7 +2,7 @@
 
 ---
 ## Analysis Document
-Version 1.2 – 06/27/18
+Version 1.2 - 06/27/18
 1. **[Introduction](#1introduction)**  
   1.1. [Purpose](#11purpose)  
 2. **[Object Classification](#2objectclassification)**  

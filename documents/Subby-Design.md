@@ -43,14 +43,14 @@ In the Design Phase we consider the behaviour of the system and detail its desig
 Here, the software architecture is established, providing the framework of the various subsystems and the interaction between them. Building on the Analysis Phase, the Architecture Design introduces the corresponding interfaces of the predefined modules outlined in the previous phases. Additionally, this phase incorporates the Detailed Design which outlays the algorithms and data structures responsible for the operation of the product modules. 
 
 ## 1.1. Purpose
-The Design Phase seeks to capture and document the specific data structures and workflows of the system in order to provide a detailed description of the project's design and automation. Once completed, the development team may proceed with a reliable forecast of the project’s time line and design for the Implementation Phase.  
+The Design Phase seeks to capture and document the specific data structures and workflows of the system in order to provide a detailed description of the project's design and automation. Once completed, the development team may proceed with a reliable forecast of the project's time line and design for the Implementation Phase.  
  
 
 ## 1.2. Intended Audience
 The intended audience for Subby includes students in the Waterloo region who are either looking to sublet a place or are looking to rent their place out for a specified amount of time. 
 
 ## 1.3. Product Scope
-The scope of Subby is driven by the need for a “one-stop shop” for Waterloo sublets. This will be done by creating, advertising and maintaining a sing website dedicated for finding and selling sublets. Achieving this will simplify an individual’s search to find a place for the school year while also aiding in an individual’s search for a renter. The finished product will be simple to use and easy to navigate through its various filters.  
+The scope of Subby is driven by the need for a "one-stop shop" for Waterloo sublets. This will be done by creating, advertising and maintaining a sing website dedicated for finding and selling sublets. Achieving this will simplify an individual's search to find a place for the school year while also aiding in an individual's search for a renter. The finished product will be simple to use and easy to navigate through its various filters.  
 
 ## 1.4. Referencing Documents
 * [Requirements Documentation for Subby](https://rawgit.com/Kuresov/CP317-W2018-G3/master/documents/Subby-Requirements.md.html)
@@ -84,7 +84,7 @@ The scope of Subby is driven by the need for a “one-stop shop” for Waterloo 
 * The ability for administrators to fix, update and maintain the website
 * Users have the ability to filter their searches based on their needs
 * Users are able to view available sublets on a map 
-* Users can post their rooms for rent in addition to posting “wanted” ads 
+* Users can post their rooms for rent in addition to posting "wanted" ads 
 * Users can rate other users based on their experiences
 * Users are able to place a bid on properties they are interested in 
 
@@ -223,33 +223,33 @@ As discussed in the Analysis Phase, the system consists of five packages: User P
 ### Sublet Class
 #### Methods
 * Constructor (public) 
-	* Sublet(sublet_title: string, duration: int, price_per_month: double, location: string, description: string) – Class Constructor. All non-null fields are enforced except for datetime fields, which are automatically recorded by the system. 
+	* Sublet(sublet\_title: string, duration: int, price\_per\_month: double, location: string, description: string) - Class Constructor. All non-null fields are enforced except for datetime fields, which are automatically recorded by the system. 
 
 
 * Getters (public)
-    * get\_sublet_id(): int
-    * get\_is_sold(): boolean
-    * get\_sublet_title: string
+    * get\_sublet\_id(): int
+    * get\_is\_sold(): boolean
+    * get\_sublet\_title: string
     * get\_duration():int
-    * get\_price_per_month(): double
+    * get\_price\_per\_month(): double
     * get\_location: string
     * get\_description(): string
-    * get\_created_at(): datetime 
-    * get\_updated_at():datetime
-    * get\_owner_id(): int
+    * get\_created\_at(): datetime 
+    * get\_updated\_at():datetime
+    * get\_owner\_id(): int
 * Setters (public)
-    * set\_sublet_title(title: string
-    * set\_is_sold(status: boolean) 
+    * set\_sublet\_title(title: string
+    * set\_is\_sold(status: boolean) 
     * set\_duration(duration: int)
-    * set\_price_per_month(price: double)
+    * set\_price\_per\_month(price: double)
     * set\_location(location: string)
     * set\_description(desc: string)
-    * set\_created_at(date: datetime)
-    * set\_updated_at(date: datetime)
-    * set\_owner_id(user_id: int)
+    * set\_created\_at(date: datetime)
+    * set\_updated\_at(date: datetime)
+    * set\_owner\_id(user\_id: int)
 
 * Relation Helpers (public) 
-    * save() – Commits the Sublet to the database, assuming Sublet is correctly initiated 
+    * save() - Commits the Sublet to the database, assuming Sublet is correctly initiated 
     * reviews() - Returns an array of Reviews concerning the Sublet 
 
 ## 6.2.3 Rating Package
@@ -259,25 +259,25 @@ As discussed in the Analysis Phase, the system consists of five packages: User P
 
 ### Methods
   * Constructor (public)
-    * Rating(rating: int, comment : string, user_id: int, reviewed_user_id:int) - Constructes a Rating
+    * Rating(rating: int, comment : string, user\_id: int, reviewed\_user\_id:int) - Constructes a Rating
     
   * Getters (public)
-    *  get_comment():string - Returns the text description tied to a rating
-    *  get_reviewed_user_id():int - Returns the ID of the user being rated
-    *  get_user_id():int - Returns the ID of the user who is rating another user
-    *  get_created_at():datetime - Returns time data for time of class creation
-    *  get_updated_at():datetime - Returns time data for time of last update to class
+    *  get\_comment():string - Returns the text description tied to a rating
+    *  get\_reviewed\_user\_id():int - Returns the ID of the user being rated
+    *  get\_user\_id():int - Returns the ID of the user who is rating another user
+    *  get\_created\_at():datetime - Returns time data for time of class creation
+    *  get\_updated\_at():datetime - Returns time data for time of last update to class
   
   * Setters (public)
-    *  set_rating(rating: tinyint) - Updates the rating review number
-    *  set_comment(comment: string) - Updates the comment for the review
-    *  set_reviewed_user_id(reviewed_user_id: int) - Updates the reviewed user ID
-    *  set_user_id(user_id: int) - Updates the reviewing user ID
-    *  set_created_at(date: datetime) - Updates created_at
-    *  set_updated_at(date: datetime) - Updates updated_at
+    *  set\_rating(rating: tinyint) - Updates the rating review number
+    *  set\_comment(comment: string) - Updates the comment for the review
+    *  set\_reviewed\_user\_id(reviewed\_user\_id: int) - Updates the reviewed user ID
+    *  set\_user\_id(user\_id: int) - Updates the reviewing user ID
+    *  set\_created\_at(date: datetime) - Updates created\_at
+    *  set\_updated\_at(date: datetime) - Updates updated\_at
     
   * Helpers (private)
-    *  validate_rating(rating: tinyint) - Ensures that the rating is valid (i.e A value that is held in ALLOWED_REVIEW_VALS)
+    *  validate\_rating(rating: tinyint) - Ensures that the rating is valid (i.e A value that is held in ALLOWED\_REVIEW\_VALS)
     
   * Relation Helpers (public):
     * save() - Saves and persistes the Rating
@@ -292,18 +292,18 @@ As discussed in the Analysis Phase, the system consists of five packages: User P
   *  **FavouritesManager:** Creates or destroys favourites from the database
 ### Methods
   * Constructor (public)
-    *  Favourite(user_id: int, sublet_id: int) - Constructes Favourite
+    *  Favourite(user\_id: int, sublet\_id: int) - Constructes Favourite
     
   * Getters (public)
-    *  get_favourite_id():int - Returns favourite ID
-    *  get_sublet_id():int - Returns the favourited sublet ID
-    *  get_user_id():int - Returns user ID the favourite is tied to
-    *  get_created_at():datetime - Returns time data for time of class creation
-    *  get_updated_at():datetime - Returns time data for time of last update to class
+    *  get\_favourite\_id():int - Returns favourite ID
+    *  get\_sublet\_id():int - Returns the favourited sublet ID
+    *  get\_user\_id():int - Returns user ID the favourite is tied to
+    *  get\_created\_at():datetime - Returns time data for time of class creation
+    *  get\_updated\_at():datetime - Returns time data for time of last update to class
   
   * Setters (public)
-    *  set_created_at(date: datetime) - Updates created_at
-    *  set_updated_at(date: datetime) - Updates updated_at
+    *  set\_created\_at(date: datetime) - Updates created\_at
+    *  set\_updated\_at(date: datetime) - Updates updated\_at
     
   * Relation Helpers (public):
     * save() - Saves and persistes Favourite
@@ -314,7 +314,7 @@ As discussed in the Analysis Phase, the system consists of five packages: User P
 ### Report Class
 #### Methods
 * Constructor (public)
-    * Report(user_id: int, sublet_id: int, issue: string, description: string) – Class Constructor. All non-null fields are enforced except datetime frields, which are recorded by system automatically.
+    * Report(user\_id: int, sublet\_id: int, issue: string, description: string) - Class Constructor. All non-null fields are enforced except datetime frields, which are recorded by system automatically.
 
 * Getters (public): only available for admins
     * get\_report\_id():int
@@ -325,16 +325,16 @@ As discussed in the Analysis Phase, the system consists of five packages: User P
     * get\_description():string
 
 * Setters (public): only available for admins
-    * set_report_id(report_id: int)
-    * set_created_at(date: datetime)
-    * set_updated_at(date: dateime)
-    * set_issue(issue: string)
-    * set_description(description: string)
-    * set_user_id(user_id: int)
+    * set\_report\_id(report\_id: int)
+    * set\_created\_at(date: datetime)
+    * set\_updated\_at(date: dateime)
+    * set\_issue(issue: string)
+    * set\_description(description: string)
+    * set\_user\_id(user\_id: int)
 
 
 * Helpers (private):
-    * test\_description(description: string) – Tests the descriptions user has entered. Reject the report if the description is not valid. For example: a series of punctuations, Non english letters, a series of random letters.
+    * test\_description(description: string) - Tests the descriptions user has entered. Reject the report if the description is not valid. For example: a series of punctuations, Non english letters, a series of random letters.
 
 
 * Relation Helpers (public):
