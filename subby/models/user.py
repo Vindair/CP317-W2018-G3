@@ -11,5 +11,8 @@ class User(models.Model):
     created_at = models.DateTimeField()
     updated_at = models.DateTimeField()
 
+    def __str__(self):
+        return "{} - admin: {}".format(self.email, self.is_admin)
+
     class Meta:
         app_label = 'subby'
