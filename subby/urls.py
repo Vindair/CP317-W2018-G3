@@ -1,7 +1,14 @@
 from django.urls import path
 
-from . import views
+from .views import application, user
+
+app_name = 'subby'
 
 urlpatterns = [
-    path('', views.index, name='index')
+    # Base application view (i.e. index, about, contact...)
+    path('', application.index, name='index'),
+
+    # User views
+    path('users', user.index, name='user_index'),
+    path('users/<int:user_id>', user.show, name='user_show')
 ]

@@ -11,3 +11,6 @@ pip-selfcheck.json
 
 # Yay JS
 node_modules/
+
+# Ignore editor-specific cruft
+.vscode/

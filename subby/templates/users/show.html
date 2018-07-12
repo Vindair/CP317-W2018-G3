@@ -1,0 +1,14 @@
+{% extends 'application/base.html' %}
+
+{% block content %}
+    {% if user %}
+        <div>
+            Display user<br /><br />
+            First name: {{ user.first_name }}<br />
+            Last name: {{ user.last_name }}<br />
+            Email: {{ user.email }}<br />
+        </div>
+    {% else %}
+        <p>Invalid user ID</p>
+    {% endif %}
+{% endblock %}

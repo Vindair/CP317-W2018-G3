@@ -12,7 +12,7 @@
     * Password: postgres
     * Port: 5432
   * Ensure `python3` and `pip3` are installed (or the appropriate python 3.X and python3-pip for your platform). From the project directory, run `pip3 install -r requirements.txt`
-  * From the project directory, run `python3 manage.py runserver --settings=subby_project.settings --configuration=Dev`. Subby will be running at `http://localhost:8000`
+  * From the project directory, run `python3 manage.py runserver --settings=subby_project.settings.development`. Subby will be running at `http://localhost:8000`
 
 #### Required dependencies:
   * PostgreSQL
