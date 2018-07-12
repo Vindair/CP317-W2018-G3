@@ -9,6 +9,10 @@ include/*
 lib/*
 pip-selfcheck.json
 
+# Ignore coverage stuff
+.coverage
+htmlcov/*
+
 # Yay JS
 node_modules/
 
