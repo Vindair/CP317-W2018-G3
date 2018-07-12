@@ -9,9 +9,9 @@
   1.3. [Product Scope](#13productscope)  
   1.4. [Referencing Documents](#14referencingdocuments)  
 2. **[Major Features](#2majorfeatures)**  
-  2.1. [Create Sublet Listings](#21createsubletlistings)  
-  2.2. [Browse/Search Sublet Listings](#22browsesearchsubletlistings)  
-  ... more  
+  2.1. [Browse/Search Sublet Listings](#21browsesearchsubletlistings)  
+  2.2. [Create Sublet Listings](#22createsubletlistings)
+  2.3. [Contact Sublet Owner](#23contactsubletowner)
 3. **[Design Considerations](#3designconsiderations)**  
   3.1. [Assumptions and Dependencies](#31assumptionsanddependencies)  
   3.2. [End-user Characteristics](#32endusercharacteristics)  
@@ -57,22 +57,35 @@ The scope of Subby is driven by the need for a "one-stop shop" for Waterloo subl
 * [Analysis Documentation for Subby](https://rawgit.com/Kuresov/CP317-W2018-G3/master/documents/Subby-Analysis.md.html)
 
 # 2. Major Features
-## 2.1. Create Sublet Listings
-* Registered users can create sublet listings
-  * Users can add details, such as the location and a description, of the listing and choose to upload photos as well
-  * Users can also add filters to their listing, enabling their listing to be included in more refined searches.
+## 2.1.  Browse/Search Sublet Listings
+* Users can browse listings created by users.
+  * Browsing is not limited to registered users and listings are accessible to public users. 
+  * Users can browse listings using a list, or by manipulating an interactive map.
+* Search functions enable public and registered users to specify postings by location or address.
+  * Filters can be applied by users to refine searches using criteria such as, price range, size, number of rooms available, and duration of stay.
+  * Users can sort search results using price, date, and ratings.
   
-## 2.2. Browse/Search Sublet Listings
-* Users can browse listings created by users
-  * Browsing is not limited to registered users and listings are accessible to public users 
-  * Users can browse listings using a list, or by manipulating an interactive map
-* Search functions enable public and registered users to specify postings by location or address
-  * Filters can be applied by users to refine searches using criteria such as, price range, size, number of rooms available, and duration of stay
-  * Users can sort search results using price, date, and ratings
+## 2.2. Create Sublet Listings
+* Registered users can create sublet listings.
+  * Users can add details, such as the location and a description, of the listing and choose to upload photos as well.
+  * Users can also add filters to their listing, enabling their listing to be included in more refined searches.
 
 ## 2.3. Contact Sublet Owners
-* Users can contact sublet owners through the subby platform
+* Users can contact sublet owners through the subby platform.
+  * An e-mail will be sent to the sublet owner's registered e-mail address and will include the attached message and the e-mail address with which the user registered.
+  * The sublet owner will then be able to contact the user directly.
   
+## 2.4. Create/Edit User Profile
+* FILLER 
+
+## 2.5. Add/Remove Favourite Sublet Listings
+* FILLER
+
+## 2.6. Edit/Delete Posted Sublet Listings
+* FILLER
+
+## 2.7. Submit Reports
+* FILLER
 
 # 3. Design Considerations
 ## 3.1. Assumptions and Dependencies
