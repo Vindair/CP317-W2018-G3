@@ -14,6 +14,12 @@
   * Ensure `python` and `pip` are installed (or the appropriate python 3.X and python3-pip for your platform). From the project directory, run `pip install -r requirements.txt`
   * From the project directory, run `python manage.py runserver --settings=subby_project.settings.development`. Subby will be running at `http://localhost:8000`
 
+#### Testing
+  * Run tests (without coverage): `python run manage.py test --settings=subby_project.settings.development`
+  * Run tests (with coverage): `coverage run manage.py test --settings=subby_project.settings.development`
+  * Generate coverage document: `coverage html`
+  * View coverage document at: `... /CP317-W2018-G3/htmlcov/index.html`
+
 #### Required dependencies:
   * PostgreSQL
   * Python3 and supporting packages
