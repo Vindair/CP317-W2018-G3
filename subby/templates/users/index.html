@@ -1,0 +1,22 @@
+{% extends 'application/base.html' %}
+
+{% block content %}
+    Index users<br /><br />
+
+    {% if users %}
+        <ul>
+            {% for user in users %}
+                <li>
+                    <div>
+                        First name: {{ user.first_name }}<br />
+                        Last name: {{ user.last_name }}<br />
+                        Email: {{ user.email }}<br />
+                        Link: <a href="{% url 'subby:user_show' user.id %}">Show User {{ user.id }}</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No users present</p>
+    {% endif %}
+{% endblock %}

@@ -1,11 +1,10 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import get_object_or_404, get_list_or_404, render
 from subby.models import User
 
 def index(req):
-    return HttpResponse("User index route")
+    context = { 'users': get_list_or_404(User) }
+    return render(req, 'users/index.html', context)
 
 def show(req, user_id):
-    res = "Show user %s"
-    user = User.objects.get(pk = user_id)
-    return HttpResponse(res % user)
+    context = { 'user': get_object_or_404(User, pk = user_id) }
+    return render(req, 'users/show.html', context)
