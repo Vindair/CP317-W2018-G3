@@ -27,7 +27,7 @@
   4.1.1. [General Guidelines](#411generalguidelines)  
   4.1.2. [Technical Standards](#412technicalstandards)  
   4.1.3. [Data Storage](#413datastorage)  
-  4.1.4. [Security and Privacy Considerations:](#414securityandprivacyconsiderations)  
+  4.1.4. [Security and Privacy Considerations](#414securityandprivacyconsiderations)  
   4.1.5. [Control Flow](#415controlflow)  
 5. **[Project Testing](#5projecttesting)**  
   5.1. [Testing Strategies](#51testingstrategies)  
