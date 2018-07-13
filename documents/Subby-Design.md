@@ -27,7 +27,7 @@
   4.1.1. [General Guidelines](#411generalguidelines)  
   4.1.2. [Technical Standards](#412technicalstandards)  
   4.1.3. [Data Storage](#413datastorage)  
-  4.1.4. [Data Security](#414datasecurity)  
+  4.1.4. [Security and Privacy Considerations](#414securityandprivacyconsiderations)  
   4.1.5. [Control Flow](#415controlflow)  
 5. **[Project Testing](#5projecttesting)**  
   5.1. [Testing Strategies](#51testingstrategies)  
@@ -137,47 +137,70 @@ The scope of Subby is driven by the need for a "one-stop shop" for Waterloo subl
   * Code should be DRY; functionality should be abstracted, rather than repeated, to avoid issues in maintenance.
 * Methods that perform non-trivial operations should have a short comment with a description of their side-effects.
 * Blocks within methods that are complex should have a short comment explaining their purpose.
-* Frontend HTML and CSS must be in compliance with the established W3C standards.
+* Frontend HTML and CSS must be in compliance with the established [W3C standards](https://www.w3.org/standards/).
+* Browser Compatibility:
+  * Bootstrap front-end framework will be used to ease cross-browser compatibility 
+  * Mac OS X, Linux and Windows users should be able to display the website with full functionality in the following browsers: 
+  	* internet Explorer 8.0 and 9.0 (Windows)
+	* Safari (mac)
+	* Firefox (Windows, Mac, Linux)
+	* Chrome (Windows, Mac, Linux)
+
 
 ### 4.1.3. Data Storage  
 *	All objects will be organized into logical groups within one or more schemas in the database to maintain data organization and manageability. 
 *	Objects within one schema should be accessible within another schema, assuming access is permitted. 
 *	Permit flexible and robust implementation of user defined objects, such as functions, data types, indexes and operators
-*	Support a variety of data types, such as:
-    * Boolean
-    * Binary
-    * Text (varchar, chart, text)
-    * Date/Time
-    * Enum
-    * Array
-    * User defined data type
+
     
     
-### 4.1.4. Data Security 
-*	Database must maintain the security and integrity of data housed with in it on several levels:
-    * Access Control: 
-        * Postgres ensures all files stored are protected from reading by any accounts other than the Admin.
-        * Access is granted or revoked on any object all the way down the column level.
-        * User authentication is performed by backend server and postmaster, who sanction permissions to users requesting access to data.
-        * Each Postgres user account is assigned a username and is further secured with a password.
-        * Write access is limited to the Admin by default.
-    * Data Integrity:
-        * Foreign Keys
-        * Primary Keys
-        * Column constraints
-        * Row Checks
-        * UNIQUE, NOT NULL
-        * Explicit Locks, Advisory Locks 
-    * Data Recovery: 
-        * Online backup
-        * Point-in-time recovery using write-ahead logging 
-        * Tablespaces
-    * Concurrency Control:
-        * Concurrency is managed through multi-version concurrency control (MVCC) and immunity to dirty reads.
-        * Ensures each transaction is not visible to other transactions until committed.
-        * Uphold ACID principles:
-              * Three levels of transaction isolation are offered: read committed, repeatable read and serializable.
-      
+### 4.1.4. Security and Privacy Considerations
+* Privacy Settings.
+  * Dual-Mode privacy setting for User account data:
+    * Private:
+      * By default, User’s phone number, email address, and name will be exclusively accessible to the User
+    * Public: 
+      * By default, a User’s username, published listings and pictures and profile description will be shared with all Users and
+	Visitors.
+* User Authentication.
+  * Subby will use single sign-on to authenticate Users; 
+  * Usernames must be unique and can contain letters (A-Z), numbers (0-9), dashes (-), underscores (_), apostrophes ('), and periods (.);
+  * Passwords can contain any combination of printable ASCII characters and must contain a minimum of 8 characters comprised of at least       one number and one special character  (e.g. !, @, #, $, etc.).
+   * Passwords will be automatically salted to further safeguard passwords before they are stored in the database.
+* User Access and Permissions.
+   * Based on the functional requirements of Users and on security considerations, Subby will offer three permission levels: 
+      * Visitor – View-Only: 
+        * search and view listings 
+      * User – Design:
+        * view, add, update and delete authored listings
+        * search, view, report, flag and respond to the listings of others 
+     * Admin – Full-Access:
+       * add, modify, and delete User listings 
+       * freeze and terminate User accounts 
+       * view and delete User profile information 
+       * review and respond to reports and flagged User listings and accounts 
+   * Below, Table A summarizes the aforementioned User Access Controls
+  
+     **Table A**
+    ![permissionsSummary](https://i.imgur.com/OisjZIs.png)
+  
+       
+   * For more details on User functionalities and permissions, refer to **[Major Features](#2majorfeatures)**  
+* Subby’s Privacy Policy (unofficial): 
+  * Subby will not share data with any third party entities, including marketing organizations
+  * Subby will not send unsolicited marketing material and advertisements 
+  * Subby will collect and store all User provided information: 
+     * Account Information: Information requested during the In the Sign Up stage such as, user’s name, username, date of birth and  email
+    address.
+    * Profile Information: A User’s profile description, phone number, profile picture and other profile information.
+    * Listing Information: A listing’s address, price, features, pictures, and reviews. 
+    * Communication Forms: Information sent by a sublet seeker to a leasee through a listing communication form.  
+  * Information that will be automatically collected and stored:  
+    * Log Data: Datetime of all data updates and creation,  including account creation and destruction, website access, and listing edits.
+    * Cookies: Subby will use (persistent and session) cookies for User recognition and personalization purposes. 
+  * For more Subby privacy and secuirty policies and regulations, refer to Subby's [Terms and Conditions Policy](https://rawgit.com/Kuresov/CP317-W2018-G3/master/documents/Terms&Conditions.md.html)
+
+
 ### 4.1.5. Control Flow 
 *	Data will transmit between client and PostgreSQL database. Client interacts with the PostgreSQL database using PHP Data Objects (PDO) API. It allows performing the common database operations in PHP such as creating new tables, inserting data, updating data, querying data, deleting data and so on. Once the connection is established successfully, client will directly send qury to database and database will respond corresponding answers to client. 
 
