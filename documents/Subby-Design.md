@@ -171,7 +171,7 @@ The scope of Subby is driven by the need for a "one-stop shop" for Waterloo subl
        * freeze and terminate User accounts 
        * view and delete User profile information 
        * review and respond to reports and flagged User listings and accounts 
-   * For more details on User functionalities, refer to **[Major Features](#2majorfeatures)**  
+   * For more details on User functionalities and permissions, refer to **[Major Features](#2majorfeatures)**  
 * Subby’s Privacy Policy (unofficial): 
   * Subby will not share data with any third party entities, including marketing organizations
   * Subby will send unsolicited marketing material and advertisements 
@@ -183,7 +183,7 @@ The scope of Subby is driven by the need for a "one-stop shop" for Waterloo subl
     * Communication Forms: Information sent by a sublet seeker to a leasee through a listing communication form.  
   * Information that will be automatically collected and stored:  
     * Log Data: Datetime of all data updates and creation,  including account creation and destruction, website access, and listing edits.
-    * Cookies: Subby uses persistent cookies for User recognition and personalization purposes. 
+    * Cookies: Subby will use (persistent and session) cookies for User recognition and personalization purposes. 
 
 
 ### 4.1.5. Control Flow 
