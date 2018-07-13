@@ -27,7 +27,7 @@
   4.1.1. [General Guidelines](#411generalguidelines)  
   4.1.2. [Technical Standards](#412technicalstandards)  
   4.1.3. [Data Storage](#413datastorage)  
-  4.1.4. [Data Security](#414datasecurity)  
+  4.1.4. [Security and Privacy Considerations:](#414securityandprivacyconsiderations)  
   4.1.5. [Control Flow](#415controlflow)  
 5. **[Project Testing](#5projecttesting)**  
   5.1. [Testing Strategies](#51testingstrategies)  
@@ -146,7 +146,7 @@ The scope of Subby is driven by the need for a "one-stop shop" for Waterloo subl
 
     
     
-### 4.1.4. Security and Privacy Considerations:
+### 4.1.4. Security and Privacy Considerations
 * Privacy Settings.
   * Dual-Mode privacy setting for User account data:
     * Private:
@@ -159,12 +159,11 @@ The scope of Subby is driven by the need for a "one-stop shop" for Waterloo subl
   * Usernames must be unique and can contain letters (A-Z), numbers (0-9), dashes (-), underscores (_), apostrophes ('), and periods (.);
   * Passwords can contain any combination of printable ASCII characters and must contain a minimum of 8 characters comprised of at least       one number and one special character  (e.g. !, @, #, $, etc.).
    * Passwords will be automatically salted to further safeguard passwords before they are stored in the database.
-
 * User Access and Permissions.
    * Based on the functional requirements of Users and on security considerations, Subby will offer three permission levels: 
       * Visitor – View-Only: 
         * search and view listings 
-      * User – Edit Permissions:
+      * User – Design:
         * view, add, update and delete authored listings
         * search, view, report, flag and respond to the listings of others 
      * Admin – Full-Access:
@@ -173,7 +172,6 @@ The scope of Subby is driven by the need for a "one-stop shop" for Waterloo subl
        * view and delete User profile information 
        * review and respond to reports and flagged User listings and accounts 
    * For more details on User functionalities, refer to **[Major Features](#2majorfeatures)**  
-   
 * Subby’s Privacy Policy (unofficial): 
   * Subby will not share data with any third party entities, including marketing organizations
   * Subby will send unsolicited marketing material and advertisements 
@@ -188,7 +186,6 @@ The scope of Subby is driven by the need for a "one-stop shop" for Waterloo subl
     * Cookies: Subby uses persistent cookies for User recognition and personalization purposes. 
 
 
-      
 ### 4.1.5. Control Flow 
 *	Data will transmit between client and PostgreSQL database. Client interacts with the PostgreSQL database using PHP Data Objects (PDO) API. It allows performing the common database operations in PHP such as creating new tables, inserting data, updating data, querying data, deleting data and so on. Once the connection is established successfully, client will directly send qury to database and database will respond corresponding answers to client. 
 
