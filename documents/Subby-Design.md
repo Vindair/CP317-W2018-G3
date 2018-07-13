@@ -10,8 +10,12 @@
   1.4. [Referencing Documents](#14referencingdocuments)  
 2. **[Major Features](#2majorfeatures)**  
   2.1. [Browse/Search Sublet Listings](#21browsesearchsubletlistings)  
-  2.2. [Create Sublet Listings](#22createsubletlistings)
-  2.3. [Contact Sublet Owner](#23contactsubletowner)
+  2.2. [Create Sublet Listings](#22createsubletlistings)  
+  2.3. [Contact Sublet Owner](#23contactsubletowner)  
+  2.4. [Create/Edit User Account](#24createedituseraccount)  
+  2.5. [Add/Remove Favourite Sublet Listings](#25addremovefavouritesubletlistings)  
+  2.6. [Edit/Delete Posted Sublet Listings](#26editdeletepostedsubletlistings)  
+  2.7. [Submit Reports](#27submitreports)  
 3. **[Design Considerations](#3designconsiderations)**  
   3.1. [Assumptions and Dependencies](#31assumptionsanddependencies)  
   3.2. [End-user Characteristics](#32endusercharacteristics)  
@@ -75,17 +79,23 @@ The scope of Subby is driven by the need for a "one-stop shop" for Waterloo subl
   * An e-mail will be sent to the sublet owner's registered e-mail address and will include the attached message and the e-mail address with which the user registered.
   * The sublet owner will then be able to contact the user directly.
   
-## 2.4. Create/Edit User Profile
-* FILLER 
+## 2.4. Create/Edit User Account
+* Users are able to create an account using a verified school e-mail address.
+  * Users are able to edit their preferences and change their password.
+  * Users will also have a profile containing basic information about them, such as their name and school.
 
 ## 2.5. Add/Remove Favourite Sublet Listings
-* FILLER
+* Users can organize and manage a list of their favourite sublet listings.
+  * Users are able to add sublet listings to their favourites as they are browsing.
+  * Users can later go to their favourite listings and remove any listings they no longer want to include.
 
 ## 2.6. Edit/Delete Posted Sublet Listings
-* FILLER
+* Users are able to modify any sublet listings that they post.
+  * Users are able to change any details, filter options or photos they included in their listing.
+  * Users are also able to delete their listings at any time they desire.
 
 ## 2.7. Submit Reports
-* FILLER
+* Users are able to issue reports concerning any violations of the terms and conditions policy and privacy policy. (Attach link to policies).  
 
 # 3. Design Considerations
 ## 3.1. Assumptions and Dependencies
