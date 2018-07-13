@@ -137,7 +137,15 @@ The scope of Subby is driven by the need for a "one-stop shop" for Waterloo subl
   * Code should be DRY; functionality should be abstracted, rather than repeated, to avoid issues in maintenance.
 * Methods that perform non-trivial operations should have a short comment with a description of their side-effects.
 * Blocks within methods that are complex should have a short comment explaining their purpose.
-* Frontend HTML and CSS must be in compliance with the established W3C standards.
+* Frontend HTML and CSS must be in compliance with the established [W3C standards](https://www.w3.org/standards/).
+* Browser Compatibility:
+  * Bootstrap front-end framework will be used to ease cross-browser compatibility 
+  * Mac OS X, Linux and Windows users should be able to display the website with full functionality in the following browsers: 
+  	* internet Explorer 8.0 and 9.0 (Windows)
+	* Safari (mac)
+	* Firefox (Windows, Mac, Linux)
+	* Chrome (Windows, Mac, Linux)
+
 
 ### 4.1.3. Data Storage  
 *	All objects will be organized into logical groups within one or more schemas in the database to maintain data organization and manageability. 
@@ -171,14 +179,15 @@ The scope of Subby is driven by the need for a "one-stop shop" for Waterloo subl
        * freeze and terminate User accounts 
        * view and delete User profile information 
        * review and respond to reports and flagged User listings and accounts 
-       
+   * Below, Table A summarizes the aforementioned User Access Controls
+     ##Table A  
     ![permissionsSummary](https://i.imgur.com/OisjZIs.png)
   
        
    * For more details on User functionalities and permissions, refer to **[Major Features](#2majorfeatures)**  
 * Subby’s Privacy Policy (unofficial): 
   * Subby will not share data with any third party entities, including marketing organizations
-  * Subby will send unsolicited marketing material and advertisements 
+  * Subby will not send unsolicited marketing material and advertisements 
   * Subby will collect and store all User provided information: 
      * Account Information: Information requested during the In the Sign Up stage such as, user’s name, username, date of birth and  email
     address.
