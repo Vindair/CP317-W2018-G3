@@ -171,6 +171,25 @@ The scope of Subby is driven by the need for a "one-stop shop" for Waterloo subl
        * freeze and terminate User accounts 
        * view and delete User profile information 
        * review and respond to reports and flagged User listings and accounts 
+       
+       ![permissionsSummary](https://i.imgur.com/OisjZIs.png)
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
    * For more details on User functionalities and permissions, refer to **[Major Features](#2majorfeatures)**  
 * Subby’s Privacy Policy (unofficial): 
   * Subby will not share data with any third party entities, including marketing organizations
