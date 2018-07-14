@@ -180,7 +180,8 @@ The scope of Subby is driven by the need for a "one-stop shop" for Waterloo subl
        * view and delete User profile information 
        * review and respond to reports and flagged User listings and accounts 
    * Below, Table A summarizes the aforementioned User Access Controls
-     ##Table A  
+  
+     **Table A**
     ![permissionsSummary](https://i.imgur.com/OisjZIs.png)
   
        
