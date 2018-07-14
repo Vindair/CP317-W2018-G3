@@ -95,7 +95,7 @@ The scope of Subby is driven by the need for a "one-stop shop" for Waterloo subl
   * Users are also able to delete their listings at any time they desire.
 
 ## 2.7. Submit Reports
-* Users are able to issue reports concerning any violations of the terms and conditions policy and privacy policy. (Attach link to policies).
+* Users are able to issue reports concerning any violations of Subby's [Terms and Conditions Policy](https://rawgit.com/Kuresov/CP317-W2018-G3/master/documents/Terms&Conditions.md)
   * Reports will be reviewed by administrators and the appropriate punishment will be carried out.
 
 # 3. Design Considerations
