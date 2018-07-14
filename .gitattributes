@@ -1,0 +1,2 @@
+# Force Unix EOL's because Windows
+*.* text eol=lf
