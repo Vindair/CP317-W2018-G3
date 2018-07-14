@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     {% load staticfiles %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link href="{% static 'css/style.css' %}" rel="stylesheet"/>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
@@ -36,7 +36,7 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" id="nav_a" href="javascript:{document.getElementById('logout').submit()}">Logout</a>
-                  <form id="logout" method="POST" action="#">
+                  <form id="logout" method="POST" action="{% url 'subby:logout' %}">
                     {% csrf_token %}
                     <input type="hidden" />
                   </form>
@@ -44,10 +44,10 @@
               </ul>
             {% else %}
               <li class="nav-item">
-                <a class="nav-link" id="nav_a" href="#">Login</a>
+                <a class="nav-link" id="nav_a" href="{% url 'subby:login' %}">Login</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" id="nav_a" href="#">
+                <a class="nav-link" id="nav_a" href="{% url 'subby:signup' %}">
                   Sign Up!
                 </a>
               </li>
