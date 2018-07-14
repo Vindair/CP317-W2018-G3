@@ -198,7 +198,7 @@ The scope of Subby is driven by the need for a "one-stop shop" for Waterloo subl
   * Information that will be automatically collected and stored:  
     * Log Data: Datetime of all data updates and creation,  including account creation and destruction, website access, and listing edits.
     * Cookies: Subby will use (persistent and session) cookies for User recognition and personalization purposes. 
-  * For more Subby privacy and secuirty policies and regulations, refer to Subby's [Terms and Conditions Policy(https://rawgit.com/Kuresov/CP317-W2018-G3/master/documents/Terms&Conditions.md.html)
+  * For more Subby privacy and secuirty policies and regulations, refer to Subby's [Terms and Conditions Policy](https://rawgit.com/Kuresov/CP317-W2018-G3/master/documents/Terms&Conditions.md.html)
 
 
 ### 4.1.5. Control Flow 
