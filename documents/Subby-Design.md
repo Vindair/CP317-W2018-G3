@@ -96,6 +96,7 @@ The scope of Subby is driven by the need for a "one-stop shop" for Waterloo subl
 
 ## 2.7. Submit Reports
 * Users are able to issue reports concerning any violations of the terms and conditions policy and privacy policy. (Attach link to policies).
+  * Reports will be reviewed by administrators and the appropriate punishment will be carried out.
 
 # 3. Design Considerations
 ## 3.1. Assumptions and Dependencies
