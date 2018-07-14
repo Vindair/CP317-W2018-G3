@@ -135,7 +135,7 @@ The scope of Subby is driven by the need for a "one-stop shop" for Waterloo subl
 
 ### 4.1.2. Technical Standards
 * Code should be easily readable and as self-documenting as possible to enable ease of future maintenance.
-  * Code should be DRY; functionality should be abstracted, rather than repeated, to avoid issues in maintenance.
+  * Code should be [DRY](https://www.artima.com/intv/dry.html); functionality should be abstracted, rather than repeated, to avoid issues in maintenance.
 * Methods that perform non-trivial operations should have a short comment with a description of their side-effects.
 * Blocks within methods that are complex should have a short comment explaining their purpose.
 * Frontend HTML and CSS must be in compliance with the established [W3C standards](https://www.w3.org/standards/).
