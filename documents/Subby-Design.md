@@ -140,6 +140,7 @@ The scope of Subby is driven by the need for a "one-stop shop" for Waterloo subl
 * Frontend HTML and CSS must be in compliance with the established [W3C standards](https://www.w3.org/standards/).
 * Browser Compatibility:
   * Bootstrap front-end framework will be used to ease cross-browser compatibility
+  * A CSS reset stylesheet will be used to ensure behavior consistency between browsers 
   * Mac OS X, Linux and Windows users should be able to display the website with full functionality in the following browsers:
   	* internet Explorer 8.0 and 9.0 (Windows)
 	* Safari (mac)
@@ -166,6 +167,7 @@ The scope of Subby is driven by the need for a "one-stop shop" for Waterloo subl
   * Subby will use single sign-on to authenticate Users;
   * Usernames must be unique and can contain letters (A-Z), numbers (0-9), dashes (-), underscores (_), apostrophes ('), and periods (.);
   * Passwords can contain any combination of printable ASCII characters and must contain a minimum of 8 characters comprised of at least       one number and one special character  (e.g. !, @, #, $, etc.).
+  
    * Passwords will be automatically salted to further safeguard passwords before they are stored in the database.
 * User Access and Permissions.
    * Based on the functional requirements of Users and on security considerations, Subby will offer three permission levels:
