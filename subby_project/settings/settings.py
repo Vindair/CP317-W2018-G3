@@ -57,6 +57,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'subby_project.wsgi.application'
 
+AUTH_USER_MODEL = 'subby.User'
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
