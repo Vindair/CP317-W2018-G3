@@ -1,0 +1,29 @@
+{% extends 'application/base.html' %}
+
+
+{% block content %}
+
+<br /><br />
+
+{% for sublet in object_list %}
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-7">
+			<a href="{% url 'subby:SubletDetail' sublet.id %}"><h3 id="sublet_title">{{ sublet.title }}<h3></a>
+				<img src="{{ sublet.front_image.url }}" class="img-fluid"height="300" width="400"/> 
+			</div>
+		<div class="col-md-5">
+			<br /><br />
+			<h4>Address</h4>
+			<p style="font-weight:bold">{{ sublet.street_address }}</p>
+			<br />
+			<h4>Description</h4>
+			<p>{{ sublet.summary }}</p>
+		
+			
+			</div>
+		</div>
+		
+{% endfor %}
+{% endblock %}			

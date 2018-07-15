@@ -1,0 +1,17 @@
+#nav_a {
+  color: grey;
+  margin-left: 5px;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+#nav_a:hover {
+	color: green;
+}
+
+
+.hello {
+  color: yellow;
+}
+
+
