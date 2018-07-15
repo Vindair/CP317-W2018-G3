@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+from django.conf import settings
 # Create your views here.
 
 def index(req):
-    return HttpResponse("Subby App Index Route")
+    return render(req, 'application/base.html')
