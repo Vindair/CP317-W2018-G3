@@ -193,19 +193,19 @@ The scope of Subby is driven by the need for a "one-stop shop" for Waterloo subl
   * Subby will not share data with any third party entities, including marketing organizations
   * Subby will not send unsolicited marketing material and advertisements
   * Subby will collect and store all User provided information:
-     * Account Information: Information requested during the In the Sign Up stage such as, user’s name, username, date of birth and  email
+    * Account Information: Information requested during the Sign Up stage, such as user’s name, username, date of birth and  email
     address.
     * Profile Information: A User’s profile description, phone number, profile picture and other profile information.
     * Listing Information: A listing’s address, price, features, pictures, and reviews.
     * Communication Forms: Information sent by a sublet seeker to a leasee through a listing communication form.
   * Information that will be automatically collected and stored:
-    * Log Data: Datetime of all data updates and creation,  including account creation and destruction, website access, and listing edits.
+    * Log Data: Datetime of all data updates and creation, including account creation and destruction, website access, and listing edits.
     * Cookies: Subby will use (persistent and session) cookies for User recognition and personalization purposes.
   * For more Subby privacy and secuirty policies and regulations, refer to Subby's [Terms and Conditions Policy](https://rawgit.com/Kuresov/CP317-W2018-G3/master/documents/Terms&Conditions.md)
 
 
 ### 4.1.5. Control Flow
-*	Data will transmit between client and PostgreSQL database. Client interacts with the PostgreSQL database using PHP Data Objects (PDO) API. It allows performing the common database operations in PHP such as creating new tables, inserting data, updating data, querying data, deleting data and so on. Once the connection is established successfully, client will directly send qury to database and database will respond corresponding answers to client.
+*	Data will transmit between client and PostgreSQL database. Client interacts with the PostgreSQL database using [PHP Data Objects (PDO)](http://php.net/manual/en/book.pdo.php) API. It allows performing the common database operations in PHP such as creating new tables, inserting data, updating data, querying data, deleting data and so on. Once the connection is established successfully, client will directly send query to database and database will respond corresponding answers to client.
 
 
 ## 4.2 Project Deployment
