@@ -26,6 +26,19 @@
 
 <!-- Add your site or application content here -->
 
+<!-- Favourite Menu -->
+<div class="fav-nav" id= "favNav">
+<a href="javascript:void(0)" class="cancel-button" onclick="cancel_fav_menu()">Close</a>
+
+<!-- Placeholder links for navigation to sublet single listing pages -->
+    <a href="">Fav 1</a>
+    <a href="">Fav 2</a>
+    <a href="">Fav 3</a>
+    <a href="">Fav 4</a>
+    <a href="">Fav 5</a>
+    
+</div>
+  
 <!-- nav bar -->
 <nav class="main-nav" id="listings-nav">
   <a href="#"><img src="http://placehold.it/100x40"/></a>
@@ -82,6 +95,8 @@
 </div>
 
 <br>
+  
+<div id="main-page"> <!-- Everyting contained within this will be animated by Favourite menu actions -->
 
 <!-- bottom portion of listings page -->
 <div id="listings-page-bottom">
@@ -173,6 +188,9 @@
   </div>
 </div>
 
+  <!-- Favourite Menu Open Button-->
+<button class="favourite-btn favourite-button" id="favourite-menu-button" type="button"><span id="favourite-span" onclick="open_fav_menu()">Favourites</span></button>
+  
   <!-- map container -->
 <div id="map"></div>
 </div>
@@ -266,7 +284,9 @@
     </div>
     <a href="#" class="close-form">Close</a>
   </div>
-</div>
+ </div>
+</div> <!-- End of "main-page" -->
+
 <script src="js/vendor/modernizr-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
@@ -275,6 +295,7 @@
 <script src="js/login.js"></script>
 <script src="js/numberpicker.js"></script>
 <script src="js/maps.js"></script>
+<script src="js/favouritelist.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCurefBmArMbo3xXJpvxk3sG1q1MPSHsCc&callback=init_map"></script>
 
 <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
