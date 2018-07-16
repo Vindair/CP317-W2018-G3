@@ -403,7 +403,8 @@ As discussed in the Analysis Phase, the system consists of five packages: User P
 
 * **Section 2**
   * Jingchi Chen [2.1 - 2.3] [2018-07-04]
-
+  * Ronald Lwin [2.1 - 2.7] [2018-07-14]
+  
 * **Section 3**
   * Sandra Sung [3.1 - 3.5] [2018-07-03]
 
