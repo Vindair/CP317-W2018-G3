@@ -224,7 +224,7 @@ As discussed in the Analysis Phase, the system consists of five packages: User P
 
 
 ## 6.2.1 User Package
-![UserPackage](https://i.imgur.com/zEhaUms.jpg)
+![UserPackage](https://i.imgur.com/Trwasts.jpg)
 
 ### User Class
 #### Methods
