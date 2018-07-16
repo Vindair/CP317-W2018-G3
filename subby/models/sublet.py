@@ -26,5 +26,8 @@ class Sublet(models.Model):
 	user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 	
 	def summary(self):
-		return self.description[:180]
+		if len(self.description) > 150:
+			return self.description[:150] + "......"
+		else:
+			return self.description
 		

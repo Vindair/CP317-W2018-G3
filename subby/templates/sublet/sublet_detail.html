@@ -5,15 +5,33 @@
 <br />
 <div class="container">
 	
-	<p class="hello">{{ object.title }}</p>
-	
-	
 	<div class="row">
-		
-		<div id="map">
+		<div class="col-md-3">
+			<h4>{{ object.title }}</h4>
+		</div>
+		<div class="col-md-3 mt-1">
+			<h5 style="color:coral">Rent: ${{ object.price }}</h5>
+		</div>
 
+	</div>
+	<div class="row">
+		<div class="col-md-5">
+			<img src="{{ sublet.front_image.url }}" class="img-fluid"height="300" width="400"/>
+		</div>
+		<div class="col-md-6 offset-md-1">
+			<div id="map">
+
+			</div>
 		</div>
 	</div>
+	<br />
+
+	<b>Address:</b>
+	<p>{{ object.street_address }}, {{ object.city }}</p>
+	<br />
+	<b>Description:</b>
+	<p>{{ object.description }}</p>
+
 </div>
 
 
@@ -22,9 +40,12 @@
 {% block js %}
 <script>
 	// Initialize and add the map
+
 	function initMap() {
+		var latitude = {{ object.latitude }};
+		var longitude = {{ object.longitude }};
 		// The location of Uluru
-		var street_address = {lat: 41.6005, lng: -93.6091};
+		var street_address = {lat: latitude, lng: longitude};
 		// The map, centered at Uluru
 		var map = new google.maps.Map(
 		document.getElementById('map'), {zoom: 16, center: street_address,

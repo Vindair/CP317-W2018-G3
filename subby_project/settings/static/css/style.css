@@ -25,7 +25,7 @@
 }
 
 #map {
-    height: 300px;
+    height: 250px;
     width: 300px;
     /* margin:auto; */
 }
@@ -36,4 +36,12 @@
 
 #map_container {
 	margin-left: 75px;
+}
+
+
+#pagination_row {
+	/* background-color: black; */
+	/* width: 70%; */
+	/* padding-left:300px; */
+	/* text-align:center; */
 }
