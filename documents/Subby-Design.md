@@ -101,12 +101,12 @@ The scope of Subby is driven by the need for a "one-stop shop" for Waterloo subl
 
 # 3. Design Considerations
 ## 3.1. Assumptions and Dependencies
-* Users will have basic knowledge of how to use a computer, more specifically webiste navigation
+* Users will have basic knowledge of how to use a computer, more specifically website navigation
 * Users will have a university or college email to register
 * Google Maps API will be available for use
 
 ## 3.2. End-user Characteristics
-* The ability for administrators to fix, update and maintain the website
+* The ability for administrators to fix various bugs that arise, provide updates for the website when appropriate and maintain the website for years to come   
 * Users have the ability to filter their searches based on their needs
 * Users are able to view available sublets on a map
 * Users can post their rooms for rent in addition to posting "wanted" ads
@@ -117,10 +117,13 @@ The scope of Subby is driven by the need for a "one-stop shop" for Waterloo subl
 * Google Maps API Budget
   * Daily free limit of 25,000 map loads
 	* $0.50 USD per 1,000 map loads over the daily free limit up to a maximum of 100,000 map loads
-  * Subby administrators are trying to make the site as cost-effective as possible which will limit the site to a daily limit of 25,000 map loads
+  	* Subby administrators are trying to make the site as cost-effective as possible which will limit the site to a daily limit of 25,000 map loads
+		* Once the site goes above the 25,000 map loads limit, users will not be able to view the map and instead will have to browse sublets manually through the listings page
+		* However, the Subby team anticipate that 25,000 map loads will be enough for the first few years of Subby's release 
 
 ## 3.4. Goals and Guidelines
-* Comments will be used when coding
+* Comments will be used when coding to make it easier for the SQA team to understand the code
+	* Subby SQA team members will run the code, make appropriate suggestions to the author and then act accordingly    
 * All features in the design and analysis documents will be adhered to
 * Any feature changes made to Subby will be documented
 * All work done for the project will have SQA performed on them
@@ -144,7 +147,7 @@ The scope of Subby is driven by the need for a "one-stop shop" for Waterloo subl
   * Bootstrap front-end framework will be used to ease cross-browser compatibility
   * A CSS reset stylesheet will be used to ensure behavior consistency between browsers 
   * Mac OS X, Linux and Windows users should be able to display the website with full functionality in the following browsers:
-  	* internet Explorer 8.0 and 9.0 (Windows)
+  	* Internet Explorer 8.0 and 9.0 (Windows)
 	* Safari (mac)
 	* Firefox (Windows, Mac, Linux)
 	* Chrome (Windows, Mac, Linux)
