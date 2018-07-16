@@ -2,8 +2,40 @@
 
 
 {% block content %}
+<br />
+<div class="container">
+	
+	<p class="hello">{{ object.title }}</p>
+	
+	
+	<div class="row">
+		
+		<div id="map">
+
+		</div>
+	</div>
+</div>
 
 
-{{ object.title }}
+{% endblock %}
 
+{% block js %}
+<script>
+	// Initialize and add the map
+	function initMap() {
+		// The location of Uluru
+		var street_address = {lat: 41.6005, lng: -93.6091};
+		// The map, centered at Uluru
+		var map = new google.maps.Map(
+		document.getElementById('map'), {zoom: 16, center: street_address,
+			scrollwheel: false,
+			
+		});
+		// The marker, positioned at Uluru
+		var marker = new google.maps.Marker({position: street_address, map: map});
+	}
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCurefBmArMbo3xXJpvxk3sG1q1MPSHsCc&callback=initMap">
+</script>
 {% endblock %}

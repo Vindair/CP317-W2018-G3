@@ -1,6 +1,6 @@
 from django.urls import path
 
-from .views import application, user, sublet
+from .views import application, user, sublet, account
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -29,7 +29,16 @@ urlpatterns = [
 	################
 	path('sublets/', sublet.SubletList.as_view(template_name='sublet/sublet_list.html'), name='SubletList'),
 	
-	path('sublets/<int:pk>/', sublet.SubletDetail.as_view(template_name='sublet/sublet_detail.html'), name='SubletDetail')
+	path('sublets/<int:pk>/', sublet.SubletDetail.as_view(template_name='sublet/sublet_detail.html'), name='SubletDetail'),
+	
+	path('sublets/create_sublet', sublet.create_sublet, name='create_sublet'),
+	
+	##############
+	##Temporary account path for report prototype
+	##############
+	path('account/', account.account_home, name='account_home'),
+	
+	
 	
 	
 ]

@@ -9,10 +9,10 @@
 	color: green;
 }
 
-
 .hello {
-  color: green;
+  color: yellow;
 }
+
 
 #sublet_title {
 	color:black;
@@ -24,4 +24,16 @@
 	
 }
 
+#map {
+    height: 300px;
+    width: 300px;
+    /* margin:auto; */
+}
 
+#sublet_description {
+	width: 500px;
+}
+
+#map_container {
+	margin-left: 75px;
+}

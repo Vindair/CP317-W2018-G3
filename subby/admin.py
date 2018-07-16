@@ -6,5 +6,5 @@ admin.site.register(User)
 
 
 class SubletData(admin.ModelAdmin):
-	list_display = ('title', 'street_address', 'pk')
+	list_display = ('title', 'street_address', 'created_at', 'updated_at')
 admin.site.register(Sublet, SubletData)

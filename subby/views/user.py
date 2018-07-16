@@ -45,7 +45,7 @@ def login(request):
 		user = auth.authenticate(username=request.POST['username'], password=request.POST['password'])
 		if user is not None:
 			auth.login(request, user)
-			returned_render = redirect('subby:index')
+			returned_render = redirect('subby:SubletList')
 		else:
 			returned_render = render(request, 'users/login.html',{'error':'username or password is incorrect.'})
 	else:
@@ -58,3 +58,5 @@ def logout(request):
 	if request.method == 'POST':
 		auth.logout(request)
 		return redirect('subby:index')
+		
+
