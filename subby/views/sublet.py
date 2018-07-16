@@ -29,7 +29,7 @@ class SubletDetail(DetailView):
 @login_required(login_url="/signup/")
 def create_sublet(request):
 	if request.method == 'POST':
-		if request.POST['title'] and request.POST['street_address'] and request.POST['city'] and request.POST['postal_code'] and request.POST['price'] and request.POST['description'] and request.POST['lat'] and request.POST['lng']:
+		if request.POST['title'] and request.POST['street_address'] and request.POST['city'] and request.POST['postal_code'] and request.POST['price'] and request.POST['description'] and request.POST['lat'] and request.POST['lng'] and request.FILES['image']:
 			sublet = Sublet()
 			sublet.title = request.POST['title']
 			sublet.street_address = request.POST['street_address']
@@ -37,7 +37,7 @@ def create_sublet(request):
 			sublet.postal_code = request.POST['postal_code']
 			sublet.price = request.POST['price']
 			sublet.description = request.POST['description']
-			# sublet.front_image = request.FILES['image']
+			sublet.front_image = request.FILES['image']
 			sublet.latitude = request.POST['lat']
 			sublet.longitude = request.POST['lng']
 			sublet.user = request.user
@@ -47,6 +47,28 @@ def create_sublet(request):
 			return render(request, 'sublet/create_sublet.html', {'error': 'All fields are required' })
 	else:
 		return render(request, 'sublet/create_sublet.html')
+		
+# @login_required(login_url="/signup/")
+# def create_sublet(request):
+	# if request.method == 'POST':
+		# if request.is_valid():
+			# sublet = Sublet()
+			# sublet.title = request.POST['title']
+			# sublet.street_address = request.POST['street_address']
+			# sublet.city = request.POST['city']
+			# sublet.postal_code = request.POST['postal_code']
+			# sublet.price = request.POST['price']
+			# sublet.description = request.POST['description']
+			# sublet.front_image = request.FILES['image']
+			# sublet.latitude = request.POST['lat']
+			# sublet.longitude = request.POST['lng']
+			# sublet.user = request.user
+			# sublet.save()
+			# return redirect('subby:index')
+		# else:
+			# return render(request, 'sublet/create_sublet.html', {'error': 'All fields are required' })
+	# else:
+		# return render(request, 'sublet/create_sublet.html')
 
 	
 	

@@ -16,12 +16,12 @@ class Sublet(models.Model):
 	postal_code = models.CharField(max_length=7)
 	city = models.CharField(max_length=20)
 	created_at = models.DateTimeField(auto_now=True)
-	updated_at = models.DateTimeField(null=True)
+	updated_at = models.DateTimeField(blank=True, null=True)
 	description = models.TextField()
 	title = models.CharField(max_length=50)
 	price = models.FloatField()
 
-	# front_image = models.ImageField(upload_to='images/')
+	front_image = models.ImageField(upload_to='images/', null=True, blank=True)
 	
 	user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 	

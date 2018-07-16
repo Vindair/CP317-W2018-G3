@@ -7,7 +7,7 @@
 <div class="container">
 <h3>Create Sublet</h3>
 
-<form method="POST" action="{% url 'subby:create_sublet' %} " enctype="multipart/form-date">
+<form method="POST" action="{% url 'subby:create_sublet' %} " enctype="multipart/form-data">
 	
 	{% csrf_token %}
 	<b>Title:</b>
