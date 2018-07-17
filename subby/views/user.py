@@ -24,20 +24,20 @@ def show(req, user_id):
 def signup(request):
 	if request.method == 'POST':
 		#User has info and wants an account now!
-		if request.POST['password1'] == request.POST['password2']:
+		if request.POST['password'] == request.POST['password-confirm']:
 			try: 
 				user = Users.objects.get(username = request.POST['username'])
-				return render(request, 'users/signup.html', {'error':'Username has already been taken'})
+				return render(request, 'application/base.html', {'error':'Username has already been taken'})
 			except Users.DoesNotExist:
 				user = Users.objects.create_user(request.POST['username'], \
-				password = request.POST['password1'])
+				password = request.POST['password'])
 				auth.login(request, user)
 				return redirect('subby:index')
 		else:
-			return render(request, 'users/signup.html', {'error':'passwords must match'})
+			return render(request, 'application/base.html', {'error':'passwords must match'})
 	else:
 		#User wants to enter info
-		return render(request, 'users/signup.html')
+		return render(request, 'application/base.html')
 		
 		
 def login(request):
@@ -47,9 +47,9 @@ def login(request):
 			auth.login(request, user)
 			returned_render = redirect('subby:SubletList')
 		else:
-			returned_render = render(request, 'users/login.html',{'error':'username or password is incorrect.'})
+			returned_render = render(request, 'application/base.html',{'error':'username or password is incorrect.'})
 	else:
-		returned_render = render(request, 'users/login.html')
+		returned_render = render(request, 'application/base.html')
 	
 	return returned_render
 	
