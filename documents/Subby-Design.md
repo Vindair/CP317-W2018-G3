@@ -96,7 +96,8 @@ The scope of Subby is driven by the need for a "one-stop shop" for Waterloo subl
 
 ## 2.7. Submit Reports
 * Users are able to issue reports concerning any violations of Subby's [Terms and Conditions Policy](https://rawgit.com/Kuresov/CP317-W2018-G3/master/documents/Terms&Conditions.md)
-  * Reports will be reviewed by administrators and the appropriate punishment will be carried out.
+  * Reports will be reviewed by administrators and the appropriate penalties will be issued.
+  * Penalties will depend on the severity of the violation and can range from deletion of the listing or temporary suspension to indefinite banning of the violating account. 
 
 # 3. Design Considerations
 ## 3.1. Assumptions and Dependencies
