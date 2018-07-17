@@ -228,6 +228,7 @@ The scope of Subby is driven by the need for a "one-stop shop" for Waterloo subl
 * Unit testing will be done on every method that is written on each model to ensure that each model is functioning as they should be.
 * Integration testing will be done by testing the controllers of each model since many cases requires working with multiple models on a single view.
 * Further manual testing will be done to find any bugs or defects that may have not been originally detected.
+* GUI testing will be conducted to test characteristics such as text formatting, text boxes, buttons, lists, layout, colors, fonts, font sizes, and so on.
 
 # 6. Project Architecture
 ## 6.1. Class Diagram
