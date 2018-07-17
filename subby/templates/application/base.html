@@ -5,9 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    {% load static %}
-    <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet"/>
-
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
@@ -17,7 +16,7 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
       <div class="container">
-        <a class="navbar-brand" href="{% url 'subby:index' %}">
+        <a class="navbar-brand" href="#">
           <img src="{% static 'icons/logo_s.png' %}" class="d-inline-block align-top" /> Subby
         </a>
 
@@ -33,11 +32,11 @@
               <ul class="navbar-nav">
                 <li class=" nav-item">
                   <a class="nav-link" id="nav_a" href=
-                  "{% url 'subby:account_home' %}">Account</a>
+                  "#">Account</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" id="nav_a" href="javascript:{document.getElementById('logout').submit()}">Logout</a>
-                  <form id="logout" method="POST" action="{% url 'subby:logout' %}">
+                  <form id="logout" method="POST" action="#">
                     {% csrf_token %}
                     <input type="hidden" />
                   </form>
@@ -45,10 +44,10 @@
               </ul>
             {% else %}
               <li class="nav-item">
-                <a class="nav-link" id="nav_a" href="{% url 'subby:login' %}">Login</a>
+                <a class="nav-link" id="nav_a" data-toggle="modal" data-target="#login-modal" href="#">Login</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" id="nav_a" href="{% url 'subby:signup' %}">
+                <a class="nav-link" id="nav_a" href="#">
                   Sign Up!
                 </a>
               </li>
@@ -58,18 +57,94 @@
       </div>
     </nav>
 
+    <div class="container">
       {% block content %}
+      {% if error %}
+      <div class="alert alert-danger fade show" role="alert" style="display: none" id="error-container">
+            <h4 class="alert-heading">Error</h4>
+            <p>{{ error }}</p>
+            <button type="button" class="close" onclick="$('.alert').hide()" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+      {% endif %}
       {% endblock %}
+    </div>
+
+    <!-- Modals -->
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="login-modal-label" aria-hidden="true">
+      {% block loginmodal %}
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="btn-group btn-group-lg modal-title" role="group" aria-label="Login Signup Buttons" id="login-modal-label">
+              <button type="button" class="btn btn-light login-btn" style="width: 235px;">Login</button>
+              <button type="button" class="btn btn-light signup-btn" style="width: 235px;">Sign-up</button>
+            </div>
+          </div>
+          <form action="login/" method="POST">
+              {% csrf_token %}
+          <div class="modal-body">
+              <div class="form-group">
+                <label for="email-box">Email address</label>
+                <input type="email" class="form-control" id="email-box" name="username" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">UW/WLU emails required</small>
+              </div>
+              <div class="form-group">
+                <label for="pw-box">Password</label>
+                <input type="password" class="form-control" id="pw-box" placeholder="Password" name="password">
+              </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">Login</button>
+          </div>
+          </form>
+        </div>
+      </div>
+      {% endblock %}
+    </div>
+
+    <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="signup-modal-label" aria-hidden="true">
+      {% block signupmodal %}
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="btn-group btn-group-lg modal-title" role="group" aria-label="Login Signup Buttons" id="login-modal-label">
+              <button type="button" class="btn btn-light login-btn" style="width: 235px;">Login</button>
+              <button type="button" class="btn btn-light signup-btn" style="width: 235px;">Sign-up</button>
+            </div>
+          </div>
+          <div class="modal-body">
+            <p>Signup Form</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Login</button>
+          </div>
+        </div>
+      </div>
+      {% endblock %}
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="{% static "js/LoginModal.js" %}"></script>
+    <script>
+        $('.login-btn').on('click', function(){
+            $('#login-modal').modal('hide');
+            $('#signup-modal').modal('show');
+        });
 
-	{% block js %}
-	{% endblock %}
-
+        $('.signup-btn').on('click', function(){
+            alert('hi');
+            $('#sign-up-modal').modal('hide');
+            $('#login-modal').modal('show');
+        });
+    </script>
   </body>
 
   <footer>
