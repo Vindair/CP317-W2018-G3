@@ -26,9 +26,8 @@
   4.1. [Technical Standards and Guidelines](#41technicalstandardsandguidelines)  
   4.1.1. [General Guidelines](#411generalguidelines)  
   4.1.2. [Technical Standards](#412technicalstandards)  
-  4.1.3. [Data Storage](#413datastorage)  
-  4.1.4. [Security and Privacy Considerations](#414securityandprivacyconsiderations)  
-  4.1.5. [Control Flow](#415controlflow)  
+  4.1.3. [Security and Privacy Considerations](#413securityandprivacyconsiderations)  
+  4.1.4. [Control Flow](#414controlflow)  
   4.2. [Project Deployment](#42projectdeployment)  
 5. **[Project Testing](#5projecttesting)**  
   5.1. [Testing Strategies](#51testingstrategies)  
@@ -152,15 +151,7 @@ The scope of Subby is driven by the need for a "one-stop shop" for Waterloo subl
 	* Firefox (Windows, Mac, Linux)
 	* Chrome (Windows, Mac, Linux)
 
-
-### 4.1.3. Data Storage
-*	All objects will be organized into logical groups within one or more schemas in the database to maintain data organization and manageability.
-*	Objects within one schema should be accessible within another schema, assuming access is permitted.
-*	Permit flexible and robust implementation of user defined objects, such as functions, data types, indexes and operators
-
-
-
-### 4.1.4. Security and Privacy Considerations
+### 4.1.3. Security and Privacy Considerations
 * Privacy Settings.
   * Dual-Mode privacy setting for User account data:
     * Private:
@@ -208,7 +199,7 @@ The scope of Subby is driven by the need for a "one-stop shop" for Waterloo subl
   * For more Subby privacy and secuirty policies and regulations, refer to Subby's [Terms and Conditions Policy](https://rawgit.com/Kuresov/CP317-W2018-G3/master/documents/Terms&Conditions.md)
 
 
-### 4.1.5. Control Flow
+### 4.1.4. Control Flow
 *	Data will transmit between client and PostgreSQL database. Client interacts with the PostgreSQL database using [PHP Data Objects (PDO)](http://php.net/manual/en/book.pdo.php) API. It allows performing the common database operations in PHP such as creating new tables, inserting data, updating data, querying data, deleting data and so on. Once the connection is established successfully, client will directly send query to database and database will respond corresponding answers to client.
 
 
@@ -225,175 +216,20 @@ The scope of Subby is driven by the need for a "one-stop shop" for Waterloo subl
 ## 6.2. Package Details
 As discussed in the Analysis Phase, the system consists of five packages: User Package, Sublet Package, Rating Package, Favourite Package, and Report Package. Within each package diagram, we list the relevant entity objects and their corresponding methods. Additionally, each package diagram includes the control objects responsible for realizing the major use cases representing the interactions between external actors and the system.
 
-
 ## 6.2.1 User Package
 ![UserPackage](https://i.imgur.com/0QpnLzZ.jpg)
 
-### User Class
-#### Methods
-* Constructor (public)
-    * User(options: map) - Class Constructor. Options parameter is a key-value object with the attributes of the desired User. Only non-null fields are enforced.
-        * Options: (email: string, password: string, lastname: string, firstname: string, phonenumber: string)
-
-* Getters (public)
-    * get\_user\_id():int
-    * get\_email():string
-    * get\_created\_at():datetime
-    * get\_updated\_at():datetime
-    * get\_is\_admin():boolean
-    * get\_last\_name():string
-    * get\_first\_name():string
-    * get\_phone\_number():string
-
-* Setters (public)
-    * set\_email(email: string)
-    * set\_created\_at(date: datetime)
-    * set\_updated\_at(date: datetime)
-    * set\_is\_admin(is_admin: boolean)
-    * set\_password\_from_plaintext(plain_password: string) - Generates hashed password and sets the salt attribute on the user.
-    * set\_first\_name(firstname: string)
-    * set\_last\_name(lastname: string)
-    * set\_phone\_number(phonenumber: string)
-
-* Helpers (public)
-    * test\_password(password: string) - Tests the given plaintext password against the user's salted and hashed password.
-
-* Helpers (private)
-    * **Static:** hash_password(password: string) - Salts and hashes the given plaintext password.
-    * validate\_password(password: string) - Ensure password meets specifications (e.x. 8 character minimum limit).
-    * validate\_phone\_number(phonenumber: string) - Ensure that the phone number is of valid length and format.
-    * validate\_email(email: string) - Validates the format of the given email.
-
-* Relation Helpers (public)
-    * save() - Runs the validation helpers, returning errors if present, and saves the User if it is valid.
-    * reviews() - Returns an array of Reviews created by the User.
-    * favorites() - Returns an array of Favorites created by the User.
-    * sublets() - Returns an array of Sublets created by the User.
-    * reports() - Returns an array of Reports created by the User.
-
 ## 6.2.2 Sublet Package
 ![SubbySubletPackage](https://i.imgur.com/T55Cppm.jpg)
-### Sublet Class
-#### Methods
-* Constructor (public)
-	* Sublet(sublet\_title: string, duration: int, price\_per\_month: double, location: string, description: string) - Class Constructor. All non-null fields are enforced except for datetime fields, which are automatically recorded by the system.
-
-
-* Getters (public)
-    * get\_sublet\_id(): int
-    * get\_is\_sold(): boolean
-    * get\_sublet\_title: string
-    * get\_duration():int
-    * get\_price\_per\_month(): double
-    * get\_location: string
-    * get\_description(): string
-    * get\_created\_at(): datetime 
-    * get\_updated\_at():datetime
-    * get\_owner\_id(): int
-* Setters (public)
-    * set\_sublet\_title(title: string
-    * set\_is\_sold(status: boolean) 
-    * set\_duration(duration: int)
-    * set\_price\_per\_month(price: double)
-    * set\_location(location: string)
-    * set\_description(desc: string)
-    * set\_created\_at(date: datetime)
-    * set\_updated\_at(date: datetime)
-    * set\_owner\_id(user\_id: int)
-
-* Relation Helpers (public)
-    * save() - Commits the Sublet to the database, assuming Sublet is correctly initiated
-    * reviews() - Returns an array of Reviews concerning the Sublet
 
 ## 6.2.3 Rating Package
-
 ![SubbyRatingPackage](https://i.imgur.com/szf85fl.png)
-### Rating Class
-
-### Methods
-  * Constructor (public)
-    * Rating(rating: int, comment : string, user\_id: int, reviewed\_user\_id:int) - Constructes a Rating
-
-  * Getters (public)
-    *  get\_comment():string - Returns the text description tied to a rating
-    *  get\_reviewed\_user\_id():int - Returns the ID of the user being rated
-    *  get\_user\_id():int - Returns the ID of the user who is rating another user
-    *  get\_created\_at():datetime - Returns time data for time of class creation
-    *  get\_updated\_at():datetime - Returns time data for time of last update to class
-
-  * Setters (public)
-    *  set\_rating(rating: tinyint) - Updates the rating review number
-    *  set\_comment(comment: string) - Updates the comment for the review
-    *  set\_reviewed\_user\_id(reviewed\_user\_id: int) - Updates the reviewed user ID
-    *  set\_user\_id(user\_id: int) - Updates the reviewing user ID
-    *  set\_created\_at(date: datetime) - Updates created\_at
-    *  set\_updated\_at(date: datetime) - Updates updated\_at
-
-  * Helpers (private)
-    *  validate\_rating(rating: tinyint) - Ensures that the rating is valid (i.e A value that is held in ALLOWED\_REVIEW\_VALS)
-
-  * Relation Helpers (public):
-    * save() - Saves and persistes the Rating
-    * users() - Returns an array of User that have been rated.
-    * sublet() - Returns an array of Sublets that is held by the rated user.
 
 ## 6.2.4 Favorite Package
-
 ![SubbyFavouriteDiagram](https://i.imgur.com/3X5iN2c.png)
-### Favourite Class
-  *  **FavouritesLister:** Gathers and returns all favourites for sublet listings display purposes
-  *  **FavouritesManager:** Creates or destroys favourites from the database
-### Methods
-  * Constructor (public)
-    *  Favourite(user\_id: int, sublet\_id: int) - Constructes Favourite
-
-  * Getters (public)
-    *  get\_favourite\_id():int - Returns favourite ID
-    *  get\_sublet\_id():int - Returns the favourited sublet ID
-    *  get\_user\_id():int - Returns user ID the favourite is tied to
-    *  get\_created\_at():datetime - Returns time data for time of class creation
-    *  get\_updated\_at():datetime - Returns time data for time of last update to class
-
-  * Setters (public)
-    *  set\_created\_at(date: datetime) - Updates created\_at
-    *  set\_updated\_at(date: datetime) - Updates updated\_at
-
-  * Relation Helpers (public):
-    * save() - Saves and persistes Favourite
 
 ## 6.2.5 Report Package
 ![UserPackage](https://i.imgur.com/Gb3Mdlx.jpg)
-
-### Report Class
-#### Methods
-* Constructor (public)
-    * Report(user\_id: int, sublet\_id: int, issue: string, description: string) - Class Constructor. All non-null fields are enforced except datetime frields, which are recorded by system automatically.
-
-* Getters (public): only available for admins
-    * get\_report\_id():int
-    * get\_created\_at():datetime
-    * get\_updated\_at():datetime
-    * get\_issue():string
-    * get\_user\_id():int
-    * get\_description():string
-
-* Setters (public): only available for admins
-    * set\_report\_id(report\_id: int)
-    * set\_created\_at(date: datetime)
-    * set\_updated\_at(date: dateime)
-    * set\_issue(issue: string)
-    * set\_description(description: string)
-    * set\_user\_id(user\_id: int)
-
-
-* Helpers (private):
-    * test\_description(description: string) - Tests the descriptions user has entered. Reject the report if the description is not valid. For example: a series of punctuations, Non english letters, a series of random letters.
-
-
-* Relation Helpers (public):
-    * save() - Saves the Report if no error is presented by the prviate helper methods.
-    * users() - Returns an array of User who has been reported. Only available for admins.
-    * sublets() - Returns an array of Sublets that has been reported. Only available for admins.
 
 # 7. Data Dictionary
 ![DataDictionary](https://i.imgur.com/frsaeyW.png)
