@@ -12,6 +12,7 @@
     * Password: postgres
     * Port: 5432
   * Ensure `python` and `pip` are installed (or the appropriate python 3.X and python3-pip for your platform). From the project directory, run `pip install -r requirements.txt`
+  * Ensure that migrations have been performed; run `python manage.py migrate --settings=subby_project.settings.development`
   * From the project directory, run `python manage.py runserver --settings=subby_project.settings.development`. Subby will be running at `http://localhost:8000`
 
 #### Testing
