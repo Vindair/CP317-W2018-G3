@@ -227,7 +227,7 @@ As discussed in the Analysis Phase, the system consists of five packages: User P
 
 
 ## 6.2.1 User Package
-![UserPackage](https://i.imgur.com/Trwasts.jpg)
+![UserPackage](https://i.imgur.com/0QpnLzZ.jpg)
 
 ### User Class
 #### Methods
@@ -272,7 +272,7 @@ As discussed in the Analysis Phase, the system consists of five packages: User P
     * reports() - Returns an array of Reports created by the User.
 
 ## 6.2.2 Sublet Package
-![SubbySubletPackage](https://i.imgur.com/16Ab2Kx.jpg)
+![SubbySubletPackage](https://i.imgur.com/T55Cppm.jpg)
 ### Sublet Class
 #### Methods
 * Constructor (public)
