@@ -362,7 +362,7 @@ As discussed in the Analysis Phase, the system consists of five packages: User P
     * save() - Saves and persistes Favourite
 
 ## 6.2.5 Report Package
-![UserPackage](https://i.imgur.com/cqmxUjY.png)
+![UserPackage](https://i.imgur.com/Gb3Mdlx.jpg)
 
 ### Report Class
 #### Methods
