@@ -13,4 +13,3 @@ DATABASES = {
         'PASSWORD': os.environ.get('DBPASS', ''),
     }
 }
-
