@@ -162,7 +162,7 @@ The scope of Subby is driven by the need for a "one-stop shop" for Waterloo subl
 	Visitors.
 * User Authentication.
   * Subby will use single sign-on to authenticate Users;
-  * Usernames must be unique and can contain letters (A-Z), numbers (0-9), dashes (-), underscores (_), apostrophes ('), and periods (.);
+  * Usernames must be unique and can contain letters (A-Z), numbers (0-9), dashes (-), underscores (_), and periods (.);
   * Passwords can contain any combination of printable ASCII characters and must contain a minimum of 8 characters comprised of at least       one number and one special character  (e.g. !, @, #, $, etc.).
   
    * Passwords will be automatically salted to further safeguard passwords before they are stored in the database.
