@@ -1,6 +1,9 @@
 from django.contrib import admin
+
 from django.contrib.auth.admin import UserAdmin as DjangoUserAdmin
 from .models import User
+from .models import *
+from .models.sublet import Sublet
 
 admin.site.register(User)
 
@@ -20,3 +23,13 @@ class UserAdmin(DjangoUserAdmin):
   list_display = ('email', 'first_name', 'last_name', 'is_admin')
   search_fields = ('email', 'first_name', 'last_name')
   ordering = ('email')
+
+
+
+
+
+
+class SubletData(admin.ModelAdmin):
+	list_display = ('title', 'street_address', 'created_at', 'updated_at')
+admin.site.register(Sublet, SubletData)
+
