@@ -143,7 +143,7 @@ The scope of Subby is driven by the need for a "one-stop shop" for Waterloo subl
 * Methods that perform non-trivial operations should have a short comment with a description of their side-effects.
 * Blocks within methods that are complex should have a short comment explaining their purpose.
 * Frontend HTML and CSS must be in compliance with the established [W3C standards](https://www.w3.org/standards/).
-* Browser Compatibility:
+* Browser Compatibility.
   * Bootstrap front-end framework will be used to ease cross-browser compatibility
   * A CSS reset stylesheet will be used to ensure behavior consistency between browsers 
   * Mac OS X, Linux and Windows users should be able to display the website with full functionality in the following browsers:
@@ -151,6 +151,21 @@ The scope of Subby is driven by the need for a "one-stop shop" for Waterloo subl
 	* Safari (mac)
 	* Firefox (Windows, Mac, Linux)
 	* Chrome (Windows, Mac, Linux)
+* Error and Exception Handling 
+  * Error Handling.
+    * Error handlers will be used to catch and respond to common HTTP errors, including:
+      *	400: Bad Request  
+      * 401: Unauthorized.
+      * 403: Forbidden
+      * 404: Not Found 
+      * 500: Internal Server Error
+      * 502: Bad Gateway
+      * 503: Service Unavailable
+    * Resulting error pages will be customized to display a description of the error in layman’s terms and should be formatted consistent       with Subby’s website branding.
+  * Exception Handling.
+    * Every client request will be wrapped in try-except handlers to catch and report any unhandled error.
+    * Any code that is likely to raise a common Python or Django exception, such as IOError or ImportError will be wrapped in try-   exception handlers.
+
 
 ### 4.1.3. Security and Privacy Considerations
 * Privacy Settings.
