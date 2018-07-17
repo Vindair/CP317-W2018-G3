@@ -1,27 +1,30 @@
-#nav_a {
-  color: grey;
-  margin-left: 5px;
-  margin-top: 5px;
-  font-weight: bold;
+.main-nav-item {
+    color: grey;
+    margin-left: 5px;
+    margin-top: 5px;
+    font-weight: bold;
 }
 
-#nav_a:hover {
-	color: green;
+.main-nav-item:hover {
+    color: green;
+}
+
+.navbar {
+    border-bottom: 1px solid #ccc;
 }
 
 .hello {
-  color: yellow;
+    color: yellow;
 }
 
-
 #sublet_title {
-	color:black;
-	
+    color: black;
+
 }
 
 #sublet_title:hover {
-	color:blue;
-	
+    color: blue;
+
 }
 
 #map {
@@ -31,17 +34,16 @@
 }
 
 #sublet_description {
-	width: 500px;
+    width: 500px;
 }
 
 #map_container {
-	margin-left: 75px;
+    margin-left: 75px;
 }
 
-
 #pagination_row {
-	/* background-color: black; */
-	/* width: 70%; */
-	/* padding-left:300px; */
-	/* text-align:center; */
+    /* background-color: black; */
+    /* width: 70%; */
+    /* padding-left:300px; */
+    /* text-align:center; */
 }
