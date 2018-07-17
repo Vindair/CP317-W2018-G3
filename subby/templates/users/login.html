@@ -1,0 +1,36 @@
+<!-- temporary login page used for report prototype purpose -->
+
+{% extends 'application/base.html' %}
+
+{% block content %}
+<div class="container">
+{% if error %}
+{{ error }}
+<br /><br />
+
+{% endif %}
+
+<h1>Login</h1>
+
+<form method="POST" action="{% url 'subby:login' %}">
+	<!--whenever we use a form we have to use csrf_token to
+		get protection from other attack-->
+	{% csrf_token %}
+	Username:<br />
+	<input type="text" name="username"/><br />
+	Password:<br />
+	<input type="password" name="password" /><br /><br />
+	<input class="btn btn-primary" type="submit" value="Login!" />
+
+</form>
+
+<br />
+
+<h1 class="hello">Hello</h1>
+</div>
+
+{% endblock %}
+
+
+
+

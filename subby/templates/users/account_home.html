@@ -1,0 +1,19 @@
+{% extends 'application/base.html' %}
+
+
+{% block content %}
+<br />
+<div class="container">
+	<a class="btn btn-secondary" href="{% url 'subby:create_sublet' %}">Post Sublet</a>
+	<br /><br />
+	<a class="btn btn-secondary" href="{% url 'subby:SubletList' %}">View All Posts</a>
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}
