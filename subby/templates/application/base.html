@@ -39,7 +39,7 @@
                     <li class="nav-item">
                         <a class="nav-link main-nav-item" id=""
                            href="javascript:{document.getElementById('logout').submit()}">Logout</a>
-                        <form id="logout" method="POST" action="#">
+                        <form id="logout" method="POST" action="{% url 'subby:logout' %}">
                             {% csrf_token %}
                             <input type="hidden"/>
                         </form>
@@ -59,18 +59,22 @@
     </div>
 </nav>
 
-<div class="container">
+<div class="container-fluid">
     {% block content %}
         {% if error %}
-            <div class="alert alert-danger fade show" role="alert" style="display: none" id="error-container">
-                <h4 class="alert-heading">Error</h4>
-                <p>{{ error }}</p>
-                <button type="button" class="close" onclick="$('.alert').hide()" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
+            <script>$('#login-modal').modal('show');</script>
         {% endif %}
     {% endblock %}
+    <div class="row">
+        <div class="col"></div>
+        <div class="col">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
+                       id="card-search">
+        </div>
+        <div class="col"></div>
+    </div>
+
+
 </div>
 
 <!-- Modals -->
@@ -79,6 +83,17 @@
     {% block loginmodal %}
         <div class="modal-dialog" role="document">
             <div class="modal-content">
+                {% if error %}
+                    <div class="modal-content">
+                        <div class="alert alert-danger fade show" role="alert" id="error-container">
+                            <h4 class="alert-heading">Error</h4>
+                            <p>{{ error }}</p>
+                            <button type="button" class="close" onclick="$('.alert').hide()" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                {% endif %}
                 <div class="modal-header">
                     <div class="btn-group btn-group-lg modal-title" role="group" aria-label="Login Signup Buttons"
                          id="login-modal-label">
@@ -93,10 +108,12 @@
                             <label for="email-box">Email address</label>
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
-                                    <div class="input-group-text"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-email.svg"></div>
+                                    <div class="input-group-text"><img
+                                            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-email.svg">
+                                    </div>
                                 </div>
                                 <input type="email" class="form-control" id="email-box" name="username"
-                                   aria-describedby="emailHelp" placeholder="Enter email">
+                                       aria-describedby="emailHelp" placeholder="Enter email">
                             </div>
                             <small id="emailHelp" class="form-text text-muted">UW/WLU emails required</small>
                         </div>
@@ -104,10 +121,12 @@
                             <label for="pw-box">Password</label>
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
-                                    <div class="input-group-text"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-password.svg"></div>
+                                    <div class="input-group-text"><img
+                                            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-password.svg">
+                                    </div>
                                 </div>
                                 <input type="password" class="form-control" id="pw-box" placeholder="Password"
-                                   name="password">
+                                       name="password">
                             </div>
                         </div>
                     </div>
@@ -140,10 +159,12 @@
                             <label for="email-box">Email Address</label>
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
-                                    <div class="input-group-text"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-email.svg"></div>
+                                    <div class="input-group-text"><img
+                                            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-email.svg">
+                                    </div>
                                 </div>
                                 <input type="email" class="form-control" id="email-box" name="username"
-                                   aria-describedby="emailHelp" placeholder="Enter email">
+                                       aria-describedby="emailHelp" placeholder="Enter email">
                             </div>
                             <small id="emailHelp" class="form-text text-muted">UW/WLU emails required</small>
                         </div>
@@ -151,20 +172,25 @@
                             <label for="pw-box">Password</label>
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
-                                    <div class="input-group-text"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-password.svg"></div>
+                                    <div class="input-group-text"><img
+                                            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-password.svg">
+                                    </div>
                                 </div>
                                 <input type="password" class="form-control" id="pw-box" placeholder="Password"
-                                   name="password">
+                                       name="password">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="pw-confirm-box">Password</label>
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
-                                    <div class="input-group-text"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-password.svg"></div>
+                                    <div class="input-group-text"><img
+                                            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-password.svg">
+                                    </div>
                                 </div>
-                                <input type="password" class="form-control" id="pw-confirm-box" placeholder="Confirm Password"
-                                   name="password-confirm">
+                                <input type="password" class="form-control" id="pw-confirm-box"
+                                       placeholder="Confirm Password"
+                                       name="password-confirm">
                             </div>
                         </div>
                     </div>
