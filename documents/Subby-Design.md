@@ -224,6 +224,10 @@ The scope of Subby is driven by the need for a "one-stop shop" for Waterloo subl
 * Depending on the deployment configuration, the hosting server will also need to support a local Postgres database; alternatively, a separate server with a networked Postgres instance must be provided and reachable by the application server.
 
 # 5. Project Testing
+## 5.1. Testing Strategies
+* Unit testing will be done on every method that is written on each model to ensure that each model is functioning as they should be.
+* Semi-integration testing will be done by testing the controllers of each model since many cases requires working with multiple models on a single view. 
+* Further manual testing will be done to find any bugs or defects that may have not been originally detected.
 
 # 6. Project Architecture
 ## 6.1. Class Diagram
@@ -266,7 +270,10 @@ As discussed in the Analysis Phase, the system consists of five packages: User P
 
 * **Section 4**
   *  Alex Kirsopp [4.1] [2018-06-20]
-   * Sarah Younes [4.1.2 - 4.1.4] [2018-07-02]
+  *  Sarah Younes [4.1.2 - 4.1.4] [2018-07-02]
+   
+* **Section 5**
+  *  Ronald Lwin [5.1] [2018-07-17]
 
 * **Section 6**
   *  Alex Kirsopp [6.2.1] [2018-06-27]
