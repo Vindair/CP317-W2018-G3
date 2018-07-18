@@ -3,8 +3,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from subby.models.sublet import Sublet
 from django.shortcuts import get_object_or_404
-from subby.models.photoform import PhotoForm
-from subby.models.photo import Photo
+from subby.models.image import Image
 
 import json
 
@@ -27,7 +26,9 @@ class SubletList(ListView):
 class SubletDetail(DetailView):
 	model = Sublet
 	
-	
+# temp redir
+def redirect(request):
+	return render(request, 'sublet/create_sublet.html')
 	
 @login_required(login_url="/signup/")
 def create_sublet(request):
@@ -40,27 +41,24 @@ def create_sublet(request):
 			sublet.postal_code = request.POST['postal_code']
 			sublet.price = request.POST['price']
 			sublet.description = request.POST['description']
-			#sublet.front_image = json.dumps(request.FILES.getlist('files'))
-			"""form = PhotoForm(request.POST, request.FILES)
-			if form.is_valid():
-				photo = form.save()
-				data = {'is_valid': True, 'name': photo.file.name, 'url': photo.file.url}
-			else:
-				data = {'is_valid': False}
-				"""
+			"""for file in request.FILES.getlist('files'):
+				instance = Image(
+					sublet=Sublet.objects.get(1),
+					image=file
+				)
+				instance.save()
+			"""
+			sublet.front_image = request.FILES.getlist('files')[0]
 			sublet.latitude = request.POST['lat']
 			sublet.longitude = request.POST['lng']
-			sublet.user = request.user
+			sublet.user_id = request.user.id
 			sublet.save()
-			return redirect('subby:index')
+			return render(request, 'sublet/create_sublet.html')
 		else:
 			return render(request, 'sublet/create_sublet.html', {'create_sublet_error': 'All fields are required' })
 	else:
 		return render(request, 'sublet/create_sublet.html')
 
-# temp redir
-def redirect(request):
-	return render(request, 'sublet/create_sublet.html')
 		
 
 
