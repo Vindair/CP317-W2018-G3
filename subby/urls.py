@@ -33,7 +33,7 @@ urlpatterns = [
 	
 	path('sublets/create_sublet', sublet.create_sublet, name='create_sublet'),
 
-	path('sublets/redirect', sublet.redirect, name='redirect'),
+	path('sublets/search', sublet.search, name='search'),
 	
 	##############
 	##Temporary account path for report prototype

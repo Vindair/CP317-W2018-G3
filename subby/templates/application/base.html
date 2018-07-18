@@ -60,6 +60,11 @@
 
 <div class="container-fluid">
     {% block content %}
+        {% if place %}
+            {% for p in place %}
+                {{ p.street_address }}
+            {% endfor %}
+        {% endif %}
         {% if login_error %}
             <script type="text/javascript">
                 $(function () {
@@ -71,13 +76,13 @@
             <div class="col"></div>
             <div class="col-xl-10">
                 <img class="d-block mx-auto main-logo-img" src="{% static 'images/subby_logo.png' %}">
-                <form action="{% url 'subby:redirect' %}" method="POST">
+                <form action="{% url 'subby:search' %}" method="POST">
                     {% csrf_token %}
                     <div class="form-group">
                         <input class="form-control" type="search" placeholder="Search" aria-label="Search"
                                id="sublet-search">
-                        <input type="hidden" id="search-lat">
-                        <input type="hidden" id="search-lng">
+                        <input type="hidden" id="search-lat" name="lat">
+                        <input type="hidden" id="search-lng" name="lng">
                         <button class="btn btn-secondary search-btn d-block mx-auto" type="submit">Search</button>
                     </div>
                 </form>

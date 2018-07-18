@@ -1,6 +1,7 @@
 from django.views.generic import ListView, DetailView
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from django.db.models import Func, F
 from subby.models.sublet import Sublet
 from django.shortcuts import get_object_or_404
 from subby.models.image import Image
@@ -27,8 +28,14 @@ class SubletDetail(DetailView):
 	model = Sublet
 	
 # temp redir
-def redirect(request):
-	return render(request, 'sublet/create_sublet.html')
+def search(request):
+	if request.method == 'POST':
+		places = Sublet.objects.nearby(request.POST['lat'], request.POST['lng'], 5)
+		return render(request, 'application/base.html', {'place': places})
+	else:
+		return render(request, 'application/base.html')
+
+
 	
 @login_required(login_url="/signup/")
 def create_sublet(request):
