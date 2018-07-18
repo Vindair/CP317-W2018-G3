@@ -43,7 +43,7 @@ def create_sublet(request):
 			sublet.save()
 			return redirect('subby:index')
 		else:
-			return render(request, 'sublet/create_sublet.html', {'error': 'All fields are required' })
+			return render(request, 'sublet/create_sublet.html', {'create_sublet_error': 'All fields are required' })
 	else:
 		return render(request, 'sublet/create_sublet.html')
 

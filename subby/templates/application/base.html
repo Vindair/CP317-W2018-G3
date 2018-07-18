@@ -33,8 +33,7 @@
             {% if user.is_authenticated %}
                 <ul class="navbar-nav">
                     <li class=" nav-item">
-                        <a class="nav-link main-nav-item" id="" href=
-                                "#">Account</a>
+                        <a class="nav-link main-nav-item" id="" href="{% url 'subby:account_home' %}">Account</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link main-nav-item" id=""
@@ -63,25 +62,26 @@
     {% block content %}
         {% if login_error %}
             <script type="text/javascript">
-                $(function (){
-                   $('#login-modal').modal('show');
+                $(function () {
+                    $('#login-modal').modal('show');
                 });
             </script>
         {% endif %}
-    <div class="row">
-        <div class="col"></div>
-        <div class="col-xl-10">
-            <img class="d-block mx-auto main-logo-img" src="{% static 'images/subby_logo.png' %}">
-            <form action="{%  url 'subby:redirect' %}" method="POST">
-                {% csrf_token %}
-                <div class="form-group">
-                    <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="card-search">
-                    <button class="btn btn-secondary search-btn d-block mx-auto" type="submit">Search</button>
-                </div>
-            </form>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-xl-10">
+                <img class="d-block mx-auto main-logo-img" src="{% static 'images/subby_logo.png' %}">
+                <form action="{% url 'subby:redirect' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search"
+                               id="card-search">
+                        <button class="btn btn-secondary search-btn d-block mx-auto" type="submit">Search</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col"></div>
         </div>
-        <div class="col"></div>
-    </div>
     {% endblock %}
 </div>
 
@@ -153,6 +153,17 @@
     {% block signupmodal %}
         <div class="modal-dialog" role="document">
             <div class="modal-content">
+                {% if signup_error %}
+                    <div class="modal-header">
+                        <div class="alert alert-danger fade show" role="alert" id="error-container">
+                            <h4 class="alert-heading">Error</h4>
+                            <p>{{ signup_error }}</p>
+                            <button type="button" class="close" onclick="$('.alert').hide()" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                {% endif %}
                 <div class="modal-header">
                     <div class="btn-group btn-group-lg modal-title" role="group" aria-label="Login Signup Buttons"
                          id="login-modal-label">
@@ -212,21 +223,22 @@
     {% endblock %}
 </div>
 
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
-        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-        crossorigin="anonymous"></script>
-<script src="{% static "js/LoginModal.js" %}"></script>
-<script src="{% static "js/FileHandling.js" %}"></script>
-<script src="{% static "js/maps.js" %}"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWKqqOWg7D2pCCKgsGe_ISDMUyEkkxXzY&libraries=places&callback=init_map" async defer></script>
+{% block js %}
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+            integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+            crossorigin="anonymous"></script>
+    <script src="{% static "js/LoginModal.js" %}"></script>
+    <script src="{% static 'js/EditAccountInformation.js' %}"></script>
+
+{% endblock %}
 
 </body>
 

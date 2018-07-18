@@ -2,7 +2,10 @@ from django.shortcuts import get_object_or_404, get_list_or_404, render, redirec
 from subby.models import User
 from django.contrib import auth
 
-from django.contrib.auth.models import User as Users
+#from django.contrib.auth.models import User as Users
+
+from django.contrib.auth import get_user_model
+User = get_user_model()
 
 def index(req):
     context = { 'users': get_list_or_404(User) }
@@ -26,15 +29,15 @@ def signup(request):
 		#User has info and wants an account now!
 		if request.POST['password'] == request.POST['password-confirm']:
 			try: 
-				user = Users.objects.get(username = request.POST['username'])
-				return render(request, 'application/base.html', {'error':'Username has already been taken'})
-			except Users.DoesNotExist:
-				user = Users.objects.create_user(request.POST['username'], \
+				user = User.objects.get(email = request.POST['username'])
+				return render(request, 'application/base.html', {'signup_error':'Username has already been taken'})
+			except User.DoesNotExist:
+				user = User.objects.create_user(request.POST['username'], \
 				password = request.POST['password'])
 				auth.login(request, user)
 				return redirect('subby:index')
 		else:
-			return render(request, 'application/base.html', {'error':'passwords must match'})
+			return render(request, 'application/base.html', {'signup_error':'Passwords must match'})
 	else:
 		#User wants to enter info
 		return render(request, 'application/base.html')

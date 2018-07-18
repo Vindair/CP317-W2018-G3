@@ -39,7 +39,7 @@ urlpatterns = [
 	##Temporary account path for report prototype
 	##############
 	path('account/', account.account_home, name='account_home'),
-	
+	path('account/update', account.update_user_info, name='update_user_info'),
 	
 	
 	

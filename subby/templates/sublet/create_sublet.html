@@ -7,6 +7,15 @@
                 <h1 class="display-4">Create a sublet listing</h1>
                 <p class="lead">Enter the following information</p>
                 <hr class="my-4">
+                {% if create_sublet_error %}
+                    <div class="alert alert-danger fade show" role="alert" id="error-container">
+                        <h4 class="alert-heading">Error</h4>
+                        <p>{{ create_sublet_error }}</p>
+                        <button type="button" class="close" onclick="$('.alert').hide()" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                {% endif %}
                 <form method="POST" action="{% url 'subby:create_sublet' %} " enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="form-group">
@@ -42,7 +51,7 @@
                         <input type="file" class="form-control" id="files" name="files[]" multiple
                                aria-describedby="Image Upload">
                         <label for="image-list">Previews:</label>
-                        <output class="form-control" id="image-list" style="height: 50px;"></output>
+                        <output class="form-control" id="image-list" style="min-height: 100px; height: auto;"></output>
                         <label for="lat">Latitude:</label>
                         <input type="text" class="form-control" name="lat" id="lat"
                                aria-describedby="Latitude" placeholder="Enter Latitude">
@@ -56,5 +65,13 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block js %}
+    {% load static %}
+    <script src="{% static "js/FileHandling.js" %}"></script>
+    <script src="{% static "js/MapAPI.js" %}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWKqqOWg7D2pCCKgsGe_ISDMUyEkkxXzY&libraries=places&callback=init_map"
+            async defer></script>
 {% endblock %}
 
