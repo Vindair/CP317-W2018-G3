@@ -16,6 +16,16 @@
                         </button>
                     </div>
                 {% endif %}
+                {% if success %}
+                    <div class="alert alert-success fade show" role="alert" id="success-container">
+                        <h4 class="alert-heading">Listing Posted</h4>
+                        <p>Your listing was successfully posted!</p>
+                        <a class="btn btn-secondary" href="{% url 'subby:SubletList' %}">View Your Posts</a>
+                        <button type="button" class="close" onclick="$('.alert').hide()" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                {% endif %}
                 <form method="POST" action="{% url 'subby:create_sublet' %} " enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="form-group">

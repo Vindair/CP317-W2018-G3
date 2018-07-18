@@ -54,7 +54,7 @@ def create_sublet(request):
 			#sublet.user_id = request.user.id
 			sublet.user = request.user
 			sublet.save()
-			return render(request, 'sublet/create_sublet.html')
+			return render(request, 'sublet/create_sublet.html', {'success': 'true'})
 		else:
 			return render(request, 'sublet/create_sublet.html', {'create_sublet_error': 'All fields are required' })
 	else:
