@@ -59,3 +59,32 @@ function init_map() {
         document.getElementById("lng").value = place.geometry.location.lng();
     });
 }
+
+function init_searchbar(){
+    let input = document.getElementById('sublet-search');
+    let autocomplete = new google.maps.places.Autocomplete(input);
+
+    autocomplete.setFields(
+        ['address_components', 'geometry', 'icon', 'name']);
+
+
+    autocomplete.addListener('place_changed', function () {
+        let place = autocomplete.getPlace();
+        if (!place.geometry) {
+            window.alert("No details available for input: '" + place.name + "'");
+            return;
+        }
+
+        let address = '';
+        if (place.address_components) {
+            address = [
+                (place.address_components[0] && place.address_components[0].short_name || ''),
+                (place.address_components[1] && place.address_components[1].short_name || ''),
+                (place.address_components[2] && place.address_components[2].short_name || '')
+            ].join(' ');
+        }
+
+        document.getElementById("search-lat").value = place.geometry.location.lat();
+        document.getElementById("search-lng").value = place.geometry.location.lng();
+    });
+}
