@@ -5,7 +5,6 @@ from django.contrib.auth.base_user import AbstractBaseUser
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
 import datetime, pytz
-import uuid
 
 from ..managers import UserManager
 

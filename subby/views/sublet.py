@@ -51,7 +51,8 @@ def create_sublet(request):
 			sublet.front_image = request.FILES.getlist('files')[0]
 			sublet.latitude = request.POST['lat']
 			sublet.longitude = request.POST['lng']
-			sublet.user_id = request.user.id
+			#sublet.user_id = request.user.id
+			sublet.user = request.user
 			sublet.save()
 			return render(request, 'sublet/create_sublet.html')
 		else:

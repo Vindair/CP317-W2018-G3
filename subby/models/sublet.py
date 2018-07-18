@@ -23,7 +23,7 @@ class Sublet(models.Model):
 
 	front_image = models.ImageField(upload_to='images/', null=True, blank=True)
 	
-	user_id = models.IntegerField()
+	user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
 	def summary(self):
 		if len(self.description) > 150:
