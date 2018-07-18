@@ -61,20 +61,28 @@
 
 <div class="container-fluid">
     {% block content %}
-        {% if error %}
-            <script>$('#login-modal').modal('show');</script>
+        {% if login_error %}
+            <script type="text/javascript">
+                $(function (){
+                   $('#login-modal').modal('show');
+                });
+            </script>
         {% endif %}
-    {% endblock %}
     <div class="row">
         <div class="col"></div>
-        <div class="col">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"
-                       id="card-search">
+        <div class="col-xl-10">
+            <img class="d-block mx-auto main-logo-img" src="http://placehold.it/350x150">
+            <form action="{%  url 'subby:redirect' %}" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="card-search">
+                    <button class="btn btn-secondary search-btn d-block mx-auto" type="submit">Search</button>
+                </div>
+            </form>
         </div>
         <div class="col"></div>
     </div>
-
-
+    {% endblock %}
 </div>
 
 <!-- Modals -->
@@ -83,11 +91,11 @@
     {% block loginmodal %}
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                {% if error %}
-                    <div class="modal-content">
+                {% if login_error %}
+                    <div class="modal-header">
                         <div class="alert alert-danger fade show" role="alert" id="error-container">
                             <h4 class="alert-heading">Error</h4>
-                            <p>{{ error }}</p>
+                            <p>{{ login_error }}</p>
                             <button type="button" class="close" onclick="$('.alert').hide()" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -132,7 +140,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Login</button>
+                        <button type="submit" class="btn btn-primary" id="submit-login-btn">Login</button>
                     </div>
                 </form>
             </div>
@@ -156,27 +164,27 @@
                     {% csrf_token %}
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="email-box">Email Address</label>
+                            <label for="su-email-box">Email Address</label>
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><img
                                             src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-email.svg">
                                     </div>
                                 </div>
-                                <input type="email" class="form-control" id="email-box" name="username"
+                                <input type="email" class="form-control" id="su-email-box" name="username"
                                        aria-describedby="emailHelp" placeholder="Enter email">
                             </div>
                             <small id="emailHelp" class="form-text text-muted">UW/WLU emails required</small>
                         </div>
                         <div class="form-group">
-                            <label for="pw-box">Password</label>
+                            <label for="su-pw-box">Password</label>
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><img
                                             src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-password.svg">
                                     </div>
                                 </div>
-                                <input type="password" class="form-control" id="pw-box" placeholder="Password"
+                                <input type="password" class="form-control" id="su-pw-box" placeholder="Password"
                                        name="password">
                             </div>
                         </div>
@@ -216,6 +224,9 @@
         integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
         crossorigin="anonymous"></script>
 <script src="{% static "js/LoginModal.js" %}"></script>
+<script src="{% static "js/FileHandling.js" %}"></script>
+<script src="{% static "js/maps.js" %}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWKqqOWg7D2pCCKgsGe_ISDMUyEkkxXzY&libraries=places&callback=init_map" async defer></script>
 
 </body>
 

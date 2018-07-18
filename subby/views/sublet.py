@@ -4,7 +4,6 @@ from django.contrib.auth.decorators import login_required
 from subby.models.sublet import Sublet
 from django.shortcuts import get_object_or_404
 
-
 class SubletList(ListView):
 	model = Sublet
 	paginate_by = 10
@@ -47,6 +46,10 @@ def create_sublet(request):
 			return render(request, 'sublet/create_sublet.html', {'error': 'All fields are required' })
 	else:
 		return render(request, 'sublet/create_sublet.html')
+
+# temp redir
+def redirect(request):
+	return render(request, 'sublet/create_sublet.html')
 		
 
 

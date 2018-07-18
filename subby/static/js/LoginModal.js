@@ -8,4 +8,5 @@ $(function () {
         $('#login-modal').modal('hide');
         $('#signup-modal').modal('show');
     });
+
 });

@@ -45,9 +45,9 @@ def login(request):
 		user = auth.authenticate(username=request.POST['username'], password=request.POST['password'])
 		if user is not None:
 			auth.login(request, user)
-			returned_render = redirect('subby:SubletList')
+			returned_render = redirect('subby:index')
 		else:
-			returned_render = render(request, 'application/base.html',{'error':'username or password is incorrect.'})
+			returned_render = render(request, 'application/base.html',{'login_error':'Invalid Email or Password Entered.'})
 	else:
 		returned_render = render(request, 'application/base.html')
 	

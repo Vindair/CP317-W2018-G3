@@ -32,6 +32,8 @@ urlpatterns = [
 	path('sublets/<int:pk>/', sublet.SubletDetail.as_view(template_name='sublet/sublet_detail.html'), name='SubletDetail'),
 	
 	path('sublets/create_sublet', sublet.create_sublet, name='create_sublet'),
+
+	path('sublets/redirect', sublet.redirect, name='redirect'),
 	
 	##############
 	##Temporary account path for report prototype
