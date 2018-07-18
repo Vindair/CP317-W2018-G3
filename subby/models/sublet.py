@@ -21,13 +21,19 @@ class Sublet(models.Model):
 	title = models.CharField(max_length=50)
 	price = models.FloatField()
 
-	front_image = models.ImageField(upload_to='images/', null=True, blank=True)
+	#front_image = models.ImageField(upload_to='images/', null=True, blank=True)
 	
-	user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-	
+	user = models.CharField(max_length=30)
+
 	def summary(self):
 		if len(self.description) > 150:
 			return self.description[:150] + "......"
 		else:
 			return self.description
+
+	class Meta:
+		db_table = 'subby_sublet'
+
+	def __str__(self):
+		return self.street_address
 		
