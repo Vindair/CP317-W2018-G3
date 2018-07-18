@@ -17,8 +17,8 @@
 
 <body>
 <nav class="navbar navbar-expand-lg navbar-light">
-    <a class="navbar-brand" href="#">
-        <img src="{% static 'icons/logo_s.png' %}" class="d-inline-block align-top"/> Subby
+    <a class="navbar-brand" href="{% url 'subby:index' %}">
+        <img src="{% static 'images/subby_logo.png' %}" class="d-inline-block align-top brand-logo"/>
     </a>
 
     <div class="navbar-header">
@@ -71,7 +71,7 @@
     <div class="row">
         <div class="col"></div>
         <div class="col-xl-10">
-            <img class="d-block mx-auto main-logo-img" src="http://placehold.it/350x150">
+            <img class="d-block mx-auto main-logo-img" src="{% static 'images/subby_logo.png' %}">
             <form action="{%  url 'subby:redirect' %}" method="POST">
                 {% csrf_token %}
                 <div class="form-group">
