@@ -32,12 +32,16 @@ urlpatterns = [
 	path('sublets/<int:pk>/', sublet.SubletDetail.as_view(template_name='sublet/sublet_detail.html'), name='SubletDetail'),
 	
 	path('sublets/create_sublet', sublet.create_sublet, name='create_sublet'),
+
+	path('sublets/search', sublet.search, name='search'),
+
+	path('sublets/contact', user.contact_user, name='contact_user'),
 	
 	##############
 	##Temporary account path for report prototype
 	##############
 	path('account/', account.account_home, name='account_home'),
-	
+	path('account/update', account.update_user_info, name='update_user_info'),
 	
 	
 	

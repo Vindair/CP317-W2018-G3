@@ -1,78 +1,254 @@
 <!doctype html>
 
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    {% load static %}
-    <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet"/>
-
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+          integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-  </head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+          integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+</head>
 
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-      <div class="container">
-        <a class="navbar-brand" href="{% url 'subby:index' %}">
-          <img src="{% static 'icons/logo_s.png' %}" class="d-inline-block align-top" /> Subby
-        </a>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="{% url 'subby:index' %}">
+        <img src="{% static 'images/subby_logo.png' %}" class="d-inline-block align-top brand-logo"/>
+    </a>
 
-        <div class="navbar-header">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="navbar-header">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
-          </button>
-        </div>
+        </button>
+    </div>
 
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav ml-auto">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
             {% if user.is_authenticated %}
-              <ul class="navbar-nav">
-                <li class=" nav-item">
-                  <a class="nav-link" id="nav_a" href=
-                  "{% url 'subby:account_home' %}">Account</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" id="nav_a" href="javascript:{document.getElementById('logout').submit()}">Logout</a>
-                  <form id="logout" method="POST" action="{% url 'subby:logout' %}">
-                    {% csrf_token %}
-                    <input type="hidden" />
-                  </form>
-                </li>
-              </ul>
+                <ul class="navbar-nav">
+                    <li class=" nav-item">
+                        <a class="nav-link main-nav-item" id="" href="{% url 'subby:account_home' %}">Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link main-nav-item" id=""
+                           href="javascript:{document.getElementById('logout').submit()}">Logout</a>
+                        <form id="logout" method="POST" action="{% url 'subby:logout' %}">
+                            {% csrf_token %}
+                            <input type="hidden"/>
+                        </form>
+                    </li>
+                </ul>
             {% else %}
-              <li class="nav-item">
-                <a class="nav-link" id="nav_a" href="{% url 'subby:login' %}">Login</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" id="nav_a" href="{% url 'subby:signup' %}">
-                  Sign Up!
-                </a>
-              </li>
+                <li class="nav-item main-nav-item">
+                    <a class="nav-link" id="" data-toggle="modal" data-target="#login-modal" href="#">Login</a>
+                </li>
+                <li class="nav-item main-nav-item">
+                    <a class="nav-link" id="" data-toggle="modal" data-target="#signup-modal" href="#">
+                        Sign Up!
+                    </a>
+                </li>
             {% endif %}
-          </div>
         </div>
-      </div>
-    </nav>
+    </div>
+</nav>
 
-      {% block content %}
-      {% endblock %}
+<div class="container-fluid">
+    {% block content %}
+        {% if login_error %}
+            <script type="text/javascript">
+                $(function () {
+                    $('#login-modal').modal('show');
+                });
+            </script>
+        {% endif %}
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-xl-10">
+                <img class="d-block mx-auto main-logo-img" src="{% static 'images/subby_logo.png' %}">
+                <form action="{% url 'subby:search' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search"
+                               id="sublet-search">
+                        <input type="hidden" id="search-lat" name="lat">
+                        <input type="hidden" id="search-lng" name="lng">
+                        <input type="hidden" id="search-prox" name="proximity" value="5">
+                        <button class="btn btn-secondary search-btn d-block mx-auto" type="submit">Search</button>
+                    </div>
+                </form>
+            </div>
+            <div class="col"></div>
+        </div>
+    {% endblock %}
+</div>
 
+<!-- Modals -->
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="login-modal-label"
+     aria-hidden="true">
+    {% block loginmodal %}
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                {% if login_error %}
+                    <div class="modal-header">
+                        <div class="alert alert-danger fade show" role="alert" id="error-container">
+                            <h4 class="alert-heading">Error</h4>
+                            <p>{{ login_error }}</p>
+                            <button type="button" class="close" onclick="$('.alert').hide()" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                {% endif %}
+                <div class="modal-header">
+                    <div class="btn-group btn-group-lg modal-title" role="group" aria-label="Login Signup Buttons"
+                         id="login-modal-label">
+                        <button type="button" class="btn btn-light login-btn" style="width: 235px;">Login</button>
+                        <button type="button" class="btn btn-light signup-btn" style="width: 235px;">Sign-up</button>
+                    </div>
+                </div>
+                <form action="{% url 'subby:login' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="email-box">Email address</label>
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><img
+                                            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-email.svg">
+                                    </div>
+                                </div>
+                                <input type="email" class="form-control" id="email-box" name="username"
+                                       aria-describedby="emailHelp" placeholder="Enter email">
+                            </div>
+                            <small id="emailHelp" class="form-text text-muted">UW/WLU emails required</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="pw-box">Password</label>
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><img
+                                            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-password.svg">
+                                    </div>
+                                </div>
+                                <input type="password" class="form-control" id="pw-box" placeholder="Password"
+                                       name="password">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" id="submit-login-btn">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    {% endblock %}
+</div>
+
+<div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="signup-modal-label"
+     aria-hidden="true">
+    {% block signupmodal %}
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                {% if signup_error %}
+                    <div class="modal-header">
+                        <div class="alert alert-danger fade show" role="alert" id="error-container">
+                            <h4 class="alert-heading">Error</h4>
+                            <p>{{ signup_error }}</p>
+                            <button type="button" class="close" onclick="$('.alert').hide()" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                {% endif %}
+                <div class="modal-header">
+                    <div class="btn-group btn-group-lg modal-title" role="group" aria-label="Login Signup Buttons"
+                         id="login-modal-label">
+                        <button type="button" class="btn btn-light login-btn" style="width: 235px;">Login</button>
+                        <button type="button" class="btn btn-light signup-btn" style="width: 235px;">Sign-up</button>
+                    </div>
+                </div>
+                <form action="{% url 'subby:signup' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="su-email-box">Email Address</label>
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><img
+                                            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-email.svg">
+                                    </div>
+                                </div>
+                                <input type="email" class="form-control" id="su-email-box" name="username"
+                                       aria-describedby="emailHelp" placeholder="Enter email">
+                            </div>
+                            <small id="emailHelp" class="form-text text-muted">UW/WLU emails required</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="su-pw-box">Password</label>
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><img
+                                            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-password.svg">
+                                    </div>
+                                </div>
+                                <input type="password" class="form-control" id="su-pw-box" placeholder="Password"
+                                       name="password">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="pw-confirm-box">Password</label>
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><img
+                                            src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/148866/cd-icon-password.svg">
+                                    </div>
+                                </div>
+                                <input type="password" class="form-control" id="pw-confirm-box"
+                                       placeholder="Confirm Password"
+                                       name="password-confirm">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Sign up</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    {% endblock %}
+</div>
+
+{% block js %}
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+            integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+            crossorigin="anonymous"></script>
+    <script src="{% static "js/LoginModal.js" %}"></script>
+    <script src="{% static 'js/EditAccountInformation.js' %}"></script>
+    <script src="{% static "js/MapAPI.js" %}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWKqqOWg7D2pCCKgsGe_ISDMUyEkkxXzY&libraries=places&callback=init_searchbar"
+            async defer></script>
 
-	{% block js %}
-	{% endblock %}
+{% endblock %}
 
-  </body>
+</body>
 
-  <footer>
+<footer>
     <!-- <div>Icons made by <a href="https://www.flaticon.com/authors/twitter" title="Twitter">Twitter</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div> -->
-  </footer>
-  </html>
+</footer>
+</html>

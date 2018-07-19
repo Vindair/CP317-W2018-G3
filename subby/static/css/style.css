@@ -1,47 +1,106 @@
-#nav_a {
-  color: grey;
-  margin-left: 5px;
-  margin-top: 5px;
-  font-weight: bold;
+html, body {
+    height:100%;
 }
 
-#nav_a:hover {
-	color: green;
+.main-nav-item {
+    color: grey;
+    margin-left: 5px;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+.main-nav-item:hover {
+    color: green;
+}
+
+.navbar {
+    border-bottom: 1px solid #ccc;
+}
+
+.thumb {
+    height: 75px;
+    border: 1px solid #000;
+    margin: 10px 5px 0 0;
+}
+
+.main-logo-img {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    max-height: 300px;
+    max-width: 250px;
+    height: auto;
+    width: auto;
+}
+
+.brand-logo {
+    max-height: 50px;
+    max-width: 100px;
+    height: auto;
+    width: auto;
+}
+
+.search-btn {
+    margin-top: 1%;
+}
+
+.jumbo-container {
+    margin-top: 3%;
+}
+
+
+.search-container {
+    max-height: 80vh;
+    min-height: 80vh;
+    height: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.gallery {
+    margin-top: 5px;
+    margin-right: 5px;
+    float: left;
+}
+
+.card-body {
+    min-height: 150px;
+    max-height: 150px;
+    height: auto;
+    overflow-y: auto;
+}
+
+#error-container {
+    width: 100%;
+    height: 100px;
 }
 
 .hello {
-  color: yellow;
+    color: yellow;
 }
 
-
-#sublet_title {
-	color:black;
-	
-}
 
 #sublet_title:hover {
-	color:blue;
-	
+    color: #609ab6;
 }
 
 #map {
-    height: 250px;
-    width: 300px;
+    height: 100%;
+    width: 100%;
+    border: 1px solid #ccc;
     /* margin:auto; */
 }
 
 #sublet_description {
-	width: 500px;
+    width: 500px;
 }
 
 #map_container {
-	margin-left: 75px;
+    margin-left: 75px;
 }
 
-
 #pagination_row {
-	/* background-color: black; */
-	/* width: 70%; */
-	/* padding-left:300px; */
-	/* text-align:center; */
+    /* background-color: black; */
+    /* width: 70%; */
+    /* padding-left:300px; */
+    /* text-align:center; */
 }
