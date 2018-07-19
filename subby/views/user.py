@@ -16,13 +16,17 @@ def show(req, user_id):
     return render(req, 'users/show.html', context)
 
 
+def contact_user(request):
+	if request.method == 'POST':
+		if request.POST['name'] and request.POST['email'] and request.POST['message']:
+			user = User.objects.get(id = request.POST['posterid'])
+			user.email_user(request.POST['name'] + 'for ' + request.POST['sublettitle'], request.POST['message'], request.POST['email'])
+			return render(request, 'sublet/sublet_detail.html', {'success' : 'Thanks for leaving a message! You will be contacted shortly.'})
+		else:
+			return render(request, 'sublet/sublet_detail.html', {'error' : 'All fields must be filled out when leaving contact info.'})
+	else:
+		return render(request, 'sublet/sublet_detail.html')
 
-####################################
-##Temporary user views (default
-##Authentication and Authorization used)
-##for report prototype purpose
-##including signup, login, logout. 
-####################################
 
 def signup(request):
 	if request.method == 'POST':

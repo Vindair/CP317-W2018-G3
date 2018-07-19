@@ -34,6 +34,8 @@ urlpatterns = [
 	path('sublets/create_sublet', sublet.create_sublet, name='create_sublet'),
 
 	path('sublets/search', sublet.search, name='search'),
+
+	path('sublets/contact', user.contact_user, name='contact_user'),
 	
 	##############
 	##Temporary account path for report prototype

@@ -60,11 +60,6 @@
 
 <div class="container-fluid">
     {% block content %}
-        {% if place %}
-            {% for p in place %}
-                {{ p.street_address }}
-            {% endfor %}
-        {% endif %}
         {% if login_error %}
             <script type="text/javascript">
                 $(function () {
