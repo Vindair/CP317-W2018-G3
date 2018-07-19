@@ -15,7 +15,12 @@
                                 <div onclick="window.location='{% url 'subby:SubletDetail' sublet.id %}';"
                                      style="cursor:pointer;">
                                     <h4 id="sublet_title">{{ sublet.title }}</h4>
-                                    <img src="{{ sublet.front_image.url }}" class="img-fluid" height="200" width="200"/>
+                                    {% for i in image_list %}
+                                        {% if i.sublet.id == sublet.id %}
+                                            <img src="{{ i.image.url }}" class="img-fluid" height="200"
+                                                 width="200"/>
+                                        {% endif %}
+                                    {% endfor %}
                                 </div>
                             </div>
                             <div class="col-md-3 mt-1">
