@@ -31,7 +31,7 @@ class SubletDetail(DetailView):
 def search(request):
 	if request.method == 'POST':
 		places = Sublet.objects.nearby(request.POST['lat'], request.POST['lng'], 5)
-		return render(request, 'application/base.html', {'place': places})
+		return render(request, 'sublet/search_sublets.html', {'place': places, 'lat' : request.POST['lat'], 'lng': request.POST['lng']})
 	else:
 		return render(request, 'application/base.html')
 

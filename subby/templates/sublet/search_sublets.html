@@ -1,0 +1,77 @@
+{% extends 'application/base.html' %}
+
+{% block content %}
+    <div class="jumbotron jumbo-container">
+        <div class="container-fluid search-sublet-main-container">
+            <div class="row">
+                <div class="col">
+                    <h2>Search Results:</h2>
+                    <div class="container-fluid search-container">
+                        {% for p in place %}
+                            <div class="card gallery" style="width: 18rem;">
+                                <img class="card-img-top" src="{{ p.front_image.url }}" alt="">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ p.title }}</h5>
+                                    <p class="card-text">{{ p.description }}</p>
+                                </div>
+                                <div class="card-footer"><a href="#"
+                                                            class="btn btn-primary d-block mx-auto view-listing-btn">View
+                                    Listing</a></div>
+                                <div class="card-footer text-center text-muted">${{ p.price }} per month</div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col">
+                    <div id="map" style="min-height: 100%; height: auto;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block js %}
+    <script>
+        function init_searchmap() {
+
+            let myOptions = {
+                center: new google.maps.LatLng({{ lat }}, {{ lng }}),
+                zoom: 17,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+
+            };
+            let map = new google.maps.Map(document.getElementById("map"),
+                myOptions);
+
+            setMarkers(map)
+
+        }
+
+
+        function setMarkers(map) {
+
+            {%  for p in place %}
+                latlngset = new google.maps.LatLng({{ p.latitude }}, {{ p.longitude }});
+                marker = new google.maps.Marker({
+                    map: map, title: '{{ p.title }}', position: latlngset
+                });
+                map.setCenter(marker.getPosition());
+
+                content = "Listing Name: {{ p.title }}" + '<br>' + "Address: {{ p.street_address }}"  + '<br>' + " City: {{ p.city }}" + '<br>' +
+                'Price: ${{ p.price }}/mo';
+
+                infowindow = new google.maps.InfoWindow();
+
+                google.maps.event.addListener(marker, 'click', (function (marker, content, infowindow) {
+                    return function () {
+                        infowindow.setContent(content);
+                        infowindow.open(map, marker);
+                    };
+                })(marker, content, infowindow));
+            {% endfor %}
+
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWKqqOWg7D2pCCKgsGe_ISDMUyEkkxXzY&libraries=places&callback=init_searchmap"
+            async defer></script>
+{% endblock %}

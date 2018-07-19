@@ -47,6 +47,27 @@ html, body {
     margin-top: 3%;
 }
 
+.search-container {
+    max-height: 80vh;
+    min-height: 80vh;
+    height: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.gallery {
+    margin-top: 5px;
+    margin-right: 5px;
+    float: left;
+}
+
+.card-body {
+    min-height: 150px;
+    max-height: 150px;
+    height: auto;
+    overflow-y: auto;
+}
+
 #error-container {
     width: 100%;
     height: 100px;

@@ -60,7 +60,7 @@ function init_map() {
     });
 }
 
-function init_searchbar(){
+function init_searchbar() {
     let input = document.getElementById('sublet-search');
     let autocomplete = new google.maps.places.Autocomplete(input);
 
