@@ -8,11 +8,10 @@ from django.conf import settings
 ######################
 
 class Sublet(models.Model):
-	
+
 	latitude = models.FloatField()
 	longitude = models.FloatField()
-
-	street_address = models.CharField(max_length=250)
+	desitination = models.CharField(max_length=250)
 	postal_code = models.CharField(max_length=7)
 	city = models.CharField(max_length=20)
 	created_at = models.DateTimeField(auto_now=True)
@@ -22,12 +21,11 @@ class Sublet(models.Model):
 	price = models.FloatField()
 
 	front_image = models.ImageField(upload_to='images/', null=True, blank=True)
-	
+
 	user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-	
+
 	def summary(self):
 		if len(self.description) > 150:
 			return self.description[:150] + "......"
 		else:
 			return self.description
-		
