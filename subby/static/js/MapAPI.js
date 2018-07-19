@@ -88,3 +88,4 @@ function init_searchbar() {
         document.getElementById("search-lng").value = place.geometry.location.lng();
     });
 }
+

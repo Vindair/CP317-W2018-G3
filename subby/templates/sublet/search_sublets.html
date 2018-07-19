@@ -14,7 +14,7 @@
                                     <h5 class="card-title">{{ p.title }}</h5>
                                     <p class="card-text">{{ p.description }}</p>
                                 </div>
-                                <div class="card-footer"><a href="#"
+                                <div class="card-footer"><a href="{% url 'subby:SubletDetail' p.id %}"
                                                             class="btn btn-primary d-block mx-auto view-listing-btn">View
                                     Listing</a></div>
                                 <div class="card-footer text-center text-muted">${{ p.price }} per month</div>
@@ -42,13 +42,13 @@
             };
             let map = new google.maps.Map(document.getElementById("map"),
                 myOptions);
-
-            setMarkers(map)
+            let bounds = new google.maps.LatLngBounds();
+            setMarkers(map, bounds)
 
         }
 
 
-        function setMarkers(map) {
+        function setMarkers(map, bounds) {
 
             {%  for p in place %}
                 latlngset = new google.maps.LatLng({{ p.latitude }}, {{ p.longitude }});
@@ -68,10 +68,17 @@
                         infowindow.open(map, marker);
                     };
                 })(marker, content, infowindow));
+
+                bounds.extend(marker.getPosition());
+
+                map.fitBounds(bounds);
             {% endfor %}
 
         }
     </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+            integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+            crossorigin="anonymous"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWKqqOWg7D2pCCKgsGe_ISDMUyEkkxXzY&libraries=places&callback=init_searchmap"
             async defer></script>
 {% endblock %}
