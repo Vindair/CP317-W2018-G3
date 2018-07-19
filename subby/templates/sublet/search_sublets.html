@@ -5,7 +5,31 @@
         <div class="container-fluid search-sublet-main-container">
             <div class="row">
                 <div class="col">
-                    <h2>Search Results:</h2>
+                    <h2>
+                        Search Results: {{ place.count }} results found
+                    </h2>
+                    <button type="button" data-toggle="collapse" data-target="#filterToggler"
+                            class="btn btn-secondary btn-sm" aria-controls="filterToggler" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                        Advanced filters
+                    </button>
+                    <div class="collapse" id="filterToggler">
+                        <div class="bg-dark p-4 mt-2" style="border-radius: 5px;">
+                            <h6 class="text-white">Advanced Filters</h6>
+                            <form action="{% url 'subby:search' %}" method="POST">
+                                {% csrf_token %}
+                                <div class="form-group text-light">
+                                    <input type="hidden" name="lat" value="{{ lat }}">
+                                    <input type="hidden" name="lng" value="{{ lng }}">
+                                    <label for="prox">Proximity (km):</label>
+                                    <input class="form-control" name="proximity" id="prox" type="number" min="1"
+                                           value="{{ prox }}">
+                                    <button class="btn btn-secondary btn-sm mt-3" type="submit">Filter</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <br><br>
                     <div class="container-fluid search-container">
                         {% for p in place %}
                             <div class="card gallery" style="width: 18rem;">
@@ -57,8 +81,8 @@
                 });
                 map.setCenter(marker.getPosition());
 
-                content = "Listing Name: {{ p.title }}" + '<br>' + "Address: {{ p.street_address }}"  + '<br>' + " City: {{ p.city }}" + '<br>' +
-                'Price: ${{ p.price }}/mo';
+                content = "Listing Name: {{ p.title }}" + '<br>' + "Address: {{ p.street_address }}" + '<br>' + " City: {{ p.city }}" + '<br>' +
+                    'Price: ${{ p.price }}/mo';
 
                 infowindow = new google.maps.InfoWindow();
 
@@ -76,6 +100,9 @@
 
         }
     </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
             integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
             crossorigin="anonymous"></script>

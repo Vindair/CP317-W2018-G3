@@ -30,9 +30,12 @@ class SubletDetail(DetailView):
 # temp redir
 def search(request):
 	if request.method == 'POST':
-		if request.POST['lat'] and request.POST['lng']:
-			places = Sublet.objects.nearby(request.POST['lat'], request.POST['lng'], 5)
-			return render(request, 'sublet/search_sublets.html', {'place': places, 'lat' : request.POST['lat'], 'lng': request.POST['lng']})
+		if request.POST['lat'] and request.POST['lng'] and request.POST['proximity']:
+			places = Sublet.objects.nearby(request.POST['lat'], request.POST['lng'], request.POST['proximity'])
+			return render(request, 'sublet/search_sublets.html',
+						  {'place': places, 'lat' : request.POST['lat'],
+						   'lng': request.POST['lng'],
+						   'prox' : request.POST['proximity']})
 		else:
 			places = Sublet.objects.nearby( 43.471111, -80.545372, 20)
 			return render(request, 'sublet/search_sublets.html', {'place' : places, 'lat' : 43.471111, 'lng' : -80.545372})
