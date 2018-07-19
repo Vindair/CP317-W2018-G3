@@ -29,6 +29,11 @@ class LocationManager(models.Manager):
                    .filter(distance__lt=proximity)\
                    .order_by('distance')
 
+class SubletManager(models.Manager):
+	def get_cover_image(self):
+		qs = self.get_queryset()
+		print(qs)
+		return qs
 
 class Sublet(models.Model):
 	objects = LocationManager()
@@ -44,7 +49,7 @@ class Sublet(models.Model):
 	title = models.CharField(max_length=50)
 	price = models.FloatField()
 
-	front_image = models.ImageField(upload_to='images/', null=True, blank=True)
+	images = SubletManager()
 	
 	user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
@@ -53,6 +58,10 @@ class Sublet(models.Model):
 			return self.description[:150] + "......"
 		else:
 			return self.description
+
+class SubletImage(models.Model):
+	sublet = models.ForeignKey(Sublet, related_name='sublet', on_delete=models.CASCADE)
+	image = models.ImageField(upload_to='image/')
 
 
 		
