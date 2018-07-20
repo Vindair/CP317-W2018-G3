@@ -33,7 +33,8 @@
                     <div class="container-fluid search-container">
                         {% for p in place %}
                             <div class="card gallery" style="width: 18rem;">
-                                <img class="card-img-top" src="{{ p.front_image.url }}" alt="">
+                                {% load index %}
+                                <img class="card-img-top" src="{{ cover|index:forloop.counter0 }}" alt="">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ p.title }}</h5>
                                     <p class="card-text">{{ p.description }}</p>

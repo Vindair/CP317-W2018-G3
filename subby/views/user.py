@@ -1,6 +1,7 @@
 from django.shortcuts import get_object_or_404, get_list_or_404, render, redirect
 from subby.models import User
 from django.contrib import auth
+from django.contrib import messages
 
 #from django.contrib.auth.models import User as Users
 
@@ -21,7 +22,9 @@ def contact_user(request):
 		if request.POST['name'] and request.POST['email'] and request.POST['message']:
 			user = User.objects.get(id = request.POST['posterid'])
 			user.email_user(request.POST['name'] + 'for ' + request.POST['sublettitle'], request.POST['message'], request.POST['email'])
-			return render(request, 'sublet/sublet_detail.html', {'success' : 'Thanks for leaving a message! You will be contacted shortly.'})
+			#return render(request, 'sublet/sublet_detail.html', {'success' : 'Thanks for leaving a message! You will be contacted shortly.'})
+			messages.add_message(request, messages.INFO, 'Hello world.')
+			return redirect('subby:SubletDetail', request.POST['subid'])
 		else:
 			return render(request, 'sublet/sublet_detail.html', {'error' : 'All fields must be filled out when leaving contact info.'})
 	else:

@@ -65,7 +65,11 @@ def search(request):
                            'prox': request.POST['proximity']})
         else:
             places = Sublet.objects.nearby(43.471111, -80.545372, 20)
-            return render(request, 'sublet/search_sublets.html', {'place': places, 'lat': 43.471111, 'lng': -80.545372})
+            images = []
+            for p in places:
+                image = SubletImage.objects.filter(sublet=p.id)
+                images.append(image[0].image.url)
+            return render(request, 'sublet/search_sublets.html', {'place': places, 'cover': images, 'lat': 43.471111, 'lng': -80.545372})
     else:
         return render(request, 'application/base.html')
 
