@@ -1,10 +1,9 @@
 from django.views.generic import ListView, DetailView
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
-from django.db.models import Func, F
-from subby.models.sublet import Sublet, SubletImage
+from subby.models.sublet import Sublet
+from subby.models.image import SubletImage
 from django.shortcuts import get_object_or_404
-from subby.models.image import Image
 
 import json
 
