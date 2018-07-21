@@ -68,49 +68,69 @@
                             </a>
                         </div>
                     </div>
+                    <div class="row mt-3 d-flex flex-row">
+                        <div class="col">
+                            <h6>Listed by: {{ user.email }}</h6>
+                        </div>
+                        <div class="col">
+                            <form action="{% url 'subby:RatingList' %}" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" name="listerid" value="{{ user.id }}">
+                                <button type="submit" class="btn btn-secondary btn-sm float-right">View
+                                    Their Reviews</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
                 <div class="col offset-md-1">
                     <div class="sublet-detail-map" style="min-height: 100%; height: 100%;" id="map"></div>
                 </div>
             </div>
-            <fieldset class="bg-dark p-4 mt-2 text-light mb-5" style="border-radius: 5px;" disabled>
-                <div class="form-group">
-                    <label for="address">Address:</label>
-                    <input type="text" id="address" class="form-control"
-                           value="{{ object.street_address }}, {{ object.city }}">
-                </div>
-                <div class="form-group">
-                    <label for="description">Description:</label>
-                    <textarea id="description" class="form-control">{{ object.description }}</textarea>
-                </div>
-            </fieldset>
-
-            <button class="btn btn-secondary" type="button"
-                    data-toggle="collapse" data-target="#contactToggler"
-                    aria-controls="contactToggler" aria-expanded="false"
-                    aria-label="Toggle navigation">Interested?
-            </button>
-            <div class="collapse" id="contactToggler">
-                <div class="bg-dark p-4 mt-2" style="border-radius: 5px;">
-                    <h4 class="text-white">Contact information</h4>
-                    <span class="text-muted">Leave your contact information, and the poster will get back to you.</span>
-                    <hr class="my-4">
-                    <form action="{% url 'subby:contact_user' %}" method="POST">
-                        {% csrf_token %}
-                        <div class="form-group text-light">
-                            <input type="hidden" name="posterid" value="{{ object.user_id }}">
-                            <input type="hidden" name="sublettitle" value="{{ object.title }}">
-                            <input type="hidden" name="subid" value="{{ object.id }}">
-                            <label for="name">Name:</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Name">
-                            <label for="email">Email:</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email">
-                            <label for="message">Message:</label>
-                            <textarea class="form-control" id="message" name="message" placeholder="Message For Seller"
-                                      rows="10"></textarea>
-                            <button class="btn btn-secondary d-block mr-2 mt-3" type="submit">Submit</button>
+            <div class="row mt-5">
+                <div class="col">
+                    <fieldset class="bg-dark p-4 mt-2 text-light mb-5" style="border-radius: 5px;" disabled>
+                        <div class="form-group">
+                            <label for="address">Address:</label>
+                            <input type="text" id="address" class="form-control"
+                                   value="{{ object.street_address }}, {{ object.city }}">
                         </div>
-                    </form>
+                        <div class="form-group">
+                            <label for="description">Description:</label>
+                            <textarea id="description" class="form-control">{{ object.description }}</textarea>
+                        </div>
+                    </fieldset>
+
+                    <button class="btn btn-secondary" type="button"
+                            data-toggle="collapse" data-target="#contactToggler"
+                            aria-controls="contactToggler" aria-expanded="false"
+                            aria-label="Toggle navigation">Interested?
+                    </button>
+                    <div class="collapse" id="contactToggler">
+                        <div class="bg-dark p-4 mt-2" style="border-radius: 5px;">
+                            <h4 class="text-white">Contact information</h4>
+                            <span class="text-muted">Leave your contact information, and the poster will get back to you.</span>
+                            <hr class="my-4">
+                            <form action="{% url 'subby:contact_user' %}" method="POST">
+                                {% csrf_token %}
+                                <div class="form-group text-light">
+                                    <input type="hidden" name="posterid" value="{{ object.user_id }}">
+                                    <input type="hidden" name="sublettitle" value="{{ object.title }}">
+                                    <input type="hidden" name="subid" value="{{ object.id }}">
+                                    <label for="name">Name:</label>
+                                    <input type="text" class="form-control" id="name" name="name"
+                                           placeholder="Enter Name">
+                                    <label for="email">Email:</label>
+                                    <input type="email" class="form-control" id="email" name="email"
+                                           placeholder="Enter Email">
+                                    <label for="message">Message:</label>
+                                    <textarea class="form-control" id="message" name="message"
+                                              placeholder="Message For Seller"
+                                              rows="10"></textarea>
+                                    <button class="btn btn-secondary d-block mr-2 mt-3" type="submit">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
