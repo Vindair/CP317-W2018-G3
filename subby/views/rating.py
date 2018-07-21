@@ -9,13 +9,17 @@ User = get_user_model()
 
 def list_user_rating(request):
     if request.method == 'POST':
-        ratings = Rating.objects.filter(user_id=request.POST['listerid'])
+        ratings = Rating.objects.filter(reviewed_user_id=request.POST['listerid'])
         lister = User.objects.get(id=request.POST['listerid'])
         raters = []
         for rating in ratings:
             rater = User.objects.get(id=rating.user_id)
             raters.append(rater.email)
-        return render(request, 'rating/rating_list.html', {'ratings': ratings, 'raters': raters, 'lister': lister})
+        if request.user.is_anonymous:
+            current = None
+        else:
+            current = request.user.email
+        return render(request, 'rating/rating_list.html', {'ratings': ratings, 'raters': raters, 'lister': lister, 'current': current})
     else:
         return render(request, 'sublet/sublet_detail.html')
 
@@ -23,10 +27,10 @@ def list_user_rating(request):
 def write_review(request):
     if request.method == 'POST':
         if request.POST['rating'] and request.POST['comment']:
-            print(request.POST['reviewedid'])
             Rating.objects.create_rating(float(request.POST['rating']), request.POST['comment'], request.user.id,
                                          request.POST['reviewedid'])
-            ratings = Rating.objects.filter(user_id=request.POST['reviewedid'])
+            print(request.POST['reviewedid'])
+            ratings = Rating.objects.filter(reviewed_user_id=request.POST['reviewedid'])
             lister = User.objects.get(id=request.POST['reviewedid'])
             raters = []
             for rating in ratings:
@@ -51,3 +55,23 @@ def write_review(request):
                            'error': 'Please fill in all fields when leaving a review.'})
     else:
         return redirect('subby:RatingList')
+
+def update_review(request):
+    if request.method == 'POST':
+        rating = Rating.objects.get(id=request.POST['ratingid'])
+        if float(request.POST['rating']) != rating.rating:
+            rating.set_rating(float(request.POST['rating']))
+        if request.POST['comment'] != rating.comment:
+            rating.set_comment(request.POST['comment'])
+        rating.save()
+        ratings = Rating.objects.filter(reviewed_user_id=request.POST['reviewedid'])
+        lister = User.objects.get(id=request.POST['reviewedid'])
+        raters = []
+        for rating in ratings:
+            rater = User.objects.get(id=rating.user_id)
+            raters.append(rater.email)
+        return render(request, 'rating/rating_list.html',
+                          {'ratings': ratings,
+                           'raters': raters,
+                           'lister': lister,
+                           'success': 'You have successfully updated your review!'})

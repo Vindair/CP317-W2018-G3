@@ -48,8 +48,7 @@ urlpatterns = [
 	path('ratings/', rating.list_user_rating, name='RatingList'),
 
 	path('ratings/write_review/', rating.write_review, name='write_review'),
-	
-	
-	
+	path('ratings/update_review/', rating.update_review, name='update_review'),
+
 ]
 
