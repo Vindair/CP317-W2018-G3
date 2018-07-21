@@ -32,6 +32,9 @@
                         <label for="listing-title">Listing Name:</label>
                         <input type="text" class="form-control" id="listing-title" name="title"
                                aria-describedby="Listing Name" placeholder="Enter Listing Name">
+                        <label class="mt-2" for="listing-duration">Listing Duration (months):</label>
+                        <input type="number" class="form-control" id="listing-duration" name="duration"
+                               aria-describedby="Listing Duration" min="4" max="12">
                         <br>
                         <label for="pac-input">Search an address:</label>
                         <input id="pac-input" class="controls form-control" type="text"
@@ -45,28 +48,28 @@
                         <label for="street_address">Street Address:</label>
                         <input type="text" class="form-control" name="street_address" id="street_address"
                                aria-describedby="Street Address" placeholder="Enter Address">
-                        <label for="city">City:</label>
+                        <label class="mt-2" for="city">City:</label>
                         <input type="text" class="form-control" name="city" id="city"
                                aria-describedby="City Name" placeholder="Enter City Name">
-                        <label for="postal_code">Postal Code:</label>
+                        <label class="mt-2" for="postal_code">Postal Code:</label>
                         <input type="text" class="form-control" name="postal_code" id="postal_code"
                                aria-describedby="Postal Code" placeholder="Enter Postal Code">
-                        <label for="price">Price:</label>
+                        <label class="mt-2" for="price">Price:</label>
                         <input type="text" class="form-control" name="price" id="price"
                                aria-describedby="Price" placeholder="Enter Listing Price">
-                        <label for="listing-description">Description:</label>
+                        <label class="mt-2" for="listing-description">Description:</label>
                         <textarea class="form-control" name="description" id="listing-description"
                                   aria-describedby="Description" placeholder="Enter Description" rows="10"></textarea>
-                        <label for="image-upload">Upload Images:</label>
+                        <label class="mt-2" for="image-upload">Upload Images:</label>
                         <input type="file" class="form-control" id="files" name="files" multiple
                                aria-describedby="Image Upload">
-                        <label for="image-list">Previews:</label>
+                        <label class="mt-2" for="image-list">Previews:</label>
                         <output class="form-control" id="image-list" style="min-height: 100px; height: auto;"></output>
-                        <label for="lat">Latitude:</label>
-                        <input type="text" class="form-control" name="lat" id="lat"
+
+                        <input type="hidden" class="form-control" name="lat" id="lat"
                                aria-describedby="Latitude" placeholder="Enter Latitude">
-                        <label for="lng">Longitude:</label>
-                        <input type="text" class="form-control" name="lng" id="lng"
+
+                        <input type="hidden" class="form-control" name="lng" id="lng"
                                aria-describedby="Longitude" placeholder="Enter Longitude">
 
                         <input type="submit" class="btn btn-primary d-block mr-0 mt-3 float-right" value="Create"/>

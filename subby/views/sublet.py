@@ -82,17 +82,16 @@ def create_sublet(request):
         if request.POST['title'] and request.POST['street_address'] and request.POST['city'] and request.POST[
             'postal_code'] and request.POST['price'] and request.POST['description'] and request.POST['lat'] and \
                 request.POST['lng'] and request.FILES.getlist('files'):
-            sublet = Sublet()
-            sublet.title = request.POST['title']
-            sublet.street_address = request.POST['street_address']
-            sublet.city = request.POST['city']
-            sublet.postal_code = request.POST['postal_code']
-            sublet.price = request.POST['price']
-            sublet.description = request.POST['description']
-            sublet.latitude = request.POST['lat']
-            sublet.longitude = request.POST['lng']
-            sublet.user = request.user
-            sublet.save()
+            sublet = Sublet.objects.create_sublet(request.POST['title'],
+                                         request.POST['duration'],
+                                         request.POST['price'],
+                                         request.POST['street_address'],
+                                         request.POST['city'],
+                                         request.POST['postal_code'],
+                                         request.POST['description'],
+                                         request.POST['lat'],
+                                         request.POST['lng'],
+                                         request.user)
             image_list = request.FILES.getlist('files')
             if len(image_list) > 0:
                 for image in image_list:

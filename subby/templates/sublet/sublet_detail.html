@@ -95,8 +95,20 @@
                                    value="{{ object.street_address }}, {{ object.city }}">
                         </div>
                         <div class="form-group">
+                            <label for="duration">Duration:</label>
+                            <input type="text" id="duration" class="form-control" value="{{ object.duration }} months">
+                        </div>
+                        <div class="form-group">
                             <label for="description">Description:</label>
                             <textarea id="description" class="form-control">{{ object.description }}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="sold">Availability:</label>
+                            {% if object.is_sold == True %}
+                                <input id="description" class="form-control" value="Sold">
+                            {% else %}
+                                <input id="description" class="form-control" value="Currently Available">
+                            {% endif %}
                         </div>
                     </fieldset>
 
