@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f60e9694-565c-43f6-b623-8b1344f923dc" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subby/templates/rating/rating_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/subby/templates/rating/rating_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subby/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/subby/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/subby/views/rating.py" beforeDir="false" afterPath="$PROJECT_DIR$/subby/views/rating.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="rating.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="rating.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/subby/views/rating.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="516">
-              <caret line="67" column="64" lean-forward="true" selection-start-line="67" selection-start-column="64" selection-end-line="67" selection-end-column="64" />
+            <state relative-caret-position="607">
+              <caret line="81" column="38" lean-forward="true" selection-start-line="81" selection-start-column="38" selection-end-line="81" selection-end-column="38" />
               <folding>
                 <element signature="e#0#53#0" expanded="true" />
               </folding>
@@ -43,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="rating_list.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="rating_list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/subby/templates/rating/rating_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="131" column="60" lean-forward="true" selection-start-line="131" selection-start-column="60" selection-end-line="131" selection-end-column="60" />
+            <state relative-caret-position="19">
+              <caret line="135" column="66" lean-forward="true" selection-start-line="135" selection-start-column="66" selection-end-line="135" selection-end-column="66" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -189,8 +186,8 @@
         <option value="$PROJECT_DIR$/subby/views/account.py" />
         <option value="$PROJECT_DIR$/subby/templates/users/account_home.html" />
         <option value="$PROJECT_DIR$/subby/urls.py" />
-        <option value="$PROJECT_DIR$/subby/views/rating.py" />
         <option value="$PROJECT_DIR$/subby/templates/rating/rating_list.html" />
+        <option value="$PROJECT_DIR$/subby/views/rating.py" />
       </list>
     </option>
   </component>
@@ -791,20 +788,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/subby/views/sublet.py">
+    <entry file="file://$PROJECT_DIR$/subby/templates/rating/rating_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="110" column="64" lean-forward="true" selection-start-line="110" selection-start-column="8" selection-end-line="110" selection-end-column="64" />
+        <state relative-caret-position="19">
+          <caret line="135" column="66" lean-forward="true" selection-start-line="135" selection-start-column="66" selection-end-line="135" selection-end-column="66" />
           <folding>
-            <element signature="e#0#53#0" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/subby/views/rating.py">
+    <entry file="file://$PROJECT_DIR$/subby/views/sublet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="67" column="64" lean-forward="true" selection-start-line="67" selection-start-column="64" selection-end-line="67" selection-end-column="64" />
+        <state relative-caret-position="111">
+          <caret line="110" column="64" lean-forward="true" selection-start-line="110" selection-start-column="8" selection-end-line="110" selection-end-column="64" />
           <folding>
             <element signature="e#0#53#0" expanded="true" />
           </folding>
@@ -821,13 +819,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/subby/templates/rating/rating_list.html">
+    <entry file="file://$PROJECT_DIR$/subby/views/rating.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="131" column="60" lean-forward="true" selection-start-line="131" selection-start-column="60" selection-end-line="131" selection-end-column="60" />
+        <state relative-caret-position="607">
+          <caret line="81" column="38" lean-forward="true" selection-start-line="81" selection-start-column="38" selection-end-line="81" selection-end-column="38" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#2;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#0#53#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -26,6 +26,10 @@ def list_user_rating(request):
 @login_required(login_url="/signup/")
 def write_review(request):
     if request.method == 'POST':
+        if request.user.is_anonymous:
+            current = None
+        else:
+            current = request.user.email
         if request.POST['rating'] and request.POST['comment']:
             Rating.objects.create_rating(float(request.POST['rating']), request.POST['comment'], request.user.id,
                                          request.POST['reviewedid'])
@@ -40,7 +44,8 @@ def write_review(request):
                           {'ratings': ratings,
                            'raters': raters,
                            'lister': lister,
-                           'success': 'You have successfully left a review!'})
+                           'success': 'You have successfully left a review!',
+                           'current': current})
         else:
             ratings = Rating.objects.filter(user_id=request.POST['reviewedid'])
             lister = User.objects.get(id=request.POST['reviewedid'])
@@ -52,12 +57,17 @@ def write_review(request):
                           {'ratings': ratings,
                            'raters': raters,
                            'lister': lister,
-                           'error': 'Please fill in all fields when leaving a review.'})
+                           'error': 'Please fill in all fields when leaving a review.',
+                           'current': current})
     else:
         return redirect('subby:RatingList')
 
 def update_review(request):
     if request.method == 'POST':
+        if request.user.is_anonymous:
+            current = None
+        else:
+            current = request.user.email
         rating = Rating.objects.get(id=request.POST['ratingid'])
         if float(request.POST['rating']) != rating.rating:
             rating.set_rating(float(request.POST['rating']))
@@ -74,4 +84,5 @@ def update_review(request):
                           {'ratings': ratings,
                            'raters': raters,
                            'lister': lister,
+                           'current': current,
                            'success': 'You have successfully updated your review!'})
