@@ -2,6 +2,7 @@ from django.views.generic import ListView, DetailView
 from django.shortcuts import render, redirect, get_list_or_404, get_object_or_404
 from subby.models.rating import Rating
 from django.contrib.auth import get_user_model
+from django.contrib.auth.decorators import login_required
 
 User = get_user_model()
 
@@ -18,7 +19,7 @@ def list_user_rating(request):
     else:
         return render(request, 'sublet/sublet_detail.html')
 
-
+@login_required(login_url="/signup/")
 def write_review(request):
     if request.method == 'POST':
         if request.POST['rating'] and request.POST['comment']:

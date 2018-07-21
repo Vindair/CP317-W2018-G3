@@ -44,8 +44,10 @@ class SubletDetail(DetailView):
 
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
-        user = User.objects.get(id=self.object.user_id)
-        ctx['user'] = user
+        lister = User.objects.get(id=self.object.user_id)
+        user =  self.request.user.id
+        ctx['lister'] = lister
+        ctx['cur_user'] = user
         images = SubletImage.objects.filter(sublet=self.object)
         if len(images) > 0:
             cover_image = images[0].image
@@ -103,3 +105,43 @@ def create_sublet(request):
             return render(request, 'sublet/create_sublet.html', {'create_sublet_error': 'All fields are required'})
     else:
         return render(request, 'sublet/create_sublet.html')
+
+def update_sublet(request):
+    if request.method == 'POST':
+        sublet = Sublet.objects.get(id=request.POST['subletid'])
+        if request.POST['title'] != sublet.get_sublet_title():
+            sublet.set_sublet_title(request.POST['title'])
+        if request.POST['duration'] != sublet.get_duration():
+            sublet.set_duration(request.POST['duration'])
+        if request.POST['is-sold'] == 'Not Sold' and sublet.get_is_sold():
+            sublet.set_is_sold(False)
+        if request.POST['is-sold'] == 'Sold' and not sublet.get_is_sold():
+            sublet.set_is_sold(True)
+        if request.POST['street_address'] != sublet.get_street_address():
+            sublet.set_street_address(request.POST['street_address'])
+        if request.POST['city'] != sublet.get_city():
+            sublet.set_city(request.POST['city'])
+        if request.POST['postal_code'] != sublet.get_postal_code():
+            sublet.set_postal_code(request.POST['postal_code'])
+        if request.POST['price'] != sublet.get_price():
+            sublet.set_price(request.POST['price'])
+        if request.POST['description'] != sublet.get_description():
+            sublet.set_description(request.POST['description'])
+        if request.POST['lat'] != sublet.get_lat():
+            sublet.set_lat(request.POST['lat'])
+        if request.POST['lng'] != sublet.get_lng():
+            sublet.set_lng(request.POST['lng'])
+        if request.FILES.getlist('files'):
+            image_list = request.FILES.getlist('files')
+            if len(image_list) > 0:
+                for image in image_list:
+                    sublet_image = SubletImage(sublet=sublet)
+                    sublet_image.image = image
+                    sublet_image.save()
+        sublet.save()
+        return redirect('subby:SubletDetail', sublet.get_sublet_id())
+    else:
+        return redirect('subby:SubletDetail', request.POST['subletid'])
+
+
+

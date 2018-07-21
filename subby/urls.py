@@ -33,6 +33,8 @@ urlpatterns = [
 	
 	path('sublets/create_sublet', sublet.create_sublet, name='create_sublet'),
 
+	path('sublets/update_sublet', sublet.update_sublet, name='update_sublet'),
+
 	path('sublets/search', sublet.search, name='search'),
 
 	path('sublets/contact', user.contact_user, name='contact_user'),
