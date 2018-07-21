@@ -8,7 +8,7 @@
 <h3>Create Sublet</h3>
 
 <form method="POST" action="{% url 'subby:create_sublet' %} " enctype="multipart/form-data">
-	
+
 	{% csrf_token %}
 	<b>Title:</b>
 	<input type="text" name="title"/><br /><br />
@@ -30,12 +30,12 @@
 	<input type="text" name="lat" id="lat" /><br /><br />
 	<b>longitude: </b>
 	<input type="text" name="lng" id="lng" /><br /><br />
-	<input type="submit" class="btn btn-primary" value="Create Sublet" /> 
+	<input type="submit" class="btn btn-primary" value="Create Sublet" />
 </form>
 
 	<br />
 
-	
+
 </div>
 
 
@@ -110,7 +110,7 @@
 						document.getElementById("postal_code").value = place.address_components[6]["long_name"];
 						document.getElementById("lat").value = place.geometry.location.lat();
 						document.getElementById("lng").value = place.geometry.location.lng();
-						
+
 
 
                         if (place.geometry.viewport) {
@@ -128,6 +128,7 @@
 
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCurefBmArMbo3xXJpvxk3sG1q1MPSHsCc&libraries=places&callback=initAutocomplete"
                 async defer></script>
+
 
 
 {% endblock %}

@@ -1,28 +1,31 @@
 from django.db import models
-from datetime import datetime
+from django.conf import settings
+from django import forms
+
+
+
+######################
+##Temporary sublet model for report prototype purpose
+######################
 
 class Sublet101(models.Model):
-    # CITY = (
-    # ('W', 'Waterloo'),
-    # ('K', 'Kitchener'),
-    # )
-    # TERMS = (
-    # ('1', '4 Months'),
-    # ('2', '8 Months'),
-    # ('3', '12 Months'),
-    # )
-    name = models.CharField(max_length=200)
-    # description = models.TextField()
-    # created_at = models.DateTimeField(default=datetime.now, blank=True)
-    # updated_at = models.DateTimeField(default=datetime.now, blank=True)
-    # is_available = models.BooleanField()
-    # number_roomates = models.SmallIntegerField()
-    # rent_date = models.DateField()
-    # returned_date = models.DateField()
-    # #price_per_month = models.DoubleField()
-    # city = models.CharField(max_length=1, choices=CITY)
-    # num_terms = models.CharField(max_length=1, choices=TERMS)
-    # longitude = models.FloatField()
-    # latitude = models.FloatField()
-    # primary_pic = models.ImageField(null = True)
-    #owner_id = models.ForeignKey(user.User, on_delete=models.CASCADE)
+	SET_OF_CHOICES = (
+	('W', 'Walking'),
+	('T', 'Transit'),
+	('D', 'Walking'),
+
+	)
+    # origin_input = models.CharField(max_length=250)
+    # destination_input = models.CharField(max_length=250)
+    # mode_selector = models.CharField(max_length=250)
+	origin_input = models.CharField(max_length=250)
+	created_at = models.DateTimeField(auto_now=True)
+	updated_at = models.DateTimeField(blank=True, null=True)
+	choice = models.CharField(max_length=250, choices=SET_OF_CHOICES)
+	latitude = models.FloatField()
+	longitude = models.FloatField()
+	title = models.CharField(max_length=50)
+	price = models.FloatField()
+	postal_code = models.CharField(max_length=7)
+	city = models.CharField(max_length=20)
+	street_address = models.CharField(max_length=250)

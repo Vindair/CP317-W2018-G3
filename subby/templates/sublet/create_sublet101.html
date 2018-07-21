@@ -7,9 +7,17 @@
 <div class="container">
 <h3>Create Sublet</h3>
 
-<form method="POST" action="{% url 'subby:create_sublet' %} " enctype="multipart/form-data">
+<form method="POST" action="{% url 'subby:create_sublet101' %} " enctype="multipart/form-data">
   {% csrf_token %}
 	<b>Title:</b>
+
+<input type="text" name="title"/><br /><br />
+<input type="text" name="street_address" id="street_address" /><br />
+<b>City:</b>
+<input type="text" name="city" id="city"  /><br />
+<b>Postal Code:</b>
+<input type="text" name="postal_code" id="postal_code" /><br />
+<b>Price: </b>
 <input id="origin_input" class="controls" type="text"
        placeholder="Enter an origin location">
 
@@ -28,7 +36,7 @@
    </div>
 
    <div id="map"></div>
-   <input type="submit" class="btn btn-primary" value="Create Sublet" /> 
+   <input type="submit" class="btn btn-primary" value="Create Sublet" />
  </form>
 
   <br />
@@ -69,6 +77,11 @@
         var originInput = document.getElementById('origin-input');
         var destinationInput = document.getElementById('destination-input');
         var modeSelector = document.getElementById('mode-selector');
+        document.getElementById("street_address").value = place.name;
+        document.getElementById("city").value = place.vicinity;
+        document.getElementById("postal_code").value = place.address_components[6]["long_name"];
+        document.getElementById("lat").value = place.geometry.location.lat();
+        document.getElementById("lng").value = place.geometry.location.lng();
         this.directionsService = new google.maps.DirectionsService;
         this.directionsDisplay = new google.maps.DirectionsRenderer;
         this.directionsDisplay.setMap(map);

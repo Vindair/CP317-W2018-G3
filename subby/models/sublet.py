@@ -9,9 +9,10 @@ from django.conf import settings
 
 class Sublet(models.Model):
 
+
+	street_address = models.CharField(max_length=250)
 	latitude = models.FloatField()
 	longitude = models.FloatField()
-	desitination = models.CharField(max_length=250)
 	postal_code = models.CharField(max_length=7)
 	city = models.CharField(max_length=20)
 	created_at = models.DateTimeField(auto_now=True)

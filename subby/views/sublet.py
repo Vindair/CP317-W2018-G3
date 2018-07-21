@@ -2,6 +2,7 @@ from django.views.generic import ListView, DetailView
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from subby.models.sublet import Sublet
+from subby.models.sublet101 import Sublet101
 from django.shortcuts import get_object_or_404
 
 
@@ -10,22 +11,23 @@ class SubletList(ListView):
 	paginate_by = 10
 	# product = get_object_or_404(Sublet, pk=1)
 	# product.delete()
-	
-	
+
+
 	def get_context_data(self, **kwargs):
 		ctx = super().get_context_data(**kwargs)
 		print(ctx["sublet_list"])
 		print(123)
 		return ctx
-	
-	
-	
-	
+
+
+
+
 class SubletDetail(DetailView):
 	model = Sublet
-	
-	
-	
+	model = Sublet101
+
+
+
 @login_required(login_url="/signup/")
 def create_sublet(request):
 	if request.method == 'POST':
@@ -47,8 +49,3 @@ def create_sublet(request):
 			return render(request, 'sublet/create_sublet.html', {'error': 'All fields are required' })
 	else:
 		return render(request, 'sublet/create_sublet.html')
-		
-
-
-	
-	
