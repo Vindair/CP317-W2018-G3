@@ -87,11 +87,18 @@
         this.directionsDisplay = new google.maps.DirectionsRenderer;
         this.directionsDisplay.setMap(map);
 
+
         var originAutocomplete = new google.maps.places.Autocomplete(
             originInput, {placeIdOnly: true});
+		originAutocomplete.setComponentRestrictions({'country':'ca'});
+		map.addListener('bounds_changed', function() {
+            originAutocomplete.setBounds(map.getBounds());
+        });
         var destinationAutocomplete = new google.maps.places.Autocomplete(
             destinationInput, {placeIdOnly: true});
-
+		map.addListener('bounds_changed', function() {
+            destinationAutocomplete.setBounds(map.getBounds());
+        });
         // this.setupClickListener('changemode-walking', 'WALKING');
         // this.setupClickListener('changemode-transit', 'TRANSIT');
         // this.setupClickListener('changemode-driving', 'DRIVING');
