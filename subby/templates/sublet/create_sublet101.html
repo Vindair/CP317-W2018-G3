@@ -17,7 +17,7 @@
 <input type="text" name="city" id="city"  /><br />
 <b>Postal Code:</b>
 <input type="text" name="postal_code" id="postal_code" /><br />
-<b>Price: </b>
+<b>Price: </b><br />
 <input id="origin_input" class="controls" type="text"
        placeholder="Enter an origin location">
 
@@ -45,6 +45,8 @@
  </div>
 
 
+
+
  {% endblock %}
 
 
@@ -59,10 +61,9 @@
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
           mapTypeControl: false,
-          center: {lat: -33.8688, lng: 151.2195},
+          center: {lat: 43.4643, lng: -80.5204},
           zoom: 13
         });
-
         new AutocompleteDirectionsHandler(map);
       }
 
@@ -74,14 +75,14 @@
         this.originPlaceId = null;
         this.destinationPlaceId = null;
         this.travelMode = 'WALKING';
-        var originInput = document.getElementById('origin-input');
-        var destinationInput = document.getElementById('destination-input');
-        var modeSelector = document.getElementById('mode-selector');
-        document.getElementById("street_address").value = place.name;
-        document.getElementById("city").value = place.vicinity;
-        document.getElementById("postal_code").value = place.address_components[6]["long_name"];
-        document.getElementById("lat").value = place.geometry.location.lat();
-        document.getElementById("lng").value = place.geometry.location.lng();
+        var originInput = document.getElementById('origin_input');
+        var destinationInput = document.getElementById('destination_input');
+        var modeSelector = document.getElementById('mode_selector');
+        // document.getElementById("street_address").value = place.name;
+        // document.getElementById("city").value = place.vicinity;
+        // document.getElementById("postal_code").value = place.address_components[6]["long_name"];
+        // document.getElementById("lat").value = place.geometry.location.lat();
+        // document.getElementById("lng").value = place.geometry.location.lng();
         this.directionsService = new google.maps.DirectionsService;
         this.directionsDisplay = new google.maps.DirectionsRenderer;
         this.directionsDisplay.setMap(map);
@@ -91,32 +92,32 @@
         var destinationAutocomplete = new google.maps.places.Autocomplete(
             destinationInput, {placeIdOnly: true});
 
-        this.setupClickListener('changemode-walking', 'WALKING');
-        this.setupClickListener('changemode-transit', 'TRANSIT');
-        this.setupClickListener('changemode-driving', 'DRIVING');
+        // this.setupClickListener('changemode-walking', 'WALKING');
+        // this.setupClickListener('changemode-transit', 'TRANSIT');
+        // this.setupClickListener('changemode-driving', 'DRIVING');
 
         this.setupPlaceChangedListener(originAutocomplete, 'ORIG');
         this.setupPlaceChangedListener(destinationAutocomplete, 'DEST');
 
-        this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
-        this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(destinationInput);
-        this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(modeSelector);
+        // this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(originInput);
+        // this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(destinationInput);
+        // this.map.controls[google.maps.ControlPosition.TOP_LEFT].push(modeSelector);
       }
 
       // Sets a listener on a radio button to change the filter type on Places
       // Autocomplete.
-      AutocompleteDirectionsHandler.prototype.setupClickListener = function(id, mode) {
-        var radioButton = document.getElementById(id);
-        var me = this;
-        radioButton.addEventListener('click', function() {
-          me.travelMode = mode;
-          me.route();
-        });
-      };
+      // AutocompleteDirectionsHandler.prototype.setupClickListener = function(id, mode) {
+      //   var radioButton = document.getElementById(id);
+      //   var me = this;
+      //   radioButton.addEventListener('click', function() {
+      //     me.travelMode = mode;
+      //     me.route();
+      //   });
+      // };
 
       AutocompleteDirectionsHandler.prototype.setupPlaceChangedListener = function(autocomplete, mode) {
         var me = this;
-        autocomplete.bindTo('bounds', this.map);
+        // autocomplete.bindTo('bounds', this.map);
         autocomplete.addListener('place_changed', function() {
           var place = autocomplete.getPlace();
           if (!place.place_id) {
@@ -153,8 +154,8 @@
       };
 
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSVSarsPGfBgOphb2jlspYrAYBps5NQHE&libraries=places&callback=initMap"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCurefBmArMbo3xXJpvxk3sG1q1MPSHsCc&libraries=places&callback=initMap"
         async defer></script>
 
 
-        {% endblock %}
+{% endblock %}
