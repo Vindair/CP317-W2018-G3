@@ -44,11 +44,13 @@ urlpatterns = [
 	##############
 	path('account/', account.account_home, name='account_home'),
 	path('account/update', account.update_user_info, name='update_user_info'),
+	
 
 	path('ratings/', rating.list_user_rating, name='RatingList'),
 
 	path('ratings/write_review/', rating.write_review, name='write_review'),
 	path('ratings/update_review/', rating.update_review, name='update_review'),
+	path('ratings/reviews/<int:pk>/', rating.my_review, name='my_review'),
 
 ]
 

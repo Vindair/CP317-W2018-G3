@@ -44,7 +44,7 @@
                             </ol>
                             <div class="carousel-inner">
                                 {% for i in rest_images %}
-                                    {% if forloop.counter0 == 0 %}
+								{% if forloop.counter0 == 0 %}
                                         <div class="carousel-item active">
                                             <img class="d-block w-100" src="{{ i.url }}" alt="Slide">
                                         </div>
