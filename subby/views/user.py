@@ -34,6 +34,8 @@ def contact_user(request):
 def signup(request):
 	if request.method == 'POST':
 		#User has info and wants an account now!
+		if not request.POST['username']:
+			return render(request, 'application/base.html', {'signup_error' : 'Please enter an email address'})
 		if request.POST['password'] == request.POST['password-confirm']:
 			try: 
 				user = User.objects.get(email = request.POST['username'])

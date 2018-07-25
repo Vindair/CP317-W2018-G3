@@ -60,13 +60,6 @@
 
 <div class="container-fluid">
     {% block content %}
-        {% if login_error %}
-            <script type="text/javascript">
-                $(function () {
-                    $('#login-modal').modal('show');
-                });
-            </script>
-        {% endif %}
         <div class="row">
             <div class="col"></div>
             <div class="col-xl-10">
@@ -124,7 +117,9 @@
                                     </div>
                                 </div>
                                 <input type="email" class="form-control" id="email-box" name="username"
-                                       aria-describedby="emailHelp" placeholder="Enter email">
+                                       aria-describedby="emailHelp" placeholder="Enter email"
+                                       tabindex="0" data-trigger="focus" data-toggle="popover"
+                                       data-content="Please enter a valid email">
                             </div>
                             <small id="emailHelp" class="form-text text-muted">UW/WLU emails required</small>
                         </div>
@@ -186,7 +181,9 @@
                                     </div>
                                 </div>
                                 <input type="email" class="form-control" id="su-email-box" name="username"
-                                       aria-describedby="emailHelp" placeholder="Enter email">
+                                       aria-describedby="emailHelp" placeholder="Enter email"
+                                       tabindex="0" data-trigger="focus" data-toggle="popover"
+                                       data-content="Please enter a valid email">
                             </div>
                             <small id="emailHelp" class="form-text text-muted">UW/WLU emails required</small>
                         </div>
@@ -199,7 +196,8 @@
                                     </div>
                                 </div>
                                 <input type="password" class="form-control" id="su-pw-box" placeholder="Password"
-                                       name="password">
+                                       name="password" tabindex="0" data-trigger="focus" data-toggle="popover"
+                                       data-content="Please enter a valid password (6 - 16 characters, at least 1 number & special character)">
                             </div>
                         </div>
                         <div class="form-group">
@@ -212,13 +210,14 @@
                                 </div>
                                 <input type="password" class="form-control" id="pw-confirm-box"
                                        placeholder="Confirm Password"
-                                       name="password-confirm">
+                                       name="password-confirm" data-toggle="popover"
+                                       data-content="Passwords must match">
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Sign up</button>
+                        <button type="submit" class="btn btn-primary" id="signup-submit-btn">Sign up</button>
                     </div>
                 </form>
             </div>
@@ -244,6 +243,16 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWKqqOWg7D2pCCKgsGe_ISDMUyEkkxXzY&libraries=places&callback=init_searchbar"
             async defer></script>
 
+    <script type="text/javascript">
+        $(function () {
+            {% if login_error %}
+                $('#login-modal').modal('show');
+            {% endif %}
+            {% if signup_error %}
+                $('#signup-modal').modal('show');
+            {% endif %}
+        });
+    </script>
 {% endblock %}
 
 </body>

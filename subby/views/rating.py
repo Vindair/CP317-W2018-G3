@@ -19,7 +19,10 @@ def list_user_rating(request):
             current = None
         else:
             current = request.user.email
-        return render(request, 'rating/rating_list.html', {'ratings': ratings, 'raters': raters, 'lister': lister, 'current': current})
+        return render(request, 'rating/rating_list.html', {'ratings': ratings,
+                                                           'raters': raters,
+                                                           'lister': lister,
+                                                           'current': current})
     else:
         return render(request, 'sublet/sublet_detail.html')
 
@@ -71,8 +74,10 @@ def update_review(request):
         rating = Rating.objects.get(id=request.POST['ratingid'])
         if float(request.POST['rating']) != rating.rating:
             rating.set_rating(float(request.POST['rating']))
+            rating.set_updated_at()
         if request.POST['comment'] != rating.comment:
             rating.set_comment(request.POST['comment'])
+            rating.set_updated_at()
         rating.save()
         ratings = Rating.objects.filter(reviewed_user_id=request.POST['reviewedid'])
         lister = User.objects.get(id=request.POST['reviewedid'])
