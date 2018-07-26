@@ -92,6 +92,21 @@
             </div>
             <div class="col"></div>
         </div>
+        <div class="row">
+            <div class="col">
+                <div id="button-holder">
+                    <button class="scroll-btn left-scroll"></button>
+                    <div id="image-gallery">
+                        {% for image in images %}
+                            <div class="slide">
+                                <a href="{% url 'subby:SubletDetail' image.sublet.id %}"><img src="{{ image.image.url }}" style="max-height: 600px; max-width: 650px;"/></a>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <button class="scroll-btn right-scroll"></button>
+                </div>
+            </div>
+        </div>
     {% endblock %}
 </div>
 
@@ -265,6 +280,7 @@
             crossorigin="anonymous"></script>
     <script src="{% static "js/LoginModal.js" %}"></script>
     <script src="{% static 'js/EditAccountInformation.js' %}"></script>
+    <script src="{% static 'js/SmoothScrolling.js' %}"></script>
     <script src="{% static "js/MapAPI.js" %}"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWKqqOWg7D2pCCKgsGe_ISDMUyEkkxXzY&libraries=places&callback=init_searchbar"
             async defer></script>
