@@ -134,10 +134,10 @@
                                 <p>{{ rating.comment }}</p>
                             </div>
                         </div>
-                        <div class="collapse" id="editToggler{{ rating.id }}">
+						<div class="collapse" id="editToggler{{ rating.id }}">
                             <div class="bg-dark p-4 mt-2" style="border-radius: 5px;">
-                                <h4 class="text-white" id="editToggler1{{ rating.id }}" >Edit Review</h4>
-                                <span class="text-muted">Edit your rating or comment here.</span>
+                                <h4 class="text-white" id="editToggler{{ rating.id }}" >Edit Review</h4>
+                                <span class="text-muted">Edit your rating or comment below.</span>
                                 <hr class="my-4">
                                 <form action="{% url 'subby:update_review' %}" method="POST">
                                     {% csrf_token %}

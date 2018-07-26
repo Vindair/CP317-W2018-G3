@@ -5,9 +5,12 @@
 	{% load staticfiles %}
     <div class="container">
         <div class="jumbotron jumbo-container" style="min-height: 90vh; max-height: 90vh; overflow-y: scroll;">
-		
-			<h2 class="hello" >Your review for {{ lister.email }} </h2><br />
-			{{ rating.reviewed_user_id }}
+
+			<h2 class="hello" >Your review for {{ lister.email }} 
+				<a class="btn btn-secondary float-right" href="{% url 'subby:RatingList' user_id=rating.reviewed_user_id %}">View All Reviews
+				</a>
+			</h2><br />
+
 		<div class="container bg-dark rounded text-light">
                         <div class="row">
                             <div class="col mt-1">
@@ -27,7 +30,7 @@
 											<div class="row">
 												<a class="close btn btn-primary offset-4" href="{% url 'subby:delete_review' rating_id=rating.id reviewed_user_id=rating.reviewed_user_id%}"> Yes
 												</a>
-												<a class="close btn btn-primary offset-1" id="closing">
+												<a class="close btn btn-secondary offset-1">
 													No
 												</a>
 													<!-- <span class="close">&times;</span> -->
@@ -116,7 +119,7 @@
                         <div class="collapse" id="editToggler{{ rating.id }}">
                             <div class="bg-dark p-4 mt-2" style="border-radius: 5px;">
                                 <h4 class="text-white" id="editToggler1{{ rating.id }}" >Edit Review</h4>
-                                <span class="text-muted">Edit your rating or comment here.</span>
+                                <span class="text-muted">Edit your rating or comment below.</span>
                                 <hr class="my-4">
                                 <form action="{% url 'subby:update_review' %}" method="POST">
                                     {% csrf_token %}
