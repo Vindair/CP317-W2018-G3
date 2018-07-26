@@ -7,7 +7,7 @@
         <div class="jumbotron jumbo-container" style="min-height: 90vh; max-height: 90vh; overflow-y: scroll;">
 		
 			<h2 class="hello" >Your review for {{ lister.email }} </h2><br />
-			{{ rating.id }}
+			{{ rating.reviewed_user_id }}
 		<div class="container bg-dark rounded text-light">
                         <div class="row">
                             <div class="col mt-1">
@@ -25,7 +25,7 @@
 									  <div class="modal-content bg-dark" style="width:40%">
 											<p>Are you sure to delete your review?</p>
 											<div class="row">
-												<a class="close btn btn-primary offset-4" href="{% url 'subby:delete_review' pk=rating.id %}"> Yes
+												<a class="close btn btn-primary offset-4" href="{% url 'subby:delete_review' rating_id=rating.id reviewed_user_id=rating.reviewed_user_id%}"> Yes
 												</a>
 												<a class="close btn btn-primary offset-1" id="closing">
 													No

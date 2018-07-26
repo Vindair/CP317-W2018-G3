@@ -46,12 +46,12 @@ urlpatterns = [
 	path('account/update', account.update_user_info, name='update_user_info'),
 	
 
-	path('ratings/', rating.list_user_rating, name='RatingList'),
+	path('ratings/<int:user_id>', rating.list_user_rating, name='RatingList'),
 
 	path('ratings/write_review/', rating.write_review, name='write_review'),
 	path('ratings/update_review/', rating.update_review, name='update_review'),
 	path('ratings/reviews/<int:pk>/', rating.my_review, name='my_review'),
-	path('ratings/delete/<int:pk>/', rating.delete_review, name='delete_review'),
+	path('ratings/delete/<int:rating_id>/<int:reviewed_user_id>/', rating.delete_review, name='delete_review'),
 
 ]
 

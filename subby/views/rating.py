@@ -7,35 +7,34 @@ from django.contrib.auth.decorators import login_required
 User = get_user_model()
 
 
-def list_user_rating(request):
-    if request.method == 'POST':
-        ratings = Rating.objects.filter(reviewed_user_id=request.POST['listerid'])
-        lister = User.objects.get(id=request.POST['listerid'])
-        raters = []
-        posted = False
-        reviewed_user_id = request.POST['listerid']
-        for rating in ratings:
-            rater = User.objects.get(id=rating.user_id)
-            raters.append(rater.email)
-				 
-        if request.user.is_anonymous:
-            current = None
-        else:
-            current = request.user.email
-            current_id = request.user.id
-            for rater in raters:
-              if rater == current:
-                 posted = True
-        avg_rating = Rating.objects.get_ratings()
-        # print(avg_rating)
-        return render(request, 'rating/rating_list.html', {'ratings': ratings, 'raters': raters, 'lister': lister, 'current': current, 'avg_rating':avg_rating, 'posted': posted, 'current_id':current_id, 'reviewed_user_id': reviewed_user_id})
-    else:
-        return render(request, 'sublet/sublet_detail.html')
+def list_user_rating(request, user_id):
+	ratings = Rating.objects.filter(reviewed_user_id=user_id)
+	lister = User.objects.get(id=user_id)
+	raters = []
+	posted = False
+	reviewed_user_id = user_id
+	for rating in ratings:
+		rater = User.objects.get(id=rating.user_id)
+		raters.append(rater.email)
+			 
+	if request.user.is_anonymous:
+		current = None
+	else:
+		current = request.user.email
+		current_id = request.user.id
+		for rater in raters:
+			if rater == current:
+				posted = True
+	avg_rating = Rating.objects.get_ratings()
+	# print(avg_rating)
+	return render(request, 'rating/rating_list.html', {'ratings': ratings, 'raters': raters, 'lister': lister, 'current': current, 'avg_rating':avg_rating, 'posted': posted, 'current_id':current_id, 'reviewed_user_id': reviewed_user_id})
+
+	
+
 
 @login_required(login_url="/signup/")
 def write_review(request):
     if request.method == 'POST':
-
         current = request.user.email
         if request.POST['rating'] and request.POST['comment']:
             Rating.objects.create_rating(float(request.POST['rating']), request.POST['comment'], request.user.id, request.POST['reviewedid'])
@@ -46,12 +45,13 @@ def write_review(request):
             for rating in ratings:
                 rater = User.objects.get(id=rating.user_id)
                 raters.append(rater.email)
-            return render(request, 'rating/rating_list.html',
-                          {'ratings': ratings,
-                           'raters': raters,
-                           'lister': lister,
-                           'success': 'You have successfully left a review!',
-                           'current': current})
+            # return render(request, 'rating/rating_list.html',
+                          # {'ratings': ratings,
+                           # 'raters': raters,
+                           # 'lister': lister,
+                           # 'success': 'You have successfully left a review!',
+                           # 'current': current})
+            return redirect('subby:RatingList', request.POST['reviewedid'])
         else:
             ratings = Rating.objects.filter(user_id=request.POST['reviewedid'])
             lister = User.objects.get(id=request.POST['reviewedid'])
@@ -105,8 +105,8 @@ def my_review(request, pk):
 	
 	
 @login_required(login_url="/signup/")
-def delete_review(request, pk):
-	Rating.objects.filter(id=pk).delete()
+def delete_review(request, rating_id, reviewed_user_id):
+	Rating.objects.filter(id=rating_id).delete()
 	
-	return redirect('subby:SubletList')
+	return redirect('subby:RatingList', user_id=reviewed_user_id)
 	
