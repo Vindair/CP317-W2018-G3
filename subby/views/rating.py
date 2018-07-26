@@ -2,6 +2,7 @@ from django.views.generic import ListView, DetailView
 from django.shortcuts import render, redirect, get_list_or_404, get_object_or_404
 from subby.models.rating import Rating
 from django.contrib.auth import get_user_model
+from subby.decorators.loginrequiredmessage import message_login_required
 from django.contrib.auth.decorators import login_required
 
 User = get_user_model()
@@ -26,7 +27,7 @@ def list_user_rating(request):
     else:
         return render(request, 'sublet/sublet_detail.html')
 
-@login_required(login_url="/signup/")
+@message_login_required
 def write_review(request):
     if request.method == 'POST':
         if request.user.is_anonymous:

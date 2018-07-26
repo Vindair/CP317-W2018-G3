@@ -1,5 +1,6 @@
 from django.views.generic import ListView, DetailView
 from django.shortcuts import render, redirect, get_object_or_404
+from subby.decorators.loginrequiredmessage import message_login_required
 from django.contrib.auth.decorators import login_required
 from subby.models.sublet import Sublet
 from subby.models.image import SubletImage
@@ -78,7 +79,7 @@ def search(request):
         return render(request, 'application/base.html')
 
 
-@login_required(login_url="/signup/")
+@message_login_required
 def create_sublet(request):
     if request.method == 'POST':
         if request.POST['title'] and request.POST['street_address'] and request.POST['city'] and request.POST[
