@@ -1,5 +1,4 @@
 $(function () {
-
     $('.login-btn').on('click', function () {
         $('#signup-modal').modal('hide');
         $('#login-modal').modal('show');
@@ -12,7 +11,7 @@ $(function () {
 
     let uwaterloo_email = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@uwaterloo.ca$/;
     let mylaurier_email = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@mylaurier.ca$/;
-    let wlu_email = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@uwaterloo.ca$/;
+    let wlu_email = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@wlu.ca$/;
     let uwaterloo_new = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@edu.uwaterloo.ca$/;
     let passwordCheck = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
 
@@ -35,7 +34,12 @@ $(function () {
         let error = false;
         if (!email || (!uwaterloo_email.test(email) && !mylaurier_email.test(email)
             && !wlu_email.test(email) && !uwaterloo_new.test(email))) {
-            $('#su-email-box').popover('show');
+            $('#su-email-box').popover({
+                content: "Please enter a valid email",
+                html: true,
+                trigger: "manual",
+                placement: "right"
+            }).popover('toggle');
             error = true;
         }
         if (!pw || pw.length < 8 || !passwordCheck.test(pw)) {

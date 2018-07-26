@@ -2,6 +2,7 @@ from django.shortcuts import get_object_or_404, get_list_or_404, render, redirec
 from subby.models import User
 from django.contrib import auth
 from django.contrib import messages
+from django.http import HttpResponse
 
 #from django.contrib.auth.models import User as Users
 
@@ -37,7 +38,7 @@ def signup(request):
 		if not request.POST['username']:
 			return render(request, 'application/base.html', {'signup_error' : 'Please enter an email address'})
 		if request.POST['password'] == request.POST['password-confirm']:
-			try: 
+			try:
 				user = User.objects.get(email = request.POST['username'])
 				return render(request, 'application/base.html', {'signup_error':'Username has already been taken'})
 			except User.DoesNotExist:
@@ -47,11 +48,17 @@ def signup(request):
 				return redirect('subby:index')
 		else:
 			return render(request, 'application/base.html', {'signup_error':'Passwords must match'})
+	elif request.method == 'GET':
+		p = request.GET.copy()
+		name = p['username']
+		if User.objects.filter(email=name):
+			return HttpResponse(False)
+		else:
+			return HttpResponse(True)
 	else:
-		#User wants to enter info
 		return render(request, 'application/base.html')
-		
-		
+
+
 def login(request):
 	if request.method == 'POST':
 		user = auth.authenticate(username=request.POST['username'], password=request.POST['password'])
@@ -62,13 +69,13 @@ def login(request):
 			returned_render = render(request, 'application/base.html',{'login_error':'Invalid Email or Password Entered.'})
 	else:
 		returned_render = render(request, 'application/base.html')
-	
+
 	return returned_render
-	
+
 def logout(request):
 
 	if request.method == 'POST':
 		auth.logout(request)
 		return redirect('subby:index')
-		
+
 
