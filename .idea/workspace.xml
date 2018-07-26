@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f60e9694-565c-43f6-b623-8b1344f923dc" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subby/static/js/LoginModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/subby/static/js/LoginModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subby/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/subby/static/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/subby/templates/application/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/subby/templates/application/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/subby/views/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/subby/views/user.py" afterDir="false" />
     </list>
@@ -31,7 +31,7 @@
       <file leaf-file-name="CreateSubletVerification.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/subby/static/js/CreateSubletVerification.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
+            <state relative-caret-position="15">
               <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
             </state>
           </provider>
@@ -41,19 +41,7 @@
         <entry file="file://$PROJECT_DIR$/subby/static/js/RatingVerification.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
-              <caret line="3" column="43" lean-forward="true" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sublet.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/subby/views/sublet.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1905">
-              <caret line="134" column="20" lean-forward="true" selection-start-line="134" selection-start-column="20" selection-end-line="134" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#53#0" expanded="true" />
-              </folding>
+              <caret line="3" column="43" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -61,8 +49,17 @@
       <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/subby/templates/application/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="270" column="45" lean-forward="true" selection-start-line="265" selection-start-column="24" selection-end-line="270" selection-end-column="45" />
+            <state relative-caret-position="1213">
+              <caret line="296" column="19" lean-forward="true" selection-start-line="296" selection-start-column="19" selection-end-line="296" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/subby/static/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="86">
+              <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -70,10 +67,10 @@
       <file leaf-file-name="user.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/subby/views/user.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
+            <state relative-caret-position="109">
+              <caret line="66" column="28" lean-forward="true" selection-start-line="66" selection-start-column="28" selection-end-line="66" selection-end-column="28" />
               <folding>
-                <element signature="e#0#81#0" expanded="true" />
+                <element signature="e#0#11#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -91,17 +88,17 @@
       <file leaf-file-name="SubletDetailVerification.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/subby/static/js/SubletDetailVerification.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-8">
-              <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+            <state relative-caret-position="202">
+              <caret line="32" column="43" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginModal.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LoginModal.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/subby/static/js/LoginModal.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="469">
-              <caret line="38" column="27" lean-forward="true" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
+              <caret line="38" column="27" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -110,7 +107,7 @@
         <entry file="file://$PROJECT_DIR$/subby/templates/sublet/sublet_list.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="480">
-              <caret line="32" column="52" lean-forward="true" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
+              <caret line="32" column="52" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -154,7 +151,6 @@
         <option value="$PROJECT_DIR$/subby_project/settings/settings.py" />
         <option value="$PROJECT_DIR$/subby/templatetags/index.py" />
         <option value="$PROJECT_DIR$/subby/models/image.py" />
-        <option value="$PROJECT_DIR$/subby/static/css/style.css" />
         <option value="$PROJECT_DIR$/subby/managers/ratingmanager.py" />
         <option value="$PROJECT_DIR$/subby/managers/locationmanager.py" />
         <option value="$PROJECT_DIR$/subby/models/user.py" />
@@ -172,9 +168,10 @@
         <option value="$PROJECT_DIR$/subby/templates/rating/rating_list.html" />
         <option value="$PROJECT_DIR$/subby/static/js/CreateSubletVerification.js" />
         <option value="$PROJECT_DIR$/subby/templates/sublet/create_sublet.html" />
+        <option value="$PROJECT_DIR$/subby/static/js/LoginModal.js" />
         <option value="$PROJECT_DIR$/subby/views/user.py" />
         <option value="$PROJECT_DIR$/subby/templates/application/base.html" />
-        <option value="$PROJECT_DIR$/subby/static/js/LoginModal.js" />
+        <option value="$PROJECT_DIR$/subby/static/css/style.css" />
       </list>
     </option>
   </component>
@@ -245,6 +242,14 @@
               <item name="subby" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CP317-W2018-G3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CP317-W2018-G3" type="462c0819:PsiDirectoryNode" />
+              <item name="subby" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="users" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CP317-W2018-G3" type="b2602c69:ProjectViewProjectNode" />
@@ -383,8 +388,8 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Python Console" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.329602" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -407,13 +412,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/subby/templatetags/index.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/subby_project/settings/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
@@ -571,13 +569,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/subby/managers/locationmanager.py" />
-    <entry file="file://$PROJECT_DIR$/subby/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="100" selection-start-line="100" selection-end-line="100" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/subby/managers/usermanager.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -688,24 +679,10 @@
     <entry file="file://$PROJECT_DIR$/subby/views/sublet.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1905">
-          <caret line="134" column="20" lean-forward="true" selection-start-line="134" selection-start-column="20" selection-end-line="134" selection-end-column="20" />
+          <caret line="134" column="20" selection-start-line="134" selection-start-column="20" selection-end-line="134" selection-end-column="20" />
           <folding>
             <element signature="e#0#53#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/subby/static/js/RatingVerification.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="43" lean-forward="true" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/subby/static/js/CreateSubletVerification.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -719,24 +696,21 @@
     <entry file="file://$PROJECT_DIR$/subby/templates/sublet/sublet_list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
-          <caret line="32" column="52" lean-forward="true" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
+          <caret line="32" column="52" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subby/static/js/LoginModal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="38" column="27" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/subby/static/js/SubletDetailVerification.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8">
-          <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/subby/views/user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="46" column="38" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#81#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="202">
+          <caret line="32" column="43" selection-start-line="32" selection-start-column="43" selection-end-line="32" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -747,17 +721,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/subby/templates/application/base.html">
+    <entry file="file://$PROJECT_DIR$/subby/static/css/users/users.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subby/views/user.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="270" column="45" lean-forward="true" selection-start-line="265" selection-start-column="24" selection-end-line="270" selection-end-column="45" />
+        <state relative-caret-position="109">
+          <caret line="66" column="28" lean-forward="true" selection-start-line="66" selection-start-column="28" selection-end-line="66" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/subby/static/js/LoginModal.js">
+    <entry file="file://$PROJECT_DIR$/subby/static/js/CreateSubletVerification.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="469">
-          <caret line="38" column="27" lean-forward="true" selection-start-line="38" selection-start-column="27" selection-end-line="38" selection-end-column="27" />
+        <state relative-caret-position="15">
+          <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subby/static/js/RatingVerification.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="43" selection-start-line="3" selection-start-column="43" selection-end-line="3" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subby/templates/application/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1213">
+          <caret line="296" column="19" lean-forward="true" selection-start-line="296" selection-start-column="19" selection-end-line="296" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subby/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
         </state>
       </provider>
     </entry>

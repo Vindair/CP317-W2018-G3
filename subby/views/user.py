@@ -1,3 +1,6 @@
+import json
+import requests
+
 from django.shortcuts import get_object_or_404, get_list_or_404, render, redirect
 from subby.models import User
 from django.contrib import auth
@@ -56,6 +59,17 @@ def contact_user(request):
 
 def signup(request):
 	if request.method == 'POST':
+		recaptcha_response = request.POST.get('recaptcha-token')
+		data = {
+			'secret': '6Ledc2YUAAAAAFYJYWjB2a8HZWXmtm4iFKyOJeio',
+			'response': recaptcha_response
+		}
+		r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
+		result = r.json()
+
+		if result['score'] < 0.4:
+			return render(request, 'application/base.html', {'signup_error': 'Bot verification failed'})
+
 		#User has info and wants an account now!
 		if not request.POST['username']:
 			return render(request, 'application/base.html', {'signup_error' : 'Please enter an email address'})
