@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
           integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     {% block styles %}{% endblock %}
+
+    <script src='https://www.google.com/recaptcha/api.js?render=6Ledc2YUAAAAAFDCtapwGWRJmi5coy8Ue615QGO4'></script>
 </head>
 
 <body>
@@ -225,6 +227,15 @@
                                        data-content="Passwords must match">
                             </div>
                         </div>
+                        <input type="hidden" name="recaptcha-token" id="recaptcha-token">
+                        <script>
+                            grecaptcha.ready(function () {
+                                grecaptcha.execute('6Ledc2YUAAAAAFDCtapwGWRJmi5coy8Ue615QGO4', {action: 'signup'})
+                                    .then(function (token) {
+                                        $('#recaptcha-token').val(token);
+                                    });
+                            });
+                        </script>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -271,6 +282,7 @@
 
     <script type="text/javascript">
         function checkEmail() {
+            $('#su-email-box').popover('hide');
             $.get('{% url 'subby:signup' %}', {username: $('#su-email-box').val()},
                 function (data) {
                     if (data === "True") {
