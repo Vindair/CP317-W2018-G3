@@ -2,10 +2,12 @@
 
 
 {% block content %}
+	{% load staticfiles %}
     <div class="container">
         <div class="jumbotron jumbo-container" style="min-height: 90vh; max-height: 90vh; overflow-y: scroll;">
 		
-			<h2>Your review for {{ lister.email }} </h2><br />
+			<h2 class="hello" >Your review for {{ lister.email }} </h2><br />
+			{{ rating.id }}
 		<div class="container bg-dark rounded text-light">
                         <div class="row">
                             <div class="col mt-1">
@@ -15,7 +17,24 @@
                                                 aria-controls="editToggler" aria-expanded="false"
                                                 aria-label="Toggle navigation">Edit
                                         </button>
+										
                                     </h5>
+									<button id="myBtn" class="btn btn-danger float-right mr-2">Delete</button>
+									<div id="myModal" class="modal">
+									  <!-- Modal content -->
+									  <div class="modal-content bg-dark" style="width:40%">
+											<p>Are you sure to delete your review?</p>
+											<div class="row">
+												<a class="close btn btn-primary offset-4" href="{% url 'subby:delete_review' pk=rating.id %}"> Yes
+												</a>
+												<a class="close btn btn-primary offset-1" id="closing">
+													No
+												</a>
+													<!-- <span class="close">&times;</span> -->
+											</div>
+									  </div>
+
+									</div>
                                 <fieldset class="rating float-left" disabled>
                                     {% if rating.rating == 5 %}
                                         <input type="radio" id="5s" value="5" checked/>
@@ -148,9 +167,35 @@
 	</div>
 
 
-Hello
-
-
-
-
 {% endblock %}		
+
+
+{% block js %}
+<script>
+	// Get the modal
+	var modal = document.getElementById('myModal');
+
+	// Get the button that opens the modal
+	var btn = document.getElementById("myBtn");
+
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[0];
+
+	// When the user clicks the button, open the modal 
+	btn.onclick = function() {
+		modal.style.display = "block";
+	}
+
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+		modal.style.display = "none";
+	}
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+		if (event.target == modal) {
+			modal.style.display = "none";
+		}
+	}
+</script>
+{% endblock %}

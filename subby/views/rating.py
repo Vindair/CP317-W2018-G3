@@ -102,3 +102,11 @@ def my_review(request, pk):
 	lister = User.objects.get(id=pk)
 	print(rating[0].rating)
 	return render(request, 'rating/rating_detail.html', {'rating': rating[0], 'lister': lister})
+	
+	
+@login_required(login_url="/signup/")
+def delete_review(request, pk):
+	Rating.objects.filter(id=pk).delete()
+	
+	return redirect('subby:SubletList')
+	

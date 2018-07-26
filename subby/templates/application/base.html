@@ -226,7 +226,7 @@
     {% endblock %}
 </div>
 
-{% block js %}
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -238,12 +238,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
             integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
             crossorigin="anonymous"></script>
-    <script src="{% static "js/LoginModal.js" %}"></script>
+    <script src="{% static 'js/LoginModal.js' %}"></script>
     <script src="{% static 'js/EditAccountInformation.js' %}"></script>
-    <script src="{% static "js/MapAPI.js" %}"></script>
+    <script src="{% static 'js/MapAPI.js' %}"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWKqqOWg7D2pCCKgsGe_ISDMUyEkkxXzY&libraries=places&callback=init_searchbar"
             async defer></script>
-
+{% block js %}
 {% endblock %}
 
 </body>

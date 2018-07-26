@@ -18,6 +18,12 @@ class RatingManager(models.Manager):
         r.save()
         return r
 		
+    def delete_rating(self):
+       r = self.model()
+       r.delete()
+		
+       return
+		
     def get_ratings(self):
       qs = self.get_queryset()
       qs = qs.annotate(score=Sum('rating'))

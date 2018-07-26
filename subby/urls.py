@@ -51,6 +51,7 @@ urlpatterns = [
 	path('ratings/write_review/', rating.write_review, name='write_review'),
 	path('ratings/update_review/', rating.update_review, name='update_review'),
 	path('ratings/reviews/<int:pk>/', rating.my_review, name='my_review'),
+	path('ratings/delete/<int:pk>/', rating.delete_review, name='delete_review'),
 
 ]
 
