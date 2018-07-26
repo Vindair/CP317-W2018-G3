@@ -130,7 +130,8 @@
                                         <label for="listing-title">Listing Name:</label>
                                         <input type="text" class="form-control" id="listing-title" name="title"
                                                aria-describedby="Listing Name" placeholder="Enter Listing Name"
-                                               value="{{ object.title }}" data-toggle="popover" data-content="Please enter a title">>
+                                               value="{{ object.title }}" data-toggle="popover"
+                                               data-content="Please enter a title">>
                                         <label class="mt-2" for="available">Availability:</label>
                                         <select class="form-control" id="available" name="is-sold"
                                                 aria-describedby="Availability">
@@ -150,7 +151,8 @@
                                         <label for="pac-input">Search an address:</label>
                                         <input id="pac-input" class="controls form-control" type="text"
                                                placeholder="Enter Address" autocomplete="off"
-                                               value="{{ object.street_address }}" data-toggle="popover" data-content="Please enter a valid address">/><br/>
+                                               value="{{ object.street_address }}" data-toggle="popover"
+                                               data-content="Please enter a valid address">/><br/>
                                         <div id="map" style="height: 250px;"></div>
                                         <div id="infowindow-content">
                                             <img src="" width="16" height="16" id="place-icon">
@@ -174,7 +176,8 @@
                                         <label class="mt-2" for="listing-description">Description:</label>
                                         <textarea class="form-control" name="description" id="listing-description"
                                                   aria-describedby="Description" placeholder="Enter Description"
-                                                  rows="10" data-toggle="popover" data-content="Please enter a description">>{{ object.description }}</textarea>
+                                                  rows="10" data-toggle="popover"
+                                                  data-content="Please enter a description">>{{ object.description }}</textarea>
                                         <label class="mt-2" for="image-upload">Upload Images:</label>
                                         <input type="file" class="form-control" id="files" name="files" multiple
                                                aria-describedby="Image Upload">
@@ -190,7 +193,8 @@
                                                aria-describedby="Longitude" placeholder="Enter Longitude"
                                                value="{{ object.longitude }}">
                                         <input type="hidden" name="subletid" value="{{ object.id }}">
-                                        <button type="submit" id="edit-sublet-confirm" class="btn btn-secondary d-block mr-0 mt-3">
+                                        <button type="submit" id="edit-sublet-confirm"
+                                                class="btn btn-secondary d-block mr-0 mt-3">
                                             Confirm
                                         </button>
 
@@ -216,16 +220,32 @@
                                         <input type="hidden" name="sublettitle" value="{{ object.title }}">
                                         <input type="hidden" name="subid" value="{{ object.id }}">
                                         <label for="name">Name:</label>
-                                        <input tabindex="0" data-trigger="focus" type="text" class="form-control" id="name" name="name"
-                                               placeholder="Enter Name" data-toggle="popover" data-content="Please enter a name">
+                                        <input tabindex="0" data-trigger="focus" type="text" class="form-control"
+                                               id="name" name="name"
+                                               placeholder="Enter Name" data-toggle="popover"
+                                               data-content="Please enter a name">
                                         <label for="email">Email:</label>
-                                        <input tabindex="0" data-trigger="focus" type="email" class="form-control" id="email" name="email"
-                                               placeholder="Enter Email" data-toggle="popover" data-content="Please enter an email">
+                                        <input tabindex="0" data-trigger="focus" type="email" class="form-control"
+                                               id="email" name="email"
+                                               placeholder="Enter Email" data-toggle="popover"
+                                               data-content="Please enter an email">
                                         <label for="message">Message:</label>
                                         <textarea class="form-control" id="message" name="message"
                                                   placeholder="Message For Seller"
-                                                  rows="10" tabindex="0" data-trigger="focus" data-toggle="popover" data-content="Please enter a message"></textarea>
-                                        <button class="btn btn-secondary d-block mr-2 mt-3" type="submit" id="contact-submit-btn">Submit</button>
+                                                  rows="10" tabindex="0" data-trigger="focus" data-toggle="popover"
+                                                  data-content="Please enter a message"></textarea>
+                                        <input type="hidden" name="grecaptcha-token" id="grecaptcha-token">
+                                        <script>
+                                            grecaptcha.ready(function () {
+                                                grecaptcha.execute('6Ledc2YUAAAAAFDCtapwGWRJmi5coy8Ue615QGO4', {action: 'contact'})
+                                                    .then(function (token) {
+                                                        $('#grecaptcha-token').val(token);
+                                                    });
+                                            });
+                                        </script>
+                                        <button class="btn btn-secondary d-block mr-2 mt-3" type="submit"
+                                                id="contact-submit-btn">Submit
+                                        </button>
                                     </div>
                                 </form>
                             </div>

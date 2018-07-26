@@ -47,16 +47,31 @@ def show(req, user_id):
 
 def contact_user(request):
 	if request.method == 'POST':
+		recaptcha_response = request.POST.get('grecaptcha-token')
+		data = {
+			'secret': '6Ledc2YUAAAAAFYJYWjB2a8HZWXmtm4iFKyOJeio',
+			'response': recaptcha_response
+		}
+		r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=data)
+		result = r.json()
+
+		if result['score'] < 0.4:
+			messages.add_message(request, messages.INFO, 'Bot Verification Failed.')
+			return redirect('subby:SubletDetail', request.POST['subid'])
+		print(result['score'])
+
 		if request.POST['name'] and request.POST['email'] and request.POST['message']:
 			user = User.objects.get(id = request.POST['posterid'])
 			user.email_user(request.POST['name'] + 'for ' + request.POST['sublettitle'], request.POST['message'], request.POST['email'])
 			#return render(request, 'sublet/sublet_detail.html', {'success' : 'Thanks for leaving a message! You will be contacted shortly.'})
-			messages.add_message(request, messages.INFO, 'Hello world.')
+			messages.add_message(request, messages.INFO, 'You have successfully left a message for this lister!')
 			return redirect('subby:SubletDetail', request.POST['subid'])
 		else:
-			return render(request, 'sublet/sublet_detail.html', {'error' : 'All fields must be filled out when leaving contact info.'})
+			messages.add_message(request, messages.INFO, 'All fields must be filled out when leaving a message.')
+			return redirect('subby:SubletDetail', request.POST['subid'])
 	else:
-		return render(request, 'sublet/sublet_detail.html')
+		messages.add_message(request, messages.INFO, 'Something went wrong!')
+		return redirect('subby:SubletDetail', request.POST['subid'])
 
 
 def signup(request):

@@ -1,7 +1,6 @@
 $(function () {
 
     $('#contact-submit-btn').on('click', function (e) {
-        e.preventDefault();
         $('#name').popover('hide');
         $('#email').popover('hide');
         $('#message').popover('hide');
@@ -21,12 +20,14 @@ $(function () {
             $('#message').popover('show');
             error = true;
         }
-        if (error)
+        if (error) {
+            e.preventDefault();
             return false;
+        }
+
     });
 
     $('#edit-sublet-confirm').on('click', function(e){
-       e.preventDefault();
        let title = $('#listing-title');
        let street_address = $('#street_address');
        let city = $('#city');
@@ -58,7 +59,10 @@ $(function () {
            description.popover('show');
            error = true;
        }
-       if(error)
+       if(error){
+           e.preventDefault();
            return false;
+       }
+
     });
 });

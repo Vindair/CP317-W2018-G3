@@ -1,6 +1,5 @@
 $(function () {
     $('#create-sublet-submit').on('click', function (e) {
-        e.preventDefault();
         let title = $('#listing-title');
         let street_address = $('#street_address');
         let city = $('#city');
@@ -44,7 +43,9 @@ $(function () {
             images.popover('show');
             error = true;
         }
-        if (error)
+        if (error) {
+            e.preventDefault();
             return false;
+        }
     });
 });
