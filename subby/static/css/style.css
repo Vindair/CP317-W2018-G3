@@ -238,3 +238,72 @@ html, body {
     /* padding-left:300px; */
     /* text-align:center; */
 }
+
+
+/* Favourite list page styling ------------------------------*/
+/* Favourite button panel  properties*/
+.favourite-btn {
+    /* Title text properties */
+    color: black; /* Text Colour */
+    text-align: center;
+
+    background-color: #89b4f9; /* Initial button background colour */
+    padding: 50px;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    border: solid;
+    border-width: 1px;
+    border-radius: 12px;
+
+    transition: 0.6s;
+    outline: none;
+
+}
+
+
+/* Drop down info panel styling and contents*/
+.info-panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0px;
+    overflow: hidden;
+
+    /* Orders the layout of the favourite info boxes */
+    display: flex;
+    flex-direction: column;
+
+    transition: max-height 0.3s ease-out;
+}
+
+/* Contents*/
+.description {
+    width: 70%;
+    margin-left: 15%;
+
+    border-right-style: solid;
+    border-left-style: solid;
+    border-bottom-style: solid;
+    border-color: #89b4f9;
+    border-width: 1px;
+
+}
+
+
+.control-panel {
+    width: 70%;
+    margin-left: 15%;
+
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-color: #89b4f9;
+    border-width: 1px;
+}
+
+
+/* Favourite button panel properties on mouse hover and button click */
+.active, .favourite-btn:hover {
+    background-color: #4286f4;
+}
+
+/* -------------------------------------------- */
