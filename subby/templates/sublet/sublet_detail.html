@@ -131,7 +131,7 @@
                                         <input type="text" class="form-control" id="listing-title" name="title"
                                                aria-describedby="Listing Name" placeholder="Enter Listing Name"
                                                value="{{ object.title }}" data-toggle="popover"
-                                               data-content="Please enter a title">>
+                                               data-content="Please enter a title">
                                         <label class="mt-2" for="available">Availability:</label>
                                         <select class="form-control" id="available" name="is-sold"
                                                 aria-describedby="Availability">
@@ -152,7 +152,7 @@
                                         <input id="pac-input" class="controls form-control" type="text"
                                                placeholder="Enter Address" autocomplete="off"
                                                value="{{ object.street_address }}" data-toggle="popover"
-                                               data-content="Please enter a valid address">/><br/>
+                                               data-content="Please enter a valid address"><br>
                                         <div id="map" style="height: 250px;"></div>
                                         <div id="infowindow-content">
                                             <img src="" width="16" height="16" id="place-icon">
@@ -177,7 +177,7 @@
                                         <textarea class="form-control" name="description" id="listing-description"
                                                   aria-describedby="Description" placeholder="Enter Description"
                                                   rows="10" data-toggle="popover"
-                                                  data-content="Please enter a description">>{{ object.description }}</textarea>
+                                                  data-content="Please enter a description">{{ object.description }}</textarea>
                                         <label class="mt-2" for="image-upload">Upload Images:</label>
                                         <input type="file" class="form-control" id="files" name="files" multiple
                                                aria-describedby="Image Upload">
@@ -197,7 +197,6 @@
                                                 class="btn btn-secondary d-block mr-0 mt-3">
                                             Confirm
                                         </button>
-
                                     </div>
                                 </form>
                             </div>

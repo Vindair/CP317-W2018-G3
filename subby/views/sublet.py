@@ -5,6 +5,7 @@ from django.contrib.auth.decorators import login_required
 from subby.models.sublet import Sublet
 from subby.models.image import SubletImage
 from django.shortcuts import get_object_or_404
+from django.contrib import messages
 
 from django.contrib.auth import get_user_model
 User = get_user_model()
@@ -151,8 +152,10 @@ def update_sublet(request):
                     sublet_image.image = image
                     sublet_image.save()
         sublet.save()
+        messages.add_message(request, messages.INFO, 'You have successfully updated your listing.')
         return redirect('subby:SubletDetail', sublet.get_sublet_id())
     else:
+        messages.add_message(request, messages.INFO, 'Something went wrong!')
         return redirect('subby:SubletDetail', request.POST['subletid'])
 
 
