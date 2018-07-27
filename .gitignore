@@ -21,6 +21,7 @@ node_modules/
 
 # Ignore .idea
 subby/.idea/*
+.idea/*
 
 # Ignore media folders
 subby_project/media/*
