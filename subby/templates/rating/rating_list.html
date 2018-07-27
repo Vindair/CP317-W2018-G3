@@ -30,18 +30,33 @@
 							{% endif %}
 					{% endif %}
                 </h2>
+				
+					{% for i in avg_rating.int_rating %}
 					<fieldset class="rating float-left" disabled>
-						<label class="full" for="5s" title="Perfect - 5 stars"></label>
+						<input type="radio" id="5s" value="5" checked />
+                        <label class="full" for="5s"></label>
 					</fieldset>
-					<br />
-                <div class="collapse" id="ratingToggler">
+					{% endfor %}
+					{% if avg_rating.float_rating == 0.5 %}
+						<fieldset class="rating float-left" disabled>
+							<input type="radio" id="5s" value="5" checked />
+							<label class="half" for="5s"></label>
+						</fieldset>
+					{% endif %}
+					{% for i in avg_rating.rest_rating %}
+						<fieldset class="rating float-left" disabled>
+							<input type="radio" id="5s" value="5" />
+							<label class="full" for="5s"></label>
+						</fieldset>
+					{% endfor %}
+					<p style="padding-top:7px;font-weight:bold;" > Average: {{ avg_rating.avg }}</p>
+<!--                 <div class="collapse" id="ratingToggler">
                     <div class="bg-dark p-4 mt-2" style="border-radius: 5px;">
-
                     </div>
-                </div>
+                </div> -->
                 <br>
                 {% for rating in ratings %}
-                    <div class="container bg-dark rounded text-light">
+                    <div class="container bg-dark rounded text-light" style="margin-top:-20px">
                         <div class="row">
                             <div class="col mt-1">
                                 {% load index %}
@@ -184,6 +199,7 @@
                         </div>
                         <hr>
                     </div>
+					
                     <br>
                 {% endfor %}
             </div>

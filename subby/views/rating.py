@@ -27,8 +27,17 @@ def list_user_rating(request, user_id):
 			if rater == current:
 				posted = True
 	avg_rating = Rating.objects.get_ratings()
+	int_rating = int(avg_rating)
+	float_rating = avg_rating - int_rating
+	if float_rating > 0.5:
+		float_rating = 0.5
+		rest_rating = 4 - int_rating
+	else:
+		float_rating = 0
+		rest_rating = 5 - int_rating
+	avg = format(avg_rating, '.2f')
 	# print(avg_rating)
-	return render(request, 'rating/rating_list.html', {'ratings': ratings, 'raters': raters, 'lister': lister, 'current': current, 'avg_rating':avg_rating, 'posted': posted, 'current_id':current_id, 'reviewed_user_id': reviewed_user_id})
+	return render(request, 'rating/rating_list.html', {'ratings': ratings, 'raters': raters, 'lister': lister, 'current': current, 'avg_rating':{'int_rating':range(int_rating), 'float_rating':float_rating,'rest_rating':range(rest_rating), 'avg':avg}, 'posted': posted, 'current_id':current_id, 'reviewed_user_id': reviewed_user_id})
 
 	
 
