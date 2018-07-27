@@ -1,0 +1,32 @@
+{% extends 'application/base.html' %}
+
+
+{% block content %}
+
+{% for favourite in all_favourites %}
+    {% load index %}
+    <button class="favourite-btn"><img src="{{ cover|index:forloop.counter0 }}" class="img-fluid" height="150" width="200"/>{{ favourite.sublet.get_sublet_title }}</button>
+    <div class="info-panel">
+        <div class="description">
+            <h2>Description:</h2>
+            <p>{{ favourite.sublet.get_description }}</p></div>
+
+        <div class="control-panel">
+            <a class="btn btn-secondary" href="{% url 'subby:SubletDetail'  favourite.sublet.get_sublet_id  %}">Visit</a>
+            <a class="btn btn-secondary">Delete</a>
+            <a class="btn btn-secondary" href="{% url 'subby:RatingList'  %}">View
+                        this users ratings</a>
+
+
+        </div>
+    </div>
+
+
+
+{% endfor %}
+
+{% load static %}
+  <script src="{% static 'js/FavouriteList.js' %}"></script>
+
+
+{% endblock %}
