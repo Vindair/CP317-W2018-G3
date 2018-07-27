@@ -20,39 +20,31 @@ $(function () {
         $('#pac-input').popover('hide');
 
         if (!title.val()) {
-            console.log('1');
             title.popover('show');
             error = true;
         }
-        console.log(duration.val());
         if (!duration.val()) {
-            console.log('2');
             duration.popover('show');
             error = true;
         }
         if (!street_address.val() || !city.val() || !postal_code.val() || !lat.val() || !lng.val()) {
-            console.log('3');
             $('#pac-input').popover('show');
             error = true;
         }
         if (!price.val()) {
-            console.log('4');
             price.popover('show');
             error = true;
         }
         if (!description.val()) {
-            console.log('5');
             description.popover('show');
             error = true;
         }
         if (!images.val()) {
-            console.log('6');
             images.popover('show');
             error = true;
         }
         if (error) {
-            console.log('7');
-            //e.preventDefault();
+            e.preventDefault();
             return false;
         }
     });
