@@ -129,3 +129,28 @@ def logout(request):
   if request.method == 'POST':
     auth.logout(request)
     return redirect('subby:index')
+
+@__ensure_admin
+def edit(request, user_id):
+    if req.user.is_admin == True:
+        messages.success(req,'admin')
+
+    if request.method == 'POST':
+        user = User.objects.get(id=user_id)
+        try:
+            user.email = request.POST['email']
+        except Exception:
+            messages.error(request, 'failed')
+        else:
+            user.first_name = request.POST['first']
+            user.last_name = request.POST['last']
+            user.phone_number = request.POST['phone']
+            user.updated_at = pytz.utc.localize(datetime.datetime.now())
+            user.save()
+            messages.success(request, "Update Successfully")
+        finally:
+            return redirect('subby:user_show', user_id)
+    else:
+        # User wants to enter info
+        return render(request, 'application/base.html')
+
