@@ -1,7 +1,7 @@
 from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
-from .views import application, user, sublet, account
+from .views import application, user, sublet, account, rating
 
 
 app_name = 'subby'
@@ -30,4 +30,10 @@ urlpatterns = [
   path('sublets/create_sublet', sublet.create_sublet, name='create_sublet'),
   path('sublets/search', sublet.search, name='search'),
   path('sublets/contact', user.contact_user, name='contact_user'),
+  path('sublets/update_sublet', sublet.update_sublet, name='update_sublet'),
+  
+  # Rating paths
+  path('ratings/', rating.list_user_rating, name='RatingList'),
+	path('ratings/write_review/', rating.write_review, name='write_review'),
+	path('ratings/update_review/', rating.update_review, name='update_review'),
 ]
