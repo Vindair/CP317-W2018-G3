@@ -4,6 +4,7 @@ from subby.models.rating import Rating
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
+from subby.decorators.loginrequiredmessage import message_login_required
 
 User = get_user_model()
 
@@ -20,6 +21,7 @@ def list_user_rating(request, user_id):
 			 
 	if request.user.is_anonymous:
 		current = None
+		current_id = None
 	else:
 		current = request.user.email
 		current_id = request.user.id
