@@ -13,7 +13,6 @@ urlpatterns = [
   # User Admin views
   path('users/', user.index, name='user_index'),
   path('users/<int:user_id>', user.show, name='user_show'),
-  path('users/<int:user_id>/update', user.edit, name='user_edit'),
 
   # User session views
   path('login/', user.login, name='login'),
