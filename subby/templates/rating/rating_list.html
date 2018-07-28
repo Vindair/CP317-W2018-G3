@@ -25,7 +25,7 @@
 							<button class="btn btn-secondary float-right" type="button"
 								data-toggle="modal" data-target="#rating-modal"
 								aria-controls="ratingToggler" aria-expanded="false"
-								aria-label="Toggle navigation">Write a Review
+								aria-label="Toggle navigation" onclick="initRating()">Write a Review
 							</button>
 							{% endif %}
 					{% endif %}
@@ -65,7 +65,7 @@
                                         <button class="btn btn-secondary float-right" type="button"
                                                 data-toggle="collapse" data-target="#editToggler{{ rating.id }}"
                                                 aria-controls="editToggler" aria-expanded="false"
-                                                aria-label="Toggle navigation">Edit
+                                                aria-label="Toggle navigation" onclick="myFunction1()">Edit
                                         </button>
                                     </h5>
                                 {% else %}
@@ -73,11 +73,11 @@
                                 {% endif %}
                                 <fieldset class="rating float-left" disabled>
                                     {% if rating.rating == 5 %}
-                                        <input type="radio" id="5s" value="5" checked/>
+                                        <input type="radio" id="5s" value="5" checked />
                                     {% else %}
                                         <input type="radio" id="5s" value="5"/>
                                     {% endif %}
-                                    <label class="full" for="5s" title="Perfect - 5 stars"></label>
+                                    <label class="full" for="5s" title="Perfect - 5 stars" ></label>
                                     {% if rating.rating == 4.5 %}
                                         <input type="radio" id="4p5s" value="4.5" checked/>
                                     {% else %}
@@ -191,7 +191,7 @@
                                                       placeholder="Comment about seller"
                                                       rows="8">{{ rating.comment }}</textarea>
 
-                                            <button type="submit" class="btn btn-secondary mt-3">Save</button>
+                                            <button type="submit" class="btn btn-secondary mt-3" >Save</button>
                                         </div>
                                     </div>
                                 </form>
@@ -222,9 +222,9 @@
                         <div class="form-group">
                             <input type="hidden" name="reviewedid" value="{{ lister.id }}">
                             <div class="form-row">
-                                <fieldset class="rating">
-                                    <input type="radio" id="a5s" name="rating" value="5"/>
-                                    <label class="full" for="a5s" title="Perfect - 5 stars"></label>
+                                <fieldset class="rating" oninput="myFunction()" id="123">
+                                    <input type="radio" id="a5s" name="rating" value="5" />
+                                    <label class="full" for="a5s" title="Perfect - 5 stars" ></label>
                                     <input type="radio" id="a4p5s" name="rating" value="4.5"/>
                                     <label class="half" for="a4p5s" title="Great - 4.5 stars"></label>
                                     <input type="radio" id="a4s" name="rating" value="4"/>
@@ -247,16 +247,46 @@
                             </div>
                             <label class="text-light" for="message">Comment:</label>
                             <textarea class="form-control" id="message" name="comment"
-                                      placeholder="Comment about seller"
-                                      rows="8"></textarea>
+                                      placeholder="Rate first, then comment about seller"
+                                      rows="8" oninput="checkMessage()"></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+
+                        <button type="submit" class="btn btn-primary" id="submit_button">Submit</button>
+
                     </div>
                 </form>
             </div>
         </div>
     </div>
-{% endblock %}			
+{% endblock %}		
+
+{% block js %}
+	<script>
+	function myFunction() {
+		var submit_button = document.getElementById('submit_button');
+		var message = document.getElementById('message');
+
+		
+		message.disabled = false;
+	}
+	function initRating(){
+		console.log("123");
+		var message = document.getElementById('message');
+		var submit_button = document.getElementById('submit_button');
+		submit_button.disabled = true;
+		message.disabled = true;
+	}
+	function checkMessage() {
+		var message = document.getElementById('message');
+		var submit_button = document.getElementById('submit_button');
+		if (message.value != ""){
+			submit_button.disabled = false;
+		}else {
+			submit_button.disabled = true;
+		}
+	}
+	</script>
+{% endblock %}
