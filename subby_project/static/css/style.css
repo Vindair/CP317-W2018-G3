@@ -1,3 +1,5 @@
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
 html, body {
     height:100%;
 }
@@ -47,18 +49,68 @@ html, body {
     margin-top: 3%;
 }
 
+
+.search-container {
+    max-height: 80vh;
+    min-height: 80vh;
+    height: auto;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.gallery {
+    margin-top: 5px;
+    margin-right: 5px;
+    float: left;
+}
+
+.card-body {
+    min-height: 150px;
+    max-height: 150px;
+    height: auto;
+    overflow-y: auto;
+}
+
+.rating > input { display: none; }
+.rating > label:before {
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.rating > .half:before {
+  content: "\f089";
+  position: absolute;
+}
+
+.rating > label {
+  color: #ddd;
+  float: right;
+}
+
+.rating > input:checked ~ label,
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label { color: #FFD700;  }
+
+.rating > input:checked + label:hover,
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label,
+.rating > input:checked ~ label:hover ~ label { color: #FFED85;  }
+
 #error-container {
     width: 100%;
     height: 100px;
 }
 
 .hello {
-    color: yellow;
+    color: green;
 }
 
 
 #sublet_title:hover {
-    color: #343642;
+    color: #609ab6;
 }
 
 #map {
@@ -82,3 +134,46 @@ html, body {
     /* padding-left:300px; */
     /* text-align:center; */
 }
+
+
+
+
+/* css for rating_detail */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+/* .close { */
+    /* color: #aaaaaa; */
+    /* float: right; */
+    /* font-size: 28px; */
+    /* font-weight: bold; */
+/* } */
+
+/* .close:hover, */
+/* .close:focus { */
+    /* color: #000; */
+    /* text-decoration: none; */
+    /* cursor: pointer; */
+/* } */
+

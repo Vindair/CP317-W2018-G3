@@ -7,6 +7,7 @@ from .views import application, user, sublet, account, rating
 app_name = 'subby'
 
 urlpatterns = [
+
   # Base application view
   path('', application.index, name='index'),
 
@@ -32,7 +33,11 @@ urlpatterns = [
   path('sublets/update_sublet', sublet.update_sublet, name='update_sublet'),
   
   # Rating paths
-  path('ratings/', rating.list_user_rating, name='RatingList'),
+	path('ratings/<int:user_id>', rating.list_user_rating, name='RatingList'),
+
 	path('ratings/write_review/', rating.write_review, name='write_review'),
 	path('ratings/update_review/', rating.update_review, name='update_review'),
+	path('ratings/reviews/<int:pk>/', rating.my_review, name='my_review'),
+	path('ratings/delete/<int:rating_id>/<int:reviewed_user_id>/', rating.delete_review, name='delete_review'),
+
 ]

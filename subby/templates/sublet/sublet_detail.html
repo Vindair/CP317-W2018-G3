@@ -44,7 +44,7 @@
                             </ol>
                             <div class="carousel-inner">
                                 {% for i in rest_images %}
-                                    {% if forloop.counter0 == 0 %}
+								{% if forloop.counter0 == 0 %}
                                         <div class="carousel-item active">
                                             <img class="d-block" src="{{ i.url }}" alt="Slide" width="400px">
                                         </div>
@@ -73,13 +73,7 @@
                             <h6>Listed by: {{ lister.email }}</h6>
                         </div>
                         <div class="col">
-                            <form action="{% url 'subby:RatingList' %}" method="POST">
-                                {% csrf_token %}
-                                <input type="hidden" name="listerid" value="{{ lister.id }}">
-                                <button type="submit" class="btn btn-secondary btn-sm float-right">View
-                                    Their Reviews
-                                </button>
-                            </form>
+							<a class="btn btn-secondary btn-sm float-right" href="{% url 'subby:RatingList' user_id=lister.id %}">View Reviews</a>
                         </div>
                     </div>
                 </div>
