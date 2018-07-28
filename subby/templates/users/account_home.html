@@ -8,7 +8,7 @@
                 <h1 class="display-4">Account Home</h1>
                 <a class="btn btn-secondary" href="{% url 'subby:create_sublet' %}">Post Sublet</a>
                 <a class="btn btn-secondary" href="{% url 'subby:SubletList' %}">View All Posts</a>
-                <form action="{% url 'subby:RatingList' %}" method="POST">
+                <form action="{% url 'subby:RatingList' user_id=id%}" method="POST">
                     {% csrf_token %}
                     <input type="hidden" name="listerid" value="{{ id }}">
                     <button type="submit" class="btn btn-secondary mt-3">View

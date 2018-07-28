@@ -15,8 +15,10 @@
                     </div>
                 {% endif %}
                 <h2>
+				
                     Reviews for {{ lister.email }} <br />
-						{% if current != None %}
+					
+						{% if current != None and current_id != user_id %}
 							{% if posted == True %}
 							<a class="btn btn-secondary float-right" 
 								href="{% url 'subby:my_review' pk=reviewed_user_id %}">View Your Review

@@ -5,6 +5,8 @@ from .models import User
 from .models.rating import Rating
 from .models.sublet import Sublet
 
+from .models.rating1 import Rating1
+
 admin.site.register(User)
 
 class UserAdmin(DjangoUserAdmin):
@@ -39,4 +41,6 @@ class RatingData(admin.ModelAdmin):
 	
 admin.site.register(Rating, RatingData)
 
+
+admin.site.register(Rating1)
 

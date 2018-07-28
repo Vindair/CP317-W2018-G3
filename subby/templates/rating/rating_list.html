@@ -16,7 +16,7 @@
                 {% endif %}
                 <h2>
                     Reviews for {{ lister.email }} <br />
-						{% if current != None %}
+						{% if current != None and current_id != lister.id %}
 							{% if posted == True %}
 							<a class="btn btn-secondary float-right" 
 								href="{% url 'subby:my_review' pk=reviewed_user_id %}">View Your Review
@@ -44,7 +44,7 @@
 						</fieldset>
 					{% endif %}
 					{% for i in avg_rating.rest_rating %}
-						<fieldset class="rating float-left" disabled>
+					<fieldset class="rating float-left" disabled>
 							<input type="radio" id="5s" value="5" />
 							<label class="full" for="5s"></label>
 						</fieldset>
@@ -314,7 +314,7 @@
                         <div class="form-group">
                             <input type="hidden" name="reviewedid" value="{{ lister.id }}">
                             <div class="form-row">
-                                <fieldset class="rating" oninput="detect_rating()" id="123">
+                                <fieldset class="rating" oninput="detect_rating()">
                                     <input type="radio" id="a5s" name="rating" value="5" />
                                     <label class="full" for="a5s" title="Perfect - 5 stars" ></label>
                                     <input type="radio" id="a4p5s" name="rating" value="4.5"/>
@@ -365,22 +365,18 @@
 		}else {
 			save_button.disabled = true;
 		}
-			
-	
 	}
+	
+	var message = document.getElementById('message');
+	var submit_button = document.getElementById('submit_button');
 	function initRating(){
-		var message = document.getElementById('message');
-		var submit_button = document.getElementById('submit_button');
 		submit_button.disabled = true;
 		message.disabled = true;
 	}
 	function detect_rating() {
-		var message = document.getElementById('message');
 		message.disabled = false;
 	}
 	function write_rating_check() {
-		var message = document.getElementById('message');
-		var submit_button = document.getElementById('submit_button');
 		if (message.value != ""){
 			submit_button.disabled = false;
 		}else {
