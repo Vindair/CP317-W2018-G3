@@ -6,10 +6,7 @@
 {% endblock %}
 
 {% block content %}
-<<<<<<< HEAD
 
-=======
->>>>>>> 6339d4364576934cce9e17527a4e93200f8fec4d
     {% if messages %}
         <div class="alert {{ message.tags }}" role="alert">{{ message }}</div>
     {% endif %}
@@ -17,10 +14,6 @@
     {% if user %}
         <div class="container">
             <div class="jumbotron jumbo-container">
-<<<<<<< HEAD
-=======
-                <h1 class="display-4">User Information</h1>
->>>>>>> 6339d4364576934cce9e17527a4e93200f8fec4d
                 <form method='POST' action="{% url 'subby:user_edit' user.id %}">{% csrf_token %}
                     <fieldset class="edit-disabled-fieldset" disabled>
                         <div class="form-group">
