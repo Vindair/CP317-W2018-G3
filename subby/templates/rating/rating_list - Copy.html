@@ -59,13 +59,13 @@
                     <div class="container bg-dark rounded text-light" style="margin-top:-20px">
                         <div class="row">
                             <div class="col mt-1">
-							{% load index %}
-							{% if rating.user_id == current_id %}
+                                 {% load index %}
+                                {% if raters|index:forloop.counter0 == current %}
                                     <h5 class="mt-3">Review by {{ raters|index:forloop.counter0 }}
                                         <button class="btn btn-secondary float-right" type="button"
                                                 data-toggle="collapse" data-target="#editToggler{{ rating.id }}"
                                                 aria-controls="editToggler" aria-expanded="false"
-                                                aria-label="Toggle navigation">Edit
+                                                aria-label="Toggle navigation" onclick="editRatingCheck()">Edit
                                         </button>
                                     </h5>
 							
@@ -139,7 +139,6 @@
                                     {% endif %}
                                     <label class="half" for="p5s" title="The Worst - 0.5 stars"></label>
                                 </fieldset><br />
-								
 							<div class="collapse" id="editToggler{{ rating.id }}">
                             <div class="bg-dark p-4 mt-2" style="border-radius: 5px;">
                                 <h4 class="text-white" id="editToggler{{ rating.id }}" >Edit Review</h4>
@@ -152,7 +151,7 @@
                                             <input type="hidden" name="ratingid" value="{{ rating.id }}">
                                             <input type="hidden" name="reviewedid" value="{{ lister.id }}">
                                             <div class="form-row">
-                                                <fieldset class="rating" id="edit_rating" oninput="edit_detect_rating()">
+                                                <fieldset class="rating">
                                                     <input type="radio" id="b5s{{ rating.id }}" name="rating" value="5"/>
                                                     <label class="full" for="b5s{{ rating.id }}" title="Perfect - 5 stars"></label>
                                                     <input type="radio" id="b4p5s{{ rating.id }}" name="rating" value="4.5"/>
@@ -177,12 +176,12 @@
                                                            title="The Worst - 0.5 stars"></label>
                                                 </fieldset>
                                             </div>
-                                            <label class="text-light" for="comment1">Comment:</label>
-                                            <textarea class="form-control" id="comment1" name="comment1"
+                                            <label class="text-light" for="comment{{ rating.id }}">Comment:</label>
+                                            <textarea class="form-control" id="comment{{ rating.id }}" name="comment"
                                                       placeholder="Comment about seller"
-                                                      rows="8" oninput="edit_detect_rating()">{{ rating.comment }}</textarea>
+                                                      rows="8">{{ rating.comment }}</textarea>
 
-                                            <button type="submit" class="btn btn-secondary mt-3" id="save_button" disabled >Save</button>
+                                            <button type="submit" class="btn btn-secondary mt-3" id="save_button">Save</button>
                                         </div>
                                     </div>
                                 </form>
@@ -299,7 +298,7 @@
                         <div class="form-group">
                             <input type="hidden" name="reviewedid" value="{{ lister.id }}">
                             <div class="form-row">
-                                <fieldset class="rating" oninput="detect_rating()" id="123">
+                                <fieldset class="rating" oninput="myFunction()" id="123">
                                     <input type="radio" id="a5s" name="rating" value="5" />
                                     <label class="full" for="a5s" title="Perfect - 5 stars" ></label>
                                     <input type="radio" id="a4p5s" name="rating" value="4.5"/>
@@ -342,26 +341,21 @@
 
 {% block js %}
 	<script>
-	function edit_detect_rating(){
-		var message = document.getElementById('comment1');
+	function editRatingCheck() {
 		var save_button = document.getElementById('save_button');
+		var message = document.getElementById('message');
 		if (message.value != ""){
 			save_button.disabled = false;
 		}else {
 			save_button.disabled = true;
 		}
-			
-	
+		save_button.disabled = true;
 	}
 	function initRating(){
 		var message = document.getElementById('message');
 		var submit_button = document.getElementById('submit_button');
 		submit_button.disabled = true;
 		message.disabled = true;
-	}
-	function detect_rating() {
-		var message = document.getElementById('message');
-		message.disabled = false;
 	}
 	function write_rating_check() {
 		var message = document.getElementById('message');
