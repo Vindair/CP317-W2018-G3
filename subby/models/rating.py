@@ -58,3 +58,6 @@ class Rating(models.Model):
             return True
         else:
             return False
+				
+    class Meta:
+       unique_together = ('user_id', 'reviewed_user_id')
