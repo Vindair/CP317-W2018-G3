@@ -50,18 +50,7 @@ def write_review(request):
 
             return redirect('subby:RatingList', request.POST['reviewedid'])
         else:
-            ratings = Rating.objects.filter(user_id=request.POST['reviewedid'])
-            lister = User.objects.get(id=request.POST['reviewedid'])
-            raters = []
-            for rating in ratings:
-                rater = User.objects.get(id=rating.user_id)
-                raters.append(rater.email)
-            return render(request, 'rating/rating_list.html',
-                          {'ratings': ratings,
-                           'raters': raters,
-                           'lister': lister,
-                           'error': 'Please fill in all fields when leaving a review.',
-                           'current': current})
+            return redirect('subby:RatingList', request.POST['reviewedid'])
 
 		
 @login_required(login_url="/signup/")	
