@@ -11,9 +11,10 @@
     * User: postgres
     * Password: postgres
     * Port: 5432
-  * Ensure `python` and `pip` are installed (or the appropriate python 3.X and python3-pip for your platform). From the project directory, run `pip install -r requirements.txt`. Windows users need to put python and python/scripts path to the path of system variables.
-  * Ensure that migrations have been performed; run `python manage.py migrate --settings=subby_project.settings.development`
-  * From the project directory, run `python manage.py runserver --settings=subby_project.settings.development`. Subby will be running at `http://localhost:8000`
+  * Ensure `python` and `pip` are installed (or the appropriate python 3.X and python3-pip for your platform). From the project directory, run `pip install -r requirements.txt`. Windows users need to put python and python/scripts path to the path of system variables before using python and pip in command line.
+  * Check migrations with `python manage.py makemigrations --settings=subby_project.settings.development` first.
+  * Ensure that migrations have been performed; run `python manage.py migrate --settings=subby_project.settings.development`.
+  * From the project directory, run `python manage.py runserver --settings=subby_project.settings.development`. Subby will be running at `http://127.0.0.1:8000`. 'localhost:8000' will be rejected by recaptcha.
   * To create a super user run `python manage.py createsuperuser --settings=subby_project.settings.development`. You will now be able to login using the info you enter.
  
 #### Testing
@@ -32,7 +33,7 @@
 #### Tasks
   * `gulp markdown` will generate clean HTML from the .md files in `documents/`. Use this instead of editing the HTML directly to avoid losing changes.
 
-#### windows doskey alias:
+#### windows doskey alias for development convenience:
 * doskey runserver=python manage.py runserver --settings=subby_project.settings.development
 * doskey makemigrations=python manage.py makemigrations --settings=subby_project.settings.development
 * doskey migrate=python manage.py migrate --settings=subby_project.settings.development
