@@ -31,24 +31,24 @@
 					{% endif %}
                 </h2>
 				
-					{% for i in avg_rating.int_rating %}
-					<fieldset class="rating float-left" disabled>
-						<input type="radio" id="5s" value="5" checked />
-                        <label class="full" for="5s"></label>
-					</fieldset>
-					{% endfor %}
-					{% if avg_rating.float_rating == 0.5 %}
-						<fieldset class="rating float-left" disabled>
-							<input type="radio" id="5s" value="5" checked />
-							<label class="half" for="5s"></label>
-						</fieldset>
-					{% endif %}
-					{% for i in avg_rating.rest_rating %}
-					<fieldset class="rating float-left" disabled>
-							<input type="radio" id="5s" value="5" />
-							<label class="full" for="5s"></label>
-						</fieldset>
-					{% endfor %}
+					<!-- {% for i in avg_rating.int_rating %} -->
+					<!-- <fieldset class="rating float-left" disabled> -->
+						<!-- <input type="radio" id="5s" value="5" checked /> -->
+                        <!-- <label class="full" for="5s"></label> -->
+					<!-- </fieldset> -->
+					<!-- {% endfor %} -->
+					<!-- {% if avg_rating.float_rating == 0.5 %} -->
+						<!-- <fieldset class="rating float-left" disabled> -->
+							<!-- <input type="radio" id="5s" value="5" checked /> -->
+							<!-- <label class="half" for="5s"></label> -->
+						<!-- </fieldset> -->
+					<!-- {% endif %} -->
+					<!-- {% for i in avg_rating.rest_rating %} -->
+					<!-- <fieldset class="rating float-left" disabled> -->
+							<!-- <input type="radio" id="5s" value="5" /> -->
+							<!-- <label class="full" for="5s"></label> -->
+						<!-- </fieldset> -->
+					<!-- {% endfor %} -->
 					<p style="padding-top:7px;font-weight:bold;" > Average: {{ avg_rating.avg }}/5</p>
 <!--                 <div class="collapse" id="ratingToggler">
                     <div class="bg-dark p-4 mt-2" style="border-radius: 5px;">
@@ -154,6 +154,7 @@
                                     {% endif %}
                                     <label class="half" for="p5s" title="The Worst - 0.5 stars"></label>
                                 </fieldset><br />
+							
 								
 							<div class="collapse" id="editToggler{{ rating.id }}">
                             <div class="bg-dark p-4 mt-2" style="border-radius: 5px;">
@@ -193,7 +194,7 @@
                                                 </fieldset>
                                             </div>
                                             <label class="text-light" for="comment1">Comment:</label>
-                                            <textarea class="form-control" id="comment1" name="comment1"
+                                            <textarea class="form-control" id="comment1" name="comment"
                                                       placeholder="Comment about seller"
                                                       rows="8" oninput="edit_detect_rating()">{{ rating.comment }}</textarea>
 
