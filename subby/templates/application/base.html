@@ -81,14 +81,17 @@
                 <form action="{% url 'subby:search' %}" method="POST">
                     {% csrf_token %}
                     <div class="form-group">
-                        <input class="form-control" type="search" placeholder="Search" aria-label="Search"
-                               id="sublet-search">
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="sublet-search">
                         <input type="hidden" id="search-lat" name="lat">
                         <input type="hidden" id="search-lng" name="lng">
                         <input type="hidden" id="search-prox" name="proximity" value="5">
-                        <button class="btn btn-secondary search-btn d-block mx-auto" type="submit">Search</button>
+					<div class="row">
+                        <button class="btn btn-secondary search-btn d-block offset-5 mt-3" type="submit" style="height:90%;">Search</button>
+						<a class="btn btn-secondary d-block mt-3" style="margin-left:20px;" href="{% url 'subby:SubletList' %}">View All Posts</a>
+					</div>
                     </div>
                 </form>
+				
             </div>
             <div class="col"></div>
         </div>

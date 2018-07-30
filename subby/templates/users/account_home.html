@@ -7,7 +7,7 @@
             <div class="container">
                 <h1 class="display-4">Account Home</h1>
                 <a class="btn btn-secondary" href="{% url 'subby:create_sublet' %}">Post Sublet</a>
-                <a class="btn btn-secondary" href="{% url 'subby:SubletList' %}">View All Posts</a>
+                <!-- <a class="btn btn-secondary" href="{% url 'subby:SubletList' %}">View All Posts</a> -->
 				<a class="btn btn-secondary" href="{% url 'subby:RatingList' user_id=id%}">View My Ratings</a>
 <!--                 <form action="{% url 'subby:RatingList' user_id=id%}" method="POST">
                     {% csrf_token %}
