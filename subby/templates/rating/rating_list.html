@@ -48,7 +48,7 @@
 							<!-- <label class="full" for="5s"></label> -->
 						<!-- </fieldset> -->
 					<!-- {% endfor %} -->
-					<p style="padding-top:7px;font-weight:bold;" > Average: {{ avg_rating.avg }}/5</p>
+					<p style="padding-top:7px;font-weight:bold;" > Average: {{ avg_rating }}/5</p>
 
                <!-- <div class="collapse" id="ratingToggler"> -->
                     <!-- <div class="bg-dark p-4 mt-2" style="border-radius: 5px;"> -->
@@ -372,7 +372,7 @@
     {% load static %}
     <script src="{% static 'js/RatingVerification.js' %}"></script>
 
-	<script>
+<script>
 	function edit_fold() {
 		var edit_button = document.getElementById('edit_button');
 		if (edit_button.value == "Edit"){

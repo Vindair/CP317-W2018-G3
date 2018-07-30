@@ -17,9 +17,14 @@ def list_user_rating(request, user_id):
 	raters = []
 	posted = False
 	reviewed_user_id = user_id
+	
+	total_rating = 0
+	total_count = len(ratings)
+	print(total_count)
 	for rating in ratings:
 		rater = User.objects.get(id=rating.user_id)
 		raters.append(rater.email)
+		total_rating += rating.rating
 			 
 	if request.user.is_anonymous:
 		current = None
@@ -30,17 +35,13 @@ def list_user_rating(request, user_id):
 		for rater in raters:
 			if rater == current:
 				posted = True
-	avg_rating = Rating.objects.get_ratings()
-	int_rating = int(avg_rating)
-	float_rating = avg_rating - int_rating
-	if float_rating >= 0.5:
-		float_rating = 0.5
 
+	# avg = format(avg_rating, '.2f')
+	if total_count != 0:
+		avg = total_rating / total_count
 	else:
-		float_rating = 0
-	rest_rating = 5 - int_rating
-	avg = format(avg_rating, '.2f')
-	return render(request, 'rating/rating_list.html', {'ratings': ratings, 'raters': raters, 'lister': lister, 'current': current, 'avg_rating':{'int_rating':range(int_rating), 'float_rating':float_rating,'rest_rating':range(rest_rating), 'avg':avg}, 'posted': posted, 'current_id':current_id, 'reviewed_user_id': reviewed_user_id})
+		avg = 0
+	return render(request, 'rating/rating_list.html', {'ratings': ratings, 'raters': raters, 'lister': lister, 'current': current, 'avg_rating':avg, 'posted': posted, 'current_id':current_id, 'reviewed_user_id': reviewed_user_id})
 
 	
 
