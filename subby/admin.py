@@ -4,6 +4,7 @@ from django.contrib.auth.admin import UserAdmin as DjangoUserAdmin
 from .models import User
 from .models.rating import Rating
 from .models.sublet import Sublet
+from .models.favourite import Favourite
 
 
 admin.site.register(User)
@@ -25,11 +26,6 @@ class UserAdmin(DjangoUserAdmin):
   search_fields = ('email', 'first_name', 'last_name')
   ordering = ('email')
 
-
-
-
-
-
 class SubletData(admin.ModelAdmin):
 	list_display = ('title', 'street_address', 'created_at', 'updated_at')
 admin.site.register(Sublet, SubletData)
@@ -39,5 +35,7 @@ class RatingData(admin.ModelAdmin):
 	list_display = ('pk', 'rating')
 	
 admin.site.register(Rating, RatingData)
+
+admin.site.register(Favourite)
 
 
