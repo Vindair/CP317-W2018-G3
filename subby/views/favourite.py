@@ -18,7 +18,7 @@ class FavouritesLister(ListView):
         all_favourites = Favourite.objects.filter(user=self.user)
         images = []
         for f in all_favourites:
-            image = SubletImage.objects.filter(sublet=f.id)
+            image = SubletImage.objects.filter(sublet=f.sublet.get_sublet_id())
             images.append(image[0].image.url)
         ctx = {'all_favourites': all_favourites, 'cover': images}
         return render(self, 'favourite/favourites_list.html', ctx)
@@ -33,11 +33,24 @@ class FavouriteMenuBar(ListView):
         return render(request, 'favourite/listings.html', ctx)
 
 
-@message_login_required
-def favourite_sublet(request):
+# Favourites a sublet if not favourited, unfavourites a sublet if already favourited (deletes it from db)
+def fav_unfav_sublet(request):
 
-    if(request.GET.get('favbtn')):
-        Favourite.objects.create_favourite(request.sublet.id, request.user.id)
+    current_user = request.user
+    next = request.POST.get('next', '/')
+    # Check if sublet exists
+    try:
+        sublet = get_object_or_404(Sublet, id=request.POST['subletid'])
+    except(KeyError, Sublet.DoesNotExist):
+        #return redirect('subby:SubletDetail', {'sublet': sublet, 'error': "Sublet does not exist."})
+        return redirect(next, id=sublet.get_sublet_id())
+    else:
+        #If it exists check to see if this favourite already exists
+        if(Favourite.objects.filter(user=current_user, sublet=sublet).count() > 0): #Remove favourite
+            Favourite.objects.remove_favourite(sublet, current_user)
+        else: #Add favourite
+            Favourite.objects.create_favourite(sublet, current_user)
+        return redirect(next, id=sublet.get_sublet_id())
 
 
 
