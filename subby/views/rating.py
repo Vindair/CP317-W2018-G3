@@ -17,7 +17,7 @@ def list_user_rating(request, user_id):
 	raters = []
 	posted = False
 	reviewed_user_id = user_id
-	
+	print(hello)
 	total_rating = 0
 	total_count = len(ratings)
 	print(total_count)
