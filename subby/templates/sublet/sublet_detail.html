@@ -199,14 +199,14 @@
                         <button class="btn btn-secondary" type="button"
                                 data-toggle="collapse" data-target="#contactToggler"
                                 aria-controls="contactToggler" aria-expanded="false"
-                                aria-label="Toggle navigation">Interested?
+                                aria-label="Toggle navigation">Contact Subletter?
                         </button>
-                    
+						<br /><br />
                         <form action="{% url 'subby:fav_unfav_sublet' %}" method="POST">
                             {% csrf_token %}
                                 <input type="hidden" name="subletid" value="{{ object.id }}">
                                 <input type="hidden" name="next" value="{{ request.path }}">
-                                <button class="btn btn-secondary" type="submit" >Favourite</button>
+                                <button class="btn btn-secondary" type="submit" >Like It</button>
 
                         </form>
                     
@@ -282,15 +282,7 @@
             init_map()
         }
     </script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
-            integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-            crossorigin="anonymous"></script>
+
     {% load static %}
     <script src="{% static 'js/SubletDetailVerification.js' %}"></script>
     <script src="{% static 'js/MapAPI.js' %}"></script>

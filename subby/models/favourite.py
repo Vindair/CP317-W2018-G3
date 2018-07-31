@@ -7,8 +7,8 @@ class Favourite(models.Model):
 
     created_at = models.DateTimeField(auto_now=True)
     updated_at = models.DateTimeField(blank=True, null=True)
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True)
-    sublet = models.ForeignKey(Sublet, on_delete=models.CASCADE, null=True)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    sublet = models.ForeignKey(Sublet, on_delete=models.CASCADE)
 
     objects = FavouriteManager()
 
