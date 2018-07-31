@@ -1,0 +1,42 @@
+{% extends 'application/base.html' %}
+
+
+{% block content %}
+
+{% if all_favourites %}
+{% for favourite in all_favourites %}
+    {% load index %}
+    <button class="favourite-btn"><img src="{{ cover|index:forloop.counter0 }}" class="img-fluid" height="150" width="200"/>{{ favourite.sublet.get_sublet_title }}</button>
+    <div class="info-panel">
+        <div class="description">
+            <h2>Description:</h2>
+            <p>{{ favourite.sublet.get_description }}</p></div>
+
+        <div class="control-panel">
+            <a class="btn btn-secondary" href="{% url 'subby:SubletDetail'  favourite.sublet.get_sublet_id  %}">Visit</a>
+            <form action="{% url 'subby:fav_unfav_sublet' %}" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="subletid" value="{{ favourite.sublet.get_sublet_id }}">
+                <input type="hidden" name="next" value="{{ request.path }}">
+                <button class="btn btn-secondary" type="submit">Delete</button>
+            </form>
+
+            <a class="btn btn-secondary" href="{% url 'subby:RatingList'  %}">View
+                        this users ratings</a>
+
+
+        </div>
+    </div>
+{% endfor %}
+
+{% else %} <!-- If there are no favourites -->
+    <p>There are no favourites.</p>
+{% endif %}
+
+
+{% load static %}
+  <script src="{% static 'js/FavouriteList.js' %}"></script>
+
+
+{% endblock %}
+

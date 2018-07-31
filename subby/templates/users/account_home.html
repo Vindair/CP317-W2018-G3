@@ -7,15 +7,13 @@
             <div class="container">
                 <h1 class="display-4">Account Home</h1>
                 <a class="btn btn-secondary" href="{% url 'subby:create_sublet' %}">Post Sublet</a>
+
                 <!-- <a class="btn btn-secondary" href="{% url 'subby:SubletList' %}">View All Posts</a> -->
 				<a class="btn btn-secondary" href="{% url 'subby:RatingList' user_id=id%}">View My Ratings</a>
-<!--                 <form action="{% url 'subby:RatingList' user_id=id%}" method="POST">
-                    {% csrf_token %}
-                    <input type="hidden" name="listerid" value="{{ id }}">
-                    <button type="submit" class="btn btn-secondary mt-3">View
-                        your ratings
-                    </button>
-                </form> -->
+               <form action="{% url 'subby:RatingList' user_id=id%}" method="POST">
+
+                <a class="btn btn-secondary" href="{% url 'subby:favourite_list' %}">View Favourites</a>
+
                 <hr class="my-4">
                 <form action="{% url 'subby:update_user_info' %}" method="POST">
                     {% csrf_token %}
