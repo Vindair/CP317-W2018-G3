@@ -1,6 +1,5 @@
 from django.db import models
 from django.conf import settings
-import datetime, pytz
 
 class FavouriteManager(models.Manager):
 
@@ -10,3 +9,7 @@ class FavouriteManager(models.Manager):
         favourite.user = user
         favourite.save()
         return favourite
+    
+    def remove_favourite(self, sublet, user):
+        self.model.objects.filter(sublet=sublet, user=user).delete()
+        return
