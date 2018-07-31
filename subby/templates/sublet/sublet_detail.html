@@ -206,8 +206,11 @@
                             {% csrf_token %}
                                 <input type="hidden" name="subletid" value="{{ object.id }}">
                                 <input type="hidden" name="next" value="{{ request.path }}">
-                                <button class="btn btn-secondary" type="submit" >Like It</button>
-
+								{% if fav == True %}
+                                <button class="btn btn-danger" type="submit" >Liked</button>
+								{% else %}
+								<button class="btn btn-secondary" type="submit" >Like It</button>
+								{% endif %}
                         </form>
                     
                         <div class="collapse" id="contactToggler">

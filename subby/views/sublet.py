@@ -4,6 +4,7 @@ from subby.decorators.loginrequiredmessage import message_login_required
 from django.contrib.auth.decorators import login_required
 from subby.models.sublet import Sublet
 from subby.models.image import SubletImage
+from subby.models.favourite import Favourite
 from django.shortcuts import get_object_or_404
 from django.contrib import messages
 
@@ -47,7 +48,13 @@ class SubletDetail(DetailView):
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
         lister = User.objects.get(id=self.object.user_id)
+        fav = Favourite.objects.filter(sublet=self.object, user=self.request.user)
+        if len(fav) > 0:
+           fav = True
+        else:
+           fav = False
         user =  self.request.user.id
+        ctx['fav'] = fav
         ctx['lister'] = lister
         ctx['cur_user'] = user
         images = SubletImage.objects.filter(sublet=self.object)
