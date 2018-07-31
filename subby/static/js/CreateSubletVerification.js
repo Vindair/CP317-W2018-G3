@@ -8,7 +8,7 @@ $(function () {
         let description = $('#listing-description');
         let lat = $('#lat');
         let lng = $('#lng');
-        let duration = $('#duration');
+        let duration = $('#listing-duration');
         let images = $('#files');
         let error = false;
 

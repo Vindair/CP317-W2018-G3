@@ -1,7 +1,10 @@
 from django.db import models
 from django.conf import settings
 from subby.managers.ratingmanager import RatingManager
+
 import datetime, pytz
+from . import User
+
 
 ALLOWED_REVIEW_VALS = [0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 3.5, 4.0, 4.5, 5.0]
 
@@ -13,6 +16,8 @@ class Rating(models.Model):
     reviewed_user_id = models.PositiveIntegerField()
     created_at = models.DateTimeField(auto_now=True)
     updated_at = models.DateTimeField(blank=True, null=True)
+    
+
 
     objects = RatingManager()
 
@@ -59,3 +64,6 @@ class Rating(models.Model):
             return True
         else:
             return False
+				
+    class Meta:
+       unique_together = ('user_id', 'reviewed_user_id')

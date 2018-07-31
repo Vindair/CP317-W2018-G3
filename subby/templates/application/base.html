@@ -81,14 +81,17 @@
                 <form action="{% url 'subby:search' %}" method="POST">
                     {% csrf_token %}
                     <div class="form-group">
-                        <input class="form-control" type="search" placeholder="Search" aria-label="Search"
-                               id="sublet-search">
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="sublet-search">
                         <input type="hidden" id="search-lat" name="lat">
                         <input type="hidden" id="search-lng" name="lng">
                         <input type="hidden" id="search-prox" name="proximity" value="5">
-                        <button class="btn btn-secondary search-btn d-block mx-auto" type="submit">Search</button>
+					<div class="row">
+                        <button class="btn btn-secondary search-btn d-block offset-5 mt-3" type="submit" style="height:90%;">Search</button>
+						<a class="btn btn-secondary d-block mt-3" style="margin-left:20px;" href="{% url 'subby:SubletList' %}">View All Posts</a>
+					</div>
                     </div>
                 </form>
+				
             </div>
             <div class="col"></div>
         </div>
@@ -266,7 +269,7 @@
     {% endblock %}
 </div>
 
-{% block js %}
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -282,10 +285,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
             integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
             crossorigin="anonymous"></script>
-    <script src="{% static "js/LoginModal.js" %}"></script>
+    <script src="{% static 'js/LoginModal.js' %}"></script>
     <script src="{% static 'js/EditAccountInformation.js' %}"></script>
+
     <script src="{% static 'js/SmoothScrolling.js' %}"></script>
-    <script src="{% static "js/MapAPI.js" %}"></script>
+    <script src="{% static 'js/MapAPI.js' %}"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWKqqOWg7D2pCCKgsGe_ISDMUyEkkxXzY&libraries=places&callback=init_searchbar"
             async defer></script>
 
@@ -325,6 +329,10 @@
 
         $(document).ready(onChange);
     </script>
+
+
+{% block js %}
+
 {% endblock %}
 
 </body>

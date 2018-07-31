@@ -56,7 +56,7 @@
                                aria-describedby="Postal Code" placeholder="Enter Postal Code">
                         <label class="mt-2" for="price">Price:</label>
                         <input type="text" class="form-control" name="price" id="price"
-                               aria-describedby="Price" placeholder="Enter Listing Price">
+                               aria-describedby="Price" placeholder="Enter Listing Price" data-toggle="popover" data-content="Please enter a price">
                         <label class="mt-2" for="listing-description">Description:</label>
                         <textarea class="form-control" name="description" id="listing-description"
                                   aria-describedby="Description" placeholder="Enter Description" rows="10" data-toggle="popover" data-content="Please enter a description"></textarea>
@@ -91,9 +91,11 @@
             integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
             crossorigin="anonymous"></script>
     {% load static %}
+
     <script src="{% static "js/FileHandling.js" %}"></script>
     <script src="{% static 'js/CreateSubletVerification.js' %}"></script>
     <script src="{% static "js/MapAPI.js" %}"></script>
+
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWKqqOWg7D2pCCKgsGe_ISDMUyEkkxXzY&libraries=places&callback=init_map"
             async defer></script>
 {% endblock %}
