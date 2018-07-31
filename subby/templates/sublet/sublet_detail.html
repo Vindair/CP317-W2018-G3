@@ -208,6 +208,15 @@
                                 aria-controls="contactToggler" aria-expanded="false"
                                 aria-label="Toggle navigation">Interested?
                         </button>
+                    
+                        <form action="{% url 'subby:fav_unfav_sublet' %}" method="POST">
+                            {% csrf_token %}
+                                <input type="hidden" name="subletid" value="{{ object.id }}">
+                                <input type="hidden" name="next" value="{{ request.path }}">
+                                <button class="btn btn-secondary" type="submit" >Favourite</button>
+
+                        </form>
+                    
                         <div class="collapse" id="contactToggler">
                             <div class="bg-dark p-4 mt-2" style="border-radius: 5px;">
                                 <h4 class="text-white">Contact information</h4>
