@@ -1,7 +1,7 @@
 from django.http import Http404
 
-from django.http import HttpResponse, Http404
-from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse, Http404 
+from django.shortcuts import render, get_object_or_404,redirect
 from django.db import models
 from django.views.generic import ListView, DetailView
 from subby.models.favourite import Favourite
@@ -10,18 +10,26 @@ from subby.models.image import SubletImage
 from subby.decorators.loginrequiredmessage import message_login_required
 
 
-class FavouritesLister(ListView):
-    model = Favourite
 
-    def index(self):
 
-        all_favourites = Favourite.objects.filter(user=self.user)
-        images = []
-        for f in all_favourites:
-            image = SubletImage.objects.filter(sublet=f.sublet.get_sublet_id())
-            images.append(image[0].image.url)
-        ctx = {'all_favourites': all_favourites, 'cover': images}
-        return render(self, 'favourite/favourites_list.html', ctx)
+	
+@message_login_required
+def FavouriteLister(request, user_id):
+	fav_list = Favourite.objects.filter(user=request.user)
+	
+	image_dict = {}
+	image_list = []
+	for fav in fav_list:
+		images = SubletImage.objects.filter(sublet=fav.sublet)
+		image_dict = images[0]
+		image_list.append(images[0])
+	fav_dict = {
+		'fav_list':fav_list,
+		'image_dict':image_dict,
+		'image_list':image_list,
+	}
+	return render(request, 'favourite/favourite_list.html', fav_dict)
+    
 
 
 

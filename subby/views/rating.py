@@ -41,7 +41,7 @@ def list_user_rating(request, user_id):
 		avg = total_rating / total_count
 	else:
 		avg = 0
-	rating_dick = {
+	rating_dict = {
 		'ratings': ratings, 
 		'raters': raters, 
 		'lister': lister, 
@@ -51,7 +51,7 @@ def list_user_rating(request, user_id):
 		'current_id':current_id, 
 		'reviewed_user_id': reviewed_user_id
 	}
-	return render(request, 'rating/rating_list.html', rating_dick)
+	return render(request, 'rating/rating_list.html', rating_dict)
 
 	
 
