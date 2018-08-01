@@ -65,9 +65,12 @@ class Report(models.Model):
 		self.description = new_description
 		return
 	
-	def set_user_id(self, new_user_id):
-		self.user.id = new_user_id
+	def set_user(self, new_user):
+		self.user = new_user
 		return
-		
+	
+	def set_sublet(self, new_sublet):
+		self.sublet = new_sublet
+		return
 	
 	

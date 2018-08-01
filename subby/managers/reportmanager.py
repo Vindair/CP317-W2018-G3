@@ -11,7 +11,8 @@ class ReportManager(models.Manager):
 		
 		report.set_issue(issue)
 		report.set_description(description)
-		report.set_user = user
-		report.set_sublet = sublet
+		report.set_user(user)
+		report.set_sublet(sublet)
+		report.save()
 		
 		return report
