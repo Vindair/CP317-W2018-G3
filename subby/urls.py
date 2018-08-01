@@ -1,7 +1,7 @@
 from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
-from .views import application, user, sublet, account, rating, favourite
+from .views import application, user, sublet, account, rating, favourite, report
 
 
 app_name = 'subby'
@@ -40,10 +40,12 @@ urlpatterns = [
 	path('ratings/reviews/<int:pk>/', rating.my_review, name='my_review'),
 	path('ratings/delete/<int:rating_id>/<int:reviewed_user_id>/', rating.delete_review, name='delete_review'),
 
-
-	
   # Favourite paths
   path('favourites/<int:user_id>', favourite.FavouriteLister, name='favourite_list'),
-  path('favourites/fav_unfav_sublet/', favourite.fav_unfav_sublet, name='fav_unfav_sublet'),	
+  path('favourites/fav_unfav_sublet/', favourite.fav_unfav_sublet, name='fav_unfav_sublet'),
+  
+  # Report paths
+  path('report/<int:user_id>/<int:sublet_id>/', report.create_report, name='create_report'),
 
+   
 ]
