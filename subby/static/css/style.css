@@ -248,7 +248,7 @@ html, body {
 
 
 /* css for rating_detail */
-.modal {
+.modalb {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -263,7 +263,7 @@ html, body {
 }
 
 /* Modal Content */
-.modal-content {
+.modal-contentb {
     background-color: #fefefe;
     margin: auto;
 	margin-top: 200px;
@@ -274,7 +274,6 @@ html, body {
 
 }
 
-The Close Button
 
 .close:hover,
 .close:focus {
