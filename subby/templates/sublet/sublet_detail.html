@@ -284,16 +284,16 @@
 				</div>
 				<form method="POST" action="{% url 'subby:create_report' user_id=lister.id  sublet_id=object.id %}">
 					{% csrf_token %}
-					<div class="modal-body">
+					<div class="modal-body text-light">
 						
 						<input type="hidden" name="reviewedid" value="{{ lister.id }}">
-						<h3 style="color:white;">Issues:</h3>
-						<input type="radio" name="issue" value=0><label style="color:white">Information not matched</label><br />
-						<input type="radio" name="issue" value=1><label style="color:white">Spam Postings</label><br />
-						<input type="radio" name="issue" value=2><label style="color:white">User send spam emails</label><br />
-						<input type="radio" name="issue" value=3><label style="color:white">Other issues</label><br />
+						<h3>Issues:</h3>
+						<input type="radio" name="issue" value=0><label>Information not matched</label><br />
+						<input type="radio" name="issue" value=1><label>Spam Postings</label><br />
+						<input type="radio" name="issue" value=2><label>User send spam emails</label><br />
+						<input type="radio" name="issue" value=3><label>Other issues</label><br />
 						
-						<h4 class="mb-2" style="color:white">Description:</h4>
+						<h4 class="mb-2" >Description:</h4>
 						
 						<textarea class="form-control" id="message" name="description"
 						placeholder="Please provide detailed description about your report"
