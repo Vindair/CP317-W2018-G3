@@ -5,7 +5,7 @@ from .models import User
 from .models.rating import Rating
 from .models.sublet import Sublet
 from .models.favourite import Favourite
-
+from .models.report import Report
 
 admin.site.register(User)
 
@@ -37,5 +37,5 @@ class RatingData(admin.ModelAdmin):
 admin.site.register(Rating, RatingData)
 
 admin.site.register(Favourite)
-
+admin.site.register(Report)
 

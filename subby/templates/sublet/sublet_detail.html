@@ -76,6 +76,11 @@
 							<a class="btn btn-secondary btn-sm float-right" href="{% url 'subby:RatingList' user_id=lister.id %}">View Reviews</a>
                         </div>
                     </div>
+					<div class="row d-flex flex-row">
+						<div class="col">
+							<a class="btn btn-secondary btn-sm" href="{% url 'subby:create_report' user_id=lister.id sublet_id=object.id %}">Report</a>
+						</div>
+					</div>
                 </div>
                 <div class="col offset-md-1">
                     <div class="sublet-detail-map" style="min-height: 100%; height: 100%;" id="detailmap"></div>
