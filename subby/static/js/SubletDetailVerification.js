@@ -65,4 +65,24 @@ $(function () {
        }
 
     });
+
+    $('#report-submit-button').on('click', function(e){
+        let error = false;
+        $('#radio-header').popover('hide');
+        $('#report-message').popover('hide');
+        if(!$('input[name=issue]:checked').length){
+            $('#radio-header').popover('show');
+            error = true;
+        }
+
+        if(!$('#report-message').val()){
+            $('#report-message').popover('show');
+            error = true;
+        }
+
+        if(error){
+            e.preventDefault();
+            return false;
+        }
+    });
 });
