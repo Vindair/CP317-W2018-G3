@@ -32,6 +32,9 @@ urlpatterns = [
   path('sublets/contact', user.contact_user, name='contact_user'),
   path('sublets/update_sublet', sublet.update_sublet, name='update_sublet'),
   
+  ##temp search path
+  path('sublets/search1/', sublet.search_sublet, name='search_sublet'),
+  
   # Rating paths
 
 	path('ratings/<int:user_id>', rating.list_user_rating, name='RatingList'),

@@ -67,7 +67,21 @@ class SubletDetail(DetailView):
             ctx['rest_images'] = rest_images
         return ctx
 
-
+		
+def search_sublet(request):
+	
+	if request.method == 'POST':
+		print(request.POST['keywords'])
+		result_list = Sublet.objects.get_search_result()
+		print(result_list)
+		result_dict = {
+			'hello':request.POST['keywords'],
+		}
+	else: 
+		result_dict = {}
+	
+	return render(request, 'sublet/search_list.html', result_dict)
+	
 def search(request):
     if request.method == 'POST':
         if request.POST['lat'] and request.POST['lng'] and request.POST['proximity']:
@@ -85,6 +99,8 @@ def search(request):
             return render(request, 'sublet/search_sublets.html', {'place': places, 'cover': images, 'lat': 43.471111, 'lng': -80.545372})
     else:
         return render(request, 'application/base.html')
+
+		
 
 
 @message_login_required

@@ -3,12 +3,27 @@ from django.conf import settings
 from django.db.models.expressions import RawSQL
 import datetime, pytz
 
+from django.db import connection
+
 class SubletManager(models.Manager):
 	def get_cover_image(self):
 		qs = self.get_queryset()
-		print(qs)
 		return qs
 
+	def get_search_result(self):
+	
+		cursor = connection.cursor()
+		cursor.execute("""
+			SELECT ss.title
+			FROM subby_sublet as ss
+			WHERE ss.title LIKE '%fine%'""")
+		result_list = []
+		rows = cursor.fetchall()
+		cursor.close()
+		for row in rows:
+		 result_list.append(row)
+		return result_list
+		
 	def nearby(self, latitude, longitude, proximity):
 		"""
         Return all object which distance to specified coordinates
@@ -30,6 +45,7 @@ class SubletManager(models.Manager):
 											latitude))) \
 			.filter(distance__lt=proximity) \
 			.order_by('distance')
+	
 
 	def create_sublet(self, sublet_title, duration, price, street_address, city, postal_code, description, lat, lng, user):
 		sublet = self.model()
