@@ -30,24 +30,7 @@
                         {% endif %}
                     {% endif %}
                 </h2>
-                <!-- {% for i in avg_rating.int_rating %} -->
-                    <!-- <fieldset class="rating float-left" disabled> -->
-                    <!-- <input type="radio" id="5s" value="5" checked /> -->
-                    <!-- <label class="full" for="5s"></label> -->
-                    <!-- </fieldset> -->
-                    <!-- {% endfor %} -->
-                <!-- {% if avg_rating.float_rating == 0.5 %} -->
-                    <!-- <fieldset class="rating float-left" disabled> -->
-                    <!-- <input type="radio" id="5s" value="5" checked /> -->
-                    <!-- <label class="half" for="5s"></label> -->
-                    <!-- </fieldset> -->
-                    <!-- {% endif %} -->
-                <!-- {% for i in avg_rating.rest_rating %} -->
-                    <!-- <fieldset class="rating float-left" disabled> -->
-                    <!-- <input type="radio" id="5s" value="5" /> -->
-                    <!-- <label class="full" for="5s"></label> -->
-                    <!-- </fieldset> -->
-                    <!-- {% endfor %} -->
+
                 <fieldset class="rating float-left" disabled>
                     {% if avg_rating == 5 %}
                         <input type="radio" id="avg5s" value="5" checked/>
@@ -119,12 +102,7 @@
                     <label class="half" for="avgp5s" title="The Worst - 0.5 stars"></label>
                 </fieldset>
 
-                <!-- <div class="collapse" id="ratingToggler"> -->
-                <!-- <div class="bg-dark p-4 mt-2" style="border-radius: 5px;"> -->
-                <!-- </div> -->
-                <!-- </div> -->
-
-                <br>
+                <br /><br /><br />
                 {% for rating in ratings %}
                     <div class="container bg-dark rounded text-light" style="margin-top:-20px">
                         <div class="row">
