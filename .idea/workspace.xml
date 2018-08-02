@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f60e9694-565c-43f6-b623-8b1344f923dc" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/subby/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/subby/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subby/templates/rating/rating_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/subby/templates/rating/rating_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/subby/templates/rating/rating_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/subby/templates/rating/rating_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subby/templates/sublet/sublet_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/subby/templates/sublet/sublet_detail.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -79,8 +82,20 @@
       <file leaf-file-name="rating_list.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/subby/templates/rating/rating_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="115" column="30" lean-forward="true" selection-start-line="115" selection-start-column="30" selection-end-line="115" selection-end-column="30" />
+            <state relative-caret-position="190">
+              <caret line="891" column="46" lean-forward="true" selection-start-line="891" selection-start-column="46" selection-end-line="891" selection-end-column="46" />
+              <folding>
+                <element signature="e#148#211#0#HTML" expanded="true" />
+                <element signature="e#658#665#1#HTML" expanded="true" />
+                <element signature="e#6667#6691#0#HTML" expanded="true" />
+                <element signature="e#7874#7891#0#HTML" expanded="true" />
+                <element signature="e#14222#14249#0#HTML" expanded="true" />
+                <element signature="e#29992#30055#0#HTML" expanded="true" />
+                <element signature="e#30379#30386#1#HTML" expanded="true" />
+                <element signature="e#31816#31857#0#HTML" expanded="true" />
+                <element signature="e#32155#32179#0#HTML" expanded="true" />
+                <element signature="e#36724#36751#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -89,7 +104,7 @@
         <entry file="file://$PROJECT_DIR$/subby/static/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="133">
-              <caret line="253" column="32" lean-forward="true" selection-start-line="253" selection-start-column="32" selection-end-line="253" selection-end-column="32" />
+              <caret line="249" column="14" lean-forward="true" selection-start-line="249" selection-start-column="14" selection-end-line="249" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -733,7 +748,7 @@
     <entry file="file://$PROJECT_DIR$/subby/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
-          <caret line="253" column="32" lean-forward="true" selection-start-line="253" selection-start-column="32" selection-end-line="253" selection-end-column="32" />
+          <caret line="249" column="14" lean-forward="true" selection-start-line="249" selection-start-column="14" selection-end-line="249" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -773,8 +788,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/subby/templates/rating/rating_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="115" column="30" lean-forward="true" selection-start-line="115" selection-start-column="30" selection-end-line="115" selection-end-column="30" />
+        <state relative-caret-position="190">
+          <caret line="891" column="46" lean-forward="true" selection-start-line="891" selection-start-column="46" selection-end-line="891" selection-end-column="46" />
+          <folding>
+            <element signature="e#148#211#0#HTML" expanded="true" />
+            <element signature="e#658#665#1#HTML" expanded="true" />
+            <element signature="e#6667#6691#0#HTML" expanded="true" />
+            <element signature="e#7874#7891#0#HTML" expanded="true" />
+            <element signature="e#14222#14249#0#HTML" expanded="true" />
+            <element signature="e#29992#30055#0#HTML" expanded="true" />
+            <element signature="e#30379#30386#1#HTML" expanded="true" />
+            <element signature="e#31816#31857#0#HTML" expanded="true" />
+            <element signature="e#32155#32179#0#HTML" expanded="true" />
+            <element signature="e#36724#36751#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

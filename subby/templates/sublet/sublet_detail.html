@@ -278,57 +278,47 @@
         </div>
     </div>
 
-    <div class="modal fade" id="report-modal" tabindex="-1" role="dialog" aria-labelledby="report-modal-label"
-         aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content bg-dark">
-                <div class="modal-header">
-                    <div>
-                        <h4 class="text-white">File a Report</h4>
-                        <span class="text-muted">Select the issue of the post then describe it below.</span>
-                    </div>
-                </div>
-                <form method="POST" action="{% url 'subby:create_report' user_id=lister.id  sublet_id=object.id %}">
-                    {% csrf_token %}
-                    <div class="modal-body text-light">
-                        <div class="form-group">
-                            <input type="hidden" name="reviewedid" value="{{ lister.id }}">
-                            <h3>Issues:</h3>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="issue" value=0>
-                                <label class="form-check-label">Information not matched</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="issue" value=1>
-                                <label class="form-check-label">Spam Postings</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="issue" value=2>
-                                <label class="form-check-label">User send spam emails</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="issue" value=3>
-                                <label class="form-check-label">Other issues</label>
-                            </div>
-                        </div>
-                        <h4 class="mb-2">Description:</h4>
-
-                        <textarea class="form-control" id="message" name="description"
-                                  placeholder="Please provide detailed description about your report"
-                                  rows="8"></textarea>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-
-                            <button type="submit" class="btn btn-primary" id="submit_button">Submit</button>
-
-                        </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    </div>
-{% endblock %}
-
+   
+	
+	<div class="modal fade" id="report-modal" tabindex="-1" role="dialog" aria-labelledby="report-modal-label"
+	aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content bg-dark">
+				<div class="modal-header">
+					<div>
+						<h4 class="text-white">File a Report</h4>
+						<span class="text-muted">Select the issue of the post then describe it below.</span>
+					</div>
+				</div>
+				<form method="POST" action="{% url 'subby:create_report' user_id=lister.id  sublet_id=object.id %}">
+					{% csrf_token %}
+					<div class="modal-body text-light">
+						
+						<input type="hidden" name="reviewedid" value="{{ lister.id }}">
+						<h3>Issues:</h3>
+						<input type="radio" name="issue" value=0><label>Information not matched</label><br />
+						<input type="radio" name="issue" value=1><label>Spam Postings</label><br />
+						<input type="radio" name="issue" value=2><label>User send spam emails</label><br />
+						<input type="radio" name="issue" value=3><label>Other issues</label><br />
+						
+						<h4 class="mb-2" >Description:</h4>
+						
+						<textarea class="form-control" id="message" name="description"
+						placeholder="Please provide detailed description about your report"
+						rows="8"></textarea>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+							
+							<button type="submit" class="btn btn-primary" id="submit_button">Submit</button>
+							
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endblock %}
+	
 {% block js %}
     <script>
         // Initialize and add the map
