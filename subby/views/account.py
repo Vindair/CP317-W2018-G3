@@ -6,8 +6,7 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 import datetime, pytz
-def add():
-	return
+
 
 def account_home(request):
 	id = request.user.id
