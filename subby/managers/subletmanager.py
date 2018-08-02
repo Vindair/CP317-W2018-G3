@@ -10,19 +10,24 @@ class SubletManager(models.Manager):
 		qs = self.get_queryset()
 		return qs
 
-	def get_search_result(self):
+	def get_search_result(self, keywords):
 	
-		cursor = connection.cursor()
-		cursor.execute("""
-			SELECT ss.title
-			FROM subby_sublet as ss
-			WHERE ss.title LIKE '%fine%'""")
-		result_list = []
-		rows = cursor.fetchall()
-		cursor.close()
-		for row in rows:
-		 result_list.append(row)
-		return result_list
+		# cursor = connection.cursor()
+		# sql = """
+			# SELECT ss.title
+			# FROM subby_sublet as ss
+			# WHERE ss.title LIKE %s
+			# """
+		# cursor.execute(sql, ['%'+keywords+'%'])
+		# result_list = []
+		# rows = cursor.fetchall()
+		# cursor.close()
+		# for row in rows:
+		 # result_list.append(row)
+		results = []
+		for result in self.filter(title__contains=keywords):
+			results.append(result)
+		return results
 		
 	def nearby(self, latitude, longitude, proximity):
 		"""

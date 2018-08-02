@@ -71,11 +71,17 @@ class SubletDetail(DetailView):
 def search_sublet(request):
 	
 	if request.method == 'POST':
-		print(request.POST['keywords'])
-		result_list = Sublet.objects.get_search_result()
+
+		keywords = request.POST['keywords']
+		result_list = Sublet.objects.get_search_result(keywords)
 		print(result_list)
+		image_list = []
+		for sublet in result_list:
+			images = SubletImage.objects.filter(sublet=sublet)
+			image_list.append(images[0])
 		result_dict = {
-			'hello':request.POST['keywords'],
+			'result_list':result_list,
+			'image_list':image_list,
 		}
 	else: 
 		result_dict = {}
