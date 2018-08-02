@@ -25,8 +25,23 @@ class SubletManager(models.Manager):
 		# for row in rows:
 		 # result_list.append(row)
 		results = []
-		for result in self.filter(title__contains=keywords):
+		title_match = self.filter(title__iexact=keywords)
+		for result in title_match:
 			results.append(result)
+		
+		address_match = self.filter(street_address__iexact=keywords)
+		for result in address_match:
+			if result not in results:
+				results.append(result)
+			
+		address_like = self.filter(street_address__icontains=keywords)
+		for result in address_like:
+			if result not in results:
+				results.append(result)
+		
+		for result in self.filter(title__icontains=keywords):
+			if result not in results:
+				results.append(result)
 		return results
 		
 	def nearby(self, latitude, longitude, proximity):
