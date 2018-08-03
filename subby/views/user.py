@@ -1,4 +1,5 @@
 import requests
+import json
 from django.contrib import auth
 from django.contrib import messages
 from django.contrib.auth import get_user_model
@@ -43,11 +44,11 @@ def index(req):
         users = User.objects.filter(is_admin=False)
     else:
         users = User.objects.filter(Q(is_admin=False) & (
-                Q(first_name__icontains=query) |
-                Q(last_name__icontains=query) |
-                Q(email__icontains=query)
-        )
-                                    )
+                        Q(first_name__icontains=query) |
+                        Q(last_name__icontains=query) |
+                        Q(email__icontains=query)
+                    )
+                )
 
     return render(req, 'users/index.html', {'users': users, 'query': query})
 
@@ -56,13 +57,35 @@ def index(req):
 @__ensure_admin
 def show(req, user_id):
     context = {'user': get_object_or_404(User, pk=user_id)}
+    if context['user'].is_active:
+        context['btn_class'] = 'btn-danger'
+        context['btn_text'] = 'Lock Account'
+    else:
+        context['btn_class'] = 'btn-secondary'
+        context['btn_text'] = 'Unlock Account'
+
     return render(req, 'users/show.html', context)
+
+@__ensure_admin
+def lock_account(req, user_id):
+    if req.method == 'POST':
+        try:
+            user = User.objects.get(pk = user_id)
+        except User.DoesNotExist:
+            res = { 'error': 'User does not exist' }
+            return HttpResponse(json.dumps(res), content_type='application/json', status=404)
+
+        user.is_active = not user.is_active
+        user.save()
+
+        res = { 'id': user.id, 'is_active': user.is_active }
+        return HttpResponse(json.dumps(res), content_type='application/json', status=201)
+    return
 
 @__ensure_admin
 def sublets(req, user_id):
     context = {'user': get_object_or_404(User, pk=user_id)}
     return render(req, 'users/sublets.html', context)
-
 
 def contact_user(request):
     if request.method == 'POST':

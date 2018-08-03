@@ -1,9 +1,9 @@
 .user-row {
-  width: 100%;
+  cursor: pointer;
 }
 
-.user-row div {
-  display: inline;
+.user-row:hover {
+  color: #609ab6;
 }
 
 #user-search-form {

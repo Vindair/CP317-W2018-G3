@@ -16,6 +16,7 @@ urlpatterns = [
     path('users/', user.index, name='user_index'),
     path('users/<int:user_id>', user.show, name='user_show'),
     path('users/<int:user_id>/sublets', user.sublets, name='user_sublets'),
+    path('users/<int:user_id>/lock_account', user.lock_account, name='user_lock_account'),
 
     # User session views
     path('login/', user.login, name='login'),
