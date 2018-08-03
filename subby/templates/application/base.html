@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     {% load staticfiles %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
     <!-- Bootstrap CSS -->
@@ -197,7 +196,8 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <a class="btn btn-secondary" href="{% url 'social:begin' 'google-oauth2' %}">Login with Google</a>
+                            <a class="sb sb-google sb-m-2 sb-fw sb-ct sb-nb d-block mx-auto rounded"
+                               href="{% url 'social:begin' 'google-oauth2' %}">Login with Google</a>
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -366,8 +366,8 @@
         $("#su-email-box").change(function () {
             checkEmail();
         });
-        $('#email-box').change(function (){
-           checkLoginEmail();
+        $('#email-box').change(function () {
+            checkLoginEmail();
         });
     }
 

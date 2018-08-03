@@ -56,7 +56,8 @@ AUTHENTICATION_BACKENDS = (
 SOCIAL_AUTH_USER_MODEL = 'subby.User'
 SOCIAL_AUTH_USERNAME_IS_FULL_EMAIL = True
 SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = [
-    'https://www.googleapis.com/auth/plus.login'
+    'https://www.googleapis.com/auth/plus.login',
+    'https://www.googleapis.com/auth/plus.me'
 ]
 SOCIAL_AUTH_GOOGLE_PLUS_USE_DEPRECATED_API = True
 

@@ -257,6 +257,61 @@ html, body {
     cursor: progress;
 }
 
+/* social buttons design */
+.sb {
+  display: inline-block;
+  height: 40px;
+  color: white !important;
+  font-family: sans-serif;
+  padding-right: 15px;
+  font-size: 15px;
+  text-decoration: none;
+  overflow: hidden;
+  border: 1px solid transparent;
+}
+.sb::before {
+  font-family: "Font Awesome 5 Brands";
+  text-align: center;
+  width: 40px;
+  height: 100%;
+  display: inline-block;
+  font-size: 25px;
+  margin-right: 10px;
+  line-height: 40px;
+  margin-bottom: 2px;
+  vertical-align: middle;
+}
+
+.sb:hover {
+  text-decoration: none;
+  color: white !important;
+}
+.sb.sb-nb {
+  border: 1px solid transparent;
+}
+.sb.sb-ct {
+  text-align: center;
+}
+.sb.sb-fw {
+  width: 220px;
+}
+
+.sb-google {
+  background-color: #F63D27;
+  border-color: #e12009;
+}
+.sb-google::before {
+  background-color: #F63D27;
+  content: "\f0d5";
+}
+.sb-google:hover::before {
+  background-color: #f86958;
+}
+.sb-google:hover {
+  background-color: #f86958;
+}
+
+
 
 /* Favourite list page styling ------------------------------*/
 /* Favourite button panel  properties*/
