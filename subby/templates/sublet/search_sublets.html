@@ -4,7 +4,7 @@
     <div class="jumbotron jumbo-container">
         <div class="container-fluid search-sublet-main-container">
             <div class="row">
-                <div class="col">
+                <div class="col-8">
                     <h2>
                         Search Results: {{ place.count }} results found
                     </h2>
@@ -32,22 +32,19 @@
                     <br><br>
                     <div class="container-fluid search-container">
                         {% for p in place %}
-                            <div class="card gallery" style="width: 18rem;">
+                            <div class="card gallery" style="width: 15rem;cursor:pointer;" id="the_container"  onclick="window.location='{% url 'subby:SubletDetail' p.id %}';">
                                 {% load index %}
                                 <img class="card-img-top" src="{{ cover|index:forloop.counter0 }}" alt="">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ p.title }}</h5>
-                                    <p class="card-text">{{ p.description }}</p>
-                                </div>
-                                <div class="card-footer"><a href="{% url 'subby:SubletDetail' p.id %}"
-                                                            class="btn btn-primary d-block mx-auto view-listing-btn">View
-                                    Listing</a></div>
-                                <div class="card-footer text-center text-muted">${{ p.price }} per month</div>
+						<div class="card-body " id="sublet{{ p.id }}">
+							<h6 class="card-title">{{ p.title }}</h6>
+							<p class="card-title">{{ p.street_address }} </p>
+							<h6 class="card-title">{{ p.city }}, ${{ p.price}}</h6>
+						</div>
                             </div>
                         {% endfor %}
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-4">
                     <div id="map" style="min-height: 100%; height: auto;"></div>
                 </div>
             </div>
@@ -82,7 +79,7 @@
                 });
                 map.setCenter(marker.getPosition());
 
-                content = "Listing Name: {{ p.title }}" + '<br>' + "Address: {{ p.street_address }}" + '<br>' + " City: {{ p.city }}" + '<br>' +
+                content = "Listing Name: <a href='{% url 'subby:SubletDetail' p.id %}'>{{ p.title }}</a>" + '<br>' + "Address: {{ p.street_address }}" + '<br>' + " City: {{ p.city }}" + '<br>' +
                     'Price: ${{ p.price }}/mo';
 
                 infowindow = new google.maps.InfoWindow();
