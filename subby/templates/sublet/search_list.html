@@ -9,34 +9,31 @@
 <div class="jumbotron jumbo-container">
 	<div class="container-fluid search-sublet-main-container">
 		<div class="row">
-			<div class="col">
+			<div class="col-8">
+
+				<div class="container-fluid search-container mt-2">
 				<h2>
 				Search Results: {{ result_list|length }} results found
 				</h2>
-				<div class="container-fluid search-container">
 					{% for sublet in result_list %}
-					<div class="card gallery" style="width: 18rem;">
+					<div class="card gallery" style="width: 15rem;cursor:pointer;" id="the_container"  onclick="window.location='{% url 'subby:SubletDetail' sublet.id %}';">
 					    {% for img in image_list %}
 						{% if img.sublet.id == sublet.id %}
                         <img class="card-img-top" src="{{ img.image.url }}" alt="">
 						{% endif %}
 						{% endfor %}
-						<div class="card-body">
-							<h5 class="card-title">{{ sublet.title }}</h5>
-							<h5 class="card-title">{{ sublet.street_address }}</h5>
-							<p class="card-text">{{ sublet.description }}</p>
+						<div class="card-body " id="sublet{{ sublet.id }}">
+							<h6 class="card-title">{{ sublet.title }}</h6>
+							<h6 class="card-title">{{ sublet.street_address }} </h6>
+							<h6 class="card-title">{{ sublet.city }}, ${{ sublet.price}}</h6>
 						</div>
-						<div class="card-footer">
-							<a href="" class="btn btn-primary d-block mx-auto view-listing-btn">View Listing</a>
-						</div>
-							<div class="card-footer text-center text-muted">${{ sublet.price }} per month</div>
 					</div>
 					{% endfor %}
 				</div>
 			</div>
-			<!-- <div class="col"> -->
-				<!-- <div id="map" style="min-height: 100%; height: auto;"></div> -->
-			<!-- </div> -->
+			<div class="col-4">
+				<div id="map" style="min-height: 100%; height: auto;"></div>
+			</div>
 		</div>
 	</div>
 </div>
@@ -48,8 +45,8 @@
 	function init_searchmap() {
 		
 		let myOptions = {
-			center: new google.maps.LatLng({{ lat }}, {{ lng }}),
-			zoom: 17,
+			center: new google.maps.LatLng(43.471111, -80.545372),
+			zoom: 11,
 			mapTypeId: google.maps.MapTypeId.ROADMAP
 			
 		};
@@ -63,24 +60,35 @@
 	
 	function setMarkers(map, bounds) {
 		
-		{%  for p in place %}
-		latlngset = new google.maps.LatLng({{ p.latitude }}, {{ p.longitude }});
+		{% for sublet in result_list %}
+		latlngset = new google.maps.LatLng({{ sublet.latitude }}, {{ sublet.longitude }});
 		marker = new google.maps.Marker({
-			map: map, title: '{{ p.title }}', position: latlngset
+			map: map, title: '{{ sublet.title }}', position: latlngset
 		});
 		map.setCenter(marker.getPosition());
 		
-		content = "Listing Name: {{ p.title }}" + '<br>' + "Address: {{ p.street_address }}" + '<br>' + " City: {{ p.city }}" + '<br>' +
-		'Price: ${{ p.price }}/mo';
+	content = "Listing Name: <a href='{% url 'subby:SubletDetail' sublet.id %}'>{{ sublet.title }}</a>" + '<br>' + "Address: {{ sublet.street_address }}" + '<br>' + " City: {{ sublet.city }}" + '<br>' +
+		'Price: ${{ sublet.price }}/mo';
 		
 		infowindow = new google.maps.InfoWindow();
-		
+
 		google.maps.event.addListener(marker, 'click', (function (marker, content, infowindow) {
 			return function () {
 				infowindow.setContent(content);
 				infowindow.open(map, marker);
+				{% for sublet in result_list %}
+					sublet_content = document.getElementById('sublet{{sublet.id}}');
+					sublet_content.style.backgroundColor = 'white';
+				{% endfor %}
+
+
+				sublet_content = document.getElementById('sublet{{sublet.id}}');
+				
+				sublet_content.style.backgroundColor = 'lightblue';
+				
 			};
 		})(marker, content, infowindow));
+		
 		
 		bounds.extend(marker.getPosition());
 		
@@ -91,5 +99,6 @@
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWKqqOWg7D2pCCKgsGe_ISDMUyEkkxXzY&libraries=places&callback=init_searchmap"
-async defer></script>
+async defer>
+</script>
 {% endblock %}

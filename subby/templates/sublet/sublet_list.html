@@ -12,8 +12,7 @@
                         <div class="row">
                             <div class="col-md-3">
                                 <!-- <a href="{% url 'subby:SubletDetail' sublet.id %}"><h3 id="sublet_title">{{ sublet.title }}</h3></a> -->
-                                <div onclick="window.location='{% url 'subby:SubletDetail' sublet.id %}';"
-                                     style="cursor:pointer;">
+                                <div onclick="window.location='{% url 'subby:SubletDetail' sublet.id %}';" style="cursor:pointer;">
                                     <h4 id="sublet_title">{{ sublet.title }}</h4>
                                     {% for i in image_list %}
                                         {% if i.sublet.id == sublet.id %}

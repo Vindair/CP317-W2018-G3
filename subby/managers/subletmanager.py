@@ -12,18 +12,6 @@ class SubletManager(models.Manager):
 
 	def get_search_result(self, keywords):
 	
-		# cursor = connection.cursor()
-		# sql = """
-			# SELECT ss.title
-			# FROM subby_sublet as ss
-			# WHERE ss.title LIKE %s
-			# """
-		# cursor.execute(sql, ['%'+keywords+'%'])
-		# result_list = []
-		# rows = cursor.fetchall()
-		# cursor.close()
-		# for row in rows:
-		 # result_list.append(row)
 		results = []
 		title_match = self.filter(title__iexact=keywords)
 		for result in title_match:

@@ -112,9 +112,10 @@ def search(request):
 @message_login_required
 def create_sublet(request):
     if request.method == 'POST':
-        if request.POST['title'] and request.POST['street_address'] and request.POST['city'] and request.POST[
-            'postal_code'] and request.POST['price'] and request.POST['description'] and request.POST['lat'] and \
-                request.POST['lng'] and request.FILES.getlist('files'):
+        if request.POST['title'] and request.POST['street_address'] and request.POST['city'] and request.POST['postal_code'] and request.POST['price'] and request.POST['description'] and request.POST['lat'] and request.POST['lng'] and request.FILES.getlist('files'):
+            city = request.POST['city']
+            if city not in ['Kitchener', 'kitchener','Waterloo','waterloo']:
+               return render(request, 'sublet/create_sublet.html', {'create_sublet_error': 'city has to be Kitchener or Waterloo'})
             sublet = Sublet.objects.create_sublet(request.POST['title'],
                                          request.POST['duration'],
                                          request.POST['price'],
