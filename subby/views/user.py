@@ -141,6 +141,7 @@ def login(request):
     return returned_render
 
 
+
 # POST /logout
 def logout(request):
     if request.method == 'POST':

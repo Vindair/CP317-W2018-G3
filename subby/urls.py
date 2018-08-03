@@ -1,6 +1,8 @@
 from django.urls import path
+from django.conf.urls import url, include
 from django.conf.urls.static import static
 from django.conf import settings
+
 from .views import application, user, sublet, account, rating, favourite, report
 
 app_name = 'subby'
@@ -18,6 +20,8 @@ urlpatterns = [
     path('login/', user.login, name='login'),
     path('logout/', user.logout, name='logout'),
     path('signup/', user.signup, name='signup'),
+    url(r'^auth/', include('social_django.urls', namespace='social')),
+
 
     # Account Paths
     path('account/', account.account_home, name='account_home'),
