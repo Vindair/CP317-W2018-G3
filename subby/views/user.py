@@ -8,9 +8,9 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render, redirect
 
 from subby.models import User
+#from subby.models import Sublet
 
 User = get_user_model()
-
 
 def __ensure_admin(func):
     def wrapper(req, *args, **kwargs):
@@ -57,6 +57,11 @@ def index(req):
 def show(req, user_id):
     context = {'user': get_object_or_404(User, pk=user_id)}
     return render(req, 'users/show.html', context)
+
+@__ensure_admin
+def sublets(req, user_id):
+    context = {'user': get_object_or_404(User, pk=user_id)}
+    return render(req, 'users/sublets.html', context)
 
 
 def contact_user(request):
@@ -110,8 +115,7 @@ def signup(request):
                 user = User.objects.get(email=request.POST['username'])
                 return render(request, 'application/base.html', {'signup_error': 'Username has already been taken'})
             except User.DoesNotExist:
-                user = User.objects.create_user(request.POST['username'], \
-                                                password=request.POST['password'])
+                user = User.objects.create_user(request.POST['username'], password=request.POST['password'])
                 auth.login(request, user)
                 return redirect('subby:index')
         else:
@@ -127,6 +131,7 @@ def signup(request):
         return render(request, 'application/base.html')
 
 
+# POST login
 def login(request):
     if request.method == 'POST':
         user = auth.authenticate(username=request.POST['username'], password=request.POST['password'])
@@ -139,8 +144,6 @@ def login(request):
     else:
         returned_render = render(request, 'application/base.html')
     return returned_render
-
-
 
 # POST /logout
 def logout(request):

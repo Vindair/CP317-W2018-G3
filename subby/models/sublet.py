@@ -21,7 +21,7 @@ class Sublet(models.Model):
 	updated_at = models.DateTimeField(auto_now_add=True, blank=True, null=True)
 
 
-	user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+	user = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='sublets', on_delete=models.CASCADE)
 
 	def summary(self):
 		if len(self.description) > 150:
@@ -100,4 +100,3 @@ class Sublet(models.Model):
 
 
 
-		

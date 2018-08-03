@@ -11,10 +11,11 @@ urlpatterns = [
 
     # Base application view
     path('', application.index, name='index'),
-	
+
     # User Admin views
     path('users/', user.index, name='user_index'),
     path('users/<int:user_id>', user.show, name='user_show'),
+    path('users/<int:user_id>/sublets', user.sublets, name='user_sublets'),
 
     # User session views
     path('login/', user.login, name='login'),
