@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f60e9694-565c-43f6-b623-8b1344f923dc" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/subby/templates/application/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/subby/templates/application/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subby/templates/sublet/sublet_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/subby/templates/sublet/sublet_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subby/views/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/subby/views/user.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,13 +16,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="user.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="user.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/subby/views/user.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-19">
-              <caret line="87" column="22" selection-start-line="87" selection-start-column="22" selection-end-line="87" selection-end-column="22" />
+            <state relative-caret-position="87">
+              <caret line="30" column="26" lean-forward="true" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
               <folding>
-                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#0#15#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -52,11 +51,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sublet_detail.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="sublet_detail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/subby/templates/sublet/sublet_detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="190" column="69" selection-start-line="190" selection-start-column="69" selection-end-line="190" selection-end-column="69" />
+            <state relative-caret-position="30">
+              <caret line="166" column="41" selection-start-line="166" selection-start-column="41" selection-end-line="166" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -143,10 +142,10 @@
       <find>editTog</find>
       <find>index</find>
       <find>inde</find>
-      <find>edit</find>
       <find>avg</find>
       <find>|floatformat:&quot;0&quot;</find>
       <find>search</find>
+      <find>edit</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -180,7 +179,6 @@
         <option value="$PROJECT_DIR$/subby/static/js/LoginModal.js" />
         <option value="$PROJECT_DIR$/subby/decorators/__init__.py" />
         <option value="$PROJECT_DIR$/subby/decorators/loginrequiredmessage.py" />
-        <option value="$PROJECT_DIR$/subby/views/user.py" />
         <option value="$PROJECT_DIR$/subby/views/application.py" />
         <option value="$PROJECT_DIR$/subby/static/js/SmoothScrolling.js" />
         <option value="$PROJECT_DIR$/subby/views/sublet.py" />
@@ -196,6 +194,7 @@
         <option value="$PROJECT_DIR$/subby/static/css/style.css" />
         <option value="$PROJECT_DIR$/subby/templates/application/base.html" />
         <option value="$PROJECT_DIR$/subby/templates/sublet/sublet_detail.html" />
+        <option value="$PROJECT_DIR$/subby/views/user.py" />
       </list>
     </option>
   </component>
@@ -502,7 +501,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.33001244" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -806,16 +805,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/subby/views/user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-19">
-          <caret line="87" column="22" selection-start-line="87" selection-start-column="22" selection-end-line="87" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/subby/static/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -879,8 +868,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/subby/templates/sublet/sublet_detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="190" column="69" selection-start-line="190" selection-start-column="69" selection-end-line="190" selection-end-column="69" />
+        <state relative-caret-position="30">
+          <caret line="166" column="41" selection-start-line="166" selection-start-column="41" selection-end-line="166" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subby/views/user.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="30" column="26" lean-forward="true" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
