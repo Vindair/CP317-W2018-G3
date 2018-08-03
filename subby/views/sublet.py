@@ -1,14 +1,13 @@
-from django.views.generic import ListView, DetailView
-from django.shortcuts import render, redirect, get_object_or_404
-from subby.decorators.loginrequiredmessage import message_login_required
-from django.contrib.auth.decorators import login_required
-from subby.models.sublet import Sublet
-from subby.models.image import SubletImage
-from subby.models.favourite import Favourite
-from django.shortcuts import get_object_or_404
 from django.contrib import messages
-
 from django.contrib.auth import get_user_model
+from django.shortcuts import render, redirect
+from django.views.generic import ListView, DetailView
+
+from subby.decorators.loginrequiredmessage import message_login_required
+from subby.models.favourite import Favourite
+from subby.models.image import SubletImage
+from subby.models.sublet import Sublet
+
 User = get_user_model()
 
 
@@ -34,9 +33,6 @@ class SubletList(ListView):
             else:
                 n += 1
 
-        print(image_list)
-        # print(images)
-        # print(self.object_list)
         ctx['image_list'] = image_list
         ctx['sublet_id_list'] = sublet_id_list
         return ctx
@@ -50,10 +46,10 @@ class SubletDetail(DetailView):
         lister = User.objects.get(id=self.object.user_id)
         fav = Favourite.objects.filter(sublet=self.object, user=self.request.user)
         if len(fav) > 0:
-           fav = True
+            fav = True
         else:
-           fav = False
-        user =  self.request.user.id
+            fav = False
+        user = self.request.user.id
         ctx['fav'] = fav
         ctx['lister'] = lister
         ctx['cur_user'] = user
@@ -72,38 +68,56 @@ def search(request):
     if request.method == 'POST':
         if request.POST['lat'] and request.POST['lng'] and request.POST['proximity']:
             places = Sublet.objects.nearby(request.POST['lat'], request.POST['lng'], request.POST['proximity'])
-            return render(request, 'sublet/search_sublets.html',
-                          {'place': places, 'lat': request.POST['lat'],
-                           'lng': request.POST['lng'],
-                           'prox': request.POST['proximity']})
+            data = {'place': places, 'lat': request.POST['lat'],
+                    'lng': request.POST['lng'],
+                    'prox': request.POST['proximity']}
+            if request.POST.get('duration'):
+                places = places.filter(duration=request.POST.get('duration'))
+                data.update(place=places)
+                data['duration'] = request.POST.get('duration')
+            images = []
+            for p in places:
+                image = SubletImage.objects.filter(sublet=p.id)
+                images.append(image[0].image.url)
+            data.update(cover=images)
+            return render(request, 'sublet/search_sublets.html', data)
         else:
             places = Sublet.objects.nearby(43.471111, -80.545372, 20)
             images = []
             for p in places:
                 image = SubletImage.objects.filter(sublet=p.id)
                 images.append(image[0].image.url)
-            return render(request, 'sublet/search_sublets.html', {'place': places, 'cover': images, 'lat': 43.471111, 'lng': -80.545372})
+            return render(request, 'sublet/search_sublets.html',
+                          {'place': places, 'cover': images, 'lat': 43.471111, 'lng': -80.545372, 'prox': 20})
     else:
         return render(request, 'application/base.html')
+
+
+def filter(request):
+    if request.method == 'POST':
+        return
 
 
 @message_login_required
 def create_sublet(request):
     if request.method == 'POST':
-        if request.POST['title'] and request.POST['street_address'] and request.POST['city'] and request.POST['postal_code'] and request.POST['price'] and request.POST['description'] and request.POST['lat'] and request.POST['lng'] and request.FILES.getlist('files'):
+        if request.POST['title'] and request.POST['street_address'] and request.POST['city'] and request.POST[
+            'postal_code'] and request.POST['price'] and request.POST['description'] and request.POST['lat'] and \
+                request.POST['lng'] and request.FILES.getlist('files'):
             city = request.POST['city']
-            if city not in ['Kitchener', 'Waterloo', 'kitchener','waterloo']:
-               return render(request, 'sublet/create_sublet.html', {'create_sublet_error':'City can only be Kitchener or Waterloo'})
+            if city not in ['Kitchener', 'Waterloo', 'kitchener', 'waterloo']:
+                return render(request, 'sublet/create_sublet.html',
+                              {'create_sublet_error': 'City can only be Kitchener or Waterloo'})
             sublet = Sublet.objects.create_sublet(request.POST['title'],
-                                         request.POST['duration'],
-                                         request.POST['price'],
-                                         request.POST['street_address'],
-                                         request.POST['city'],
-                                         request.POST['postal_code'],
-                                         request.POST['description'],
-                                         request.POST['lat'],
-                                         request.POST['lng'],
-                                         request.user)
+                                                  request.POST['duration'],
+                                                  request.POST['price'],
+                                                  request.POST['street_address'],
+                                                  request.POST['city'],
+                                                  request.POST['postal_code'],
+                                                  request.POST['description'],
+                                                  request.POST['lat'],
+                                                  request.POST['lng'],
+                                                  request.user)
             image_list = request.FILES.getlist('files')
             if len(image_list) > 0:
                 for image in image_list:
@@ -115,6 +129,7 @@ def create_sublet(request):
             return render(request, 'sublet/create_sublet.html', {'create_sublet_error': 'All fields are required'})
     else:
         return render(request, 'sublet/create_sublet.html')
+
 
 def update_sublet(request):
     if request.method == 'POST':
@@ -166,21 +181,21 @@ def update_sublet(request):
         messages.add_message(request, messages.INFO, 'Something went wrong!')
         return redirect('subby:SubletDetail', request.POST['subletid'])
 
+
 @message_login_required
 def my_sublets(request):
-	my_postings = Sublet.objects.filter(user=request.user)
-	print(my_postings)
-	image_dict = {}
-	image_list = []
-	for post in my_postings:
-		print(post.id)
-		images = SubletImage.objects.filter(sublet=post)
-		image_dict = images[0]
-		image_list.append(images[0])
-	posting_dict = {
-		'my_postings':my_postings,
-		'image_dict':image_dict,
-		'image_list':image_list,
-	}
-	return render(request, 'sublet/my_sublets.html', posting_dict)
-
+    my_postings = Sublet.objects.filter(user=request.user)
+    print(my_postings)
+    image_dict = {}
+    image_list = []
+    for post in my_postings:
+        print(post.id)
+        images = SubletImage.objects.filter(sublet=post)
+        image_dict = images[0]
+        image_list.append(images[0])
+    posting_dict = {
+        'my_postings': my_postings,
+        'image_dict': image_dict,
+        'image_list': image_list,
+    }
+    return render(request, 'sublet/my_sublets.html', posting_dict)
