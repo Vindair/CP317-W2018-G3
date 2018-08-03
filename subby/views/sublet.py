@@ -93,11 +93,6 @@ def search(request):
         return render(request, 'application/base.html')
 
 
-def filter(request):
-    if request.method == 'POST':
-        return
-
-
 @message_login_required
 def create_sublet(request):
     if request.method == 'POST':
