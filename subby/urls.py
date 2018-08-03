@@ -9,7 +9,7 @@ urlpatterns = [
 
     # Base application view
     path('', application.index, name='index'),
-
+	
     # User Admin views
     path('users/', user.index, name='user_index'),
     path('users/<int:user_id>', user.show, name='user_show'),
@@ -25,12 +25,12 @@ urlpatterns = [
 
     # Sublet paths
     path('sublets/', sublet.SubletList.as_view(template_name='sublet/sublet_list.html'), name='SubletList'),
-    path('sublets/<int:pk>/', sublet.SubletDetail.as_view(template_name='sublet/sublet_detail.html'),
-         name='SubletDetail'),
+    path('sublets/<int:pk>/', sublet.SubletDetail.as_view(template_name='sublet/sublet_detail.html'), name='SubletDetail'),
     path('sublets/create_sublet', sublet.create_sublet, name='create_sublet'),
     path('sublets/search', sublet.search, name='search'),
     path('sublets/contact', user.contact_user, name='contact_user'),
     path('sublets/update_sublet', sublet.update_sublet, name='update_sublet'),
+    path('sublets/my_sublets', sublet.my_sublets, name='my_sublets'),
 
     # Rating paths
 

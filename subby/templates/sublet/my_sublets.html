@@ -1,0 +1,60 @@
+{% extends 'application/base.html' %}
+
+
+
+
+
+{% block content %}
+
+
+
+<div class="container">
+	<div class="jumbotron jumbo-container" style="min-height: 90vh;">
+		<div class="container">
+			<h2>My Postings List</h2>
+			{% if my_postings|length > 0%}			
+			<br>
+			{% for post in my_postings %}
+			<div class="container">
+				<div class="row">
+					<div class="col-md-3">
+						<div onclick="window.location='{% url 'subby:SubletDetail' post.id %}';"
+						style="cursor:pointer;">
+							<h4 id="sublet_title">{{ post.title }}</h4>
+							{% for i in image_list %}
+								{% if i.sublet.id == post.id %}
+								<img src="{{ i.image.url }}" class="img-fluid" height="200"
+								width="200"/>
+								{% endif %}
+							{% endfor %}
+						</div>
+					</div>
+					<div class="col-md-3 mt-1">
+						<h5>Address</h5>
+						<p>{{ post.street_address }}, {{ post.city }}</p>
+						<h5>Rent</h5>
+						<p>${{ post.price }}</p>
+					</div>
+					<div class="col-md-5 mt-1">
+						<h5>Description</h5>
+						<p>{{ post.summary }}</p>
+						<h5>Offered By</h5>
+						<p style="color:green;">{{ post.user.email }}</p>
+					</div>
+					
+				</div>
+				<hr>
+			</div>
+			{% endfor %}
+			{% else %}
+			<p>You have posting.</p>
+			
+			{% endif %}
+			<br>
+			
+		</div>
+	</div>
+</div>
+
+
+{% endblock %}

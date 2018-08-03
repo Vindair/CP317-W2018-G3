@@ -9,7 +9,10 @@
                 <a class="btn btn-secondary" href="{% url 'subby:create_sublet' %}">Post Sublet</a>
 
                 <!-- <a class="btn btn-secondary" href="{% url 'subby:SubletList' %}">View All Posts</a> -->
+				<a class="btn btn-secondary" href="{% url 'subby:my_sublets' %}">My Postings</a>
 				<a class="btn btn-secondary" href="{% url 'subby:RatingList' user_id=id%}">View My Ratings</a>
+				
+				
 
                 <a class="btn btn-secondary" href="{% url 'subby:favourite_list' user_id=id%}">View Favourites</a>
 
