@@ -25,6 +25,10 @@ html, body {
     margin: 10px 5px 0 0;
 }
 
+.green-border {
+  border: 2px solid green !important;
+}
+
 .main-logo-img {
     margin-top: 5%;
     margin-bottom: 5%;

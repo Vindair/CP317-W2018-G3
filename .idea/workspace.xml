@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f60e9694-565c-43f6-b623-8b1344f923dc" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/subby/static/js/MapAPI.js" beforeDir="false" afterPath="$PROJECT_DIR$/subby/static/js/MapAPI.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subby/static/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/subby/static/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subby/templates/application/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/subby/templates/application/base.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,10 +18,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="user.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/subby/views/user.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-19">
+              <caret line="87" column="22" selection-start-line="87" selection-start-column="22" selection-end-line="87" selection-end-column="22" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="sublet.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/subby/views/sublet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
+            <state relative-caret-position="-45">
               <caret line="158" column="51" lean-forward="true" selection-start-line="158" selection-start-column="51" selection-end-line="158" selection-end-column="51" />
               <folding>
                 <element signature="e#0#53#0" expanded="true" />
@@ -31,7 +45,7 @@
       <file leaf-file-name="report.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/subby/views/report.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
+            <state relative-caret-position="-409">
               <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
@@ -40,7 +54,7 @@
       <file leaf-file-name="rating_list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/subby/templates/rating/rating_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
+            <state relative-caret-position="-6484">
               <caret line="24" column="65" lean-forward="true" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="65" />
               <folding>
                 <element signature="e#17183#17246#0#HTML" expanded="true" />
@@ -63,26 +77,35 @@
       <file leaf-file-name="report_list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/subby/templates/report/report_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
+            <state relative-caret-position="-574">
               <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/subby/templates/application/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="319" column="29" lean-forward="true" selection-start-line="319" selection-start-column="29" selection-end-line="319" selection-end-column="29" />
+            <state relative-caret-position="380">
+              <caret line="351" column="29" lean-forward="true" selection-start-line="351" selection-start-column="29" selection-end-line="351" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MapAPI.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/subby/static/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MapAPI.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/subby/static/js/MapAPI.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="75" column="39" selection-start-line="75" selection-start-column="39" selection-end-line="75" selection-end-column="39" />
+            <state relative-caret-position="-94">
+              <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
             </state>
           </provider>
         </entry>
@@ -92,26 +115,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
               <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="report.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/subby/models/report.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-37">
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/subby/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="372">
-              <caret line="49" column="71" selection-start-line="49" selection-start-column="71" selection-end-line="49" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -187,7 +190,6 @@
         <option value="$PROJECT_DIR$/subby/views/sublet.py" />
         <option value="$PROJECT_DIR$/subby/templates/sublet/create_sublet.html" />
         <option value="$PROJECT_DIR$/subby/static/js/CreateSubletVerification.js" />
-        <option value="$PROJECT_DIR$/subby/static/css/style.css" />
         <option value="$PROJECT_DIR$/subby/static/js/SubletDetailVerification.js" />
         <option value="$PROJECT_DIR$/subby/templates/sublet/sublet_detail.html" />
         <option value="$PROJECT_DIR$/subby/templates/rating/rating_list.html" />
@@ -195,8 +197,9 @@
         <option value="$PROJECT_DIR$/subby/templates/report/report_list.html" />
         <option value="$PROJECT_DIR$/subby/views/rating.py" />
         <option value="$PROJECT_DIR$/subby/views/report.py" />
-        <option value="$PROJECT_DIR$/subby/templates/application/base.html" />
         <option value="$PROJECT_DIR$/subby/static/js/MapAPI.js" />
+        <option value="$PROJECT_DIR$/subby/templates/application/base.html" />
+        <option value="$PROJECT_DIR$/subby/static/css/style.css" />
       </list>
     </option>
   </component>
@@ -734,16 +737,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/subby/views/user.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1125">
-          <caret line="87" column="22" selection-start-line="87" selection-start-column="22" selection-end-line="87" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/subby/templates/rating/rating_list - Copy.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -755,13 +748,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="16" lean-forward="true" selection-start-line="18" selection-start-column="16" selection-end-line="18" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/subby/static/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3735">
-          <caret line="249" column="14" lean-forward="true" selection-start-line="249" selection-start-column="14" selection-end-line="249" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -830,7 +816,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/subby/views/sublet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
+        <state relative-caret-position="-45">
           <caret line="158" column="51" lean-forward="true" selection-start-line="158" selection-start-column="51" selection-end-line="158" selection-end-column="51" />
           <folding>
             <element signature="e#0#53#0" expanded="true" />
@@ -838,10 +824,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/subby/views/report.py">
+    <entry file="file://$PROJECT_DIR$/subby/static/js/MapAPI.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        <state relative-caret-position="-94">
+          <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
         </state>
       </provider>
     </entry>
@@ -852,16 +838,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/subby/templates/report/report_list.html">
+    <entry file="file://$PROJECT_DIR$/subby/views/report.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+        <state relative-caret-position="-409">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/subby/templates/rating/rating_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
+        <state relative-caret-position="-6484">
           <caret line="24" column="65" lean-forward="true" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="65" />
           <folding>
             <element signature="e#17183#17246#0#HTML" expanded="true" />
@@ -871,17 +857,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/subby/templates/application/base.html">
+    <entry file="file://$PROJECT_DIR$/subby/views/user.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="319" column="29" lean-forward="true" selection-start-line="319" selection-start-column="29" selection-end-line="319" selection-end-column="29" />
+        <state relative-caret-position="-19">
+          <caret line="87" column="22" selection-start-line="87" selection-start-column="22" selection-end-line="87" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/subby/static/js/MapAPI.js">
+    <entry file="file://$PROJECT_DIR$/subby/templates/report/report_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="75" column="39" selection-start-line="75" selection-start-column="39" selection-end-line="75" selection-end-column="39" />
+        <state relative-caret-position="-574">
+          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subby/static/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subby/templates/application/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="351" column="29" lean-forward="true" selection-start-line="351" selection-start-column="29" selection-end-line="351" selection-end-column="29" />
         </state>
       </provider>
     </entry>

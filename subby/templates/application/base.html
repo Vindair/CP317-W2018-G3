@@ -347,9 +347,24 @@
             });
     }
 
+    function checkLoginEmail() {
+        $.get('{% url 'subby:signup' %}', {username: $('#email-box').val()},
+            function (data) {
+                console.log('hi');
+                if (data === "True") {
+                    $('#email-box').removeClass('green-border');
+                } else {
+                    $('#email-box').addClass('green-border');
+                }
+            });
+    }
+
     function onChange() {
         $("#su-email-box").change(function () {
             checkEmail();
+        });
+        $('#email-box').change(function (){
+           checkLoginEmail();
         });
     }
 
