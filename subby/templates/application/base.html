@@ -30,7 +30,23 @@
             <span class="navbar-toggler-icon"></span>
         </button>
     </div>
-
+    {% if request.get_full_path == "/sublets/search" %}
+        <div class="nav-item col-md-6">
+            <form action="{% url 'subby:search' %}" method="POST">
+                {% csrf_token %}
+                <div class="input-group">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search"
+                           id="sublet-search">
+                    <input type="hidden" id="search-lat" name="lat">
+                    <input type="hidden" id="search-lng" name="lng">
+                    <input type="hidden" id="search-prox" name="proximity" value="5">
+                    <span class="input-group-btn">
+                    <button class="btn btn-secondary search-btn" type="submit">Search</button>
+                </span>
+                </div>
+            </form>
+        </div>
+    {% endif %}
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
             {% if user.is_authenticated %}
@@ -86,17 +102,21 @@
                 <form action="{% url 'subby:search' %}" method="POST">
                     {% csrf_token %}
                     <div class="form-group">
-                        <input class="form-control" type="search" placeholder="Search" aria-label="Search" id="sublet-search">
+                        <input class="form-control" type="search" placeholder="Search" aria-label="Search"
+                               id="sublet-search">
                         <input type="hidden" id="search-lat" name="lat">
                         <input type="hidden" id="search-lng" name="lng">
                         <input type="hidden" id="search-prox" name="proximity" value="5">
-					<div class="row">
-                        <button class="btn btn-secondary search-btn d-block offset-5 mt-3" type="submit" style="height:90%;">Search</button>
-						<a class="btn btn-secondary d-block mt-3" style="margin-left:20px;" href="{% url 'subby:SubletList' %}">View All Posts</a>
-					</div>
+                        <div class="row">
+                            <button class="btn btn-secondary search-btn d-block offset-5 mt-3" type="submit"
+                                    style="height:90%;">Search
+                            </button>
+                            <a class="btn btn-secondary d-block mt-3" style="margin-left:20px;"
+                               href="{% url 'subby:SubletList' %}">View All Posts</a>
+                        </div>
                     </div>
                 </form>
-				
+
             </div>
             <div class="col"></div>
         </div>
@@ -275,68 +295,68 @@
 </div>
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script> -->
-    <script
-            src="https://code.jquery.com/jquery-3.3.1.min.js"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
-            integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-            crossorigin="anonymous"></script>
-    <script src="{% static 'js/LoginModal.js' %}"></script>
-    <script src="{% static 'js/EditAccountInformation.js' %}"></script>
-    <script src="{% static 'js/RatingVerification.js' %}"></script>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script> -->
+<script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+        integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+        crossorigin="anonymous"></script>
+<script src="{% static 'js/LoginModal.js' %}"></script>
+<script src="{% static 'js/EditAccountInformation.js' %}"></script>
+<script src="{% static 'js/RatingVerification.js' %}"></script>
 
-    <script src="{% static 'js/SmoothScrolling.js' %}"></script>
-    <script src="{% static 'js/MapAPI.js' %}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWKqqOWg7D2pCCKgsGe_ISDMUyEkkxXzY&libraries=places&callback=init_searchbar"
-            async defer></script>
+<script src="{% static 'js/SmoothScrolling.js' %}"></script>
+<script src="{% static 'js/MapAPI.js' %}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWKqqOWg7D2pCCKgsGe_ISDMUyEkkxXzY&libraries=places&callback=init_searchbar"
+        async defer></script>
 
-    <script type="text/javascript">
-        $(function () {
-            {% if login_error %}
-                $('#login-modal').modal('show');
-            {% endif %}
-            {% if signup_error %}
-                $('#signup-modal').modal('show');
-            {% endif %}
-        });
-    </script>
+<script type="text/javascript">
+    $(function () {
+        {% if login_error %}
+            $('#login-modal').modal('show');
+        {% endif %}
+        {% if signup_error %}
+            $('#signup-modal').modal('show');
+        {% endif %}
+    });
+</script>
 
-    <script type="text/javascript">
-        function checkEmail() {
-            $('#su-email-box').popover('hide');
-            $.get('{% url 'subby:signup' %}', {username: $('#su-email-box').val()},
-                function (data) {
-                    if (data === "True") {
-                    } else {
-                        $('#su-email-box').popover({
-                            content: "The following email already exists in our database!",
-                            html: true,
-                            trigger: "manual",
-                            placement: "right"
-                        }).popover('toggle');
-                    }
-                });
-        }
-
-        function onChange() {
-            $("#su-email-box").change(function () {
-                checkEmail();
+<script type="text/javascript">
+    function checkEmail() {
+        $('#su-email-box').popover('hide');
+        $.get('{% url 'subby:signup' %}', {username: $('#su-email-box').val()},
+            function (data) {
+                if (data === "True") {
+                } else {
+                    $('#su-email-box').popover({
+                        content: "The following email already exists in our database!",
+                        html: true,
+                        trigger: "manual",
+                        placement: "right"
+                    }).popover('toggle');
+                }
             });
-        }
+    }
 
-        $(document).ready(onChange);
-    </script>
-	
-	
+    function onChange() {
+        $("#su-email-box").change(function () {
+            checkEmail();
+        });
+    }
+
+    $(document).ready(onChange);
+</script>
+
+
 
 
 {% block js %}

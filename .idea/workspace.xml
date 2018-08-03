@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f60e9694-565c-43f6-b623-8b1344f923dc" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subby/templates/rating/rating_list - Copy.html" beforeDir="false" afterPath="$PROJECT_DIR$/subby/templates/rating/rating_list - Copy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subby/templates/rating/rating_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/subby/templates/rating/rating_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subby/templates/report/report_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/subby/templates/report/report_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subby/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/subby/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subby/views/rating.py" beforeDir="false" afterPath="$PROJECT_DIR$/subby/views/rating.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subby/views/report.py" beforeDir="false" afterPath="$PROJECT_DIR$/subby/views/report.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/subby_project/static/admin/js/vendor/xregexp/xregexp.js" beforeDir="false" afterPath="$PROJECT_DIR$/subby_project/static/admin/js/vendor/xregexp/xregexp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/subby/templates/application/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/subby/templates/application/base.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,8 +20,8 @@
       <file leaf-file-name="sublet.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/subby/views/sublet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="157" column="51" lean-forward="true" selection-start-line="157" selection-start-column="51" selection-end-line="157" selection-end-column="51" />
+            <state relative-caret-position="210">
+              <caret line="158" column="51" lean-forward="true" selection-start-line="158" selection-start-column="51" selection-end-line="158" selection-end-column="51" />
               <folding>
                 <element signature="e#0#53#0" expanded="true" />
               </folding>
@@ -35,14 +29,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="report.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="report.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/subby/views/report.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="15">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -64,7 +55,7 @@
       <file leaf-file-name="rating.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/subby/views/rating.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
+            <state relative-caret-position="-1039">
               <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
             </state>
           </provider>
@@ -75,6 +66,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
               <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/subby/templates/application/base.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="32" column="51" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -192,12 +192,12 @@
         <option value="$PROJECT_DIR$/subby/static/css/style.css" />
         <option value="$PROJECT_DIR$/subby/static/js/SubletDetailVerification.js" />
         <option value="$PROJECT_DIR$/subby/templates/sublet/sublet_detail.html" />
-        <option value="$PROJECT_DIR$/subby/templates/application/base.html" />
         <option value="$PROJECT_DIR$/subby/templates/rating/rating_list.html" />
         <option value="$PROJECT_DIR$/subby/urls.py" />
         <option value="$PROJECT_DIR$/subby/templates/report/report_list.html" />
         <option value="$PROJECT_DIR$/subby/views/rating.py" />
         <option value="$PROJECT_DIR$/subby/views/report.py" />
+        <option value="$PROJECT_DIR$/subby/templates/application/base.html" />
       </list>
     </option>
   </component>
@@ -794,13 +794,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/subby/templates/application/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="44" column="34" lean-forward="true" selection-start-line="44" selection-start-column="34" selection-end-line="44" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/subby/templates/sublet/sublet_detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="181">
@@ -831,13 +824,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/subby/templates/report/report_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/subby_project/static/admin/js/admin/DateTimeShortcuts.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2908">
@@ -852,18 +838,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/subby/views/sublet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="157" column="51" lean-forward="true" selection-start-line="157" selection-start-column="51" selection-end-line="157" selection-end-column="51" />
+        <state relative-caret-position="210">
+          <caret line="158" column="51" lean-forward="true" selection-start-line="158" selection-start-column="51" selection-end-line="158" selection-end-column="51" />
           <folding>
             <element signature="e#0#53#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/subby/views/rating.py">
+    <entry file="file://$PROJECT_DIR$/subby/views/report.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+        <state relative-caret-position="15">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
@@ -879,13 +865,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/subby/views/report.py">
+    <entry file="file://$PROJECT_DIR$/subby/views/rating.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-1039">
+          <caret line="3" column="24" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subby/templates/report/report_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="40" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/subby/templates/application/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="32" column="51" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="51" />
         </state>
       </provider>
     </entry>
