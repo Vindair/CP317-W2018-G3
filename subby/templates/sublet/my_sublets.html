@@ -1,25 +1,18 @@
 {% extends 'application/base.html' %}
 
-
-
-
-
 {% block content %}
-
-
 
 <div class="container">
 	<div class="jumbotron jumbo-container" style="min-height: 90vh;">
 		<div class="container">
 			<h2>My Postings List</h2>
-			{% if my_postings|length > 0%}			
+			{% if my_postings|length > 0 %}
 			<br>
 			{% for post in my_postings %}
 			<div class="container">
 				<div class="row">
 					<div class="col-md-3">
-						<div onclick="window.location='{% url 'subby:SubletDetail' post.id %}';"
-						style="cursor:pointer;">
+						<div onclick="window.location='{% url 'subby:SubletDetail' post.id %}';" style="cursor:pointer;">
 							<h4 id="sublet_title">{{ post.title }}</h4>
 							{% for i in image_list %}
 								{% if i.sublet.id == post.id %}
@@ -41,20 +34,19 @@
 						<h5>Offered By</h5>
 						<p style="color:green;">{{ post.user.email }}</p>
 					</div>
-					
+
 				</div>
 				<hr>
 			</div>
 			{% endfor %}
 			{% else %}
 			<p>You have posting.</p>
-			
+
 			{% endif %}
 			<br>
-			
+
 		</div>
 	</div>
 </div>
-
 
 {% endblock %}
