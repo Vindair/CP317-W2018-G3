@@ -181,7 +181,7 @@
                                             <label class="mt-2" for="price">Price:</label>
                                             <input type="text" class="form-control" name="price" id="price"
                                                    aria-describedby="Price" placeholder="Enter Listing Price"
-                                                   value="{{ object.price }}">
+                                                   value="{{ object.price }}" data-toggle="popover" data-content="Please enter a price">
                                             <label class="mt-2" for="listing-description">Description:</label>
                                             <textarea class="form-control" name="description" id="listing-description"
                                                       aria-describedby="Description" placeholder="Enter Description"
@@ -354,21 +354,9 @@
             init_map()
         }
     </script>
-
-    {% load static %}
-    <script
-            src="https://code.jquery.com/jquery-3.3.1.min.js"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
-            integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-            crossorigin="anonymous"></script>
-    <script src="{% static 'js/SubletDetailVerification.js' %}"></script>
-    <script src="{% static 'js/MapAPI.js' %}"></script>
-    <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCurefBmArMbo3xXJpvxk3sG1q1MPSHsCc&callback=initMap">
-    </script>
+        {% load static %}
+        <script src="{% static 'js/MapAPI.js' %}"></script>
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCurefBmArMbo3xXJpvxk3sG1q1MPSHsCc&callback=initMap">
+        </script>
 {% endblock %}
