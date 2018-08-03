@@ -7,14 +7,14 @@
 ### Developer Notes
 #### Running Subby (Development)
   * Install PostgreSQL with the default admin user settings, reachable at localhost:
-    * DB Name: subby
+    * DB Name: subby, use PSQL cmd line to create database with code `CREATE DATABASE subby;`
     * User: postgres
     * Password: postgres
     * Port: 5432
   * Ensure `python` and `pip` are installed (or the appropriate python 3.X and python3-pip for your platform). From the project directory, run `pip install -r requirements.txt`. Windows users need to put python and python/scripts path to the path of system variables before using python and pip in command line.
   * Check migrations with `python manage.py makemigrations --settings=subby_project.settings.development` first.
   * Ensure that migrations have been performed; run `python manage.py migrate --settings=subby_project.settings.development`.
-  * From the project directory, run `python manage.py runserver --settings=subby_project.settings.development`. Subby will be running at `http://127.0.0.1:8000`. 'localhost:8000' will be rejected by recaptcha.
+  * From the project directory, run `python manage.py runserver --settings=subby_project.settings.development`. Subby will be running at `http://127.0.0.1:8000`. `localhost:8000` will be rejected by recaptcha.
   * To create a super user run `python manage.py createsuperuser --settings=subby_project.settings.development`. You will now be able to login using the info you enter.
  
 #### Testing
