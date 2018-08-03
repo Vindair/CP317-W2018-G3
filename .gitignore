@@ -18,6 +18,7 @@ node_modules/
 
 # Ignore editor-specific cruft
 .vscode/
+.idea/
 
 # Ignore media folders
 subby_project/media/*
