@@ -47,5 +47,6 @@ urlpatterns = [
     # Report paths
     path('report/<int:user_id>/<int:sublet_id>/', report.create_report, name='create_report'),
     path('report_list/', report.report_list, name='report_list'),
+    path('search_report/', report.search_report, name='search_report'),
 
 ]

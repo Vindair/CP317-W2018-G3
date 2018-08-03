@@ -9,22 +9,26 @@
                         <h2>Reports</h2>
                     </div>
                     <div class="col">
-                        <div class="form-row">
-                            <div class="form-group col-md-10">
-                                <input class="form-control" type="search" placeholder="Search"
-                                       aria-label="Report Filter"
-                                       name="query">
+                        <form action="{% url 'subby:search_report' %}" method="POST">
+                            {% csrf_token %}
+                            <div class="form-row">
+                                <div class="form-group col-md-10">
+                                    <input class="form-control" type="search" placeholder="Search for email"
+                                           aria-label="Report Filter"
+                                           name="query" id="report-search-bar" onkeyup="filterReports()">
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-secondary search-btn" id="report-search-button"
+                                            type="submit">
+                                        Search
+                                    </button>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <button class="btn btn-secondary search-btn" id="report-search-button" type="submit">
-                                    Search
-                                </button>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
                 {% for r in reports %}
-                    <div class="container bg-dark rounded text-light mt-3">
+                    <div class="container bg-dark rounded text-light mt-3 report" id="{{ r.user.email }}">
                         <div class="row">
                             <div class="col mt-2">
                                 {% load index %}
@@ -47,4 +51,24 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block js %}
+    <script>
+        function filterReports() {
+            let input, filter, reports, report, i;
+            input = document.getElementById('report-search-bar');
+            filter = input.value.toUpperCase();
+            reports = document.getElementsByClassName('report');
+
+            for (i = 0; i < reports.length; i++) {
+                report = reports[i].getAttribute('id');
+                if (report.toUpperCase().indexOf(filter) > -1) {
+                    reports[i].style.display = "";
+                } else {
+                    reports[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 {% endblock %}
