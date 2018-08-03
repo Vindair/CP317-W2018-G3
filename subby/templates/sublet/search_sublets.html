@@ -5,7 +5,9 @@
         <div class="container-fluid search-sublet-main-container">
             <div class="row">
                 <div class="col-8">
-                    <h2>
+
+                    <div class="container-fluid search-container">
+					                    <h2>
                         Search Results: {{ place.count }} results found
                     </h2>
                     <button type="button" data-toggle="collapse" data-target="#filterToggler"
@@ -30,7 +32,6 @@
                         </div>
                     </div>
                     <br><br>
-                    <div class="container-fluid search-container">
                         {% for p in place %}
                             <div class="card gallery" style="width: 15rem;cursor:pointer;" id="the_container"  onclick="window.location='{% url 'subby:SubletDetail' p.id %}';">
                                 {% load index %}
@@ -98,12 +99,7 @@
 
         }
     </script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
-            integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
-            crossorigin="anonymous"></script>
+
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWKqqOWg7D2pCCKgsGe_ISDMUyEkkxXzY&libraries=places&callback=init_searchmap"
             async defer></script>
 {% endblock %}
