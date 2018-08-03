@@ -14,96 +14,105 @@
                         </button>
                     </div>
                 {% endif %}
-                <h2>
-                    Reviews for {{ lister.email }} <br/>
-                    {% if current != None and current_id != lister.id %}
-                        {% if posted == True %}
-                            <a class="btn btn-secondary float-right"
-                               href="{% url 'subby:my_review' pk=reviewed_user_id %}">View Your Review
-                            </a>
-                        {% else %}
-                            <button class="btn btn-secondary float-right" type="button"
-                                    data-toggle="modal" data-target="#rating-modal"
-                                    aria-controls="ratingToggler" aria-expanded="false"
-                                    aria-label="Toggle navigation">Write a Review
-                            </button>
+                <div class="row">
+                    <div class="col col-md-9">
+                        <h2>Reviews for {{ lister.email }}</h2>
+                    </div>
+                    <div class="col">
+                        {% if current != None and current_id != lister.id %}
+                            {% if posted == True %}
+                                <a class="btn btn-secondary float-right"
+                                   href="{% url 'subby:my_review' pk=reviewed_user_id %}">View Your Review
+                                </a>
+                            {% else %}
+                                <button class="btn btn-secondary float-right" type="button"
+                                        data-toggle="modal" data-target="#rating-modal"
+                                        aria-controls="ratingToggler" aria-expanded="false"
+                                        aria-label="Toggle navigation">Write a Review
+                                </button>
+                            {% endif %}
                         {% endif %}
-                    {% endif %}
-                </h2>
-                <div class="form-group">
-                    <fieldset class="rating float-left" disabled>
-                        {% if avg_rating == 5 %}
-                            <input type="radio" id="5s" value="5" checked/>
-                        {% else %}
-                            <input type="radio" id="5s" value="5"/>
-                        {% endif %}
-                        <label class="full" for="5s" title="Perfect - 5 stars"></label>
-                        {% if avg_rating == 4.5 %}
-                            <input type="radio" id="4p5s" value="4.5" checked/>
-                        {% else %}
-                            <input type="radio" id="4p5s" value="4.5"/>
-                        {% endif %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <fieldset class="rating float-left" disabled>
+                                <p class="mt-1 mb-0">Average:</p>
+                                {% if avg_rating == 5 %}
+                                    <input type="radio" id="avg5s" value="5" checked/>
+                                {% else %}
+                                    <input type="radio" id="avg5s" value="5"/>
+                                {% endif %}
+                                <label class="full" for="avg5s" data-toggle="popover"
+                                   data-content="{{ avg_rating }}" id="avg-rating"></label>
+                                {% if avg_rating == 4.5 %}
+                                    <input type="radio" id="avg4p5s" value="4.5" checked/>
+                                {% else %}
+                                    <input type="radio" id="avg4p5s" value="4.5"/>
+                                {% endif %}
 
-                        <label class="half" for="4p5s" title="Great - 4.5 stars"></label>
-                        {% if avg_rating == 4 %}
-                            <input type="radio" id="4s" value="4" checked/>
-                        {% else %}
-                            <input type="radio" id="4s" value="4"/>
-                        {% endif %}
+                                <label class="half" for="avg4p5s" title="Great - 4.5 stars"></label>
+                                {% if avg_rating == 4 %}
+                                    <input type="radio" id="avg4s" value="4" checked/>
+                                {% else %}
+                                    <input type="radio" id="avg4s" value="4"/>
+                                {% endif %}
 
-                        <label class="full" for="4s" title="Good - 4 stars"></label>
-                        {% if avg_rating == 3.5 %}
-                            <input type="radio" id="3p5s" value="3.5" checked/>
-                        {% else %}
-                            <input type="radio" id="3p5s" value="3.5"/>
-                        {% endif %}
+                                <label class="full" for="avg4s" title="Good - 4 stars"></label>
+                                {% if avg_rating == 3.5 %}
+                                    <input type="radio" id="avg3p5s" value="3.5" checked/>
+                                {% else %}
+                                    <input type="radio" id="avg3p5s" value="3.5"/>
+                                {% endif %}
 
-                        <label class="half" for="3p5s" title="Satisfactory - 3.5 stars"></label>
-                        {% if avg_rating == 3 %}
-                            <input type="radio" id="3s" value="3" checked/>
-                        {% else %}
-                            <input type="radio" id="3s" value="3"/>
-                        {% endif %}
+                                <label class="half" for="avg3p5s" title="Satisfactory - 3.5 stars"></label>
+                                {% if avg_rating == 3 %}
+                                    <input type="radio" id="avg3s" value="3" checked/>
+                                {% else %}
+                                    <input type="radio" id="avg3s" value="3"/>
+                                {% endif %}
 
-                        <label class="full" for="3s" title="Average - 3 stars"></label>
-                        {% if avg_rating == 2.5 %}
-                            <input type="radio" id="2p5s" value="2.5" checked/>
-                        {% else %}
-                            <input type="radio" id="2p5s" value="2.5"/>
-                        {% endif %}
+                                <label class="full" for="avg3s" title="Average - 3 stars"></label>
+                                {% if avg_rating == 2.5 %}
+                                    <input type="radio" id="avg2p5s" value="2.5" checked/>
+                                {% else %}
+                                    <input type="radio" id="avg2p5s" value="2.5"/>
+                                {% endif %}
 
-                        <label class="half" for="2p5s" title="Okay - 2.5 stars"></label>
-                        {% if avg_rating == 2 %}
-                            <input type="radio" id="2s" value="2" checked/>
-                        {% else %}
-                            <input type="radio" id="2s" value="2"/>
-                        {% endif %}
+                                <label class="half" for="avg2p5s" title="Okay - 2.5 stars"></label>
+                                {% if avg_rating == 2 %}
+                                    <input type="radio" id="avg2s" value="2" checked/>
+                                {% else %}
+                                    <input type="radio" id="avg2s" value="2"/>
+                                {% endif %}
 
-                        <label class="full" for="2s" title="Not good - 2 stars"></label>
-                        {% if avg_rating == 1.5 %}
-                            <input type="radio" id="1p5s" value="1.5" checked/>
-                        {% else %}
-                            <input type="radio" id="1p5s" value="1.5"/>
-                        {% endif %}
+                                <label class="full" for="avg2s" title="Not good - 2 stars"></label>
+                                {% if avg_rating == 1.5 %}
+                                    <input type="radio" id="avg1p5s" value="1.5" checked/>
+                                {% else %}
+                                    <input type="radio" id="avg1p5s" value="1.5"/>
+                                {% endif %}
 
-                        <label class="half" for="1p5s" title="Bad - 1.5 stars"></label>
-                        {% if avg_rating == 1 %}
-                            <input type="radio" id="1s" value="1" checked/>
-                        {% else %}
-                            <input type="radio" id="1s" value="1"/>
-                        {% endif %}
+                                <label class="half" for="avg1p5s" title="Bad - 1.5 stars"></label>
+                                {% if avg_rating == 1 %}
+                                    <input type="radio" id="avg1s" value="1" checked/>
+                                {% else %}
+                                    <input type="radio" id="avg1s" value="1"/>
+                                {% endif %}
 
-                        <label class="full" for="1s" title="Terrible - 1 star"></label>
-                        {% if avg_rating == 0.5 %}
-                            <input type="radio" id="p5s" value="0.5" checked/>
-                        {% else %}
-                            <input type="radio" id="p5s" value="0.5"/>
-                        {% endif %}
-                        <label class="half" for="p5s" title="The Worst - 0.5 stars"></label>
-                    </fieldset>
+                                <label class="full" for="avg1s" title="Terrible - 1 star"></label>
+                                {% if avg_rating == 0.5 %}
+                                    <input type="radio" id="avgp5s" value="0.5" checked/>
+                                {% else %}
+                                    <input type="radio" id="avgp5s" value="0.5"/>
+                                {% endif %}
+                                <label class="half" for="avgp5s" title="The Worst - 0.5 stars"></label>
+                            </fieldset>
+                        </div>
+                    </div>
                 </div>
 
-                <br>
                 {% for rating in ratings %}
                     <div class="container bg-dark rounded text-light mt-3">
                         <div class="row">
@@ -234,8 +243,8 @@
                                     </div>
                                     <div class="collapse" id="editToggler{{ rating.id }}">
                                         <div class="bg-dark p-4 mt-2" style="border-radius: 5px;">
-                                            <h4 class="text-white">Edit
-                                                Review #{{ rating.id }}</h4>
+                                            <h4 class="text-white">Edit Your
+                                                Review</h4>
                                             <span class="text-muted">Edit your rating or comment below.</span>
                                             <hr class="my-4">
                                             <form action="{% url 'subby:update_review' %}" method="POST">
@@ -454,5 +463,12 @@
     </div>
 
 
+{% endblock %}
 
+{% block js %}
+    <script>
+        $(function () {
+            $('#avg-rating').popover('show');
+        });
+    </script>
 {% endblock %}

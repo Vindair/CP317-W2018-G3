@@ -32,3 +32,7 @@ def create_report(request, user_id, sublet_id):
 		'sublet_id': sublet_id,
 		}
 	return render(request, 'report/report_page.html', report_dict)
+
+def report_list(request):
+	reports = Report.objects.all()
+	return render(request, "report/report_list.html", {'reports': reports})

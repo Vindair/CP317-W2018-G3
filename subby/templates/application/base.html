@@ -36,8 +36,13 @@
             {% if user.is_authenticated %}
                 <ul class="navbar-nav">
                     {% if user.is_admin %}
-                        <li class="nav-item">
-                            <a class="nav-link main-nav-item" id="" href="{% url 'subby:user_index' %}">Admin</a>
+                        <li class="dropdown nav-item">
+                            <a class="nav-link main-nav-item dropdown-toggle" id="dropdownMenuLink"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="{% url 'subby:user_index' %}">User List</a>
+                                <a class="dropdown-item" href="{% url 'subby:report_list' %}">Report List</a>
+                            </div>
                         </li>
                     {% endif %}
                     <li class="nav-item">
