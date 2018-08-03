@@ -1,12 +1,10 @@
-from django.views.generic import ListView, DetailView
-from django.shortcuts import render, redirect, get_list_or_404, get_object_or_404
-from subby.models.rating import Rating
-from django.contrib.auth import get_user_model
-from subby.decorators.loginrequiredmessage import message_login_required
-from django.contrib.auth.decorators import login_required
-from django.urls import reverse
-from subby.decorators.loginrequiredmessage import message_login_required
 from django.contrib import messages
+from django.contrib.auth import get_user_model
+from django.shortcuts import render, redirect
+from django.urls import reverse
+
+from subby.decorators.loginrequiredmessage import message_login_required
+from subby.models.rating import Rating
 
 User = get_user_model()
 
