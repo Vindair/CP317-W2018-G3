@@ -36,7 +36,13 @@
 						<h5>Offered By</h5>
 						<p style="color:green;">{{ fav.sublet.user.email }}</p>
 					</div>
-					
+				
+				 <form action="{% url 'subby:fav_unfav_sublet' %}" method="POST">
+                			{% csrf_token %}
+                			<input type="hidden" name="subletid" value="{{ fav.sublet.get_sublet_id }}">
+                			<input type="hidden" name="next" value="{{ request.path }}">
+                			<button class="close" type="submit">&times;</button>
+            			 </form>			
 				</div>
 				<hr>
 			</div>
@@ -50,9 +56,6 @@
 		</div>
 	</div>
 </div>
-
-
-
 
 
 {% endblock %}
