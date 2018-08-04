@@ -114,12 +114,12 @@
                 </div>
 
                 {% for rating in ratings %}
-                    <div class="container bg-dark rounded text-light mt-3">
+                    <div class="container bg-dark rounded text-light mt-1">
                         <div class="row">
                             <div class="col mt-1">
                                 {% load index %}
                                 {% if rating.user_id == current_id %}
-                                    <h5 class="mt-3">Review by {{ raters|index:forloop.counter0 }}</h5>
+                                    <h5 class="mt-3">Review by {{ raters|index:forloop.counter0 }}
 
                                     <input class="btn btn-secondary float-right" type="button"
                                            data-toggle="collapse" data-target="#editToggler{{ rating.id }}"
@@ -132,6 +132,7 @@
                                             aria-controls="deletingToggler" aria-expanded="false"
                                             aria-label="Toggle navigation">Delete
                                     </button>
+									</h5>
                                     <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog"
                                          aria-labelledby="delete-modal-label"
                                          aria-hidden="true">
@@ -161,7 +162,7 @@
                                             </div>
                                         </div>
                                     </div>
-
+										 
                                     <fieldset class="rating float-left" disabled>
                                         {% if rating.rating == 5 %}
                                             <input type="radio" id="5s" value="5" checked/>
@@ -313,7 +314,8 @@
                                         </div>
                                     </div>
                                 {% else %}
-                                    <h5 class="mt-3">Review by {{ raters|index:forloop.counter0 }}</h5>
+                                    <h5 class="mt-3">Review by {{ raters|index:forloop.counter0 }}
+										</h5>
                                     <fieldset class="rating float-left" disabled>
                                         {% if rating.rating == 5 %}
                                             <input type="radio" id="5s" value="5" checked/>
@@ -385,6 +387,7 @@
                                         <label class="half" for="p5s" title="The Worst - 0.5 stars"></label>
                                     </fieldset>
                                 {% endif %}
+								
 
                     </div>
                     </div>
