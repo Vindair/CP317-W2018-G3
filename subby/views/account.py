@@ -9,6 +9,17 @@ import datetime, pytz
 
 
 def account_home(request):
+	"""
+	---------------------
+	creating account.
+	Use: render = account_home(request)
+	---------------------
+	Parameters:
+		request - request object
+	Return:
+		render - render object
+	---------------------
+	"""
 	id = request.user.id
 	email = request.user.email
 	first_name = request.user.first_name
