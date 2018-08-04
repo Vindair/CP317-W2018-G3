@@ -14,7 +14,7 @@ User = get_user_model()
 
 class SubletList(ListView):
     model = Sublet
-    paginate_by = 10
+    paginate_by = 3
 
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
@@ -197,3 +197,11 @@ def my_sublets(request):
         'image_list': image_list,
     }
     return render(request, 'sublet/my_sublets.html', posting_dict)
+	
+@message_login_required
+def delete_sublet(request, sublet_id):
+	title = Sublet.objects.get(id=sublet_id).title
+	Sublet.objects.delete_sublet(sublet_id)
+	
+	messages.add_message(request, messages.INFO, "Sublet \""+title+'\" is deleted')
+	return redirect('subby:my_sublets')

@@ -37,6 +37,7 @@ urlpatterns = [
     path('sublets/contact', user.contact_user, name='contact_user'),
     path('sublets/update_sublet', sublet.update_sublet, name='update_sublet'),
     path('sublets/my_sublets', sublet.my_sublets, name='my_sublets'),
+    path('sublets/my_sublets/delete_sublet/<int:sublet_id>', sublet.delete_sublet, name='delete_sublet'),
 
     # Rating paths
 
