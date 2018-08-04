@@ -29,6 +29,9 @@
             <span class="navbar-toggler-icon"></span>
         </button>
     </div>
+	
+	
+	
     {% if request.get_full_path == "/sublets/search" %}
         <div class="nav-item col-md-6">
             <form action="{% url 'subby:search' %}" method="POST">
@@ -92,7 +95,7 @@
     {% endfor %}
 {% endif %}
 
-<div class="alert ajax-alert" role="alert" style="display: none;"></div>
+<div class="alert ajax-alert" role="alert" style="display: none;" id="message_alert"></div>
 
 <div class="container-fluid">
     {% block content %}
@@ -376,8 +379,18 @@
     $(document).ready(onChange);
 </script>
 
+<script>
 
+var ele = document.querySelectorAll('[role="alert"]');
+var message_ele = ele[0];
 
+console.log(message_ele);
+console.log(123);
+setTimeout(function(){ 
+   message_ele.style.display = "none"; 
+}, 3000);
+
+</script>
 
 {% block js %}
 

@@ -59,6 +59,7 @@ def fav_unfav_sublet(request):
             Favourite.objects.remove_favourite(sublet, current_user)
         else: #Add favourite
             messages.add_message(request, messages.INFO, 'You have liked the sublet')
+
             Favourite.objects.create_favourite(sublet, current_user)
         
         return redirect(next, id=sublet.get_sublet_id())
