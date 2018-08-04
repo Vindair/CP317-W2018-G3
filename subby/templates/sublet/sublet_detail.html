@@ -27,7 +27,8 @@
                     <div class="col">
                         <div class="row d-flex flex-column">
                             <h4>{{ object.title }}</h4>
-                            <h6 class="d-block">Monthly Rent: ${{ object.price }}</h6>
+                            <h6 class="d-block">Monthly Rent: ${{ object.price }} <a class="btn btn-secondary btn-sm float-right mr-3"
+                                   href="{% url 'subby:RatingList' user_id=lister.id %}">View Reviews</a></h6>
                         </div>
                         <div class="row">
                             <div id="imageCarousel" class="carousel slide" data-ride="carousel">
@@ -72,10 +73,6 @@
                         <div class="row mt-3 d-flex flex-row">
                             <div class="col">
                                 <h6>Listed by: {{ lister.email }}</h6>
-                            </div>
-                            <div class="col">
-                                <a class="btn btn-secondary btn-sm float-right"
-                                   href="{% url 'subby:RatingList' user_id=lister.id %}">View Reviews</a>
                             </div>
                         </div>
                         <div class="row d-flex flex-row">
@@ -359,4 +356,6 @@
         <script async defer
                 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCurefBmArMbo3xXJpvxk3sG1q1MPSHsCc&callback=initMap">
         </script>
+
+
 {% endblock %}

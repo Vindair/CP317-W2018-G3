@@ -13,3 +13,8 @@ class FavouriteManager(models.Manager):
     def remove_favourite(self, sublet, user):
         self.model.objects.filter(sublet=sublet, user=user).delete()
         return
+        
+    def remove_by_id(self, fav_id):
+        favourite = self.model.objects.get(id=fav_id)
+        favourite.delete()
+        return

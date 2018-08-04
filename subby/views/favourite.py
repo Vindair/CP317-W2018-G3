@@ -8,13 +8,13 @@ from subby.models.favourite import Favourite
 from subby.models.sublet import Sublet
 from subby.models.image import SubletImage
 from subby.decorators.loginrequiredmessage import message_login_required
-
+from django.contrib import messages
 
 
 
 	
 @message_login_required
-def FavouriteLister(request, user_id):
+def FavouriteLister(request):
 	fav_list = Favourite.objects.filter(user=request.user)
 	
 	image_dict = {}
@@ -55,10 +55,17 @@ def fav_unfav_sublet(request):
     else:
         #If it exists check to see if this favourite already exists
         if(Favourite.objects.filter(user=current_user, sublet=sublet).count() > 0): #Remove favourite
+            messages.add_message(request, messages.INFO, 'You have disliked the sublet')
             Favourite.objects.remove_favourite(sublet, current_user)
         else: #Add favourite
+            messages.add_message(request, messages.INFO, 'You have liked the sublet')
             Favourite.objects.create_favourite(sublet, current_user)
+        
         return redirect(next, id=sublet.get_sublet_id())
 
 
+def unfav_sublet(request, fav_id):
+	
+	Favourite.objects.remove_by_id(fav_id)
+	return redirect('subby:favourite_list')
 

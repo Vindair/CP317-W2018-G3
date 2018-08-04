@@ -30,11 +30,14 @@
 						<h5>Rent</h5>
 						<p>${{ fav.sublet.price }}</p>
 					</div>
-					<div class="col-md-5 mt-1">
+					<div class="col-md-3 mt-1">
 						<h5>Description</h5>
 						<p>{{ fav.sublet.summary }}</p>
 						<h5>Offered By</h5>
 						<p style="color:green;">{{ fav.sublet.user.email }}</p>
+					</div>
+					<div class="col-md-1">
+						<a href="{% url 'subby:unfav_sublet' fav_id=fav.id %}" class="btn btn-danger">Dislike</a>
 					</div>
 					
 				</div>
@@ -57,3 +60,6 @@
 
 {% endblock %}
 
+{% block js %}
+
+{% endblock %}
