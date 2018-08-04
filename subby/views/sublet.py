@@ -8,6 +8,7 @@ from subby.models.favourite import Favourite
 from subby.models.image import SubletImage
 from subby.models.sublet import Sublet
 
+
 User = get_user_model()
 
 
@@ -113,13 +114,15 @@ def create_sublet(request):
                                                   request.POST['lat'],
                                                   request.POST['lng'],
                                                   request.user)
+
             image_list = request.FILES.getlist('files')
             if len(image_list) > 0:
                 for image in image_list:
                     sublet_image = SubletImage(sublet=sublet)
                     sublet_image.image = image
                     sublet_image.save()
-            return render(request, 'sublet/create_sublet.html', {'success': 'true'})
+            messages.add_message(request, messages.INFO, 'You have successfully created your listing.')
+            return redirect('subby:SubletDetail', sublet.get_sublet_id())
         else:
             return render(request, 'sublet/create_sublet.html', {'create_sublet_error': 'All fields are required'})
     else:

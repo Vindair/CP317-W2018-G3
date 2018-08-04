@@ -8,7 +8,7 @@
                 <p class="lead">Enter the following information</p>
                 <hr class="my-4">
                 {% if create_sublet_error %}
-                    <div class="alert alert-danger fade show" role="alert" id="error-container">
+                    <div class="alert alert-danger fade show" role="alert" id="error-container" style="height:120px;">
                         <h4 class="alert-heading">Error</h4>
                         <p>{{ create_sublet_error }}</p>
                         <button type="button" class="close" onclick="$('.alert').hide()" aria-label="Close">
@@ -16,16 +16,7 @@
                         </button>
                     </div>
                 {% endif %}
-                {% if success %}
-                    <div class="alert alert-success fade show" role="alert" id="success-container">
-                        <h4 class="alert-heading">Listing Posted</h4>
-                        <p>Your listing was successfully posted!</p>
-                        <a class="btn btn-secondary" href="{% url 'subby:SubletList' %}">View Your Posts</a>
-                        <button type="button" class="close" onclick="$('.alert').hide()" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                {% endif %}
+
                 <form method="POST" action="{% url 'subby:create_sublet' %} " enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="form-group">
@@ -34,7 +25,7 @@
                                aria-describedby="Listing Name" placeholder="Enter Listing Name" data-toggle="popover" data-content="Please enter a title">
                         <label class="mt-2" for="listing-duration">Listing Duration (months):</label>
                         <input type="number" class="form-control" id="listing-duration" name="duration"
-                               aria-describedby="Listing Duration" min="4" max="12" value="4" data-toggle="popover" data-content="Please enter a duration">
+                               aria-describedby="Listing Duration" min="1" max="12" value="1" data-toggle="popover" data-content="Please enter a duration">
                         <br>
                         <label for="pac-input">Search an address:</label>
                         <input id="pac-input" class="controls form-control" type="text"
