@@ -95,7 +95,7 @@
     {% endfor %}
 {% endif %}
 
-<div class="alert ajax-alert" role="alert" style="display: none;" id="message_alert"></div>
+<!-- <div class="alert ajax-alert" role="alert" style="display: none;" id="message_alert"></div> -->
 
 <div class="container-fluid">
     {% block content %}
@@ -265,7 +265,8 @@
                                 </div>
                                 <input type="password" class="form-control" id="su-pw-box" placeholder="Password"
                                        name="password" tabindex="0" data-trigger="focus" data-toggle="popover"
-                                       data-content="Please enter a valid password (6 - 16 characters, at least 1 number & special character)">
+                                       data-content="Please enter a valid password (8 - 16 characters, with at least 1 number & special character)">
+							    <small class="form-text text-muted">Please enter a valid password (8 - 16 characters, with at least 1 number & special character)</small>
                             </div>
                         </div>
                         <div class="form-group">
