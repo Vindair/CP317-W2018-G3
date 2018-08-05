@@ -36,10 +36,10 @@
 					</div>
                     <br><br>
 					{% for p in place %}
-					<div class="card gallery" style="width: 15rem;cursor:pointer;" id="the_container"  onclick="window.location='{% url 'subby:SubletDetail' p.id %}';">
+					<div class="card gallery" style="width: 15rem;cursor:pointer;"   id="sublet{{ p.id }}" onclick="window.location='{% url 'subby:SubletDetail' p.id %}';">
 						{% load index %}
 						<img class="card-img-top" src="{{ cover|index:forloop.counter0 }}" alt="">
-						<div class="card-body " id="sublet{{ p.id }}">
+						<div class="card-body" >
 							<h6 class="card-title">{{ p.title }}</h6>
 							<p class="card-title">{{ p.street_address }} </p>
 							<h6 class="card-title">{{ p.city }}, ${{ p.price}}</h6>
@@ -90,8 +90,15 @@
 		
 		google.maps.event.addListener(marker, 'click', (function (marker, content, infowindow) {
 			return function () {
+				var sublet = document.getElementById('sublet{{ p.id }}');
+				{% for p in place %}
+				document.getElementById('sublet{{p.id}}').style.backgroundColor = 'white';
+				{% endfor %}
+				sublet.style.backgroundColor = 'lightblue';
+				window.location.href="#sublet{{ p.id }}";
 				infowindow.setContent(content);
 				infowindow.open(map, marker);
+
 			};
 		})(marker, content, infowindow));
 		

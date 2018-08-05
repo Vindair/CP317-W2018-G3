@@ -18,3 +18,8 @@ class FavouriteManager(models.Manager):
         favourite = self.model.objects.get(id=fav_id)
         favourite.delete()
         return
+			
+			
+    def remove_favourite_list(self, user):
+      self.model.objects.filter(user=uesr).delete()
+      return 

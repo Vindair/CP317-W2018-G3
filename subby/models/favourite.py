@@ -12,20 +12,28 @@ class Favourite(models.Model):
 
     objects = FavouriteManager()
 
-def __str__(self):
-    return self.sublet.get_sublet_title
+    def __str__(self):
+       return self.sublet.get_sublet_title
 
-# Getters
-def get_created_at(self):
-     return self.created_at
-def get_updated_at(self):
-    return self.updated_at
+    # Getters
+    def get_favourite_id(self):
+       return self.id;
+	   
+    def get_sublet_id(self):
+       return self.sublet.id
+	   
+    def get_user_id(self):
+       return self.user.id
+	   
+    def get_created_at(self):
+       return self.created_at
+	   
+    def get_updated_at(self):
+       return self.updated_at
 
 
-# Setters
-def set_created_at(self, created_at):
-    self.created_at = created_at
-    return
-def set_updated_at(self):
-    self.updated_at = pytz.utc.localize(datetime.datetime.now())
-    return
+    # Setters, no need to set created_at since it is recorded automatically.
+	   
+    def set_updated_at(self):
+       self.updated_at = pytz.utc.localize(datetime.datetime.now())
+       return

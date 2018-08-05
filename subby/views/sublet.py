@@ -14,7 +14,7 @@ User = get_user_model()
 
 class SubletList(ListView):
     model = Sublet
-    paginate_by = 3
+    paginate_by = 10
 
     def get_context_data(self, **kwargs):
         ctx = super().get_context_data(**kwargs)
@@ -22,7 +22,6 @@ class SubletList(ListView):
         image_list = []
         sublet_id_list = []
         for image in images:
-            # element<> = <image.sublet.id, image.image>
             image_list.append(image)
             if image.sublet.id not in sublet_id_list:
                 sublet_id_list.append(image.sublet.id)

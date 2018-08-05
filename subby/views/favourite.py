@@ -21,11 +21,10 @@ def FavouriteLister(request):
 	image_list = []
 	for fav in fav_list:
 		images = SubletImage.objects.filter(sublet=fav.sublet)
-		image_dict = images[0]
-		image_list.append(images[0])
+		if (len(images) > 0):
+			image_list.append(images[0])
 	fav_dict = {
 		'fav_list':fav_list,
-		'image_dict':image_dict,
 		'image_list':image_list,
 	}
 	return render(request, 'favourite/favourite_list.html', fav_dict)
