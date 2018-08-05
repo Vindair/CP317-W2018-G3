@@ -3,12 +3,12 @@ from django.http import Http404
 from django.http import HttpResponse, Http404 
 from django.shortcuts import render, get_object_or_404,redirect
 from django.db import models
-from django.views.generic import ListView, DetailView
 from subby.models.favourite import Favourite
 from subby.models.sublet import Sublet
 from subby.models.image import SubletImage
 from subby.decorators.loginrequiredmessage import message_login_required
-
+from django.http import JsonResponse
+import sys
 
 
 
@@ -33,12 +33,14 @@ def FavouriteLister(request, user_id):
 
 
 
-class FavouriteMenuBar(ListView):
-    def index(request):
-        all_favourites = Favourite.objects.all()
-        ctx = {'all_favourites': all_favourites}
+def favourite_bar_lister(request):
+    print("Its lit", file=sys.stderr)
+    fav_list = Favourite.objects.filter(user=request.user)
 
-        return render(request, 'favourite/listings.html', ctx)
+    data = { 'fav_list': fav_list, }
+
+    return JsonResponse(data)
+
 
 
 # Favourites a sublet if not favourited, unfavourites a sublet if already favourited (deletes it from db)
