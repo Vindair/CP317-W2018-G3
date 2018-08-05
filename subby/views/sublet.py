@@ -75,6 +75,10 @@ def search(request):
                 places = places.filter(duration=request.POST.get('duration'))
                 data.update(place=places)
                 data['duration'] = request.POST.get('duration')
+            if request.POST.get('price'):
+                places = places.filter(price__lt=float(request.POST.get('price')))
+                data.update(place=places)
+                data['price'] = request.POST.get('price')
             images = []
             for p in places:
                 image = SubletImage.objects.filter(sublet=p.id)

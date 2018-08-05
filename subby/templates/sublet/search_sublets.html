@@ -4,7 +4,7 @@
 <div class="jumbotron jumbo-container">
 	<div class="container-fluid search-sublet-main-container">
 		<div class="row">
-			<div class="col-8">
+			<div class="col-7">
 				
 				<div class="container-fluid search-container">
 					<h2>
@@ -15,6 +15,7 @@
 					aria-label="Toggle navigation">
                         Advanced filters
 					</button>
+
                     <div class="collapse" id="filterToggler">
                         <div class="bg-dark p-4 mt-2" style="border-radius: 5px;">
                             <h6 class="text-white">Advanced Filters</h6>
@@ -23,12 +24,14 @@
                                 <div class="form-group text-light">
                                     <input type="hidden" name="lat" value="{{ lat }}">
                                     <input type="hidden" name="lng" value="{{ lng }}">
-                                    <label for="prox">Proximity (km):</label>
+                                    <label for="prox">Proximity within(km):</label>
                                     <input class="form-control" name="proximity" id="prox" type="number" min="1"
 									value="{{ prox }}">
                                     <label for="duration">Duration (months):</label>
                                     <input class="form-control" name="duration" id="duration" type="number" min="1" max="12"
 									value="{{ duration }}">
+									<label for="price">price (<):</label>
+                                    <input class="form-control" name="price" id="price" type="number" value="{{ price }}">
                                     <button class="btn btn-secondary btn-sm mt-3" type="submit">Filter</button>
 								</div>
 							</form>
@@ -40,7 +43,7 @@
 						{% load index %}
 						<img class="card-img-top" src="{{ cover|index:forloop.counter0 }}" alt="">
 						<div class="card-body" >
-							<h6 class="card-title">{{ p.title }}</h6>
+							<h6 class="card-title">{{ p.title }}, For {{ p.duration }} months</h6>
 							<p class="card-title">{{ p.street_address }} </p>
 							<h6 class="card-title">{{ p.city }}, ${{ p.price}}</h6>
 						</div>
