@@ -45,5 +45,5 @@ urlpatterns = [
   # Favourite paths
   path('favourites/<int:user_id>', favourite.FavouriteLister, name='favourite_list'),
   path('favourites/fav_unfav_sublet/', favourite.fav_unfav_sublet, name='fav_unfav_sublet'),	
-
+  path('favourites/favourite_bar_lister', favourite.favourite_bar_lister, name='favourite_bar_lister'),
 ]
