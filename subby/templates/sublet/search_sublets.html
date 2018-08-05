@@ -30,6 +30,8 @@
                         </div>
                     </div>
                     <br><br>
+                  <div class="fav-bar">{% include "favourite/favourite_bar.html" %}</div>
+                  <div id="main-page"> <!-- Everyting contained within this will be animated by Favourite menu actions -->
                     <div class="container-fluid search-container">
                         {% for p in place %}
                             <div class="card gallery" style="width: 18rem;">
@@ -46,6 +48,7 @@
                             </div>
                         {% endfor %}
                     </div>
+                  </div> <!-- End of "main-page" -->
                 </div>
                 <div class="col">
                     <div id="map" style="min-height: 100%; height: auto;"></div>
