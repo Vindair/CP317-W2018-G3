@@ -1,0 +1,69 @@
+<head>
+{% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/favourites/favourite_bar.css' %}"/>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+</head>
+<div id="successMessage"></div>
+{% csrf_token %}
+<!-- Favourite Menu Open Button-->
+<button class="btn btn-secondary btn-sm favourite-button-bar" id="favourite-menu-button"  url-data='{% url "subby:favourite_bar_lister" %}' onclick="open_fav_menu()">Favourites</button>
+
+
+
+     <!-- Favourite Menu -->
+<div class="fav-nav" id= "favNav">
+
+    <!-- Placeholder links for navigation to sublet single listing pages -->
+    {% for fav in fav_list %}
+        <b href="">{{ fav.sublet.get_sublet_title }}</b>
+    {% endfor %}
+
+</div>
+
+
+{% block javascript %}
+
+{% csrf_token %}
+<script>
+$(document).ready(function(){
+    $("#favourite-menu-button").on("click",function(){
+        getFavourites();
+    });
+
+});
+</script>
+{% csrf_token %}
+<script>
+function getFavourites(){
+    var url_text =  $("#favourite-menu-button").attr("url-data");
+
+    window.alert(url_text);
+      $.ajax({
+
+        url: url_text,
+        type: 'GET',
+
+        data: { csrfmiddlewaretoken: '{{ csrf_token }}' },
+
+        success: function(json) {
+            window.alert("done");
+            $("#successMessage").html("It worked");
+        },
+        error: function(json) {
+            window.alert("done");
+        }
+
+      });
+
+    window.alert("end of func");
+
+}
+</script>
+
+{% endblock %}
+
+{% load static %}
+    <script src="{% static 'js/FavouriteBar.js' %}"></script>
